@@ -1,0 +1,16 @@
+Characters: 
+- 64 x 64
+
+Resolution:
+- 858 x 480
+Camera Position:
+
+- 0.5, 0.5 (Bottom Pivot)
+
+Tile Map:
+- 32 x 32
+
+
+-------------------------------------------------------
+HUD
+Creditos
