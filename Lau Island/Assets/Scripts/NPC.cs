@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 using UnityEngine;
 
 public class NPC : MonoBehaviour
@@ -68,25 +66,35 @@ public class NPC : MonoBehaviour
         }
     }
 
+    bool doOnce = true;
+
     void ConversationLoop()
     {
-        m_dialog.text = DataManager.m_data.Conversations[0].Dialogs[0].Text;
-        m_name.text = DataManager.getCharacterName(DataManager.m_data.Conversations[0].Character);
+        if(doOnce)
+        {
+            var textDialog = DataManager.m_data.Conversations[0].Dialogs[0].Text;
 
-        GameObject[] options = GameObject.FindGameObjectsWithTag("Option");
-        foreach (GameObject option in options)
-        {
-            option.SetActive(false);
-        }
-        if (DataManager.m_data.Conversations[0].Dialogs[0].Options.Length > 0)
-        {
-            for (int i = 0; i < DataManager.m_data.Conversations[0].Dialogs[0].Options.Length; i++)
+            m_dialog.GetComponent<TextTyper>().ShowText(textDialog);
+
+            m_name.text = DataManager.getCharacterName(DataManager.m_data.Conversations[0].Character);
+
+            GameObject[] options = GameObject.FindGameObjectsWithTag("Option");
+            foreach (GameObject option in options)
             {
-                options[i].SetActive(true);
+                option.SetActive(false);
             }
-            m_goodOption.text = DataManager.m_data.Conversations[0].Dialogs[0].Options[0].Text;
-            m_badOption.text = DataManager.m_data.Conversations[0].Dialogs[0].Options[1].Text;
-            m_neutralOption.text = DataManager.m_data.Conversations[0].Dialogs[0].Options[2].Text;
+            if (DataManager.m_data.Conversations[0].Dialogs[0].Options.Length > 0)
+            {
+                for (int i = 0; i < DataManager.m_data.Conversations[0].Dialogs[0].Options.Length; i++)
+                {
+                    options[i].SetActive(true);
+                }
+                m_goodOption.text = DataManager.m_data.Conversations[0].Dialogs[0].Options[0].Text;
+                m_badOption.text = DataManager.m_data.Conversations[0].Dialogs[0].Options[1].Text;
+                m_neutralOption.text = DataManager.m_data.Conversations[0].Dialogs[0].Options[2].Text;
+            }
+            
+            doOnce = false;
         }
     }
 

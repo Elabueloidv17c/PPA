@@ -6,7 +6,7 @@
             "Character" : 0,
             "Dialogs" : [
                     {
-                        "Expression": "2",
+                        "Expression": 2,
                         "ToughtA": "",
                         "Text" : "I can's stop admiring its size. Its beautiful branches created a sort of canopy over the ground, shading it from the sun. As my eyes followed their shape, I noticed I’d almost stepped over a boy. Despite the fact that I was almost on top of him, the boy took no notice, nose buried in the pages of a book. His eyes moved quickly from side to side, completely enraptured.",
                         "ToughtB": "",
@@ -44,7 +44,7 @@
             "Character" : 10,
             "Dialogs" : [
                     {
-                        "Expression": "2",
+                        "Expression": 2,
                         "ToughtA": "",
                         "Text" : "What up, bud!",
                         "ToughtB": "Why, oh why, did I say that? Because I had no self control or self preservation, instead of backing up like a normal human being, I escalated the situation.  Grinning  with the particular brand of madness that comes from public humiliation, I pat the boy’s shoulder. What was I? His uncle?",
@@ -78,7 +78,7 @@
             "Character" : 2,
             "Dialogs" : [
                     {
-                        "Expression": "6",
+                        "Expression": 6,
                         "ToughtA": " The boy, rather reasonably, startled at the sound of my voice, sending the book flying. Now, I was no mind-reader... but the boy looked rather upset. Huffing in annoyance, he reached out for his fallen book.",
                         "Text" : "“Ah… y-you scared m-me…”",
                         "ToughtB": "",
@@ -112,7 +112,7 @@
             "Character" : 10,
             "Dialogs" : [
                     {
-                        "Expression": "6",
+                        "Expression": 6,
                         "ToughtA": "God, what was I doing?! I removed my hand immediately and moved to brush the dirt from his book. ",
                         "Text" : "“I am so sorry, I’ve got no idea what came over me.”",
                         "ToughtB": "",
@@ -146,7 +146,7 @@
             "Character" : 2,
             "Dialogs" : [
                     {
-                        "Expression": "3",
+                        "Expression": 3,
                         "ToughtA": "The boy swat my hand away with a resigned sigh, eyebrows pinched in annoyance.",
                         "Text" : "“Yeah, it’s fine.. .Can I just,” he gestured towards his book, “go back to reading? I’m kind of busy at the moment.”",
                         "ToughtB": "",
@@ -180,7 +180,7 @@
             "Character" : 10,
             "Dialogs" : [
                     {
-                        "Expression": "6",
+                        "Expression": 6,
                         "ToughtA": "",
                         "Text" : "“Of course! Lemme just...get out of your way then…”",
                         "ToughtB": "I stood up, trying my best not to run away from the scene, stiff smile on my face. As soon as I was out of sight, I groaned.  That had been *beyond* humiliating!",
@@ -214,7 +214,7 @@
             "Character" : 10,
             "Dialogs" : [
                     {
-                        "Expression": "2",
+                        "Expression": 2,
                         "ToughtA": "Rocking on my heels for a bit, I tried to catch his eye, but the boy was completely enraptured. Feeling rather shy, I coughed to get his attention. I pretended to cough to catch his attention and I greeted him politely.",
                         "Text" : "“Uh, hi there.”",
                         "ToughtB": "",
@@ -248,7 +248,7 @@
             "Character" : 2,
             "Dialogs" : [
                     {
-                        "Expression": "5",
+                        "Expression": 5,
                         "ToughtA": "The boy looked up at me, big brown eyes widening in surprise. After a couple of blinks, he curled up, book against his chest and cheeks red. How cute!",
                         "Text" : "“Ah… h-hello. I didn’t notice you there.” He stole another glance. “Sorry.”",
                         "ToughtB": "",
@@ -282,7 +282,7 @@
             "Character" : 10,
             "Dialogs" : [
                     {
-                        "Expression": "2",
+                        "Expression": 2,
                         "ToughtA": "Truly cute. I laughed light-heartedly.",
                         "Text" : "“That’s okay! Looks like you were really into your book.”",
                         "ToughtB": "",
@@ -316,7 +316,7 @@
             "Character" : 2,
             "Dialogs" : [
                     {
-                        "Expression": "2",
+                        "Expression": 2,
                         "ToughtA": "The moments the words were out of my mouth, the boy’s eyes sparkled.",
                         "Text" : "“Uh, yes! It’s a horror mystery and it’s so good! We were just getting to where the monster is revealed and-” the boy stopped, curling over himself again.",
                         "ToughtB": "",
@@ -345,7 +345,7 @@
                         ]
                     },
                     {
-                        "Expression": "1",
+                        "Expression": 1,
                         "ToughtA": "",
                         "Text" : " “...And you probably don’t care, right?” He sighed, downcast. “I’m sorry, I do this all the time.”",
                         "ToughtB": "I rushed to reassure him.",
@@ -379,7 +379,7 @@
             "Character" : 10,
             "Dialogs" : [
                     {
-                        "Expression": "2",
+                        "Expression": 2,
                         "ToughtA": "",
                         "Text" : "“N-Not at all! It sounds really interesting! I’m sure you had to be, for you to be so concentrated.”",
                         "ToughtB": "",
@@ -413,7 +413,7 @@
             "Character" : 2,
             "Dialogs" : [
                     {
-                        "Expression": "2",
+                        "Expression": 2,
                         "ToughtA": "The boy brightened up again. Just as he opened his mouth to speak, he spotted something behind me. ",
                         "Text" : "",
                         "ToughtB": "",
@@ -442,7 +442,7 @@
                         ]
                     },
                     {
-                        "Expression": "0",
+                        "Expression": 0,
                         "ToughtA": "A man was waving his arm, calling him over. The boy stood up hastily.",
                         "Text" : "“I-I’m so sorry, I’ve gotta get back to work.”",
                         "ToughtB": "",
@@ -476,7 +476,7 @@
             "Character" : 10,
             "Dialogs" : [
                     {
-                        "Expression": "0",
+                        "Expression": 0,
                         "ToughtA": "",
                         "Text" : "“Don’t worry about it.”",
                         "ToughtB": "",
@@ -510,7 +510,7 @@
             "Character" : 2,
             "Dialogs" : [
                     {
-                        "Expression": "0",
+                        "Expression": 0,
                         "ToughtA": "“If you ever wanna, uh, keep talking about books and stuff I’ll be at the library.” ",
                         "Text" : "",
                         "ToughtB": "",
@@ -539,7 +539,7 @@
                         ]
                     },
                     {
-                        "Expression": "5",
+                        "Expression": 5,
                         "ToughtA": "He scratched his head sheepishly. The man called out to him and the boy startled, breaking into a run.",
                         "Text" : "“Uh, see you around!”",
                         "ToughtB": "",
@@ -573,7 +573,7 @@
             "Character" : 10,
             "Dialogs" : [
                     {
-                        "Expression": "2",
+                        "Expression": 2,
                         "ToughtA": "",
                         "Text" : "“Bye!”",
                         "ToughtB": "As I waved goodbye, I realized I hadn’t asked for his name. Guess I’d have to visit the library next time!",
@@ -607,7 +607,7 @@
             "Character" : 10,
             "Dialogs" : [
                     {
-                        "Expression": "0",
+                        "Expression": 0,
                         "ToughtA": "Why interrupt the boy when he was obviously having so much fun? I decided to sit a little bit away from him, leaning against the tree. ",
                         "Text" : "",
                         "ToughtB": "The rustling of the leaves and the way the sun reached the ground through the gaps was enchanting. As I stared, my eyes starting getting heavier until I fell into a very peaceful sleep.",
@@ -636,7 +636,7 @@
                         ]
                     },
                     {
-                        "Expression": "0",
+                        "Expression": 0,
                         "ToughtA": "When I woke, the boy was gone and the sun had moved across the sky. Stretching my arms and legs, I walked away, smelling faintly of watermelon.",
                         "Text" : "",
                         "ToughtB": "",
