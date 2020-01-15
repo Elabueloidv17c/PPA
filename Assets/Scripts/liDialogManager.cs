@@ -1,14 +1,14 @@
-#if NOPLZ
 using UnityEngine.UI;
 using UnityEngine;
 
-public class liDialogManager
+public class liDialogManager : MonoBehaviour
 {
     public static liDialogManager instance;
 
-    public bool m_isConversationActive;
+    public bool m_startConversation;
+    private bool m_isConversationActive;
     public GameObject m_conversationUI;
-    public liCharacter m_playerRef;
+    private liCharacter m_playerRef;
 
     Text m_dialog;
     Text m_name;
@@ -32,15 +32,15 @@ public class liDialogManager
         dialog = GameObject.FindGameObjectWithTag("Neutral");
         m_neutralOption = dialog.GetComponent<Text>();
 
-        m_dialog = GameObject.FindGameObjectWithTag("Player")
-                             .GetComponent<liCharacter>();
+        m_playerRef = GameObject.FindGameObjectWithTag("Player")
+                                .GetComponent<liCharacter>();
         
         m_isConversationActive = false;
         m_conversationUI.SetActive(false);
     }
 
     void Update() {
-        if(m_isPlayerNearby)
+        if(m_startConversation)
         {
             EnterConversation();
         }
@@ -60,6 +60,7 @@ public class liDialogManager
         {
             m_isConversationActive = true;
             m_conversationUI.SetActive(true);
+            m_startConversation = false;
         }
     }
 
@@ -80,7 +81,7 @@ public class liDialogManager
         {
             var textDialog = liDataManager.m_data.Conversations[0].Dialogs[0].Text;
 
-            m_dialog.GetComponent<TextTyper>().ShowText(textDialog);
+            m_dialog.GetComponent<liTextTyper>().ShowText(textDialog);
 
             m_name.text = liDataManager.getCharacterName(liDataManager.m_data.Conversations[0].Character);
 
@@ -104,4 +105,3 @@ public class liDialogManager
         }
     }
 }
-#endif

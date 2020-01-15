@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Text))]
-public class TextTyper : MonoBehaviour
+public class liTextTyper : MonoBehaviour
 {
     public bool IsTypingText
     {
         get;
         private set;
     }
-    public int textSpeed = 50;
+    public float textSpeed = 50;
     private string textCopy;
     private TextParser.TextNode[] parsedText;
     private Text textGUI;
@@ -80,7 +80,7 @@ public class TextTyper : MonoBehaviour
             textGUI.text += c;
             var localcopy = textGUI.text;
             textGUI.text += string.Join("",footerStack.ToArray());
-            yield return new WaitForSecondsRealtime(1 / textSpeed);
+            yield return new WaitForSeconds(1 / textSpeed);
             textGUI.text = localcopy;
         }
     }
