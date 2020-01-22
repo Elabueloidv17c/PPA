@@ -104,9 +104,9 @@ public class liDataManager : MonoBehaviour
 
 public struct Scene
 {
-  public string InComment;
-  public string OutComment;
-  public Conversation[] Conversations;
+    public string InComment;
+    public string OutComment;
+    public Conversation[] Conversations;
 }
 
 public struct Conversation
@@ -117,15 +117,21 @@ public struct Conversation
 
 public struct Dialog
 {
-    public int Expression;
-    public string ThoughtA;
+    public DialogCharacter[] LeftCharacter;
+    public DialogCharacter[] RightCharacter;
+    public int ActiveCharacterLeft;
+    public int ActiveCharacterRight;
+    public bool ActiveSide; // false if left, true if right
     public string Text;
-    public string ThoughtB;
-    public int Character;
-    public int Next;
-    public Log Action;
-    public Item Inventory;
+    public string Thought;
+    public Action LogAction;
     public Option[] Options;
+}
+
+public struct DialogCharacter
+{
+    public int CharacterID;
+    public int Expression;
 }
 
 public struct Option
@@ -135,27 +141,9 @@ public struct Option
     public int Value;
 }
 
-public struct Log
+public struct Action
 {
-    public int ID;
+    public int OptionType; // TODO: change parser to Json.Net & change this to enum
     public int Next;
     public int Value;
-}
-
-public struct Item
-{
-    public int ID;
-    public int Next;
-    public int Value;
-}
-
-public enum GameInput
-{
-    MoveUp = KeyCode.UpArrow,
-    MoveDown = KeyCode.DownArrow,
-    MoveLeft = KeyCode.LeftArrow,
-    MoveRight = KeyCode.RightArrow,
-    Sprint = KeyCode.Space,
-    Interact = KeyCode.A,
-    Exit = KeyCode.Escape
 }
