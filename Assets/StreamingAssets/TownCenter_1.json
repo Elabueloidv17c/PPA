@@ -21,8 +21,7 @@
                 "Text" : "<b>I can's stop admiring its size.</b> Its beautiful branches created a sort of canopy over the ground, shading it from the sun. As my eyes followed their shape, I noticed I’d almost stepped over a boy. Despite the fact that I was almost on top of him, the boy took no notice, nose buried in the pages of a book. His eyes moved quickly from side to side, completely enraptured.",
                 
                 "LogAction" : {
-                    "_comment" : "OptionType 2 means buttons",
-                    "OptionType" : 2,
+                    "OptionType" : "Buttons",
                     "Next" : 0,
                     "Value" : 0
                 },
@@ -67,8 +66,7 @@
                 "Tought": "Why, oh why, did I say that? Because I had no self control or self preservation, instead of backing up like a normal human being, I escalated the situation.  Grinning  with the particular brand of madness that comes from public humiliation, I pat the boy’s shoulder. What was I? His uncle?",
                 
                 "LogAction" : {
-                    "_comment" : "OptionType 1 means jump to Next",
-                    "OptionType" : 2,
+                    "OptionType" : "JumpToNext",
                     "Next" : 4,
                     "Value" : 0
                 }

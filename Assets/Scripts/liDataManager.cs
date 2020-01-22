@@ -1,8 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Newtonsoft.Json;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using System.IO;
+
+using UnityEngine;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 public class liDataManager : MonoBehaviour
 {
@@ -124,7 +126,7 @@ public struct Dialog
     public bool ActiveSide; // false if left, true if right
     public string Text;
     public string Thought;
-    public Action LogAction;
+    public LogAction LogAction;
     public Option[] Options;
 }
 
@@ -141,9 +143,18 @@ public struct Option
     public int Value;
 }
 
-public struct Action
+public struct LogAction
 {
-    public int OptionType; // TODO: change parser to Json.Net & change this to enum
+    public ActionType ActionType;
     public int Next;
     public int Value;
+}
+
+[JsonConverter(typeof(StringEnumConverter))]  
+public enum ActionType {
+    None,
+    JumpToNext,
+    Buttons,
+    
+    //... 
 }
