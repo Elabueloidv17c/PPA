@@ -32,6 +32,10 @@ public class liTextTyper : MonoBehaviour
         StopAllCoroutines();
         EndTextTyping();
       }
+      else
+      {
+        
+      }
     }
   }
 
@@ -89,19 +93,5 @@ public class liTextTyper : MonoBehaviour
     {
         textGUI.text = textCopy;
         IsTypingText = false;
-        /*switch (textOption)
-        {
-          case DialogTextOption.EndWithArrow:
-              Arrow.SetActive(true);
-              break;
-          case DialogTextOption.EndWithoutArrow:
-            Arrow.SetActive(false);
-            break;
-          case DialogTextOption.EndWithOptions:
-              SendMessageUpwards("ShowButtons");
-              break;
-          default:
-              break;
-        }*/
     }
 }
