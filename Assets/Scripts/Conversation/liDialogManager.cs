@@ -1,6 +1,5 @@
 using UnityEngine.UI;
 using UnityEngine;
-using System;
 
 public class liDialogManager : MonoBehaviour
 {
@@ -39,6 +38,8 @@ public class liDialogManager : MonoBehaviour
             liDataManager.m_data.Conversations[dialogID].
             Character
         );
+
+        DisplayIndividualDialog();
     }
 
     private void DisplayIndividualDialog()
@@ -51,6 +52,13 @@ public class liDialogManager : MonoBehaviour
 
     public void NextDialog()
     {
-        m_dialogPanel.SetActive(false);
+        if()
+        {
+
+        }
+        else
+        {
+            m_dialogPanel.SetActive(false);
+        }
     }
 }
