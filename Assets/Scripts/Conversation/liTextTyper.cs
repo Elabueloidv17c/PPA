@@ -11,6 +11,7 @@ public class liTextTyper : MonoBehaviour
         get;
         private set;
     }
+    
     public float textSpeed = 50;
     private string textCopy;
     private TextParser.TextNode[] parsedText;
@@ -25,7 +26,8 @@ public class liTextTyper : MonoBehaviour
 
   private void Update()
   {
-    if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
+    if ((Input.GetKeyDown(KeyCode.Space) || 
+         Input.GetMouseButtonDown(0)))
     {
       if(IsTypingText)
       {
@@ -34,7 +36,7 @@ public class liTextTyper : MonoBehaviour
       }
       else
       {
-        
+        liDialogManager.instance.NextDialog();
       }
     }
   }

@@ -2,35 +2,39 @@
 
 public class liNPC : MonoBehaviour
 {
-    public static bool m_isPlayerNearby;
-    private liCharacter m_playerRef;
+    public int m_dialogID;
 
-    void Start() {
-        m_isPlayerNearby = false;
-        
-        m_playerRef = GameObject.FindGameObjectWithTag("Player")
-                                .GetComponent<liCharacter>();
+    private bool m_playerInRange;
+    private liCharacter m_character;
+
+    void Start()
+    {
+        m_character = FindObjectOfType<liCharacter>();
     }
 
-    void Update() {
-        if(m_isPlayerNearby && m_playerRef.m_isInteracting) {
-            liDialogManager.instance.m_startConversation = true;
+    void Update() 
+    {
+        if(m_playerInRange && 
+           !m_character.m_isInteracting &&
+           Input.GetKeyDown((KeyCode)GameInput.Interact))
+        {
+            liDialogManager.instance.DisplayDialog(m_dialogID);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.tag == "Player")
         {
-            m_isPlayerNearby = true;
+            m_playerInRange = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.tag == "Player")
         {
-            m_isPlayerNearby = false;
+            m_playerInRange = true;
         }
     }
 }

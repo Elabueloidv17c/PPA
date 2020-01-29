@@ -17,25 +17,10 @@ public class liDataManager : MonoBehaviour
   public static bool m_showingConversationUI;
   public GameObject m_conversationUI;
 
-  void FindRenderersOnLayer(int layer) {
-      var objectsInScene = FindObjectsOfType<GameObject>();
-      var objectsInLayer = new List<GameObject>();
-      for (var i = 0; i < objectsInScene.Length; i++) {
-          if (objectsInScene[i].layer == layer) {
-              objectsInLayer.Add(objectsInScene[i]);
-          }
-      }
-      m_objectsOnLayer = objectsInLayer;
-  }
-
   void Start() {
       s_currentDay++;
       s_time = 0.0f;
       m_data = ParseConversation();
-      //Load Objects Here
-
-      //Then Load Renderers
-      FindRenderersOnLayer(9);
   }
 
   void Update() {
