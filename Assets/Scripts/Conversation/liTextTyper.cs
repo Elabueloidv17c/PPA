@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Text = TMPro.TextMeshProUGUI;
 
+// TODO: Document file
+
 [RequireComponent(typeof(Text))]
 public class liTextTyper : MonoBehaviour
 {
@@ -93,5 +95,7 @@ public class liTextTyper : MonoBehaviour
     {
         textGUI.text = textCopy;
         IsTypingText = false;
+        
+        liDialogManager.instance.FinishedTyping();
     }
 }

@@ -6,6 +6,8 @@ using UnityEngine;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
+// TODO: Document file
+
 public class liDataManager : MonoBehaviour
 {
     public static uint s_currentDay = 0;
@@ -129,6 +131,7 @@ public enum ActionType {
     None,
     JumpToNext,
     Buttons,
-    
+    End,
+
     //... 
 }

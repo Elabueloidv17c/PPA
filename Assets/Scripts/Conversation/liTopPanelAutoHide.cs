@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
+// TODO: Document file
+
 public class liTopPanelAutoHide 
     : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
