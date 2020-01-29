@@ -1,15 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using Text = TMPro.TextMeshProUGUI;
 
 [RequireComponent(typeof(Text))]
 public class liTextTyper : MonoBehaviour
 {
-    public bool IsTypingText
-    {
-        get;
-        private set;
+    public bool IsTypingText {
+        get; private set;
     }
     
     public float textSpeed = 50;

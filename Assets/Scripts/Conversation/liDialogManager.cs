@@ -1,5 +1,5 @@
-using UnityEngine.UI;
 using UnityEngine;
+using Text = TMPro.TextMeshProUGUI;
 
 public class liDialogManager : MonoBehaviour
 {
@@ -21,14 +21,20 @@ public class liDialogManager : MonoBehaviour
         m_character = FindObjectOfType<liCharacter>();
         m_dialogPanel = transform.GetChild(0).gameObject;
 
-        m_textTyper =
-            m_dialogPanel.GetComponentInChildren<liTextTyper>();
+        var bkgd = m_dialogPanel.transform.Find("Background");
+
+        m_textTyper = bkgd.GetComponentInChildren<liTextTyper>();
+
+        m_charNameText = bkgd.Find("Character Name").
+                         GetComponentInChildren<Text>();
 
         m_dialogPanel.SetActive(false);
     }
 
     public void DisplayDialog(int dialogID)
     {
+        m_dialogPanel.SetActive(true);
+
         m_character.m_isInteracting = true;
 
         m_dialogID = dialogID;
@@ -46,15 +52,16 @@ public class liDialogManager : MonoBehaviour
     {
         m_textTyper.ShowText(
             liDataManager.m_data.Conversations[m_dialogID].
-            Dialogs[m_dialogIndex].Text
+            Dialogs[m_dialogIndex++].Text
         );
     }
 
     public void NextDialog()
     {
-        if()
+        if(m_dialogIndex < liDataManager.m_data.
+                           Conversations[m_dialogID].Dialogs.Length)
         {
-
+            DisplayIndividualDialog();
         }
         else
         {

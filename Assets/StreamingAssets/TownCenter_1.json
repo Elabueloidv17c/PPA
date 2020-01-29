@@ -22,25 +22,23 @@
 					"Text" : "<b>I can's stop admiring its size.</b> Its beautiful branches created a sort of canopy over the ground, shading it from the sun. As my eyes followed their shape, I noticed I’d almost stepped over a boy. Despite the fact that I was almost on top of him, the boy took no notice, nose buried in the pages of a book. His eyes moved quickly from side to side, completely enraptured.",
 					
 					"LogAction" : {
-						"ActionType" : "Buttons",
-						"Next" : 0,
-						"Value" : 0
+						"ActionType" : "Buttons"
 					},
 					
 					"Options" : [
 						{
 							"Text" : "What up, bud!",
-							"Next" : 3,
+							"Next" : 1,
 							"Value" : -2
 						},
 						{
 							"Text" : "Hi there.",
-							"Next" : 8,
+							"Next" : 2,
 							"Value" : 1
 						},
 						{
 							"Text" : "I leave him alone.",
-							"Next" : 20,
+							"Next" : 3,
 							"Value" : 0
 						}
 					]
