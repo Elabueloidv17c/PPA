@@ -40,10 +40,15 @@ public class liCharacter : MonoBehaviour
         if (Input.GetKey((KeyCode)GameInput.MoveLeft))
         {
             delta.x -= 1;
+            gameObject.GetComponent<Animator>().SetBool("Mover",true);
         }
         if (Input.GetKey((KeyCode)GameInput.MoveRight))
         {
             delta.x += 1;
+            gameObject.GetComponent<Animator>().SetBool("Mover", true);
+        }
+        if (!Input.GetKey((KeyCode)GameInput.MoveLeft) && !Input.GetKey((KeyCode)GameInput.MoveRight)) {
+            gameObject.GetComponent<Animator>().SetBool("Mover", false);
         }
 
         m_body.MovePosition(m_body.position + (delta * Time.deltaTime *
