@@ -4,7 +4,7 @@ public class liCharacter : MonoBehaviour
 {
     Rigidbody2D m_body;
     Vector2 m_movement;
-    public Animator m_animator;
+     Animator m_animator;
     public float m_verticalRatio;
     public float m_walkSpeed;
     public float m_runSpeed;
@@ -16,7 +16,7 @@ public class liCharacter : MonoBehaviour
         m_verticalRatio = 0.75f;
         m_runSpeed = 2.8f;
         m_walkSpeed = 1.8f;
-        
+        m_animator = GetComponent<Animator>();
     }
 
     private void Update() {
@@ -33,27 +33,29 @@ public class liCharacter : MonoBehaviour
         
         if (Input.GetKey((KeyCode)GameInput.MoveUp))
         {
-            m_animator.SetBool("Mover_atras", true);
+            m_animator.SetBool("Up", true);
             delta.y += m_verticalRatio;
         }
         if (Input.GetKey((KeyCode)GameInput.MoveDown))
         {
             delta.y -= m_verticalRatio;
+            m_animator.SetBool("Up", false);
         }
         if (Input.GetKey((KeyCode)GameInput.MoveLeft))
         {
             delta.x -= 1;
-            m_animator.SetBool("Mover_izquierda", true);
+            m_animator.SetBool("Left", true);
         }
         if (Input.GetKey((KeyCode)GameInput.MoveRight))
         {
             delta.x += 1;
-            m_animator.SetBool("Mover_derecha",true);
+            m_animator.SetBool("Right", true);
         }
         if (!Input.GetKey((KeyCode)GameInput.MoveLeft) && !Input.GetKey((KeyCode)GameInput.MoveRight)) {
-            m_animator.SetBool("Mover_izquierda", false);
-            m_animator.SetBool("Mover_derecha", false);
+            m_animator.SetBool("Left", false);
+            m_animator.SetBool("Right", false);
         }
+       
 
         m_body.MovePosition(m_body.position + (delta * Time.deltaTime *
                            ((Input.GetKey((KeyCode)GameInput.Sprint)) ?
