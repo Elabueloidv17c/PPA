@@ -22,9 +22,7 @@
 					"Text" : "<b>I can's stop admiring its size.</b> Its beautiful branches created a sort of canopy over the ground, shading it from the sun. As my eyes followed their shape, I noticed I’d almost stepped over a boy. Despite the fact that I was almost on top of him, the boy took no notice, nose buried in the pages of a book. His eyes moved quickly from side to side, completely enraptured.",
 					
 					"LogAction" : {
-						"ActionType" : "Buttons",
-						"Next" : 0,
-						"Value" : 0
+						"ActionType" : "Buttons"
 					},
 					
 					"Options" : [
@@ -86,6 +84,9 @@
 	
 					"Tought": " The boy, rather reasonably, startled at the sound of my voice, sending the book flying. Now, I was no mind-reader... but the boy looked rather upset. Huffing in annoyance, he reached out for his fallen book.",
 					"Text" : "“Ah… y-you scared m-me…”"
+				},
+				{
+
 				}
 			]
         }

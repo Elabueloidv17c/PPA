@@ -1,0 +1,55 @@
+{
+    "InComment" : null,
+    "OutComment" : null,
+    "Conversations" : [
+        {
+            "Character" : 0,
+            "Dialogs" : [
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 0,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 0,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 0,
+                    "ActiveCharacterRight" : 0,
+                    "ActiveSide" : null,
+
+                    "Text" : null,
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 0,
+                        "Value" : 0
+                    },
+
+                    "Options" : [
+                    {
+                        "Text" : null,
+                        "Next" : 0,
+                        "Value" : 0
+                    },
+                    {
+                        "Text" : null,
+                        "Next" : 0,
+                        "Value" : 0
+                    },
+                    {
+                        "Text" : null,
+                        "Next" : 0,
+                        "Value" : 0
+                    }
+                    ]
+                }
+            ]   
+        }
+    ]
+}
