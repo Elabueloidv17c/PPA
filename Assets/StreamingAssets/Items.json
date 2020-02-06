@@ -1,0 +1,272 @@
+[
+    {
+        "id": 0,
+        "title": "Apple",
+        "value": 2,
+        "power":  4,
+        "type": "Food",
+        "desc": "A small beginning for a journey, may this be the answer.",
+        "stackable": true,
+        "maxstack": 3
+    },
+    {
+        "id": 1,
+        "title": "Coal",
+        "value": 3,
+        "power":  0,
+        "type": "Trading",
+        "desc": "Used as fuel and as a primitive writing utensil.",
+        "stackable": true,
+        "maxstack": 3
+    },
+    {
+        "id": 2,
+        "title": "Wood",
+        "value": 10,
+        "power":  0,
+        "type": "Trading",
+        "desc": "The sons and daughters of the praisers of the sun.",
+        "stackable": true,
+        "maxstack": 3
+    },
+    {
+        "id":3,
+        "title": "Watermelon",
+        "value": 15,
+        "power":  30,
+        "type": "Food",
+        "desc": "Huge fruit, wish I had a juice-shooting dinosaur with me.",
+        "stackable": false,
+        "maxstack": 0
+    },
+    {
+        "id":4,
+        "title": "AppleBlue",
+        "value": 9,
+        "power":  14,
+        "type": "Food",
+        "desc": "It looks like solid water.",
+        "stackable": false,
+        "maxstack": 3
+    },
+    {
+        "id":5,
+        "title": "AppleFace",
+        "value": 250,
+        "power":  1,
+        "type": "Health",
+        "desc": "Are you really gonna eat it??.",
+        "stackable": false,
+        "maxstack": 0
+    },
+    {
+        "id":6,
+        "title": "AppleGolden",
+        "value": 35,
+        "power":  50,
+        "type": "Food",
+        "desc": "This was touched by Midas, now its my turn.",
+        "stackable": false,
+        "maxstack": 2
+    },
+    {
+        "id":7,
+        "title": "AppleGreen",
+        "value": 23,
+        "power":  20,
+        "type": "Food",
+        "desc": "Same as its brother but... greener.",
+        "stackable": false,
+        "maxstack": 3
+    },
+    {
+        "id":8,
+        "title": "AppleCloud",
+        "value": 100,
+        "power":  1,//0.5
+        "type": "Health",
+        "desc": "Like being touched by the angels... in a good and healthy way.",
+        "stackable": false,
+        "maxstack": 5
+    },
+    {
+        "id":9,
+        "title": "AppleRainbow",
+        "value": 690,
+        "power":  100,
+        "type": "Food",
+        "desc": "What if i eat 2? will I see a double rainbow?.",
+        "stackable": true,
+        "maxstack": 2
+    },
+    {
+        "id":10,
+        "title": "AppleSlime",
+        "value": 25,
+        "power":  -50,
+        "type": "Food",
+        "desc": "I am sure this is a goo idea.",
+        "stackable": false,
+        "maxstack": 10
+    },
+    {
+        "id":11,
+        "title": "AppleUnicorn",
+        "value": 800,
+        "power":  100,
+        "type": "Food",
+        "desc": "May the power of the unicorns unite this world.",
+        "stackable": false,
+        "maxstack": 0
+    },
+    {
+        "id":12,
+        "title": "Bread",
+        "value": 30,
+        "power":  25,
+        "type": "Food",
+        "desc": "Mother Fire Trucking Breadcrumbs for the ducks!.",
+        "stackable": true,
+        "maxstack": 20
+    },
+    {
+        "id":13,
+        "title": "Bronze",
+        "value": 140,
+        "power":  -75,
+        "type": "Food",
+        "desc": "It is used to classify the worst, extra salty and rare mineral, dont try to be what you eat!.",
+        "stackable": true,
+        "maxstack": 10
+    },
+    {
+        "id":14,
+        "title": "Coffee",
+        "value": 700,
+        "power":  50,//2
+        "type": "Food",
+        "desc": "The Gods' drink.",
+        "stackable": true,
+        "maxstack": 69
+    },
+    {
+        "id":15,
+        "title": "Crown",
+        "value": 0,
+        "power":  0,
+        "type": "Quest",
+        "desc": "For the Power and Control, seek who will obey and who will command.",
+        "stackable": false,
+        "maxstack": 1
+    },
+    {
+        "id":16,
+        "title": "Diamond",
+        "value": 0,
+        "power":  0,
+        "type": "Quest",
+        "desc": "I feel this is very important for me.",
+        "stackable": false,
+        "maxstack": 0
+    },
+    {
+        "id":17,
+        "title": "Face",
+        "value": 550,
+        "power":  2,
+        "type": "Health",
+        "desc": "Am I really going to eat this... for 150 energy?.",
+        "stackable": false,
+        "maxstack": 0
+    },
+    {
+        "id":18,
+        "title": "FriedPotatoes",
+        "value": 20,
+        "power":  20,
+        "type": "Food",
+        "desc": "All hail Ron!.",
+        "stackable": true,
+        "maxstack": 5
+    },
+    {
+        "id":19,
+        "title": "LoveCraft",
+        "value": 1000,
+        "power":  5,
+        "type": "Health",
+        "desc": "A nice story about creations and love to fear.",
+        "stackable": false,
+        "maxstack": 0
+    },
+    {
+        "id":20,
+        "title": "Metal",
+        "value": 100,
+        "power":  -100,
+        "type": "Food",
+        "desc": "A fusion of minerals transformed and processed to... no it is just metal.",
+        "stackable": true,
+        "maxstack": 10
+    },
+    {
+        "id":21,
+        "title": "Mochi",
+        "value": 1,
+        "power": 1,
+        "type": "Food",
+        "desc": "Mochi Mochi!! Just the right price and ammount.",
+        "stackable": true,
+        "maxstack": 1
+    },
+    {
+        "id":22,
+        "title": "Soda",
+        "value": 50,
+        "power":  96,
+        "type": "Food",
+        "desc": "This Cliff Dew is just awesome!!.",
+        "stackable": true,
+        "maxstack": 2
+    },
+    {
+        "id":23,
+        "title": "SuperHamburger",
+        "value": 33,
+        "power":  30,
+        "type": "Food",
+        "desc": "I would like one like the commercial ones, please.",
+        "stackable": true,
+        "maxstack": 4
+    },
+    {
+        "id":24,
+        "title": "Sushi",
+        "value": 50,
+        "power":  17,
+        "type": "Food",
+        "desc": "For senpai.",
+        "stackable": true,
+        "maxstack": 2
+    },
+    {
+        "id":25,
+        "title": "Water",
+        "value": 0,
+        "power":  0, //WTF? This does nothing? Was that intentional?
+        "type": "Quest",
+        "desc": "This is your best friend.",
+        "stackable": true,
+        "maxstack": 10
+    },
+	{
+		"id":26,
+		"title": "Paper",
+        "value": 0,
+        "power":  0,
+        "type": "Quest",
+        "desc": "Give this to the King so the path to the next road opens.",
+        "stackable": false,
+        "maxstack": 1
+	}
+]

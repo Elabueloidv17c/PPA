@@ -2,12 +2,20 @@
 
 public class liCamera : MonoBehaviour
 {
-    public GameObject m_player;
-    public float m_positionZ;
+    [SerializeField]
+    private GameObject m_player;
+    
+    [SerializeField]
+    private float m_positionZ;
 
     private void Start()
     {
-        m_positionZ = -10.0f;   
+        m_positionZ = -10.0f;  
+
+        if(null == m_player)
+        {
+            m_player = FindObjectOfType<liCharacter>().gameObject;
+        } 
     }
 
     void LateUpdate()
