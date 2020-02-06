@@ -1,0 +1,1434 @@
+ {
+    "InComment" : "So this is the library, huh?",
+    "OutComment" : null,
+    "Conversations" : [
+        {
+            "Character" : 10,
+            "Dialogs" : [
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 2,
+                        "Expression" : 5
+                    }],
+
+                    "ActiveCharacterLeft" : 0,
+                    "ActiveCharacterRight" : 0,
+                    "ActiveSide" : true,
+
+                    "Text" : "W-welcome to the library. What can I do for you?",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 1,
+                        "Value" : 0
+                    }
+                },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 5 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 5
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : false,
+    
+                        "Text" : "Oh, I was just.. Uh..",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 2,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 5 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 5
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : false,
+    
+                        "Text" : "I...uh..,",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 3,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 5 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 5
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : false,
+    
+                        "Text" : "I was trying to read that poster",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 4,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 5 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "Those are the library rules. You’re new here, right? Let me read them to you",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 5,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 5 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 7
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "1. Use indoor voices (NO SCREAMING)",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 6,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 5 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 7
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "2. Read quietly",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 7,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 5 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 7
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "3. No running, jumping or skateboarding allowed",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 8,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 5 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 7
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "4. No food or drinks allowed",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 9,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 5 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 7
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "5. Treat the books with care (NO CHEWING)",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 10,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 5 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 7
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "6. Keep your area clean (NO SLIME)",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 11,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 5 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 7
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "7. Books may be borrowed for two weeks at a time",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 12,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 5 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 7
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "Anyone who fails to comply with these rules will be asked to leave",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 13,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 5 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 7
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "We’re open from 10:00 am to 9:00 pm",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 14,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 5 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 7
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "So...any questions?",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 15,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 7
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : false,
+    
+                        "Text" : "Do people chew books?",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 16,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 5
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "W-why don’t you b-borrow a book? Follow me",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 17,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "Are you looking for a book in particular?",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 18,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : false,
+    
+                        "Text" : "Oh, uh, not really",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 19,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : false,
+    
+                        "Text" : "I was just looking around",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 20,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "You’re new in town, right? Why don’t you borrow a book?",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 21,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "What do you like to read?",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 0,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                    "Options" : [
+                    {
+                        "Text" : "[Romance]",
+                        "Next" : 22,
+                        "Value" : 0
+                    },
+                    {
+                        "Text" : "[Mystery and Crimes]",
+                        "Next" : 34,
+                        "Value" : 1
+                    },
+                    {
+                        "Text" : "[I don’t like books]",
+                        "Next" : 44,
+                        "Value" : 0
+                    }
+                    ]
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 2 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : false,
+    
+                        "Text" : "Romance, for sure. I’m a hopeless romantic",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 23,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 2 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : false,
+    
+                        "Text" : "I always imagine myself as the protagonist",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 24,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 2 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : false,
+    
+                        "Text" : "What about you? You like them?",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 25,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 2 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "I actually find those kind of...uh….very boring. I never read them",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 26,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : false,
+    
+                        "Text" : "Then...ah, what do you like?",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 27,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "I like a lot but I guess crime stories are the best",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 28,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : false,
+    
+                        "Text" : "Crime? How can you like those? Aren’t they kinda dull?",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 29,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 5
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "I’ll show you where the romance section is",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 30,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 5
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : false,
+    
+                        "Text" : "So… what’s your name?",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 31,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "My name is Nero",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 32,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "Here we are",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 33,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "I’ll go back to the counter. Meet me there when you’ve chosen the book you want",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 0,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 6 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : false,
+    
+                        "Text" : "It’s, um, Mystery and Crime dramas. But I’m not a serial killer or anything!",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 35,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 6 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 2
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "No way! I love crime stories! I can show you where all the good ones are. I’ll even show you my favorites! Follow me",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 36,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 2
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : false,
+    
+                        "Text" : "You know, I still don’t know your name",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 37,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 2
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "I’m Nero. You?",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 38,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 2
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : false,
+    
+                        "Text" : "Oh, it’s [PL]",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 39,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "Here it is…",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 40,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 2
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "This is one of the best mysteries in the whole library. You’ll love it, I promise",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 41,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 2
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : false,
+    
+                        "Text" : "I’ve never seen this before",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 42,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 2 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 2
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : false,
+    
+                        "Text" : "Guess I’m taking it home",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 43,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 2 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "See you in two weeks then!",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 0,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : false,
+    
+                        "Text" : "You know, I don’t actually like books all that much",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 45,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "Wait...you don’t like books?",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 46,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "Maybe you just haven’t found the right one. I’ll show you my favorites. Come, if you want",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 47,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "This is one of my favorites. I think you might like it",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 48,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : false,
+    
+                        "Text" : "I guess I’ll read it! It looks interesting",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 49,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 2
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "Great! I hope you like it. Let’s go back to the counter so I can register this for you",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 50,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "I’ll see you in two weeks and you tell me if you liked it",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 51,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : false,
+    
+                        "Text" : "Oh! You never told me your name",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 52,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 0 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : true,
+    
+                        "Text" : "Ah, sorry. Call me Nero",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 53,
+                            "Value" : 0
+                        }
+                    },
+                    {
+                        "LeftCharacter" : [
+                        {
+                           "CharacterID" : 10,
+                           "Expression" : 2 
+                        }],
+    
+                        "RightCharacter" : [
+                        {
+                            "CharacterID" : 2,
+                            "Expression" : 0
+                        }],
+    
+                        "ActiveCharacterLeft" : 0,
+                        "ActiveCharacterRight" : 0,
+                        "ActiveSide" : false,
+    
+                        "Text" : "‘Kay Nero! I’m [PL]",
+                        "Thought" : null,
+    
+                        "LogAction" : {
+                            "OptionType" : 0,
+                            "Next" : 0,
+                            "Value" : 0
+                        }
+                    }
+            ]   
+        }
+    ]
+}
