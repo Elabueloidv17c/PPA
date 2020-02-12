@@ -33,30 +33,29 @@ public class liCharacter : MonoBehaviour
         
         if (Input.GetKey((KeyCode)GameInput.MoveUp))
         {
-            m_animator.SetBool("Up", true);
+           
             delta.y += m_verticalRatio;
+
         }
         if (Input.GetKey((KeyCode)GameInput.MoveDown))
         {
             delta.y -= m_verticalRatio;
-            m_animator.SetBool("Up", false);
+            
         }
         if (Input.GetKey((KeyCode)GameInput.MoveLeft))
         {
             delta.x -= 1;
-            m_animator.SetBool("Left", true);
+          
         }
         if (Input.GetKey((KeyCode)GameInput.MoveRight))
         {
             delta.x += 1;
-            m_animator.SetBool("Right", true);
+         
         }
-        if (!Input.GetKey((KeyCode)GameInput.MoveLeft) && !Input.GetKey((KeyCode)GameInput.MoveRight)) {
-            m_animator.SetBool("Left", false);
-            m_animator.SetBool("Right", false);
-        }
-       
 
+        m_animator.SetBool("isWalking", delta != Vector2.zero);
+        m_animator.SetFloat("X",delta.x);
+        m_animator.SetFloat("Y", delta.y);
         m_body.MovePosition(m_body.position + (delta * Time.deltaTime *
                            ((Input.GetKey((KeyCode)GameInput.Sprint)) ?
                            m_runSpeed : m_walkSpeed)));
