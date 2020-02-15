@@ -1,0 +1,165 @@
+{
+    "InComment" : null,
+    "OutComment" : null,
+    "Conversations" : [
+        {
+            "Character" : 1,
+            "Dialogs" : [
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 0,
+                       "Expression" : 1 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 3,
+                        "Expression" : 1
+                    }],
+
+                    "ActiveCharacterLeft" : 0,
+                    "ActiveCharacterRight" : 0,
+                    "ActiveSide" : true,
+
+                    "Text" : "I’m sorry!",
+
+                    "LogAction" : {
+                        "OptionType" : "Buttoms",
+                        "Next" : 0,
+                        "Value" : 0
+                    },
+
+                    "Options" : [
+                    {
+                        "Text" : "Hey, Izzy!",
+                        "Next" : 1,
+                        "Value" : 2
+                    },
+                    {
+                        "Text" : "I watch her run away", 
+                        "Next" : 7,
+                        "Value" : 0
+                    }
+                    ]
+                },
+
+                {
+					"LeftCharacter": [{
+						"CharacterID" : 0,
+						"Expression" : 0
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
+						"Expression" : 0
+					}],
+					
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": false,
+	
+					"Text" : "Hey Izzy!",
+					"Tought": "How far were we from the beach? What exactly was I seeing?",
+					
+					"LogAction" : {
+						"ActionType" : "JumpToNext",
+						"Next" : 2
+					}
+                },
+                
+				{
+					"LeftCharacter": [{
+						"CharacterID" : 0,
+						"Expression" : 2
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
+						"Expression" : 0
+					}],
+			
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": true,
+	
+					"Text" : "...What the hell is this",
+                    "Thought" : "My tongue felt heavy, struggling to form words.",
+
+                    "LogAction" : {
+						"ActionType" : "JumpToNext",
+						"Next" : 3
+					}
+                },
+                
+                {
+					"LeftCharacter": [{
+						"CharacterID" : 0,
+						"Expression" : 2
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
+						"Expression" : 0
+					}],
+			
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": false,
+	
+					"Text" : "I-I-I don’t know, I’ve never been here before!",
+
+                    "LogAction" : {
+						"ActionType" : "JumpToNext",
+						"Next" : 4
+
+					}
+                },
+                
+                {
+					"LeftCharacter": [{
+						"CharacterID" : 0,
+						"Expression" : 2
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
+						"Expression" : 0
+					}],
+			
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": true,
+	
+					"Text" : "We better return to the beach, huh",
+
+                    "LogAction" : {
+						"ActionType" : "JumpToNext",
+						"Next" : 5
+
+					}
+                },
+
+                {
+					"LeftCharacter": [{
+						"CharacterID" : 0,
+						"Expression" : 2
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
+						"Expression" : 0
+					}],
+			
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": true,
+	
+					"Text" : "Don’t go back there, okay?” She said, eyes still firmly on the horizon. “I don’t...know what was that, but I know it wasn’t good.",
+
+                    "LogAction" : {
+						"ActionType" : "JumpToNext",
+						"Next" : 6
+
+					}
+                },
