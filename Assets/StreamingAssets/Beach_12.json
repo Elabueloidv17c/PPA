@@ -8,14 +8,14 @@
                 {
                     "LeftCharacter" : [
                     {
-                       "CharacterID" : 0,
-                       "Expression" : 1 
+                       "CharacterID" : 10,
+                       "Expression" : 0
                     }],
 
                     "RightCharacter" : [
                     {
                         "CharacterID" : 3,
-                        "Expression" : 1
+                        "Expression" : 0
                     }],
 
                     "ActiveCharacterLeft" : 0,
@@ -46,8 +46,8 @@
 
                 {
 					"LeftCharacter": [{
-						"CharacterID" : 0,
-						"Expression" : 0
+						"CharacterID" : 10,
+						"Expression" : 3
 					}],
 					
 					"RightCharacter": [{
@@ -60,7 +60,7 @@
 					"ActiveSide": false,
 	
 					"Text" : "Hey Izzy!",
-					"Tought": "How far were we from the beach? What exactly was I seeing?",
+					"Tought": "How far were we from the beach?",
 					
 					"LogAction" : {
 						"ActionType" : "JumpToNext",
@@ -70,21 +70,20 @@
                 
 				{
 					"LeftCharacter": [{
-						"CharacterID" : 0,
-						"Expression" : 2
+						"CharacterID" : 10,
+						"Expression" : 7
 					}],
 					
 					"RightCharacter": [{
 						"CharacterID" : 3,
-						"Expression" : 0
+						"Expression" : 6
 					}],
 			
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
 					"ActiveSide": true,
 	
-					"Text" : "...What the hell is this",
-                    "Thought" : "My tongue felt heavy, struggling to form words.",
+					"Text" : "...What the hell is this?",
 
                     "LogAction" : {
 						"ActionType" : "JumpToNext",
@@ -94,13 +93,13 @@
                 
                 {
 					"LeftCharacter": [{
-						"CharacterID" : 0,
-						"Expression" : 2
+						"CharacterID" : 10,
+						"Expression" : 7
 					}],
 					
 					"RightCharacter": [{
 						"CharacterID" : 3,
-						"Expression" : 0
+						"Expression" : 6
 					}],
 			
 					"ActiveCharacterLeft": 0,
@@ -118,13 +117,13 @@
                 
                 {
 					"LeftCharacter": [{
-						"CharacterID" : 0,
-						"Expression" : 2
+						"CharacterID" : 10,
+						"Expression" : 7
 					}],
 					
 					"RightCharacter": [{
 						"CharacterID" : 3,
-						"Expression" : 0
+						"Expression" : 6
 					}],
 			
 					"ActiveCharacterLeft": 0,
@@ -142,20 +141,20 @@
 
                 {
 					"LeftCharacter": [{
-						"CharacterID" : 0,
-						"Expression" : 2
+						"CharacterID" : 10,
+						"Expression" : 7
 					}],
 					
 					"RightCharacter": [{
 						"CharacterID" : 3,
-						"Expression" : 0
+						"Expression" : 6
 					}],
 			
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
 					"ActiveSide": true,
 	
-					"Text" : "Don’t go back there, okay?” She said, eyes still firmly on the horizon. “I don’t...know what was that, but I know it wasn’t good.",
+					"Text" : "Don’t go back there, okay?, I don’t... know what was that, but I know it wasn’t good.",
 
                     "LogAction" : {
 						"ActionType" : "JumpToNext",
@@ -166,13 +165,13 @@
 
                 {
 					"LeftCharacter": [{
-						"CharacterID" : 0,
-						"Expression" : 2
+						"CharacterID" : 10,
+						"Expression" : 7
 					}],
 					
 					"RightCharacter": [{
 						"CharacterID" : 3,
-						"Expression" : 0
+						"Expression" : 6
 					}],
 			
 					"ActiveCharacterLeft": 0,
@@ -183,7 +182,7 @@
                     "Thought" : "What secrets did Lau Island hide? What would I do to know?",
 
                     "LogAction" : {
-						"ActionType" : "JumpToNext",
+						"ActionType" : "None",
 						"Next" : 0
 
 					}
