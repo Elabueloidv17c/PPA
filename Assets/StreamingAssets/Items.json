@@ -1,0 +1,62 @@
+[
+    {
+        "id": 0,
+        "name": "Apple",
+        "type": "General",
+        "desc": "A small beginning for a journey, may this be the answer."
+    },
+    {
+        "id": 1,
+        "name": "Coal",
+        "type": "General",
+        "desc": "Used as fuel and as a primitive writing utensil."
+    },
+    {
+        "id": 2,
+        "name": "Wood",
+        "type": "General",
+        "desc": "The sons and daughters of the praisers of the sun."
+    },
+    {
+        "id":3,
+        "name": "Watermelon",
+        "type": "Recipies",
+        "desc": "Huge fruit, wish I had a juice-shooting dinosaur with me."
+    },
+    {
+        "id":4,
+        "name": "AppleBlue",
+        "type": "Recipies",
+        "desc": "It looks like solid water."
+    },
+    {
+        "id":5,
+        "name": "AppleFace",
+        "type": "Books",
+        "desc": "Are you really gonna eat it??."
+    },
+    {
+        "id":6,
+        "name": "AppleGolden",
+        "type": "Photos",
+        "desc": "This was touched by Midas, now its my turn."
+    },
+    {
+        "id":7,
+        "name": "AppleGreen",
+        "type": "Photos",
+        "desc": "Same as its brother but... greener."
+    },
+    {
+        "id":8,
+        "name": "AppleCloud",
+        "type": "Photos",
+        "desc": "Like being touched by the angels... in a good and healthy way."
+    },
+    {
+        "id":9,
+        "name": "AppleRainbow",
+        "type": "Notes",
+        "desc": "What if i eat 2? will I see a double rainbow?."
+    }
+]
