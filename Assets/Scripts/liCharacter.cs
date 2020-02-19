@@ -52,12 +52,15 @@ public class liCharacter : MonoBehaviour
             delta.x += 1;
          
         }
-
-        m_animator.SetBool("isWalking", delta != Vector2.zero);
-        m_animator.SetFloat("X",delta.x);
-        m_animator.SetFloat("Y", delta.y);
-        m_body.MovePosition(m_body.position + (delta * Time.deltaTime *
+        if (delta != Vector2.zero) {
+             m_animator.SetFloat("X",delta.x);
+             m_animator.SetFloat("Y", delta.y);
+             m_body.MovePosition(m_body.position + (delta * Time.deltaTime *
                            ((Input.GetKey((KeyCode)GameInput.Sprint)) ?
                            m_runSpeed : m_walkSpeed)));
+
+        }
+       
+        
     }
 }
