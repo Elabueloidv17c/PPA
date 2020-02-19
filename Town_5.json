@@ -1,0 +1,809 @@
+ {
+    "InComment" : null,
+    "OutComment" : null,
+    "Conversations" : [
+        {
+            "Character" : 1,
+            "Dialogs" : [
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : false,
+
+                    "Text" : null,
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 0,
+                        "Value" : 0
+                    },
+
+                    "Options" : [
+                    {
+                        "Text" : "Apologize for the visit",
+                        "Next" : 1,
+                        "Value" : 0
+                    },
+                    {
+                        "Text" : "Confront them",
+                        "Next" : 5,
+                        "Value" : -1
+                    },
+                    {
+                        "Text" : "Step inside",
+                        "Next" : 16,
+                        "Value" : 1
+                    }
+                    ]
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : false,
+
+                    "Text" : "Uh, hey! Remember me? I was here the other day",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 2,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : false,
+
+                    "Text" : "I didn’t mean to just, uh, pop in my head like this. It’s just...uh...I, uh, knocked and no one answered and then it opened by itself",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 3,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : true,
+
+                    "Text" : "...It is alright",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 4,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : true,
+
+                    "Text" : "If you don’t mind, however, I am occupied at the moment",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 0,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 3 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : false,
+
+                    "Text" : "You!",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 6,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 3 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : false,
+
+                    "Text" : "Thanks to you I’ve had to deal with creepy parasol man TWICE now! And you didn’t even have the decency to open the door!",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 7,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 3 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : false,
+
+                    "Text" : "And yesterday! You hid behind that door-",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 8,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 3 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : false,
+
+                    "Text" : "-instead of kicking me out or something! That’s super annoying, you know?!",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 9,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 3 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : true,
+
+                    "Text" : "Is that all?",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 10,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 3 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : false,
+
+                    "Text" : "Y-Yes!",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 11,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 3 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 1
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : true,
+
+                    "Text" : "If you are annoyed, how do you recon I feel? A complete stranger barges into my house, uninvited, twice, and dares to come again and screech to my face about how I made them feel",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 12,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 3 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 1
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : true,
+
+                    "Text" : "If you are so terribly annoyed then don’t have to back here",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 13,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 3 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 1
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : true,
+
+                    "Text" : "In fact, I would strongly prefer if you didn’t. Get out",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 14,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 5 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 1
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : false,
+
+                    "Text" : "Woah, woah, wait a-",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 15,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 5 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 3
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : true,
+
+                    "Text" : "Get.Out",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 0,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 5 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 3
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : false,
+
+                    "Text" : "Uh...hi. River, right?",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 17,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 5 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 3
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : false,
+
+                    "Text" : "I’m [PL]. Petyr sent me",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 18,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 3
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : false,
+
+                    "Text" : "What a pushy guy, huh? Almost threw me in here himself! Wouldn’t take no for an answer!",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 19,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 3
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : false,
+
+                    "Text" : "Not that I don’t want to be here right now! I...uh...I’m actually new around here and I guess I was curious and...uh...yeah, that",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 20,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : true,
+
+                    "Text" : "You are new here?",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 21,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : false,
+
+                    "Text" : "I - yes! I’m actually here on vacation, visiting some family! I arrived just a couple of days ago",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 22,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : true,
+
+                    "Text" : "And how do you like it? The island",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 23,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : false,
+
+                    "Text" : "It’s….amazing. I really love it. I didn’t even know a place could be this beautiful. The beaches and the mountains and the town...I feel like I’m in a storybook!",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 24,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 2
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : true,
+
+                    "Text" : "I’m glad",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 25,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 2
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : false,
+
+                    "Text" : "You know, we...we could go out next time. Maybe you could go show me around some time?",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 26,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : true,
+
+                    "Text" : "...I don’t think so",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 27,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 2
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : true,
+
+                    "Text" : "Thank you for the invitation though",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 28,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 2
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : false,
+
+                    "Text" : "Um, but, can I come again? To see you?",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 29,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 1,
+                        "Expression" : 2
+                    }],
+
+                    "ActiveCharacterLeft" : 10,
+                    "ActiveCharacterRight" : 1,
+                    "ActiveSide" : true,
+
+                    "Text" : "Of course",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : 0,
+                        "Next" : 0,
+                        "Value" : 0
+                    }
+                }
+            ]   
+        }
+    ]
+}
