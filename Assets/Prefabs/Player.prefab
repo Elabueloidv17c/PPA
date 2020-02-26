@@ -114,12 +114,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5676903963584458529}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16a909470f968a444a7c2fa2f4b3a871, type: 3}
+  m_Script: {fileID: 11500000, guid: e6d4de69a402fed44aad7930b8a61fb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_verticalRatio: 0
-  m_walkSpeed: 0
-  m_runSpeed: 0
+  m_verticalRatio: 0.75
+  m_walkSpeed: 1.8
+  m_runSpeed: 2.8
   m_isInteracting: 0
 --- !u!61 &5676903963584458534
 BoxCollider2D:

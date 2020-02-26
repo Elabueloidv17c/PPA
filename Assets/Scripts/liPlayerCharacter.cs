@@ -4,18 +4,15 @@ public class liPlayerCharacter : MonoBehaviour
 {
     Rigidbody2D m_body;
     Vector2 m_movement;
-     Animator m_animator;
-    public float m_verticalRatio;
-    public float m_walkSpeed;
-    public float m_runSpeed;
+    Animator m_animator;
+    public float m_verticalRatio = 0.75f;
+    public float m_walkSpeed = 1.8f;
+    public float m_runSpeed = 2.8f;
 
     public bool m_isInteracting;
 
     void Start() {
         m_body = GetComponent<Rigidbody2D>();
-        m_verticalRatio = 0.75f;
-        m_runSpeed = 2.8f;
-        m_walkSpeed = 1.8f;
         m_animator = GetComponent<Animator>();
     }
 
