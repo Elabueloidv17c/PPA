@@ -41,19 +41,20 @@ public class liDataManager : MonoBehaviour
         return JsonConvert.DeserializeObject<Scene>(data);
     }
 
-    private string getSceneName() {
-        if (0 == s_currentScene){
-            return "House";
-        }
-        if (1 == s_currentScene){
-            return "Library";
-        }
-        if (2 == s_currentScene)
-        {
-            return "TownCenter";
-        }
+    public enum liScene {
+        House,
+        Library,
+        TownCenter
+    }
 
-        return "";
+    public static string getSceneName() {
+        return ((liScene)s_currentScene).ToString();
+    }
+
+    public enum liCharacter {
+        House,
+        Library,
+        TownCenter
     }
 
     public static string getCharacterName(int ID)

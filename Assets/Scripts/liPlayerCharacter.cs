@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class liCharacter : MonoBehaviour
+public class liPlayerCharacter : MonoBehaviour
 {
     Rigidbody2D m_body;
     Vector2 m_movement;

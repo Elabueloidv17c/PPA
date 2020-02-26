@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +9,8 @@ using Text = TMPro.TextMeshProUGUI;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+
+#pragma warning disable CS0649
 
 public class liInventory : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class liInventory : MonoBehaviour
     Text itemNameTxt;
     Image itemImg;
     Text itemDescTxt;
+    Scrollbar descScrollbar;
 
     int activeTabIndex = -1;
 
@@ -33,6 +35,9 @@ public class liInventory : MonoBehaviour
     
     [SerializeField]
     Color activeColor;
+
+    bool isOpen;
+    Transform mainPanel;
     
     void Start()
     {
@@ -50,18 +55,27 @@ public class liInventory : MonoBehaviour
                     itemDataBase[i].id = i;
                 }
 
-                itemDataBase[i].sprite =
-                    Resources.Load<Sprite>("Sprites/Items/" + itemDataBase[i].name);
+                itemDataBase[i].icon =
+                    Resources.Load<Sprite>("Sprites/Items/Icons/" + itemDataBase[i].name);
 
-                if(itemDataBase[i].sprite == null)
+                if(itemDataBase[i].icon == null)
                 {
-                    Debug.LogError("Missing Items Sprite " + itemDataBase[i].name);
+                    Debug.LogError("Missing Items Icon " + itemDataBase[i].name);
+                }
+
+                itemDataBase[i].largeImage =
+                    Resources.Load<Sprite>("Sprites/Items/Large/" + itemDataBase[i].name);
+
+                if(itemDataBase[i].largeImage == null)
+                {
+                    Debug.LogWarning("Missing Items Large Image " + itemDataBase[i].name);
+                    itemDataBase[i].largeImage = itemDataBase[i].icon;
                 }
             }
         }
 
-        tabBtns = transform.GetChild(0).Find("Tabs")
-                           .GetComponentsInChildren<Button>();
+        mainPanel = transform.GetChild(0);
+        tabBtns = mainPanel.Find("Tabs").GetComponentsInChildren<Button>();
 
         for (int i = 0; i < tabBtns.Length; i++)
         {
@@ -69,7 +83,7 @@ public class liInventory : MonoBehaviour
             tabBtns[i].onClick.AddListener(() => { TabBtnCallback(index); });
         }
 
-        var background = transform.GetChild(0).Find("Background");
+        var background = mainPanel.Find("Background");
         itemSlots = background.GetChild(0).GetComponentsInChildren<liItemSlot>();
 
         for (int i = 0; i < itemSlots.Length; i++)
@@ -81,7 +95,9 @@ public class liInventory : MonoBehaviour
         var itemDetails = background.GetChild(1);
         itemNameTxt = itemDetails.Find("Item Name").GetComponent<Text>();
         itemImg = itemDetails.Find("Item Image").GetChild(0).GetComponent<Image>();
-        itemDescTxt = itemDetails.Find("Item Description").GetChild(0).GetComponent<Text>();
+        var scrollView = itemDetails.Find("Item Description").GetChild(0);
+        itemDescTxt = scrollView.Find("Viewport").GetChild(0).GetComponent<Text>();
+        descScrollbar = scrollView.Find("Scrollbar Vertical").GetComponent<Scrollbar>();
 
         TabBtnCallback(tabBtns.Length - 1);
     }
@@ -97,7 +113,14 @@ public class liInventory : MonoBehaviour
             if(ItemTypeToTabIndex(item.type) == activeTabIndex)
             {
                 itemSlots[index].image.color = Color.white;
-                itemSlots[index].image.sprite = item.sprite;
+                itemSlots[index].button.interactable = true;
+                itemSlots[index].image.sprite = item.icon;
+                if(currentItems[i].count != 1) {
+                    itemSlots[index].text.text = currentItems[i].count.ToString();
+                }
+                else {
+                    itemSlots[index].text.text = "";
+                }
     
                 itemSlots[index].itemID = currentItems[i].id;
                 itemSlots[index].itemInstIndex = i;
@@ -109,6 +132,8 @@ public class liInventory : MonoBehaviour
         for (; index < itemSlots.Length; index++)
         {
             itemSlots[index].image.color = Color.clear;
+            itemSlots[index].text.text = "";
+            itemSlots[index].button.interactable = false;
             itemSlots[index].itemID = -1;
             itemSlots[index].itemInstIndex = -1;
         }
@@ -146,10 +171,23 @@ public class liInventory : MonoBehaviour
 
         itemNameTxt.text = "Name: " + item.name;
         itemImg.color = Color.white;
-        itemImg.sprite = item.sprite;
-        itemDescTxt.text = "<size=40>Description:</size>\n" + 
-                           item.desc + "\n" + 
-                           itemInst.dateTime;
+        itemImg.sprite = item.largeImage;
+
+        string text = "<size=40>Description:</size>\n" + 
+                           item.desc + "\n";
+        
+        foreach(var dateTime in itemInst.dateTimes)
+        {
+            text += " -" + dateTime + "\n";
+        }
+
+        itemDescTxt.text = text;
+        Invoke("DelayScrollBarCorrection", 0.05f);
+    }
+
+    void DelayScrollBarCorrection()
+    {
+        descScrollbar.value = 1;
     }
 
     void ClearActiveSlot()
@@ -171,27 +209,68 @@ public class liInventory : MonoBehaviour
 
     [InspectorButton("AddItem")]
     public bool addItem;
+    #endif
 
-    void AddItem()
+    public bool AddItem()
     {
+        #if UNITY_EDITOR
+        if(!Application.isPlaying) {
+            Debug.LogWarning("Calling method without running the game... you fool.");
+            return false;
+        }
+        
+        if(gameObject.IsPrefab()) {
+            Debug.LogWarning("Calling method from prefab... you fool.");
+            return false;
+        }
+        
+        if(addItemID < 0 || addItemID >= itemDataBase.Length) {
+            Debug.LogWarning("Added Item ID out of Range.");
+            return false;
+        }
+        #endif
+
+        for(int i = 0; i < currentItems.Count ; ++i) {
+            if(currentItems[i].id == addItemID) {
+                currentItems[i].count++;
+                currentItems[i].dateTimes.Add(DateTime.Now);
+
+                if(ItemTypeToTabIndex(itemDataBase[addItemID].type) == activeTabIndex)
+                {
+                    UpdateItemUI();
+                }
+
+                return true;
+            }
+        }
+
+        if(currentItems.Count >= 12) {
+            Debug.LogWarning("All item slots are full.");
+            return false;
+        }
+
         var item = new ItemInstance();
         item.id = addItemID;
-        item.dateTime = DateTime.Now;
+        item.dateTimes = new List<DateTime>();
+        item.dateTimes.Add(DateTime.Now);
+        item.count = 1;
         currentItems.Add(item);
 
         if(ItemTypeToTabIndex(itemDataBase[item.id].type) == activeTabIndex)
         {
             UpdateItemUI();
         }
+
+        return true;
     }    
 
-    #endif
 }
 
-public struct ItemInstance
+public class ItemInstance
 {
     public int id;
-    public DateTime dateTime;
+    public int count;
+    public List<DateTime> dateTimes;
 }
 
 public struct Item
@@ -200,7 +279,8 @@ public struct Item
     public string name;
     public ItemType type;
     public string desc;
-    public Sprite sprite;
+    public Sprite icon;
+    public Sprite largeImage;
 }
 
 [JsonConverter(typeof(StringEnumConverter))]  

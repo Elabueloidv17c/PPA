@@ -8,7 +8,7 @@ using Button = UnityEngine.UI.Button;
 public class liDialogManager : MonoBehaviour
 {
     public static liDialogManager instance;
-    private liCharacter m_character;
+    private liPlayerCharacter m_character;
     
     private GameObject m_dialogPanel;
     private liTextTyper m_textTyper;
@@ -30,7 +30,7 @@ public class liDialogManager : MonoBehaviour
 
     void Start() 
     {
-        m_character = FindObjectOfType<liCharacter>();
+        m_character = FindObjectOfType<liPlayerCharacter>();
         m_dialogPanel = transform.GetChild(0).gameObject;
 
         var bkgd = m_dialogPanel.transform.Find("Background");
@@ -43,8 +43,8 @@ public class liDialogManager : MonoBehaviour
         m_elipsis = bkgd.Find("Elipsis").gameObject;
         m_elipsis.SetActive(false);
 
-        m_buttons = m_dialogPanel.transform.Find("Buttons Panel")
-            .GetComponentsInChildren<Button>();
+        m_buttons = m_dialogPanel.transform.Find("Buttons Panel").
+                    GetComponentsInChildren<Button>();
         
         DisableButtons();
 

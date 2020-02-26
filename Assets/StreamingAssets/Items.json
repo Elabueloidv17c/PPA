@@ -58,5 +58,11 @@
         "name": "AppleRainbow",
         "type": "Notes",
         "desc": "What if i eat 2? will I see a double rainbow?."
+    },
+    {
+        "id":10,
+        "name": "Squidward",
+        "type": "Notes",
+        "desc": "The most beautiful being in all of existance."
     }
 ]

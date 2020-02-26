@@ -14,7 +14,7 @@ public class liCamera : MonoBehaviour
 
         if(null == m_player)
         {
-            m_player = FindObjectOfType<liCharacter>().gameObject;
+            m_player = FindObjectOfType<liPlayerCharacter>().gameObject;
         } 
     }
 

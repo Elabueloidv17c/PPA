@@ -5,11 +5,11 @@ public class liNPC : MonoBehaviour
     public int m_dialogID;
 
     private bool m_playerInRange;
-    private liCharacter m_character;
+    private liPlayerCharacter m_character;
 
     void Start()
     {
-        m_character = FindObjectOfType<liCharacter>();
+        m_character = FindObjectOfType<liPlayerCharacter>();
     }
 
     void Update() 
