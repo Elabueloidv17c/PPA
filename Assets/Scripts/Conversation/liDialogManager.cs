@@ -65,10 +65,9 @@ public class liDialogManager : MonoBehaviour
         m_dialogID = dialogID;
         m_dialogIndex = 0;
 
-        m_charNameText.text = liDataManager.getCharacterName(
+        m_charNameText.text = 
             liDataManager.m_data.Conversations[dialogID].
-            Character
-        );
+                Character.ToString().Replace("_", " ");
 
         DisplayIndividualDialog();
     }

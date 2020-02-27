@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
-
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
 [Serializable]
 public class SaveFile
 {
     public EventsBank m_gameEvents;
+    public int m_unixTime;
     // ...
 }
 
@@ -23,6 +25,8 @@ public class liEventManager : MonoBehaviour
     public liEventManager instance;
 
     EventsBank eventsBank;
+
+    static string folderPath = Application.persistentDataPath + "/liSaveFiles/";
 
     void Start() 
     {
@@ -58,5 +62,38 @@ public class liEventManager : MonoBehaviour
     public void SetFloat(string name, float real)
     {
         eventsBank.m_fEvents[name] = real;
+    }
+
+    public void SaveGame() {
+        // Create Save File
+        var saveFile = new SaveFile();
+        saveFile.m_gameEvents = eventsBank;
+        
+        // Compute Unix Time
+        TimeSpan t = DateTime.Now - new DateTime(1970, 1, 1);
+        saveFile.m_unixTime = (int)t.TotalSeconds;
+
+        // Format fileName
+        String fileName = folderPath + "Save_" + saveFile.m_unixTime + ".lisv";
+
+        // Save the File
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(fileName);
+        bf.Serialize(file, saveFile);
+        file.Close();
+    }
+
+    public List<SaveFile> LoadAllSaveFiles() {
+        List<SaveFile> saveFiles = new List<SaveFile>();
+
+        foreach (string fileName in Directory.EnumerateFiles(folderPath, "*.lisv"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(fileName, FileMode.Open);
+            saveFiles.Add((SaveFile)bf.Deserialize(file));
+            file.Close();
+        }
+
+        return saveFiles;
     }
 }

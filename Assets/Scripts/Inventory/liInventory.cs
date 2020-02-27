@@ -37,7 +37,7 @@ public class liInventory : MonoBehaviour
     Color activeColor;
 
     bool isOpen;
-    Transform mainPanel;
+    GameObject mainPanel;
     
     void Start()
     {
@@ -74,8 +74,8 @@ public class liInventory : MonoBehaviour
             }
         }
 
-        mainPanel = transform.GetChild(0);
-        tabBtns = mainPanel.Find("Tabs").GetComponentsInChildren<Button>();
+        mainPanel = transform.GetChild(0).gameObject;
+        tabBtns = mainPanel.transform.Find("Tabs").GetComponentsInChildren<Button>();
 
         for (int i = 0; i < tabBtns.Length; i++)
         {
@@ -83,7 +83,7 @@ public class liInventory : MonoBehaviour
             tabBtns[i].onClick.AddListener(() => { TabBtnCallback(index); });
         }
 
-        var background = mainPanel.Find("Background");
+        var background = mainPanel.transform.Find("Background");
         itemSlots = background.GetChild(0).GetComponentsInChildren<liItemSlot>();
 
         for (int i = 0; i < itemSlots.Length; i++)
@@ -99,7 +99,7 @@ public class liInventory : MonoBehaviour
         itemDescTxt = scrollView.Find("Viewport").GetChild(0).GetComponent<Text>();
         descScrollbar = scrollView.Find("Scrollbar Vertical").GetComponent<Scrollbar>();
 
-        TabBtnCallback(tabBtns.Length - 1);
+        mainPanel.SetActive(false);
     }
 
     void UpdateItemUI()
