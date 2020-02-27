@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+
 using UnityEngine;
 
 [Serializable]
@@ -22,16 +23,17 @@ public class EventsBank
 
 public class liEventManager : MonoBehaviour
 {
-    public liEventManager instance;
+    public static liEventManager instance;
 
     EventsBank eventsBank;
 
-    static string folderPath = Application.persistentDataPath + "/liSaveFiles/";
+    static string folderPath;
 
-    void Start() 
+    void Awake() 
     {
         instance = this;
         eventsBank = new EventsBank();
+        folderPath = Application.persistentDataPath + "/liSaveFiles/";
     }
 
     public bool GetFlag(string name)

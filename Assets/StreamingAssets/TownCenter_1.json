@@ -19,7 +19,7 @@
 					"ActiveCharacterRight": 0,
 					"ActiveSide": false,
 					
-					"Text" : "<b>I can's stop admiring its size.</b> Its beautiful branches created a sort of canopy over the ground, shading it from the sun. As my eyes followed their shape, I noticed I’d almost stepped over a boy. Despite the fact that I was almost on top of him, the boy took no notice, nose buried in the pages of a book. His eyes moved quickly from side to side, completely enraptured.",
+					"Text" : "I can's stop admiring its size. Its beautiful branches created a sort of canopy over the ground, shading it from the sun. As my eyes followed their shape, I noticed I’d almost stepped over a boy. Despite the fact that I was almost on top of him, the boy took no notice, nose buried in the pages of a book. His eyes moved quickly from side to side, completely enraptured.",
 					
 					"LogAction" : {
 						"ActionType" : "Buttons"
@@ -27,18 +27,18 @@
 					
 					"Options" : [
 						{
-							"Text" : "What up, bud!",
-							"Next" : 3,
+							"Text" : "What up, bud!!!",
+							"Next" : 1,
 							"Value" : -2
 						},
 						{
 							"Text" : "Hi there.",
-							"Next" : 8,
+							"Next" : 6,
 							"Value" : 1
 						},
 						{
 							"Text" : "I leave him alone.",
-							"Next" : 20,
+							"Next" : 100,
 							"Value" : 0
 						}
 					]
@@ -58,13 +58,83 @@
 					"ActiveCharacterRight": 0,
 					"ActiveSide": false,
 	
-					"Text" : "What up, bud!",
-					"Tought": "Why, oh why, did I say that? Because I had no self control or self preservation, instead of backing up like a normal human being, I escalated the situation.  Grinning  with the particular brand of madness that comes from public humiliation, I pat the boy’s shoulder. What was I? His uncle?",
+					"Text" : "<b>What up, bud!!!</b>",
+					"Tought": "Why, oh why, did I say that? Because I had no self control or self preservation, instead of backing up like a normal human being, I escalated the situation.  Grinning  with the particular brand of madness that comes from public humiliation, I pat the boy’s shoulder. What was I? His uncle?"
+				},
+				{
+					"LeftCharacter": [{
+						"CharacterID" : 0,
+						"Expression" : 2
+					}],
 					
+					"RightCharacter": [{
+						"CharacterID" : 1,
+						"Expression" : 0
+					}],
+			
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": true,
+	
+					"Text" : "“Ah… y-you scared m-me…”",
+					"Tought": " The boy, rather reasonably, startled at the sound of my voice, sending the book flying. Now, I was no mind-reader... but the boy looked rather upset. Huffing in annoyance, he reached out for his fallen book."
+				},
+				{
+					"LeftCharacter": [{
+						"CharacterID" : 0,
+						"Expression" : 2
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 1,
+						"Expression" : 0
+					}],
+			
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": true,
+	
+					"Tought": "God, what was I doing?! I removed my hand immediately and moved to brush the dirt from his book. ",
+					"Text" : "“I am so sorry, I’ve got no idea what came over me.”"
+				},
+				{
+					"LeftCharacter": [{
+						"CharacterID" : 0,
+						"Expression" : 2
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 1,
+						"Expression" : 0
+					}],
+			
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": true,
+	
+					"Tought": "The boy swat my hand away with a resigned sigh, eyebrows pinched in annoyance.",
+					"Text" : "“Yeah, it’s fine.. .Can I just,” he gestured towards his book, “go back to reading? I’m kind of busy at the moment.”"
+				},
+				{
+					"LeftCharacter": [{
+						"CharacterID" : 0,
+						"Expression" : 2
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 1,
+						"Expression" : 0
+					}],
+			
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": true,
+	
+					"Text" : "“Of course! Lemme just...get out of your way then…”",
+					"Tought": "I stood up, trying my best not to run away from the scene, stiff smile on my face. As soon as I was out of sight, I groaned.  That had been *beyond* humiliating!",
+
 					"LogAction" : {
-						"ActionType" : "JumpToNext",
-						"Next" : 4,
-						"Value" : 0
+						"ActionType" : "End"
 					}
 				},
 				{
@@ -82,11 +152,53 @@
 					"ActiveCharacterRight": 0,
 					"ActiveSide": true,
 	
-					"Tought": " The boy, rather reasonably, startled at the sound of my voice, sending the book flying. Now, I was no mind-reader... but the boy looked rather upset. Huffing in annoyance, he reached out for his fallen book.",
-					"Text" : "“Ah… y-you scared m-me…”"
+					"Tought": "Rocking on my heels for a bit, I tried to catch his eye, but the boy was completely enraptured. Feeling rather shy, I coughed to get his attention. I pretended to cough to catch his attention and I greeted him politely.",
+					"Text" : "“Uh, hi there.”"
 				},
 				{
-
+					"LeftCharacter": [{
+						"CharacterID" : 0,
+						"Expression" : 2
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 1,
+						"Expression" : 0
+					}],
+			
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": true,
+	
+					"Tought": "The boy looked up at me, big brown eyes widening in surprise. After a couple of blinks, he curled up, book against his chest and cheeks red. How cute!",
+					"Text" : "“Ah… h-hello. I didn’t notice you there.” He stole another glance. “Sorry.”"
+				},
+				{
+					"LeftCharacter": [{
+						"CharacterID" : 0,
+						"Expression" : 2
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 1,
+						"Expression" : 0
+					}],
+			
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": true,
+	
+					"Tought": "Truly cute. I laughed light-heartedly.",
+                    "Text" : "“That’s okay! Looks like you were really into your book.”"
+				},
+				{
+					"Tought": "WTF",
+                    "Text" : "“Here, take a SQUIDWARD.”",
+                    
+                    "LogAction" : {
+                        "ActionType" : "GiveItem",
+                        "Value" : 10
+					}
 				}
 			]
         }

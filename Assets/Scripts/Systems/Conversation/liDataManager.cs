@@ -11,13 +11,10 @@ using Newtonsoft.Json.Converters;
 public class liDataManager : MonoBehaviour
 {
     public static uint s_currentDay = 0;
-    public static uint s_currentScene = 2;
+    public static liScene s_currentScene = liScene.TownCenter;
     public static float s_time = 0.0f;
     public static Scene m_data;
     private List<GameObject> m_objectsOnLayer;
-
-    public static bool m_showingConversationUI;
-    public GameObject m_conversationUI;
 
     void Start() 
     {
@@ -33,7 +30,7 @@ public class liDataManager : MonoBehaviour
 
     private Scene ParseConversation() {
         string data = File.ReadAllText(Application.streamingAssetsPath + "/" + 
-                                       getSceneName() + "_" + s_currentDay + ".json");
+                                       s_currentScene.ToString() + "_" + s_currentDay + ".json");
         return JsonConvert.DeserializeObject<Scene>(data);
     }
 
@@ -41,10 +38,6 @@ public class liDataManager : MonoBehaviour
         House,
         Library,
         TownCenter
-    }
-
-    public static string getSceneName() {
-        return ((liScene)s_currentScene).ToString();
     }
 }
 
@@ -111,6 +104,7 @@ public enum ActionType {
     JumpToNext,
     Buttons,
     End,
+    GiveItem,
 
     //... 
 }

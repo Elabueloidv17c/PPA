@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 3905794554336919084}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -218,12 +218,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3905794554336919085}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16a909470f968a444a7c2fa2f4b3a871, type: 3}
+  m_Script: {fileID: 11500000, guid: 29bae94ba7b216e4abea72d2b6d00a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_verticalRatio: 0
-  m_walkSpeed: 0
-  m_runSpeed: 0
+  m_verticalRatio: 0.75
+  m_walkSpeed: 1.8
+  m_runSpeed: 2.8
   m_isInteracting: 0
 --- !u!61 &3905794554336919075
 BoxCollider2D:

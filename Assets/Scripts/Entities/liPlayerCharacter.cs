@@ -8,8 +8,7 @@ public class liPlayerCharacter : MonoBehaviour
     public float m_verticalRatio = 0.75f;
     public float m_walkSpeed = 1.8f;
     public float m_runSpeed = 2.8f;
-
-    public bool m_isInteracting;
+    
 
     void Start() {
         m_body = GetComponent<Rigidbody2D>();
@@ -18,8 +17,13 @@ public class liPlayerCharacter : MonoBehaviour
 
     private void Update() {
         
-        if (!m_isInteracting) 
+        if (!liGameManager.instance.menuActive) 
         {
+            if(Input.GetKey(KeyCode.I))
+            {
+                liInventory.instance.OpenUI();
+            }
+
             Move();
         }
     }

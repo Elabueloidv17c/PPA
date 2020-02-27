@@ -5,7 +5,7 @@ using Button = UnityEngine.UI.Button;
 
 // TODO: Document file
 
-public class liDialogManager : MonoBehaviour
+public class liDialogManager : BaseUIManager
 {
     public static liDialogManager instance;
     private liPlayerCharacter m_character;
@@ -48,8 +48,46 @@ public class liDialogManager : MonoBehaviour
         
         DisableButtons();
 
+        CloseUI();
+    }
+
+    public override void OpenUI()
+    {
+        m_dialogPanel.SetActive(true);
+        IsOpen = true;
+        IsMaximized = true;
+
+        liGameManager.instance.RegisterOpenUI(this);
+    }
+
+    public override void CloseUI()
+    {
+        m_dialogPanel.SetActive(false);
+        IsOpen = false;
+        IsMaximized = false;
+
+        liGameManager.instance.RegisterCloseUI(this);
+    }
+
+    public override void MinimizeUI()
+    {
+        if(!IsOpen) { return; }
+
+        if(m_textTyper.IsTypingText) { 
+            m_textTyper.EndTextTyping();
+        }
+
+        IsMaximized = false;
         m_dialogPanel.SetActive(false);
     }
+
+    public override void MaximizeUI()
+    {
+        if(!IsOpen) { return; }
+        IsMaximized = true;
+        m_dialogPanel.SetActive(true);
+    }
+
 
     void DisableButtons()
     {
@@ -58,9 +96,7 @@ public class liDialogManager : MonoBehaviour
 
     public void DisplayDialog(int dialogID)
     {
-        m_dialogPanel.SetActive(true);
-
-        m_character.m_isInteracting = true;
+        OpenUI();
 
         m_dialogID = dialogID;
         m_dialogIndex = 0;
@@ -80,10 +116,28 @@ public class liDialogManager : MonoBehaviour
 
         action = dialogs[m_dialogIndex].LogAction;
 
-        m_nextEnabled = (action.ActionType == ActionType.None) 
-                        ? m_dialogIndex + 1 < dialogs.Length :
-                        (action.ActionType == ActionType.JumpToNext) 
-                        ? action.Next < dialogs.Length : false;
+        switch (action.ActionType)
+        {
+            case ActionType.None:
+                m_nextEnabled = m_dialogIndex + 1 < dialogs.Length;
+            break;
+            case ActionType.JumpToNext:
+                m_nextEnabled = action.Next < dialogs.Length;
+            break;
+            case ActionType.Buttons:
+                m_nextEnabled = false;
+            break;
+            case ActionType.End:
+                m_nextEnabled = false;
+            break;
+            case ActionType.GiveItem:
+                m_nextEnabled = m_dialogIndex + 1 < dialogs.Length;
+                liInventory.instance.AddItem(action.Value);
+            break;
+            
+            default:
+            throw new NotImplementedException();
+        }
     }
 
     public void NextDialog()
@@ -108,8 +162,7 @@ public class liDialogManager : MonoBehaviour
         }
         else
         {
-            m_dialogPanel.SetActive(false);
-            m_character.m_isInteracting = false;
+            CloseUI();
         }
     }
 
@@ -159,7 +212,6 @@ public class liDialogManager : MonoBehaviour
 
     private void EndDialog()
     {
-        m_dialogPanel.SetActive(false);
-        m_character.m_isInteracting = false;
+        CloseUI();
     }
 }

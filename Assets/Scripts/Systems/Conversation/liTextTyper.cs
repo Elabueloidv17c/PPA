@@ -26,9 +26,14 @@ public class liTextTyper : MonoBehaviour
 
   private void Update()
   {
-    if ((Input.GetKeyDown(KeyCode.Space) || 
-         Input.GetMouseButtonDown(0)))
+    if (Input.GetKeyDown(KeyCode.Space))
     {
+      QueueNextDialog();
+    }
+  }
+
+  public void QueueNextDialog()
+  {
       if(IsTypingText)
       {
         StopAllCoroutines();
@@ -38,7 +43,6 @@ public class liTextTyper : MonoBehaviour
       {
         liDialogManager.instance.NextDialog();
       }
-    }
   }
 
     public void ShowText(string value)
@@ -91,7 +95,7 @@ public class liTextTyper : MonoBehaviour
         }
     }
 
-    void EndTextTyping()
+    public void EndTextTyping()
     {
         textGUI.text = textCopy;
         IsTypingText = false;

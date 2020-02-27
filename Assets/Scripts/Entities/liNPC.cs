@@ -15,7 +15,7 @@ public class liNPC : MonoBehaviour
     void Update() 
     {
         if(m_playerInRange && 
-           !m_character.m_isInteracting &&
+           !liGameManager.instance.menuActive &&
            Input.GetKeyDown((KeyCode)GameInput.Interact))
         {
             liDialogManager.instance.DisplayDialog(m_dialogID);
