@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 
 using UnityEngine;
@@ -18,7 +19,7 @@ public class liInventory : BaseUIManager
 
     static Item[] itemDataBase = null;
 
-    static List<ItemInstance> currentItems = new List<ItemInstance>(); 
+    public static List<ItemInstance> m_currentItems; 
 
     Button[] tabBtns;
     liItemSlot[] itemSlots;
@@ -77,6 +78,8 @@ public class liInventory : BaseUIManager
                     itemDataBase[i].largeImage = itemDataBase[i].icon;
                 }
             }
+
+            m_currentItems  = new List<ItemInstance>();         
         }
 
         mainPanel = transform.GetChild(0).gameObject;
@@ -124,6 +127,11 @@ public class liInventory : BaseUIManager
 
         liGameManager.instance.RegisterOpenUI(this);
 
+        if(activeTabIndex == -1)
+        {
+            TabBtnCallback(tabBtns.Length - 1);
+        }
+
         UpdateItemUI();
     }
 
@@ -156,23 +164,23 @@ public class liInventory : BaseUIManager
 
         int index = 0;
 
-        for (int i = 0; i < currentItems.Count; i++)
+        for (int i = 0; i < m_currentItems.Count; i++)
         {
-            Item item = itemDataBase[currentItems[i].id];
+            Item item = itemDataBase[m_currentItems[i].id];
 
             if(ItemTypeToTabIndex(item.type) == activeTabIndex)
             {
                 itemSlots[index].image.color = Color.white;
                 itemSlots[index].button.interactable = true;
                 itemSlots[index].image.sprite = item.icon;
-                if(currentItems[i].count != 1) {
-                    itemSlots[index].text.text = currentItems[i].count.ToString();
+                if(m_currentItems[i].count != 1) {
+                    itemSlots[index].text.text = m_currentItems[i].count.ToString();
                 }
                 else {
                     itemSlots[index].text.text = "";
                 }
     
-                itemSlots[index].itemID = currentItems[i].id;
+                itemSlots[index].itemID = m_currentItems[i].id;
                 itemSlots[index].itemInstIndex = i;
     
                 index++;
@@ -217,7 +225,7 @@ public class liInventory : BaseUIManager
         activeSlotIndex = index;
 
         Item item = itemDataBase[itemSlots[index].itemID];
-        ItemInstance itemInst = currentItems[itemSlots[index].itemInstIndex];
+        ItemInstance itemInst = m_currentItems[itemSlots[index].itemInstIndex];
 
         itemNameTxt.text = "Name: " + item.name;
         itemImg.color = Color.white;
@@ -272,10 +280,10 @@ public class liInventory : BaseUIManager
         }
         #endif
 
-        for(int i = 0; i < currentItems.Count ; ++i) {
-            if(currentItems[i].id == itemID) {
-                currentItems[i].count++;
-                currentItems[i].dateTimes.Add(DateTime.Now);
+        for(int i = 0; i < m_currentItems.Count ; ++i) {
+            if(m_currentItems[i].id == itemID) {
+                m_currentItems[i].count++;
+                m_currentItems[i].dateTimes.Add(DateTime.Now);
 
                 if(ItemTypeToTabIndex(itemDataBase[itemID].type) == activeTabIndex)
                 {
@@ -286,7 +294,7 @@ public class liInventory : BaseUIManager
             }
         }
 
-        if(currentItems.Count >= 12) {
+        if(m_currentItems.Count >= 12) {
             Debug.LogWarning("All item slots are full.");
             return false;
         }
@@ -296,7 +304,7 @@ public class liInventory : BaseUIManager
         item.dateTimes = new List<DateTime>();
         item.dateTimes.Add(DateTime.Now);
         item.count = 1;
-        currentItems.Add(item);
+        m_currentItems.Add(item);
 
         if(ItemTypeToTabIndex(itemDataBase[item.id].type) == activeTabIndex)
         {
@@ -315,7 +323,7 @@ public class liInventory : BaseUIManager
         }
         #endif
 
-        foreach(var itemInst in currentItems) {
+        foreach(var itemInst in m_currentItems) {
             if(itemInst.id == itemID) {
                 return true;
             }
@@ -342,10 +350,10 @@ public class liInventory : BaseUIManager
         }
         #endif
 
-        foreach(var itemInst in currentItems) {
+        foreach(var itemInst in m_currentItems) {
             if(itemInst.id == itemID) {
                 if(itemInst.count <= 1) {
-                    currentItems.Remove(itemInst);
+                    m_currentItems.Remove(itemInst);
                 }
                 else {
                     itemInst.count--;
@@ -362,7 +370,7 @@ public class liInventory : BaseUIManager
         return false;
     }
 
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     [SerializeField]
     int itemID;
 
@@ -379,11 +387,11 @@ public class liInventory : BaseUIManager
     private void InspectorRemoveItem() {
         RemoveItem(itemID);
     }
-
 #endif
 
 }
 
+[Serializable]
 public class ItemInstance
 {
     public int id;

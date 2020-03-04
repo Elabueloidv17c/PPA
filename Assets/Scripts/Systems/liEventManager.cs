@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 
 using UnityEngine;
@@ -8,9 +9,10 @@ using UnityEngine;
 [Serializable]
 public class SaveFile
 {
+    public PlayerData m_playerData;
     public EventsBank m_gameEvents;
-    public int m_unixTime;
-    // ...
+    public DateTime m_timeStamp;
+    public ItemInstance[] m_items;
 }
 
 [Serializable]
@@ -66,17 +68,20 @@ public class liEventManager : MonoBehaviour
         eventsBank.m_fEvents[name] = real;
     }
 
-    public void SaveGame() {
+    public void SaveGame(int slot) {
         // Create Save File
         var saveFile = new SaveFile();
         saveFile.m_gameEvents = eventsBank;
+        saveFile.m_items = liInventory.m_currentItems.ToArray();
         
-        // Compute Unix Time
-        TimeSpan t = DateTime.Now - new DateTime(1970, 1, 1);
-        saveFile.m_unixTime = (int)t.TotalSeconds;
+        // Get time stamp
+        saveFile.m_timeStamp = DateTime.Now;
+
+        // Create Directory in case it doesn't exist
+        Directory.CreateDirectory(folderPath);
 
         // Format fileName
-        String fileName = folderPath + "Save_" + saveFile.m_unixTime + ".lisv";
+        String fileName = folderPath + "Save_" + slot + ".lisv";
 
         // Save the File
         BinaryFormatter bf = new BinaryFormatter();
@@ -98,4 +103,33 @@ public class liEventManager : MonoBehaviour
 
         return saveFiles;
     }
+
+    public void RestoreSaveFile(SaveFile saveFile) {
+        
+        eventsBank = saveFile.m_gameEvents;
+        liInventory.m_currentItems = new List<ItemInstance>(saveFile.m_items);
+    }
+
+#if UNITY_EDITOR
+    [InspectorButton("InspectorSaveFile")]
+    public bool saveFile;
+
+    private void InspectorSaveFile() {
+        SaveGame(0);
+    }
+
+    [InspectorButton("InspectorRestoreFile")]
+    public bool restoreFile;
+
+    private void InspectorRestoreFile() {
+        var saveFiles = LoadAllSaveFiles();
+
+        if(saveFiles.Count > 0) {
+            RestoreSaveFile(saveFiles[0]);
+        }
+        else {
+            Debug.LogWarning("Save File not Found.");
+        }
+    }
+#endif
 }

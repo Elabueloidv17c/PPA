@@ -3,27 +3,27 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
+[Serializable]
+public class PlayerData
+{
+    public string m_name;
+
+    public Vector3 m_torsoColor;
+    public Vector3 m_featColor;
+    public Vector3 m_headColor;
+    public Vector3 m_skinColor;
+    public Vector3 m_armColor;
+}
+
 public class liGameManager : MonoBehaviour
 {
     public static liGameManager instance;
 
-    [SerializeField]
-    static public float m_time;
-    [SerializeField]
-    static public int m_day;
+    public static float m_time;
+    public static int m_day;
+    public static Scene m_scene;
 
-    [SerializeField]
-    static public Scene m_scene;
-    [SerializeField]
-    public Vector3 m_torsoColor;
-    [SerializeField]
-    public Vector3 m_featColor;
-    [SerializeField]
-    public Vector3 m_headColor;
-    [SerializeField]
-    public Vector3 m_skinColor;
-    [SerializeField]
-    public Vector3 m_armColor;
+    public static PlayerData m_playerData;
 
     private List<BaseUIManager> m_OpenUIManagers = new List<BaseUIManager>();
 
