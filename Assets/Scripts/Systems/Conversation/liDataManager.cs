@@ -11,13 +11,10 @@ using Newtonsoft.Json.Converters;
 public class liDataManager : MonoBehaviour
 {
     public static uint s_currentDay = 0;
-    public static uint s_currentScene = 2;
+    public static liScene s_currentScene = liScene.TownCenter;
     public static float s_time = 0.0f;
     public static Scene m_data;
     private List<GameObject> m_objectsOnLayer;
-
-    public static bool m_showingConversationUI;
-    public GameObject m_conversationUI;
 
     void Start() 
     {
@@ -31,13 +28,9 @@ public class liDataManager : MonoBehaviour
         s_time += Time.deltaTime;
     }
 
-    private void FixedUpdate()
-    {
-    }
-
     private Scene ParseConversation() {
         string data = File.ReadAllText(Application.streamingAssetsPath + "/" + 
-                                       getSceneName() + "_" + s_currentDay + ".json");
+                                       s_currentScene.ToString() + "_" + s_currentDay + ".json");
         return JsonConvert.DeserializeObject<Scene>(data);
     }
 
@@ -45,39 +38,6 @@ public class liDataManager : MonoBehaviour
         House,
         Library,
         TownCenter
-    }
-
-    public static string getSceneName() {
-        return ((liScene)s_currentScene).ToString();
-    }
-
-    public enum liCharacter {
-        House,
-        Library,
-        TownCenter
-    }
-
-    public static string getCharacterName(int ID)
-    {
-        switch (ID)
-        {        
-            case 0:
-                return "Tree";
-            case 1:
-                return "River";
-            case 2:
-                return "Nero";
-            case 3:
-                return "Izzy";
-            case 4:
-                return "Shiro";
-            case 5:
-                return "Hiroshi";
-            case 6:
-                return "La tia";
-            default:
-                return "";
-        }
     }
 }
 
@@ -90,7 +50,7 @@ public struct Scene
 
 public struct Conversation
 {
-    public int Character;
+    public liCharacter Character;
     public Dialog[] Dialogs;
 }
 
@@ -107,9 +67,20 @@ public struct Dialog
     public Option[] Options;
 }
 
+[JsonConverter(typeof(StringEnumConverter))]  
+public enum liCharacter {
+    Tree,
+    River,
+    Nero,
+    Izzy,
+    Shiro,
+    Hiroshi,
+    La_Tia
+}
+
 public struct DialogCharacter
 {
-    public int CharacterID;
+    public liCharacter CharacterID;
     public int Expression;
 }
 
@@ -133,6 +104,7 @@ public enum ActionType {
     JumpToNext,
     Buttons,
     End,
+    GiveItem,
 
     //... 
 }

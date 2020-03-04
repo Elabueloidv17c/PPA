@@ -12,8 +12,10 @@ using Newtonsoft.Json.Converters;
 
 #pragma warning disable CS0649
 
-public class liInventory : MonoBehaviour
+public class liInventory : BaseUIManager
 {
+    public static liInventory instance;
+
     static Item[] itemDataBase = null;
 
     static List<ItemInstance> currentItems = new List<ItemInstance>(); 
@@ -36,8 +38,11 @@ public class liInventory : MonoBehaviour
     [SerializeField]
     Color activeColor;
 
-    bool isOpen;
-    Transform mainPanel;
+    GameObject mainPanel;
+
+    void Awake() {
+        instance = this;
+    }
     
     void Start()
     {
@@ -74,8 +79,8 @@ public class liInventory : MonoBehaviour
             }
         }
 
-        mainPanel = transform.GetChild(0);
-        tabBtns = mainPanel.Find("Tabs").GetComponentsInChildren<Button>();
+        mainPanel = transform.GetChild(0).gameObject;
+        tabBtns = mainPanel.transform.Find("Tabs").GetComponentsInChildren<Button>();
 
         for (int i = 0; i < tabBtns.Length; i++)
         {
@@ -83,7 +88,7 @@ public class liInventory : MonoBehaviour
             tabBtns[i].onClick.AddListener(() => { TabBtnCallback(index); });
         }
 
-        var background = mainPanel.Find("Background");
+        var background = mainPanel.transform.Find("Background");
         itemSlots = background.GetChild(0).GetComponentsInChildren<liItemSlot>();
 
         for (int i = 0; i < itemSlots.Length; i++)
@@ -99,11 +104,56 @@ public class liInventory : MonoBehaviour
         itemDescTxt = scrollView.Find("Viewport").GetChild(0).GetComponent<Text>();
         descScrollbar = scrollView.Find("Scrollbar Vertical").GetComponent<Scrollbar>();
 
-        TabBtnCallback(tabBtns.Length - 1);
+        CloseUI();
+    }
+
+    public void Update()
+    {
+        if(IsOpen && IsMaximized && 
+           (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.I)))
+        {
+            CloseUI();
+        }
+    }
+
+    public override void OpenUI()
+    {
+        mainPanel.SetActive(true);
+        IsOpen = true;
+        IsMaximized = true;
+
+        liGameManager.instance.RegisterOpenUI(this);
+
+        UpdateItemUI();
+    }
+
+    public override void CloseUI()
+    {
+        mainPanel.SetActive(false);
+        IsOpen = false;
+        IsMaximized = false;
+
+        liGameManager.instance.RegisterCloseUI(this);
+    }
+
+    public override void MinimizeUI()
+    {
+        if(!IsOpen) { return; }
+        IsMaximized = false;
+        mainPanel.SetActive(false);
+    }
+
+    public override void MaximizeUI()
+    {
+        if(!IsOpen) { return; }
+        IsMaximized = true;
+        mainPanel.SetActive(true);
     }
 
     void UpdateItemUI()
     {
+        if(!IsOpen) return;
+
         int index = 0;
 
         for (int i = 0; i < currentItems.Count; i++)
@@ -203,15 +253,7 @@ public class liInventory : MonoBehaviour
         return tabBtns.Length - ((int)type + 1);
     }
 
-    #if UNITY_EDITOR
-    [SerializeField]
-    int addItemID;
-
-    [InspectorButton("AddItem")]
-    public bool addItem;
-    #endif
-
-    public bool AddItem()
+    public bool AddItem(int itemID)
     {
         #if UNITY_EDITOR
         if(!Application.isPlaying) {
@@ -224,18 +266,18 @@ public class liInventory : MonoBehaviour
             return false;
         }
         
-        if(addItemID < 0 || addItemID >= itemDataBase.Length) {
+        if(itemID < 0 || itemID >= itemDataBase.Length) {
             Debug.LogWarning("Added Item ID out of Range.");
             return false;
         }
         #endif
 
         for(int i = 0; i < currentItems.Count ; ++i) {
-            if(currentItems[i].id == addItemID) {
+            if(currentItems[i].id == itemID) {
                 currentItems[i].count++;
                 currentItems[i].dateTimes.Add(DateTime.Now);
 
-                if(ItemTypeToTabIndex(itemDataBase[addItemID].type) == activeTabIndex)
+                if(ItemTypeToTabIndex(itemDataBase[itemID].type) == activeTabIndex)
                 {
                     UpdateItemUI();
                 }
@@ -250,7 +292,7 @@ public class liInventory : MonoBehaviour
         }
 
         var item = new ItemInstance();
-        item.id = addItemID;
+        item.id = itemID;
         item.dateTimes = new List<DateTime>();
         item.dateTimes.Add(DateTime.Now);
         item.count = 1;
@@ -263,6 +305,82 @@ public class liInventory : MonoBehaviour
 
         return true;
     }    
+
+    public bool HasItem(int itemID) {
+
+        #if UNITY_EDITOR
+        if(itemID < 0 || itemID >= itemDataBase.Length) {
+            Debug.LogWarning("Check Item ID out of Range.");
+            return false;
+        }
+        #endif
+
+        foreach(var itemInst in currentItems) {
+            if(itemInst.id == itemID) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public bool RemoveItem(int itemID) {
+        #if UNITY_EDITOR
+        if(!Application.isPlaying) {
+            Debug.LogWarning("Calling method without running the game... you fool.");
+            return false;
+        }
+        
+        if(gameObject.IsPrefab()) {
+            Debug.LogWarning("Calling method from prefab... you fool.");
+            return false;
+        }
+        
+        if(itemID < 0 || itemID >= itemDataBase.Length) {
+            Debug.LogWarning("Remove Item ID out of Range.");
+            return false;
+        }
+        #endif
+
+        foreach(var itemInst in currentItems) {
+            if(itemInst.id == itemID) {
+                if(itemInst.count <= 1) {
+                    currentItems.Remove(itemInst);
+                }
+                else {
+                    itemInst.count--;
+                }
+
+                if(IsOpen) {
+                    UpdateItemUI();
+                }
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    #if UNITY_EDITOR
+    [SerializeField]
+    int itemID;
+
+    [InspectorButton("InspectorAddItem")]
+    public bool addItem;
+
+    private void InspectorAddItem() {
+        AddItem(itemID);
+    }
+
+    [InspectorButton("InspectorRemoveItem")]
+    public bool removeItem;
+
+    private void InspectorRemoveItem() {
+        RemoveItem(itemID);
+    }
+
+#endif
 
 }
 
