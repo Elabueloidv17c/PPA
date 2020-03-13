@@ -17,7 +17,8 @@ public class liPlayerCharacter : MonoBehaviour
 
     private void Update() {
         
-        if (!liGameManager.instance.menuActive) 
+        if (liGameManager.instance && 
+            !liGameManager.instance.menuActive) 
         {
             if(Input.GetKey(KeyCode.I))
             {
@@ -34,32 +35,31 @@ public class liPlayerCharacter : MonoBehaviour
         
         if (Input.GetKey((KeyCode)GameInput.MoveUp))
         {
-           
-            delta.y += m_verticalRatio;
-
+            delta.y += 1;
         }
         if (Input.GetKey((KeyCode)GameInput.MoveDown))
         {
-            delta.y -= m_verticalRatio;
-            
+            delta.y -= 1;
         }
         if (Input.GetKey((KeyCode)GameInput.MoveLeft))
         {
             delta.x -= 1;
-          
         }
         if (Input.GetKey((KeyCode)GameInput.MoveRight))
         {
             delta.x += 1;
-         
         }
-        if (delta != Vector2.zero) {
-             m_animator.SetFloat("X",delta.x);
-             m_animator.SetFloat("Y", delta.y);
-             m_body.MovePosition(m_body.position + (delta * Time.deltaTime *
-                           ((Input.GetKey((KeyCode)GameInput.Sprint)) ?
-                           m_runSpeed : m_walkSpeed)));
 
+        if (delta != Vector2.zero) {
+            delta.Normalize();
+            delta.y *= m_verticalRatio;
+
+            m_animator.SetFloat("X", delta.x);
+            m_animator.SetFloat("Y", delta.y);
+
+            m_body.MovePosition(m_body.position + (delta * Time.deltaTime *
+                                ((Input.GetKey((KeyCode)GameInput.Sprint)) ?
+                                m_runSpeed : m_walkSpeed)));
         }
        
         

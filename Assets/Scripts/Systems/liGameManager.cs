@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [Serializable]
 public class PlayerData
@@ -41,6 +42,10 @@ public class liGameManager : MonoBehaviour
 
     void Start()
     {
+        if(!EventSystem.current) {
+            Instantiate(Resources.Load<GameObject>("Prefabs/UI/EventSystem"));
+        }
+
         if(!liDialogManager.instance) {
             Instantiate(Resources.Load<GameObject>("Prefabs/UI/Conversation"));
         }
