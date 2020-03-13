@@ -39,6 +39,17 @@ public class liGameManager : MonoBehaviour
         instance = this;
     }
 
+    void Start()
+    {
+        if(!liDialogManager.instance) {
+            Instantiate(Resources.Load<GameObject>("Prefabs/UI/Conversation"));
+        }
+
+        if(!liInventory.instance) {
+            Instantiate(Resources.Load<GameObject>("Prefabs/UI/Inventory"));
+        }
+    }
+
     public void OpenInventory() {
         liInventory.instance.OpenUI();
     }
