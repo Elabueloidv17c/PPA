@@ -13,6 +13,8 @@ public class liPlayerCharacter : MonoBehaviour
     void Start() {
         m_body = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
+
+        m_animator.SetFloat("Y", -1);
     }
 
     private void Update() {
@@ -52,16 +54,19 @@ public class liPlayerCharacter : MonoBehaviour
 
         if (delta != Vector2.zero) {
             delta.Normalize();
-            delta.y *= m_verticalRatio;
 
             m_animator.SetFloat("X", delta.x);
             m_animator.SetFloat("Y", delta.y);
+            m_animator.SetFloat("Speed", 0.5f);
+            
+            delta.y *= m_verticalRatio;
 
             m_body.MovePosition(m_body.position + (delta * Time.deltaTime *
                                 ((Input.GetKey((KeyCode)GameInput.Sprint)) ?
                                 m_runSpeed : m_walkSpeed)));
         }
-       
-        
+        else {
+            m_animator.SetFloat("Speed", 0f);
+        }
     }
 }
