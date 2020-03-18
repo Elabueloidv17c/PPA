@@ -1,0 +1,104 @@
+{
+	"InComment" : null,
+	"OutComment" : null,
+    "Conversations" : [
+        {
+            "Character" : 0,
+            "Dialogs" : [
+				{
+					"LeftCharacter": [{
+						"CharacterID" : 10,
+						"Expression" : 0
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 2,
+						"Expression" : 0
+					}],
+					
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": true,
+					
+                    "Text" : "Hey! Were you looking for something?",
+                    
+                    "LogAction" : {
+						"ActionType" : "JumpToNext",
+						"Next" : 1,
+						"Value" : 0
+					}
+                },
+
+                {
+					"LeftCharacter": [{
+						"CharacterID" : 10,
+						"Expression" : 0
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 2,
+						"Expression" : 0
+					}],
+					
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": false,
+					
+                    "Text" : "Oh, I was just passing by. I was hoping you weren’t too busy...",
+                    
+                    "LogAction" : {
+						"ActionType" : "JumpToNext",
+						"Next" : 2,
+						"Value" : 0
+					}
+                },
+
+                {
+					"LeftCharacter": [{
+						"CharacterID" : 10,
+						"Expression" : 0
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 2,
+						"Expression" : 0
+					}],
+					
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": true,
+					
+                    "Text" : "I’m actually in a bit of a hurry, sorry! But I’ll talk to you later, yeah?",
+                    
+                    "LogAction" : {
+						"ActionType" : "JumpToNext",
+						"Next" : 3,
+						"Value" : 0
+					}
+                },
+
+                {
+					"LeftCharacter": [{
+						"CharacterID" : 10,
+						"Expression" : 0
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 2,
+						"Expression" : 0
+					}],
+					
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": false,
+					
+                    "Text" : "Don’t worry about it, I’ll see you later.",
+                    
+                    "LogAction" : {
+						"ActionType" : "None"
+					}
+                }
+            ]
+        }
+    ]
+}

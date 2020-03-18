@@ -31,22 +31,22 @@
 						{
 							"Text" : "Approach the tree",
 							"Next" : 1,
-							"Value" : -2
+							"Value" : 0
 						},
 						{
 							"Text" : "Are those...watermelons?",
 							"Next" : 2,
-							"Value" : -2
+							"Value" : 0
 						},
 						{
 							"Text" : "What up, bud!",
 							"Next" : 3,
-							"Value" : -2
+							"Value" : 0
 						},
 						{
 							"Text" : "Hi there.",
 							"Next" : 8,
-							"Value" : 1
+							"Value" : 0
 						},
 						{
 							"Text" : "I leave him alone.",
