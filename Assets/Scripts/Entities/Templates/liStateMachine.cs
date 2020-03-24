@@ -14,5 +14,16 @@ public class StateMachine<T>
         m_entity = entity;
         m_current = initState;
         m_previus = initState;
-    }   
+    }
+    public void onState() {
+
+        m_current.onStateUpdate();
+        m_current.onComputeNextState();
+    }
+    public void toState(IState<T> nextState) {
+        m_current.onExit();
+        m_previus = m_current;
+        m_current = nextState;
+        m_current.onEnter();
+    }
 }
