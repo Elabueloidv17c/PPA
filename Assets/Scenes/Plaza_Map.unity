@@ -368,7 +368,17 @@ PrefabInstance:
     - target: {fileID: 620565470604035582, guid: 407641cb6af277a4a8f556062e328a34,
         type: 3}
       propertyPath: orthographic size
-      value: 3.84
+      value: 3.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 620565470604035582, guid: 407641cb6af277a4a8f556062e328a34,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192114941333054828, guid: 407641cb6af277a4a8f556062e328a34,
+        type: 3}
+      propertyPath: m_RefResolutionX
+      value: 1024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 407641cb6af277a4a8f556062e328a34, type: 3}
