@@ -214,4 +214,9 @@ public class liDialogManager : BaseUIManager
     {
         CloseUI();
     }
+
+    public void OpenInventory()
+    {
+        liGameManager.instance.OpenInventory();
+    }
 }

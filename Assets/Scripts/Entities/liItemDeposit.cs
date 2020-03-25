@@ -1,9 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-public class liNPC : MonoBehaviour
+public class liItemDeposit : MonoBehaviour
 {
-    public int m_dialogID;
-
     private bool m_playerInRange;
 
     void Start()
@@ -16,7 +14,7 @@ public class liNPC : MonoBehaviour
            !liGameManager.instance.menuActive &&
            Input.GetKeyDown((KeyCode)GameInput.Interact))
         {
-            liDialogManager.instance.DisplayDialog(m_dialogID);
+            //liInventory.instance.
         }
     }
 

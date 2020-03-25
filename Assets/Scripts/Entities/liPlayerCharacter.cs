@@ -17,16 +17,12 @@ public class liPlayerCharacter : MonoBehaviour
         m_animator.SetFloat("Y", -1);
     }
 
+    bool keycodeIDown;
+
     private void Update() {
-        
         if (liGameManager.instance && 
             !liGameManager.instance.menuActive) 
         {
-            if(Input.GetKey(KeyCode.I))
-            {
-                liInventory.instance.OpenUI();
-            }
-
             Move();
         }
     }

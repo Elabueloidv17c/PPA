@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
 
 using UnityEngine;
@@ -19,7 +18,7 @@ public class liInventory : BaseUIManager
 
     static Item[] itemDataBase = null;
 
-    public static List<ItemInstance> m_currentItems; 
+    public static List<ItemInstance> m_currentItems;
 
     Button[] tabBtns;
     liItemSlot[] itemSlots;
@@ -112,8 +111,15 @@ public class liInventory : BaseUIManager
 
     public void Update()
     {
-        if(IsOpen && IsMaximized && 
-           (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.I)))
+        if(liGameManager.instance && 
+           !liGameManager.instance.menuActive &&
+           Input.GetKeyDown(KeyCode.I))
+        {
+            OpenUI();
+        }
+        else if(IsOpen && IsMaximized && 
+                (Input.GetKeyDown(KeyCode.Escape) || 
+                 Input.GetKeyDown(KeyCode.I)))
         {
             CloseUI();
         }
