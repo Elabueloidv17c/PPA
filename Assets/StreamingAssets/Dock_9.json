@@ -26,10 +26,10 @@
                     "Thought" : null,
 
                     "LogAction" : {
-                        "OptionType" : 0,
-                        "Next" : 0,
-                        "Value" : 0
-                    },
+						"ActionType" : "Buttons",
+						"Next" : 0,
+						"Value" : 0
+					},
 
                     "Options" : [
                     {
