@@ -22,412 +22,377 @@
 					
 					
 					"LogAction" : {
-						"ActionType" : "Buttons",
-						"Next" : 0,
-						"Value" : 0
+						"ActionType" : "Buttons"
 					},
 					
 					"Options" : [
 						{
-							"Text" : "Cough to get his attention",
+							"Text" : "What are you doing?",
 							"Next" : 1,
 							"Value" : 0
 						},
 						{
-							"Text" : "Call out to him",
-							"Next" : 10,
-							"Value" : 0
-						},
-						{
-							"Text" : "Leave him alone",
-							"Next" : 16,
+							"Text" : "Avoid her.",
+							"Next" : 14,
 							"Value" : 0
 						}
 					]
                 },
-                
-                {
+
+
+                {//1
 					"LeftCharacter": [{
 						"CharacterID" : 10,
 						"Expression" : 0
 					}],
 					
 					"RightCharacter": [{
-						"CharacterID" : 2,
+						"CharacterID" : 3,
 						"Expression" : 0
 					}],
 					
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
 					"ActiveSide": false,
+					
+                    "Text" : "What are you doing",
                     
-					"Text" : "That looks interesting",
-                    
-					"LogAction" : {
+                    "LogAction" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 2,
 						"Value" : 0
 					}
-				},
-                
-                {
+                },
+
+
+                {//2
 					"LeftCharacter": [{
 						"CharacterID" : 10,
 						"Expression" : 0
 					}],
 					
 					"RightCharacter": [{
-						"CharacterID" : 2,
+						"CharacterID" : 3,
 						"Expression" : 2
 					}],
 					
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
 					"ActiveSide": true,
+					
+                    "Text" : "Hey []!...        I’m decorating obviously!",
                     
-					"Text" : "Oh it is! It’s about this serial killer that only killed when there was a full moon. Crazy, right?",
-                    
-					"LogAction" : {
+                    "LogAction" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 3,
 						"Value" : 0
 					}
                 },
-                
-                {
+
+
+
+                {//3
 					"LeftCharacter": [{
 						"CharacterID" : 10,
-						"Expression" : 2
+						"Expression" : 0
 					}],
 					
 					"RightCharacter": [{
-						"CharacterID" : 2,
+						"CharacterID" : 3,
 						"Expression" : 2
 					}],
 					
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
 					"ActiveSide": false,
+					
+                    "Text" : "I can see that. Didn’t expect you’d be so into it, though.",
                     
-					"Text" : "Ohh...kind of like a werewolf!",
-                    
-					"LogAction" : {
+                    "LogAction" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 4,
 						"Value" : 0
 					}
                 },
-                
-                {
+
+
+
+                {//4
 					"LeftCharacter": [{
 						"CharacterID" : 10,
-						"Expression" : 2
+						"Expression" : 0
 					}],
 					
 					"RightCharacter": [{
-						"CharacterID" : 2,
-						"Expression" : 6
+						"CharacterID" : 3,
+						"Expression" : 2
 					}],
 					
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
 					"ActiveSide": false,
+					
+                    "Text" : "I can see that. Didn’t expect you’d be so into it, though.",
                     
-					"Text" : "Yeah! And the media is covering it up so no one knows that werewolves actually exist.",
-                    
-					"LogAction" : {
+                    "LogAction" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 5,
 						"Value" : 0
 					}
                 },
 
-                {
+
+
+                {//5
 					"LeftCharacter": [{
 						"CharacterID" : 10,
-						"Expression" : 2
+						"Expression" : 0
 					}],
 					
 					"RightCharacter": [{
-						"CharacterID" : 2,
-						"Expression" : 6
+						"CharacterID" : 3,
+						"Expression" : 2
 					}],
 					
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": false,
+					"ActiveSide": true,
+					
+                    "Text" : "Are you kidding? It’s the watermelon festival! The best day of the year, no competition. I’ve been a fan of it ever since I arrived here.",
                     
-					"Text" : "So they just make him look like a really weird human.",
-                    
-					"LogAction" : {
+                    "LogAction" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 6,
 						"Value" : 0
 					}
                 },
 
-                {
+
+
+                {//6
 					"LeftCharacter": [{
 						"CharacterID" : 10,
-						"Expression" : 2
+						"Expression" : 0
 					}],
 					
 					"RightCharacter": [{
-						"CharacterID" : 2,
+						"CharacterID" : 3,
 						"Expression" : 2
 					}],
 					
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": true,
+					"ActiveSide": false,
+					
+                    "Text" : "I thought you hadn’t been here for long.",
                     
-					"Text" : "Yeah, maybe...but he also drank their blood. Isn’t that more like a vampire?",
-                    
-					"LogAction" : {
+                    "LogAction" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 7,
 						"Value" : 0
 					}
                 },
 
-                {
+
+
+                {//7
 					"LeftCharacter": [{
 						"CharacterID" : 10,
-						"Expression" : 2
+						"Expression" : 0
 					}],
 					
 					"RightCharacter": [{
-						"CharacterID" : 2,
+						"CharacterID" : 3,
 						"Expression" : 2
 					}],
 					
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": false,
+					"ActiveSide": true,
+					
+                    "Text" : "I haven’t! Just five year or so.",
                     
-					"Text" : "Well, maybe I can borrow that book some time. Oh! That reminds me!",
-                    
-					"LogAction" : {
+                    "LogAction" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 8,
 						"Value" : 0
 					}
                 },
 
-                {
+
+
+                {//8
 					"LeftCharacter": [{
 						"CharacterID" : 10,
-						"Expression" : 2
+						"Expression" : 0
 					}],
 					
 					"RightCharacter": [{
-						"CharacterID" : 2,
-						"Expression" : 0
+						"CharacterID" : 3,
+						"Expression" : 2
 					}],
 					
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": true,
+					"ActiveSide": false,
+					
+                    "Text" : "...",
                     
-					"Text" : "One second!",
-                    
-					"LogAction" : {
+                    "LogAction" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 9,
 						"Value" : 0
 					}
                 },
 
-                {
+
+
+                {//9
 					"LeftCharacter": [{
 						"CharacterID" : 10,
+						"Expression" : 0
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
 						"Expression" : 2
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 2,
-						"Expression" : 0
-					}],
-					
-					"ActiveCharacterLeft": 0,
-					"ActiveCharacterRight": 0,
-					"ActiveSide": true,
-                    
-					"Text" : "I gotta work. It was nice seeing you!!",
-                    
-					"LogAction" : {
-						"ActionType" : "None"
-
-					}
-                },
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 0
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 2,
-						"Expression" : 0
 					}],
 					
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
 					"ActiveSide": false,
+					
+                    "Text" : "",
                     
-					"Text" : "Nero!",
+                    "LogAction" : {
+						"ActionType" : "JumpToNext",
+						"Next" : 10,
+						"Value" : 0
+					}
+                },
+
+
+
+                {//10
+					"LeftCharacter": [{
+						"CharacterID" : 10,
+						"Expression" : 0
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
+						"Expression" : 2
+					}],
+					
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": false,
+					
+                    "Text" : "...Well, everything looks pretty great already.",
                     
-					"LogAction" : {
+                    "LogAction" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 11,
 						"Value" : 0
 					}
                 },
 
-                {
+
+                {//11
 					"LeftCharacter": [{
 						"CharacterID" : 10,
 						"Expression" : 0
 					}],
 					
 					"RightCharacter": [{
-						"CharacterID" : 2,
-						"Expression" : 0
+						"CharacterID" : 3,
+						"Expression" : 2
 					}],
 					
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": false,
+					"ActiveSide": true,
+					
+                    "Text" : "Thank you! But great is not enough - we strive for perfection!        On this wonderful watermelon day, all our senses must be fulfilled! Alluring scents, beautiful decorations, cheerful music and best of all - THE MOST DELICIOUS FOOD!",
                     
-                    "Text" : "Nero!",
-                    "Thought" : "Whoops! Guess I forgot this was a library!",
-
-					"LogAction" : {
+                    "LogAction" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 12,
 						"Value" : 0
 					}
                 },
 
-                {
+
+                {//12
 					"LeftCharacter": [{
 						"CharacterID" : 10,
 						"Expression" : 0
 					}],
 					
 					"RightCharacter": [{
-						"CharacterID" : 2,
-						"Expression" : 0
+						"CharacterID" : 3,
+						"Expression" : 2
 					}],
 					
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
 					"ActiveSide": false,
+					
+                    "Text" : "Well then, I guess I’ll trust your judgement. Maybe you could show me your favorite snacks?",
                     
-                    "Text" : "Oh, I’m sorry!",
-
-					"LogAction" : {
+                    "LogAction" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 13,
 						"Value" : 0
 					}
                 },
 
-                {
+
+                {//13
 					"LeftCharacter": [{
 						"CharacterID" : 10,
 						"Expression" : 0
 					}],
 					
 					"RightCharacter": [{
-						"CharacterID" : 2,
-						"Expression" : 4
+						"CharacterID" : 3,
+						"Expression" : 2
 					}],
 					
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
 					"ActiveSide": true,
+					
+                    "Text" : "Of course! See you around, []",
                     
-                    "Text" : "Can you stop shouting?!",
-
-					"LogAction" : {
-						"ActionType" : "JumpToNext",
-						"Next" : 14,
-						"Value" : 0
+                    "LogAction" : {
+						"ActionType" : "None"
 					}
                 },
 
-                {
+
+                {//14
 					"LeftCharacter": [{
 						"CharacterID" : 10,
 						"Expression" : 0
 					}],
 					
 					"RightCharacter": [{
-						"CharacterID" : 2,
-						"Expression" : 3
+						"CharacterID" : 3,
+						"Expression" : 2
 					}],
 					
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
 					"ActiveSide": true,
-                    
-                    "Text" : "I’m gonna have to ask you to leave.",
-
-					"LogAction" : {
-						"ActionType" : "JumpToNext",
-						"Next" : 15,
-						"Value" : 0
-					}
-                },
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 0
-					}],
 					
-					"RightCharacter": [{
-						"CharacterID" : 2,
-						"Expression" : 3
-					}],
-					
-					"ActiveCharacterLeft": 0,
-					"ActiveCharacterRight": 0,
-					"ActiveSide": false,
-                    
-                    "Text" : "I’m sorry",
 
-					"LogAction" : {
+                    
+                    "LogAction" : {
 						"ActionType" : "None"
 					}
                 },
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 0
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 2,
-						"Expression" : 0
-					}],
-					
-					"ActiveCharacterLeft": 0,
-					"ActiveCharacterRight": 0,
-					"ActiveSide": false,
-                    
-                    "Thought" : "Maybe bothering him while he was reading what seemed to be a really interesting book was not the best option",
-
-					"LogAction" : {
-						"ActionType" : "None"
-					}
-                }
-
-                
-			]
+            ]
         }
     ]
 }
