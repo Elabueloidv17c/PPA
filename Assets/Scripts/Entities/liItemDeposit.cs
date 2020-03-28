@@ -14,7 +14,7 @@ public class liItemDeposit : MonoBehaviour
            !liGameManager.instance.menuActive &&
            Input.GetKeyDown((KeyCode)GameInput.Interact))
         {
-            //liInventory.instance.
+            liInventory.instance.OpenUIDepositMode();
         }
     }
 

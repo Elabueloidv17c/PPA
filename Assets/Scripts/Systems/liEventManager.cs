@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 
 using UnityEngine;
@@ -13,6 +12,7 @@ public class SaveFile
     public EventsBank m_gameEvents;
     public DateTime m_timeStamp;
     public ItemInstance[] m_items;
+    public ItemInstance[] m_depotItems;
 }
 
 [Serializable]
@@ -72,7 +72,8 @@ public class liEventManager : MonoBehaviour
         // Create Save File
         var saveFile = new SaveFile();
         saveFile.m_gameEvents = eventsBank;
-        saveFile.m_items = liInventory.m_currentItems.ToArray();
+        saveFile.m_items = liInventory.s_currentItems.ToArray();
+        saveFile.m_depotItems = liInventory.s_depositItems.ToArray();
         
         // Get time stamp
         saveFile.m_timeStamp = DateTime.Now;
@@ -107,7 +108,8 @@ public class liEventManager : MonoBehaviour
     public void RestoreSaveFile(SaveFile saveFile) {
         
         eventsBank = saveFile.m_gameEvents;
-        liInventory.m_currentItems = new List<ItemInstance>(saveFile.m_items);
+        liInventory.s_currentItems = new List<ItemInstance>(saveFile.m_items);
+        liInventory.s_depositItems = new List<ItemInstance>(saveFile.m_depotItems);
     }
 
 #if UNITY_EDITOR
@@ -115,6 +117,16 @@ public class liEventManager : MonoBehaviour
     public bool saveFile;
 
     private void InspectorSaveFile() {
+        if(!Application.isPlaying) {
+            Debug.LogWarning("Calling method without running the game... you fool.");
+            return;
+        }
+        
+        if(gameObject.IsPrefab()) {
+            Debug.LogWarning("Calling method from prefab... you fool.");
+            return;
+        }
+        
         SaveGame(0);
     }
 
@@ -122,6 +134,16 @@ public class liEventManager : MonoBehaviour
     public bool restoreFile;
 
     private void InspectorRestoreFile() {
+        if(!Application.isPlaying) {
+            Debug.LogWarning("Calling method without running the game... you fool.");
+            return;
+        }
+        
+        if(gameObject.IsPrefab()) {
+            Debug.LogWarning("Calling method from prefab... you fool.");
+            return;
+        }
+
         var saveFiles = LoadAllSaveFiles();
 
         if(saveFiles.Count > 0) {
