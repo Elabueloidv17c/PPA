@@ -116,7 +116,7 @@ public class liEventManager : MonoBehaviour
     [InspectorButton("InspectorSaveFile")]
     public bool saveFile;
 
-    private void InspectorSaveFile() {
+    public void InspectorSaveFile() {
         if(!Application.isPlaying) {
             Debug.LogWarning("Calling method without running the game... you fool.");
             return;
@@ -133,7 +133,7 @@ public class liEventManager : MonoBehaviour
     [InspectorButton("InspectorRestoreFile")]
     public bool restoreFile;
 
-    private void InspectorRestoreFile() {
+    public void InspectorRestoreFile() {
         if(!Application.isPlaying) {
             Debug.LogWarning("Calling method without running the game... you fool.");
             return;

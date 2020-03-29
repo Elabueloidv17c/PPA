@@ -24,8 +24,13 @@ public static class UnityExtensions
     var props = type.GetProperties();
     foreach (var prop in props)
     {
-      if (!prop.CanWrite || !prop.CanWrite || prop.Name == "name") continue;
-      prop.SetValue(dst, prop.GetValue(original, null), null);
+      if (!prop.CanWrite || !prop.CanRead || prop.Name == "name") continue;
+
+      try
+      {
+        prop.SetValue(dst, prop.GetValue(original, null), null);
+      }
+      catch {}
     }
     return dst as T;
   }
