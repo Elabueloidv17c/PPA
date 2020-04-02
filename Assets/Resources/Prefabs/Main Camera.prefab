@@ -100,8 +100,8 @@ MonoBehaviour:
   m_target: {fileID: 0}
   minDistance_x: 2
   minDistance_y: 1
-  maxCoord: {x: 19, y: 17}
-  minCoord: {x: -20, y: -19}
+  maxMapCoord: {x: 19, y: 17}
+  minMapCoord: {x: -20, y: -19}
   speed: 3
 --- !u!114 &5192114941333054828
 MonoBehaviour:
