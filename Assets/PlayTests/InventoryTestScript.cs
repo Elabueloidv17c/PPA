@@ -13,7 +13,8 @@ namespace Tests
         [SetUp]
         public void Setup()
         {
-            GameObject GO2 = Object.Instantiate(Resources.Load<GameObject>("Prefabs/Game Manager"));
+            GameObject GO2 = Object.Instantiate(
+                Resources.Load<GameObject>("Prefabs/Game Manager"));
         }
 
         [TearDown]
@@ -49,6 +50,10 @@ namespace Tests
             Assert.NotNull(eventManager);
             
             eventManager.InspectorSaveFile();
+
+            liInventory.s_currentItems.Clear();
+
+            Assert.That(liInventory.s_currentItems.Count, Is.EqualTo(0));
             
             yield return new WaitForSeconds(2f);
             

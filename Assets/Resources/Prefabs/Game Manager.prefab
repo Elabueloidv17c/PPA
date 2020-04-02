@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718050225852727469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.67524, y: 566.4014, z: -357.29755}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1530311987372710590}
@@ -45,11 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bb81bd6a64528b4b86f81cac1138cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_torsoColor: {x: 0, y: 0, z: 0}
-  m_featColor: {x: 0, y: 0, z: 0}
-  m_headColor: {x: 0, y: 0, z: 0}
-  m_skinColor: {x: 0, y: 0, z: 0}
-  m_armColor: {x: 0, y: 0, z: 0}
 --- !u!114 &6692688048020017609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,6 +57,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11d06fa3b46074a45aa7e605ed51bf6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveFile: 0
+  restoreFile: 0
 --- !u!1001 &8330679284162751554
 PrefabInstance:
   m_ObjectHideFlags: 0

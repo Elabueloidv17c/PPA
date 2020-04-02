@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 475910249617364845}
   - component: {fileID: 3174464966581184197}
   - component: {fileID: 3174464966581184195}
-  - component: {fileID: 3174464966581184194}
+  - component: {fileID: 7309776963999167024}
   m_Layer: 9
   m_Name: Item Deposit
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3174464966581184192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.53, y: -4.1, z: -1.8403368}
+  m_LocalPosition: {x: -3.5, y: -4, z: -2}
   m_LocalScale: {x: 0.75, y: 0.5, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad8ebce6b3682404b97d199087d49fa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dialogID: 0
 --- !u!212 &3174464966581184197
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -109,7 +108,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.27887166}
+  m_Offset: {x: 0, y: -0.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -120,10 +119,10 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0269231, y: 0.41917983}
+  m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
---- !u!61 &3174464966581184194
-BoxCollider2D:
+--- !u!58 &7309776963999167024
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -136,15 +135,5 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0429688, y: 0.9921875}
-    newSize: {x: 1.0269231, y: 0.97692305}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
-  m_EdgeRadius: 0
+  m_Radius: 1

@@ -63,4 +63,20 @@ public static class UnityMathExtensions
   {
     return new Vector3(a.x * b.x, a.y * b.y, a.z * b.z);
   }
+
+  /// <summary>
+  /// Component-wise Max function
+  /// </summary>
+  public static Vector2 MaxComp(this Vector2 a, Vector2 b)
+  {
+    return new Vector2(Mathf.Max(a.x, b.x), Mathf.Max(a.y, b.y));
+  }
+
+  /// <summary>
+  /// Component-wise Min function
+  /// </summary>
+  public static Vector2 MinComp(this Vector2 a, Vector2 b)
+  {
+    return new Vector2(Mathf.Min(a.x, b.x), Mathf.Min(a.y, b.y));
+  }
 }

@@ -21,11 +21,6 @@ public class liPlayerCharacter : MonoBehaviour
         
         if (!liGameManager.instance.menuActive) 
         {
-            if(Input.GetKey(KeyCode.I))
-            {
-                liInventory.instance.OpenUI();
-            }
-
             Move();
         }
     }
