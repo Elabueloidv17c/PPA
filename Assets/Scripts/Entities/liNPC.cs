@@ -5,11 +5,9 @@ public class liNPC : MonoBehaviour
     public int m_dialogID;
 
     private bool m_playerInRange;
-    private liPlayerCharacter m_character;
 
     void Start()
     {
-        m_character = FindObjectOfType<liPlayerCharacter>();
     }
 
     void Update() 
@@ -34,7 +32,7 @@ public class liNPC : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            m_playerInRange = true;
+            m_playerInRange = false;
         }
     }
 }

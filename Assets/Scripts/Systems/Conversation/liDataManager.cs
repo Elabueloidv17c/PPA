@@ -98,6 +98,7 @@ public struct LogAction
     public int Value;
 }
 
+// TODO: Create a DialogAction class to make all functionality go there
 [JsonConverter(typeof(StringEnumConverter))]  
 public enum ActionType {
     None,
