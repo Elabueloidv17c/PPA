@@ -1,0 +1,68 @@
+{
+    "InComment": null,
+    "OutComment" : null,
+    "Conversations": [
+      {
+        "Character": 10,
+        "Dialogs": [
+            {
+            "LeftCharacter": [
+              {
+                "CharacterID": 10,
+                "Expression": 2
+              }
+            ],
+  
+            "RightCharacter": [
+              {
+                "CharacterID": 19,
+                "Expression": 2
+              }
+            ],
+  
+            "ActiveCharacterLeft": 0,
+            "ActiveCharacterRight": 0,
+            "ActiveSide": true,
+  
+            "Text": "I’m tagging this tree. But shh! Don’t tell anyone.",
+  
+            "LogAction": {
+                "ActionType": "None"
+              }
+            }
+            
+        ]
+      },
+      {
+        "Character": 10,
+        "Dialogs": [
+            {
+            "LeftCharacter": [
+              {
+                "CharacterID": 10,
+                "Expression": 2
+              }
+            ],
+  
+            "RightCharacter": [
+              {
+                "CharacterID": 30,
+                "Expression": 2
+              }
+            ],
+  
+            "ActiveCharacterLeft": 0,
+            "ActiveCharacterRight": 0,
+            "ActiveSide": true,
+  
+            "Text": "I’m tagging this tree. But shh! Don’t tell anyone.",
+  
+            "LogAction": {
+                "ActionType": "None"
+              }
+            }
+        ]
+      }
+      
+    ]
+  }
