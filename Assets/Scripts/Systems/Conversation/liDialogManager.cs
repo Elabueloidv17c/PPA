@@ -103,7 +103,7 @@ public partial class liDialogManager : BaseUIManager
     }
 
     /// <summary>
-    /// Opens the dialog manager ui.
+    /// Opens the dialog manager UI.
     /// </summary>
     public override void OpenUI()
     {
@@ -115,7 +115,7 @@ public partial class liDialogManager : BaseUIManager
     }
 
     /// <summary>
-    /// Closes the dialog manager ui.
+    /// Closes the dialog manager UI.
     /// </summary>
     public override void CloseUI()
     {
@@ -127,7 +127,7 @@ public partial class liDialogManager : BaseUIManager
     }
 
     /// <summary>
-    /// Hides the dialog manager ui without closing.
+    /// Hides the dialog manager UI without closing.
     /// </summary>
     public override void MinimizeUI()
     {
@@ -142,7 +142,7 @@ public partial class liDialogManager : BaseUIManager
     }
 
     /// <summary>
-    /// Unhides the dialog manager ui.
+    /// Unhides the dialog manager UI.
     /// </summary>
     public override void MaximizeUI()
     {
@@ -295,7 +295,7 @@ public partial class liDialogManager : BaseUIManager
     }
 
     /// <summary>
-    /// Forcibly ends a conversation by closing dialog ui.
+    /// Forcibly ends a conversation by closing dialog UI.
     /// </summary>
     private void EndConversation()
     {
@@ -303,7 +303,7 @@ public partial class liDialogManager : BaseUIManager
     }
 
     /// <summary>
-    /// Opens the inventory ui from the dialog ui.
+    /// Opens the inventory UI from the dialog UI.
     /// </summary>
     public void OpenInventory()
     {
