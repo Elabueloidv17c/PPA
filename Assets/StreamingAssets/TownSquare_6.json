@@ -1,0 +1,67 @@
+{
+    "InComment": null,
+    "OutComment" : null,
+    "Conversations": [
+      {
+        "Character": 10,
+        "Dialogs": [
+            {
+            "LeftCharacter": [
+              {
+                "CharacterID": 10,
+                "Expression": 2
+              }
+            ],
+  
+            "RightCharacter": [
+              {
+                "CharacterID": 15,
+                "Expression": 2
+              }
+            ],
+  
+            "ActiveCharacterLeft": 0,
+            "ActiveCharacterRight": 0,
+            "ActiveSide": true,
+  
+            "Text": "You won’t believe it, but I saw it… The Mighty Dove walked right in front of me. I saw it’s majestic white color, but when I reached into my bag for bread it got scared and ran away... how could this be?",
+  
+            "LogAction": {
+                "ActionType": "JumpToNext",
+                "Next": 1,
+                "Value": 0
+              }
+            },        
+
+            {
+                "LeftCharacter": [
+                  {
+                    "CharacterID": 10,
+                    "Expression": 2
+                  }
+                ],
+      
+                "RightCharacter": [
+                  {
+                    "CharacterID": 15,
+                    "Expression": 2
+                  }
+                ],
+      
+                "ActiveCharacterLeft": 0,
+                "ActiveCharacterRight": 0,
+                "ActiveSide": true,
+      
+                "Text": "Leave me alone, I’m too sad for words.",
+      
+                "LogAction": {
+                    "ActionType": "None",
+                    "Next": 1,
+                    "Value": 0
+                }
+            }
+            
+        ]
+      }
+    ]
+  }
