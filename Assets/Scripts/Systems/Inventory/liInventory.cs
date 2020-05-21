@@ -91,6 +91,10 @@ public class liInventory : BaseUIManager
         instance = this;
     }
     
+    /// <summary>
+    ///  initializes all the items and makes sure non of them are out 
+    ///  of place or have wrong information.
+    /// </summary>
     void Start()
     {
         if(null == s_itemDataBase)
@@ -138,6 +142,7 @@ public class liInventory : BaseUIManager
             tabBtns[i].onClick.AddListener(() => { TabBtnCallback(index); });
         }
 
+        /* Initializes gui for the inventory */
         var background = mainPanel.transform.Find("Background");
         backgroundImg = background.GetComponent<Image>();
         itemSlotPanel = background.GetChild(0).GetChild(0).GetChild(0);
@@ -249,7 +254,7 @@ public class liInventory : BaseUIManager
     {
         if(!IsOpen || !IsMaximized) return;
 
-        int index = 0;
+        int index = 0;// <-- why is this here
 
         for (int i = 0; i < currentItems.Count; i++)
         {
@@ -279,7 +284,8 @@ public class liInventory : BaseUIManager
                 index++;
             }
         }
-        
+       
+        /** Initialize all the item slots with default values*/
         for (; index < itemSlots.Count; index++)
         {
             itemSlots[index].image.color = Color.clear;
