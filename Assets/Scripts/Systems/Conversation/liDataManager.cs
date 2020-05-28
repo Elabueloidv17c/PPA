@@ -12,7 +12,7 @@ using Newtonsoft.Json.Converters;
 public class liDataManager : MonoBehaviour
 {
     public static uint s_currentDay = 0;
-    public static liScene s_currentScene = liScene.TownCenter;
+    public static EDialogScene s_currentScene = EDialogScene.WatermelonTree;
     public static float s_time = 0.0f;
     public static DialogSceneData m_data;
     private List<GameObject> m_objectsOnLayer;
@@ -38,15 +38,6 @@ public class liDataManager : MonoBehaviour
                                        s_currentScene.ToString() + "_" + s_currentDay + ".json");
         return JsonConvert.DeserializeObject<DialogSceneData>(data);
     }
-
-    /// <summary>
-    /// Enumerates scenes that conversations can be loaded for.
-    /// </summary>
-    public enum liScene {
-        House,
-        Library,
-        TownCenter
-    }
 }
 
 public struct DialogSceneData
@@ -71,7 +62,7 @@ public struct Dialog
     public bool ActiveSide; // false if left, true if right
     public string Text;
     public string Thought;
-    public LogAction Action;
+    public LogActionData LogActionData;
     public LogOption[] Options;
 }
 

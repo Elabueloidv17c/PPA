@@ -2,18 +2,7 @@
 
 public class DialogActionEnd : DialogAction
 {
-    public void onDialogBegin()
-    {
-        throw new System.NotImplementedException();
-    }
-    
-    public int NextDialogIndex()
-    {
-        throw new System.NotImplementedException();
-    }
+    public override bool ClickIntoNextEnabled() => false;
 
-    public void onDialogEnd()
-    {
-        throw new System.NotImplementedException();
-    }
+    public override bool ClickToCloseUIEnabled() => true;
 }

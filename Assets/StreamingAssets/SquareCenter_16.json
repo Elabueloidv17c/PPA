@@ -21,7 +21,7 @@
 					"ActiveSide": false,
 					
 					
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "Buttons"
 					},
 					
@@ -57,7 +57,7 @@
 					
                     "Text" : "What are you doing",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 2,
 						"Value" : 0
@@ -82,7 +82,7 @@
 					
                     "Text" : "Hey []!...        I’m decorating obviously!",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 3,
 						"Value" : 0
@@ -108,7 +108,7 @@
 					
                     "Text" : "I can see that. Didn’t expect you’d be so into it, though.",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 4,
 						"Value" : 0
@@ -134,7 +134,7 @@
 					
                     "Text" : "I can see that. Didn’t expect you’d be so into it, though.",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 5,
 						"Value" : 0
@@ -160,7 +160,7 @@
 					
                     "Text" : "Are you kidding? It’s the watermelon festival! The best day of the year, no competition. I’ve been a fan of it ever since I arrived here.",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 6,
 						"Value" : 0
@@ -186,7 +186,7 @@
 					
                     "Text" : "I thought you hadn’t been here for long.",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 7,
 						"Value" : 0
@@ -212,7 +212,7 @@
 					
                     "Text" : "I haven’t! Just five year or so.",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 8,
 						"Value" : 0
@@ -238,7 +238,7 @@
 					
                     "Text" : "...",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 9,
 						"Value" : 0
@@ -264,7 +264,7 @@
 					
                     "Text" : "",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 10,
 						"Value" : 0
@@ -290,7 +290,7 @@
 					
                     "Text" : "...Well, everything looks pretty great already.",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 11,
 						"Value" : 0
@@ -315,7 +315,7 @@
 					
                     "Text" : "Thank you! But great is not enough - we strive for perfection!        On this wonderful watermelon day, all our senses must be fulfilled! Alluring scents, beautiful decorations, cheerful music and best of all - THE MOST DELICIOUS FOOD!",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 12,
 						"Value" : 0
@@ -340,7 +340,7 @@
 					
                     "Text" : "Well then, I guess I’ll trust your judgement. Maybe you could show me your favorite snacks?",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 13,
 						"Value" : 0
@@ -365,7 +365,7 @@
 					
                     "Text" : "Of course! See you around, []",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "None"
 					}
                 },
@@ -388,7 +388,7 @@
 					
 
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "None"
 					}
                 },

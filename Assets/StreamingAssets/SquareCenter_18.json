@@ -21,7 +21,7 @@
 					"ActiveSide": false,
 					
 					
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "Buttons"
 					},
 					
@@ -61,7 +61,7 @@
 					
                     "Text" : "Hey Izzy! I noticed you’re really busy and, well,  I was wondering if you wanted some help.",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 2,
 						"Value" : 0
@@ -85,7 +85,7 @@
 					
                     "Text" : "Really? Yes, thank you! Look, I’ve got some new decorations!",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 3,
 						"Value" : 0
@@ -109,7 +109,7 @@
 					
                     "Text" : "Wow...those are...really shiny!",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 4,
 						"Value" : 0
@@ -133,7 +133,7 @@
 					
                     "Text" : "Of course! There’s no such thing as too shiny!",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "None"
 					}
                 },
@@ -156,7 +156,7 @@
 					
                     "Text" : "Hey, what’s up? Are you busy?",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 6,
 						"Value" : 0
@@ -180,7 +180,7 @@
 					
                     "Text" : "Oh, hey []...Yeah, I’ve been hanging decorations all week. I’m super excited but my arms are killing me.",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 7,
 						"Value" : 0
@@ -205,7 +205,7 @@
 					
                     "Text" : "Oh gotcha. I’ll get out of your way then. See you around, Izzy.",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 8,
 						"Value" : 0
@@ -230,7 +230,7 @@
 					
                     "Text" : "See you",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "None"
 					}
                 },
@@ -253,7 +253,7 @@
 					
                     "Text" : "Hey Izzy! I found something! I think you might like it.",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 10,
 						"Value" : 0
@@ -278,7 +278,7 @@
 					
                     "Text" : "Really?! Can I see?",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 11,
 						"Value" : 0
@@ -303,7 +303,7 @@
 					
                     "Text" : "Of course!",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 12,
 						"Value" : 0
@@ -328,7 +328,7 @@
 					
                     "Text" : "Sure, it’s all yours",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 13,
 						"Value" : 0
@@ -353,7 +353,7 @@
 					
                     "Text" : "Thank you, [].",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 14,
 						"Value" : 0
@@ -377,7 +377,7 @@
 					
                     "Text" : "...No problem.",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "None"
 					}
                 }

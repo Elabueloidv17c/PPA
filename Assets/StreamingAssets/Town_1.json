@@ -26,7 +26,7 @@
   
             "Text": "This is our town. It’s kind of boring, but that can’t be helped. This is just where everyone lives. Now follow me this way, to the more fun spots!",
   
-            "LogAction": {
+            "LogActionData": {
               "ActionType": "None"
             }
             }    

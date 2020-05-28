@@ -26,7 +26,7 @@
 
           "Text": "No one was there yesterday! Why did you disappear?",
 
-          "LogAction": {
+          "LogActionData": {
             "ActionType": "JumpToNext",
             "Next": 1,
             "Value": 0
@@ -56,7 +56,7 @@
 
           "Text": "I’ve got no idea what you mean! I just saw River today. Why not go greet them?",
 
-          "LogAction": {
+          "LogActionData": {
             "ActionType": "JumpToNext",
             "Next": 2,
             "Value": 0
@@ -84,7 +84,7 @@
 
           "Text": "No way! I don’t even know who you are! And it’s creepy!",
 
-          "LogAction": {
+          "LogActionData": {
             "ActionType": "JumpToNext",
             "Next": 3,
             "Value": 0
@@ -112,7 +112,7 @@
 
           "Text": "I’ve got no idea what you mean. You just rushed past me on your way out!",
 
-          "LogAction": {
+          "LogActionData": {
             "ActionType": "JumpToNext",
             "Next": 4,
             "Value": 0
@@ -141,7 +141,7 @@
 
           "Text": "And you promised you would help, dear. We don’t go back on our promises, do we?",
 
-          "LogAction": {
+          "LogActionData": {
             "ActionType": "JumpToNext",
             "Next": 5,
             "Value": 0
@@ -169,7 +169,7 @@
 
           "Text": "I’m Petyr, dear",
 
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "Buttons",
 						"Next" : 0,
 						"Value" : 0
@@ -215,7 +215,7 @@
 
           "Text": "Who’s there?!” Dammit, my voice cracked!",
 
-          "LogAction": {
+          "LogActionData": {
             "ActionType": "JumpToNext",
             "Next": 7,
             "Value": 0
@@ -243,7 +243,7 @@
   
             "Text": "Alright then! Keep your secrets!",
   
-            "LogAction": {
+            "LogActionData": {
               "ActionType": "None",
               "Next": 0,
               "Value": 0
@@ -271,7 +271,7 @@
   
             "Text": "Hello…? Is anyone there…",
   
-            "LogAction": {
+            "LogActionData": {
               "ActionType": "JumpToNext",
               "Next": 9,
               "Value": 0
@@ -299,7 +299,7 @@
   
             "Text": "I’m really sorry for barging in like this. Some guy, uh….Petyr sent me? He mentioned you you don’t get out much and uh...oh god, I’m really sorry, this is so creepy, I’m sorry.",
   
-            "LogAction": {
+            "LogActionData": {
               "ActionType": "JumpToNext",
               "Next": 10,
               "Value": 0
@@ -327,7 +327,7 @@
   
             "Text": "...You shouldn’t listen to that man",
   
-            "LogAction": {
+            "LogActionData": {
               "ActionType": "JumpToNext",
               "Next": 0,
               "Value": 0
@@ -355,7 +355,7 @@
   
             "Text": "...He is…” the person hesitated, as if looking for the right word, “...presumptuous and overbearing.",
   
-            "LogAction": {
+            "LogActionData": {
               "ActionType": "JumpToNext",
               "Next": 12,
               "Value": 0
@@ -383,7 +383,7 @@
   
             "Text": "Yeah, I figured, I’m [], by the way.",
   
-            "LogAction": {
+            "LogActionData": {
               "ActionType": "JumpToNext",
               "Next": 13,
               "Value": 0
@@ -411,7 +411,7 @@
   
             "Text": "It’s...a pleasure, I suppose. I’m River.",
   
-            "LogAction": {
+            "LogActionData": {
               "ActionType": "JumpToNext",
               "Next": 14,
               "Value": 0
@@ -439,7 +439,7 @@
   
             "Text": "I should go now but I, uh, I can come back! ...If that’s okay with you, of course.",
   
-            "LogAction": {
+            "LogActionData": {
               "ActionType": "JumpToNext",
               "Next": 15,
               "Value": 0
@@ -467,7 +467,7 @@
   
             "Text": "It’s okay.",
   
-            "LogAction": {
+            "LogActionData": {
               "ActionType": "None",
               "Next": 0,
               "Value": 0
@@ -495,7 +495,7 @@
   
             "Text": "Goodbye, then.",
   
-            "LogAction": {
+            "LogActionData": {
               "ActionType": "JumpToNext",
               "Next": 17,
               "Value": 0
@@ -523,7 +523,7 @@
   
             "Text": "Goodbye.",
   
-            "LogAction": {
+            "LogActionData": {
               "ActionType": "None",
               "Next": 0,
               "Value": 0

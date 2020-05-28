@@ -24,7 +24,7 @@
 
                     "Text" : "I’m sorry!",
 
-                    "LogAction" : {
+                    "LogActionData" : {
                         "OptionType" : "Buttoms",
                         "Next" : 0,
                         "Value" : 0
@@ -62,7 +62,7 @@
 					"Text" : "Hey Izzy!",
 					"Tought": "How far were we from the beach?",
 					
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 2
 					}
@@ -85,7 +85,7 @@
 	
 					"Text" : "...What the hell is this?",
 
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 3
 					}
@@ -108,7 +108,7 @@
 	
 					"Text" : "I-I-I don’t know, I’ve never been here before!",
 
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 4
 
@@ -132,7 +132,7 @@
 	
 					"Text" : "We better return to the beach, huh",
 
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 5
 
@@ -156,7 +156,7 @@
 	
 					"Text" : "Don’t go back there, okay?, I don’t... know what was that, but I know it wasn’t good.",
 
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 6
 
@@ -181,7 +181,7 @@
                     "Text" : "I think you’re right.",
                     "Thought" : "What secrets did Lau Island hide? What would I do to know?",
 
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "None",
 						"Next" : 0
 
@@ -205,7 +205,7 @@
     
                     "Tought": "I watch her run away.",				
 					
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 0
 					}

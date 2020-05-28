@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using UnityEngine;
 
 /// <summary>
 /// Used to parse strings into xml trees.

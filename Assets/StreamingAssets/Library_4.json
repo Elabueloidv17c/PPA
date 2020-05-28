@@ -21,7 +21,7 @@
 					"ActiveSide": false,
 					
 					
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "Buttons",
 						"Next" : 0,
 						"Value" : 0
@@ -63,7 +63,7 @@
                     
 					"Text" : "That looks interesting",
                     
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 2,
 						"Value" : 0
@@ -87,7 +87,7 @@
                     
 					"Text" : "Oh it is! It’s about this serial killer that only killed when there was a full moon. Crazy, right?",
                     
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 3,
 						"Value" : 0
@@ -111,7 +111,7 @@
                     
 					"Text" : "Ohh...kind of like a werewolf!",
                     
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 4,
 						"Value" : 0
@@ -135,7 +135,7 @@
                     
 					"Text" : "Yeah! And the media is covering it up so no one knows that werewolves actually exist.",
                     
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 5,
 						"Value" : 0
@@ -159,7 +159,7 @@
                     
 					"Text" : "So they just make him look like a really weird human.",
                     
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 6,
 						"Value" : 0
@@ -183,7 +183,7 @@
                     
 					"Text" : "Yeah, maybe...but he also drank their blood. Isn’t that more like a vampire?",
                     
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 7,
 						"Value" : 0
@@ -207,7 +207,7 @@
                     
 					"Text" : "Well, maybe I can borrow that book some time. Oh! That reminds me!",
                     
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 8,
 						"Value" : 0
@@ -231,7 +231,7 @@
                     
 					"Text" : "One second!",
                     
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 9,
 						"Value" : 0
@@ -255,7 +255,7 @@
                     
 					"Text" : "I gotta work. It was nice seeing you!!",
                     
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "None"
 
 					}
@@ -278,7 +278,7 @@
                     
 					"Text" : "Nero!",
                     
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 11,
 						"Value" : 0
@@ -303,7 +303,7 @@
                     "Text" : "Nero!",
                     "Thought" : "Whoops! Guess I forgot this was a library!",
 
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 12,
 						"Value" : 0
@@ -327,7 +327,7 @@
                     
                     "Text" : "Oh, I’m sorry!",
 
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 13,
 						"Value" : 0
@@ -351,7 +351,7 @@
                     
                     "Text" : "Can you stop shouting?!",
 
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 14,
 						"Value" : 0
@@ -375,7 +375,7 @@
                     
                     "Text" : "I’m gonna have to ask you to leave.",
 
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 15,
 						"Value" : 0
@@ -399,7 +399,7 @@
                     
                     "Text" : "I’m sorry",
 
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "None"
 					}
                 },
@@ -421,7 +421,7 @@
                     
                     "Thought" : "Maybe bothering him while he was reading what seemed to be a really interesting book was not the best option",
 
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "None"
 					}
                 }

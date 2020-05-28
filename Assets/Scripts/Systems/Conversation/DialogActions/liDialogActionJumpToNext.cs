@@ -2,18 +2,14 @@
 
 public class DialogActionJumpToNext : DialogAction
 {
-    public void onDialogBegin()
+    public override bool ClickIntoNextEnabled() 
     {
-        throw new System.NotImplementedException();
-    }
-    
-    public int NextDialogIndex()
-    {
-        throw new System.NotImplementedException();
+        return liDialogManager.instance.LogActionData.Next < 
+               liDialogManager.instance.CurrentDialogs.Length;
     }
 
-    public void onDialogEnd()
-    {
-        throw new System.NotImplementedException();
+    public override int NextDialogIndex()
+    { 
+        return liDialogManager.instance.LogActionData.Next; 
     }
 }

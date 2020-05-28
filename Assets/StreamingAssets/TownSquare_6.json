@@ -26,7 +26,7 @@
   
             "Text": "You won’t believe it, but I saw it… The Mighty Dove walked right in front of me. I saw it’s majestic white color, but when I reached into my bag for bread it got scared and ran away... how could this be?",
   
-            "LogAction": {
+            "LogActionData": {
                 "ActionType": "JumpToNext",
                 "Next": 1,
                 "Value": 0
@@ -54,7 +54,7 @@
       
                 "Text": "Leave me alone, I’m too sad for words.",
       
-                "LogAction": {
+                "LogActionData": {
                     "ActionType": "None",
                     "Next": 1,
                     "Value": 0
