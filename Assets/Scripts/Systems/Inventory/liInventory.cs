@@ -86,7 +86,9 @@ public class liInventory : BaseUIManager
     Image backgroundImg;
 
     #endregion
-
+    /// <summary>
+    /// Good old fashion single-ton.
+    /// </summary>
     void Awake() {
         instance = this;
     }
