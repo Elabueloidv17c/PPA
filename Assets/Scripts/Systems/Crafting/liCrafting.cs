@@ -12,9 +12,9 @@ public class liCrafting : MonoBehaviour
 
   // TODO : Only use this for testing 
   [SerializeField]
-  CraftableItem m_testDummyItem;
+  liCraftableItem m_testDummyItem;
 
-  static List<CraftableItem> s_possibleCraftableItems;
+  static List<liCraftableItem> s_possibleCraftableItems;
 
   /// <summary>
   /// Takes an array of item IDs and check to see if an item can be crafted
@@ -54,9 +54,17 @@ public class liCrafting : MonoBehaviour
     return false;
   }
 
+  /// <summary>
+  /// Adds a new CraftableItem to the list of Craftable items, after performing
+  /// a few check to make sure the item is valid.
+  /// </summary>
+  /// <param name="requiredIDs"></param>
+  /// <param name="resultID"></param>
   private void AddCraftableItem(int[] requiredIDs, int resultID)
   {
-    s_possibleCraftableItems.Add(new CraftableItem(resultID, requiredIDs));
+    liCraftableItem temp = new liCraftableItem(resultID, requiredIDs);
+
+    s_possibleCraftableItems.Add(temp );
   }
 
 #if UNITY_EDITOR // This code is ONLY for debugging in the editor.
@@ -90,16 +98,5 @@ public class liCrafting : MonoBehaviour
 
 /// <summary>
 /// Defines the id of a item that can be crafted  
-/// and what items are necessary in order to craft-it. 
+/// and what items are necessary in order to craft it. 
 /// </summary>
-public class CraftableItem
-{
-  public CraftableItem(int in_resultingItem, int []in_requiredItems)
-  {
-    resultingItemID = in_resultingItem;
-    requiredItemIDs = (int[])in_requiredItems.Clone();
-    Array.Sort(requiredItemIDs);
-  }
-  int resultingItemID;
-  int[] requiredItemIDs;
-}
