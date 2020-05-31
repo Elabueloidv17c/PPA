@@ -130,7 +130,7 @@ public class liCrafting : MonoBehaviour
 #if UNITY_EDITOR // This code is ONLY for debugging in the editor.
 
   [InspectorButton("Inspector_CreateDefaultItem")]
-  public bool func_test;
+  public bool i_CreateDefaultItem;
 
   private void Inspector_CreateDefaultItem()
   {
@@ -178,7 +178,8 @@ public class liCrafting : MonoBehaviour
 
 
   [InspectorButton("Inspector_AddItem")]
-  public bool UseFunc_AddItem;
+  [SerializeField]
+  private bool AddItem_;
   public int[] InspectorRequiredItems;
   public int InspectorResultingID;
 
@@ -210,7 +211,8 @@ public class liCrafting : MonoBehaviour
 
 
   [InspectorButton("Inspector_CraftItem")]
-  public bool Func_CraftItem;
+  [SerializeField]
+  private bool CraftItem_;
   public int[] test_arrayItems;
 
 
@@ -243,7 +245,8 @@ public class liCrafting : MonoBehaviour
 
 
   [InspectorButton("Inspector_PrintItems")]
-  public bool func_printItems;
+  [SerializeField]
+  private bool i_printItems;
 
   private void Inspector_PrintItems()
   {
