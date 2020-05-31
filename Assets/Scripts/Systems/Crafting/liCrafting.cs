@@ -13,7 +13,7 @@ public class liCrafting : MonoBehaviour
   /// <summary>
   /// Contains all the valid craftable items
   /// </summary>
-  static List<liCraftableItem> s_possibleCraftableItems;
+  protected static List<liCraftableItem> s_possibleCraftableItems;
 
   public static liCrafting instance;
 
@@ -34,7 +34,7 @@ public class liCrafting : MonoBehaviour
   /// <param name="itemIDsUseToCraft"> Contains the ids of the items used for crafting </param>
   /// <returns>'-1' when the combination of IDs is invalid, 
   /// otherwise gives corresponding  </returns>
-  public int GetItemIDForCraftableItem(int[] itemIDsUseToCraft)//craftable
+  public int GetItemIDForCraftableItem(int[] itemIDsUseToCraft)
   {
     Array.Sort(itemIDsUseToCraft);
     if (CheckForDuplicates(itemIDsUseToCraft))
@@ -55,6 +55,8 @@ public class liCrafting : MonoBehaviour
 
     return -1;
   }
+
+
 
   /// <summary>
   /// check for duplicates Item. Requires that the array be sorted first.
@@ -92,6 +94,12 @@ public class liCrafting : MonoBehaviour
     return false;
   }
 
+  /// <summary>
+  /// Checks to make sure the player has every they pass to the function.
+  /// </summary>
+  /// <param name="itemIDsUseToCraft"> The items to be removed from the inventory</param>
+  /// <param name="inventory"></param>
+  /// <returns>'true' if the player does have every item, 'false' when they don't.</returns>
   private bool checkPlayerHasItems(int[] itemIDsUseToCraft, liInventory inventory)
   {
     foreach (int i in itemIDsUseToCraft)
@@ -103,11 +111,16 @@ public class liCrafting : MonoBehaviour
     return true;
   }
 
+  /// <summary>
+  /// Removes item to simulate using them to craft an item.
+  /// </summary>
+  /// <param name="itemIDsUseToCraft">Item that are going to be used</param>
+  /// <param name="inventory"></param>
   private void removeItemsFromInventory(int[] itemIDsUseToCraft, liInventory inventory)
   {
     foreach (int i in itemIDsUseToCraft)
     {
-      Debug.Assert(inventory.RemoveItem(i) == true, "Trying to removed Item the inventory does not have");
+      Debug.Assert(inventory.RemoveItem(i) == true, "Trying to remove an item that the inventory does not have");
     }
 
   }
@@ -215,8 +228,10 @@ public class liCrafting : MonoBehaviour
       return;
     }
 
-    if (-1 != GetItemIDForCraftableItem(test_arrayItems))
+    int ItemID = GetItemIDForCraftableItem(test_arrayItems);
+    if (-1 != ItemID)
     {
+      liInventory.instance.AddItem(ItemID);
       Debug.Log("successfully Created Item");
     }
     else
@@ -226,6 +241,45 @@ public class liCrafting : MonoBehaviour
 
   }
 
+
+  [InspectorButton("Inspector_PrintItems")]
+  public bool func_printItems;
+
+  private void Inspector_PrintItems()
+  {
+    if (!Application.isPlaying)
+    {
+      Debug.LogWarning("Calling method without running the game... you fool.");
+      return;
+    }
+
+    if (gameObject.IsPrefab())
+    {
+      Debug.LogWarning("Calling method from prefab... you fool.");
+      return;
+    }
+
+    string result = "";
+
+    foreach (liCraftableItem item in s_possibleCraftableItems)
+    {
+      result += "Resulting item =" +
+       item.resultingItemID.ToString();
+
+
+      result += "\n Items for Creating Resulting Item =[";
+      foreach (int i in item.requiredItemIDs)
+      {
+        result += i.ToString() + ", ";
+      }
+      result += "]\n\n";
+
+      Debug.Log(result);
+      result = "";
+    }
+
+
+  }
 
 
 #endif

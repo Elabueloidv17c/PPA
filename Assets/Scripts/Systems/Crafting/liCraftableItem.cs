@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
 
 [Serializable]
 public class liCraftableItem : IComparable<liCraftableItem>, IComparable<int[]>
