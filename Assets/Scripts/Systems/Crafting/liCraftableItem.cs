@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[Serializable]
 public class liCraftableItem : IComparable<liCraftableItem>, IComparable<int[]>
 {
   public liCraftableItem(int in_resultingItem, int[] in_requiredItems)
@@ -27,21 +29,8 @@ public class liCraftableItem : IComparable<liCraftableItem>, IComparable<int[]>
   /// '-1' when otherItem is greater then the current liCraftableItem. </returns>
   public int CompareTo(liCraftableItem otherItem)
   {
-
-    int arrayCompare = m_requiredItemIDs.Length.CompareTo(otherItem.m_requiredItemIDs.Length);
-    if (0 == arrayCompare)
-    {
-      int arrayLength = m_requiredItemIDs.Length;
-      int compareResult = 0;
-      for (int i = 0; i < arrayLength; ++i)
-      {
-        compareResult = m_requiredItemIDs[i].CompareTo(otherItem.m_requiredItemIDs[i]);
-        if (0 != compareResult)
-          return compareResult;
-      }
-    }
-
-    return arrayCompare;
+    // use the array comparison
+    return CompareTo(otherItem.m_requiredItemIDs);
   }
 
   /// <summary>

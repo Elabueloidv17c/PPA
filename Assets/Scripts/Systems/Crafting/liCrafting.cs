@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
@@ -21,30 +22,36 @@ public class liCrafting : MonoBehaviour
     instance = this;
   }
 
+  private void Start()
+  {
+    s_possibleCraftableItems = new List<liCraftableItem>();
+  }
+
+
   /// <summary>
   /// Takes an array of item IDs and check to see if an item can be crafted
   /// </summary>
   /// <param name="itemIDsUseToCraft"> Contains the ids of the items used for crafting </param>
   /// <returns>'-1' when the combination of IDs is invalid, 
-  /// otherwise give the </returns>
-  public int tryToCraftItem(int[] itemIDsUseToCraft)
+  /// otherwise gives corresponding  </returns>
+  public int GetItemIDForCraftableItem(int[] itemIDsUseToCraft)//craftable
   {
     Array.Sort(itemIDsUseToCraft);
-    if (checkForDuplicates(itemIDsUseToCraft))
+    if (CheckForDuplicates(itemIDsUseToCraft))
       return -1;
 
     var inventory = liInventory.instance;
-    foreach (int i in itemIDsUseToCraft)
+    if (false == checkPlayerHasItems(itemIDsUseToCraft, inventory))
+      return -1;
+
+
+    int index =
+      s_possibleCraftableItems.FindIndex(items => 0 == items.CompareTo(itemIDsUseToCraft));
+    if (-1 != index)
     {
-      if (false == inventory.HasItem(i))
-      { return -1; }
+      removeItemsFromInventory(itemIDsUseToCraft, inventory);
+      return s_possibleCraftableItems[index].resultingItemID;
     }
-
-    liCraftableItem TempForFindingItem = new liCraftableItem(-1, itemIDsUseToCraft);
-    
-    s_possibleCraftableItems.BinarySearch(  )
-
-    
 
     return -1;
   }
@@ -54,7 +61,7 @@ public class liCrafting : MonoBehaviour
   /// </summary>
   /// <param name="itemUsedToCraft"></param>
   /// <returns>'false' when there are no duplicates, 'true' otherwise.</returns>
-  private bool checkForDuplicates(int[] itemIDsUseToCraft)
+  private bool CheckForDuplicates(int[] itemIDsUseToCraft)
   {
     for (int i = 1; i < itemIDsUseToCraft.Length; ++i)
     {
@@ -85,7 +92,78 @@ public class liCrafting : MonoBehaviour
     return false;
   }
 
+  private bool checkPlayerHasItems(int[] itemIDsUseToCraft, liInventory inventory)
+  {
+    foreach (int i in itemIDsUseToCraft)
+    {
+      if (false == inventory.HasItem(i))
+        return false;
+    }
+
+    return true;
+  }
+
+  private void removeItemsFromInventory(int[] itemIDsUseToCraft, liInventory inventory)
+  {
+    foreach (int i in itemIDsUseToCraft)
+    {
+      Debug.Assert(inventory.RemoveItem(i) == true, "Trying to removed Item the inventory does not have");
+    }
+
+  }
+
+  #region InspectorButtons
+
 #if UNITY_EDITOR // This code is ONLY for debugging in the editor.
+
+  [InspectorButton("Inspector_CreateDefaultItem")]
+  public bool func_test;
+
+  private void Inspector_CreateDefaultItem()
+  {
+    if (!Application.isPlaying)
+    {
+      Debug.LogWarning("Calling method without running the game... you fool.");
+      return;
+    }
+
+    if (gameObject.IsPrefab())
+    {
+      Debug.LogWarning("Calling method from prefab... you fool.");
+      return;
+    }
+
+    int squidward = 10;
+
+    int[] squidwardRecepi = new int[] { 1, 5, 9 };
+
+
+    int something = 1;
+
+    int[] somethingRequiredItem = new int[] { 2, 6, 10 };//required
+
+    int something2 = 2;
+
+    int[] somethingRequiredItem2 = new int[] { 3, 6, 10 };//required
+
+    if (AddCraftableItem(squidwardRecepi, squidward))
+    {
+      Debug.Log("successfully made squidward/calamardo");//squid-world
+    }
+
+    if (AddCraftableItem(somethingRequiredItem, something))
+    {
+      Debug.Log("successfully Add something item with the id of " + something.ToString());
+    }
+
+    if (AddCraftableItem(somethingRequiredItem2, something2))
+    {
+      Debug.Log("successfully Add something item with the id of " + something2.ToString());
+    }
+
+  }
+
+
   [InspectorButton("Inspector_AddItem")]
   public bool UseFunc_AddItem;
   public int[] InspectorRequiredItems;
@@ -117,8 +195,42 @@ public class liCrafting : MonoBehaviour
 
   }
 
+
+  [InspectorButton("Inspector_CraftItem")]
+  public bool Func_CraftItem;
+  public int[] test_arrayItems;
+
+
+  private void Inspector_CraftItem()
+  {
+    if (!Application.isPlaying)
+    {
+      Debug.LogWarning("Calling method without running the game... you fool.");
+      return;
+    }
+
+    if (gameObject.IsPrefab())
+    {
+      Debug.LogWarning("Calling method from prefab... you fool.");
+      return;
+    }
+
+    if (-1 != GetItemIDForCraftableItem(test_arrayItems))
+    {
+      Debug.Log("successfully Created Item");
+    }
+    else
+    {
+      Debug.Log("Item was not valid");
+    }
+
+  }
+
+
+
 #endif
 
+  #endregion
 }
 
 /// <summary>
