@@ -9,12 +9,17 @@ using UnityEngine;
 
 public class liCrafting : MonoBehaviour
 {
-
-  // TODO : Only use this for testing 
-  [SerializeField]
-  liCraftableItem m_testDummyItem;
-
+  /// <summary>
+  /// Contains all the valid craftable items
+  /// </summary>
   static List<liCraftableItem> s_possibleCraftableItems;
+
+  public static liCrafting instance;
+
+  private void Awake()
+  {
+    instance = this;
+  }
 
   /// <summary>
   /// Takes an array of item IDs and check to see if an item can be crafted
@@ -34,6 +39,12 @@ public class liCrafting : MonoBehaviour
       if (false == inventory.HasItem(i))
       { return -1; }
     }
+
+    liCraftableItem TempForFindingItem = new liCraftableItem(-1, itemIDsUseToCraft);
+    
+    s_possibleCraftableItems.BinarySearch(  )
+
+    
 
     return -1;
   }
@@ -60,15 +71,22 @@ public class liCrafting : MonoBehaviour
   /// </summary>
   /// <param name="requiredIDs"></param>
   /// <param name="resultID"></param>
-  private void AddCraftableItem(int[] requiredIDs, int resultID)
+  /// <returns>'true' when an item was added successfully,'false' otherwise.</returns>
+  private bool AddCraftableItem(int[] requiredIDs, int resultID)
   {
-    liCraftableItem temp = new liCraftableItem(resultID, requiredIDs);
+    liCraftableItem possiblyNewItem = new liCraftableItem(resultID, requiredIDs);
 
-    s_possibleCraftableItems.Add(temp );
+    if (0 > s_possibleCraftableItems.BinarySearch(possiblyNewItem))
+    {
+      s_possibleCraftableItems.Add(possiblyNewItem);
+      s_possibleCraftableItems.Sort();
+      return true;
+    }
+    return false;
   }
 
 #if UNITY_EDITOR // This code is ONLY for debugging in the editor.
-    [InspectorButton("Inspector_AddItem")]
+  [InspectorButton("Inspector_AddItem")]
   public bool UseFunc_AddItem;
   public int[] InspectorRequiredItems;
   public int InspectorResultingID;
@@ -88,7 +106,14 @@ public class liCrafting : MonoBehaviour
       return;
     }
 
-    AddCraftableItem(InspectorRequiredItems, InspectorResultingID);
+    if (AddCraftableItem(InspectorRequiredItems, InspectorResultingID))
+    {
+      Debug.Log("successfully Added Craftable item"); ;
+    }
+    else
+    {
+      Debug.Log("Failed to Add craftable item");
+    }
 
   }
 
