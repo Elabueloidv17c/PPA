@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Newtonsoft.Json;
@@ -285,12 +287,43 @@ public class liCrafting : MonoBehaviour
   }
 
 
+  [InspectorButton("Inspector_SerialzeItems")]
+  [SerializeField]
+  private bool i_serializeItems;
+
+  /// <summary>
+  /// Serializes the craftable items.
+  /// </summary>
+  private void Inspector_SerialzeItems()
+  {
+    string Path = Application.streamingAssetsPath + "/craftable_items.json";
+    if (false == File.Exists(Path))
+    {
+      File.Create(Path);
+    }
+
+    FileStream fileStream = File.OpenWrite(Path);
+
+    string[] data = new string[s_possibleCraftableItems.Count];
+
+    for (int i =0; i < s_possibleCraftableItems.Count; ++i)
+    {
+      data[i] = JsonConvert.SerializeObject(s_possibleCraftableItems[i]) + "\n";
+    }
+
+    foreach(string s in data)
+    {
+      byte[] info = new UTF8Encoding(true).GetBytes(s);
+      fileStream.Write(info, 0, info.Length);
+    }
+
+    fileStream.Close();
+  }
+
+
+
 #endif
 
   #endregion
 }
 
-/// <summary>
-/// Defines the id of a item that can be crafted  
-/// and what items are necessary in order to craft it. 
-/// </summary>
