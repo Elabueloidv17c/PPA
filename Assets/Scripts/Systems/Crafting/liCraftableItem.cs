@@ -62,10 +62,3 @@ public struct liCraftableItem : IComparable<liCraftableItem>, IComparable<int[]>
     return arrayCompare;
   }
 }
-
-
-struct CraftingData
-{
-  public int m_resultingItemID;
-  public int[] m_requiredItemIDs;
-}
