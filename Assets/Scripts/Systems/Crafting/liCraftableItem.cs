@@ -3,25 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 
-
-[Serializable]
-public class liCraftableItem : IComparable<liCraftableItem>, IComparable<int[]>
+public struct liCraftableItem : IComparable<liCraftableItem>, IComparable<int[]>
 {
   public liCraftableItem(int in_resultingItem, int[] in_requiredItems)
   {
     m_resultingItemID = in_resultingItem;
-    m_requiredItemIDs = (int[])in_requiredItems.Clone();
-    Array.Sort(m_requiredItemIDs);
+    m_requiredItemIDs = in_requiredItems;
+    if(null != m_requiredItemIDs)
+    {
+      Array.Sort(m_requiredItemIDs);
+    }
   }
-  public int resultingItemID { get { return m_resultingItemID; } }
-  public int[] requiredItemIDs { get { return m_requiredItemIDs; } }
+  public int resultingItemID { get { return m_resultingItemID; } set { } }
+  public int[] requiredItemIDs { get { return m_requiredItemIDs; } set { } }
 
 
-  protected int m_resultingItemID;
-  protected int[] m_requiredItemIDs;
+  public int m_resultingItemID;
+  public int[] m_requiredItemIDs;
 
   /// <summary>
   /// Sorts craftable items first by the amount of required items each one has,
@@ -62,4 +61,11 @@ public class liCraftableItem : IComparable<liCraftableItem>, IComparable<int[]>
 
     return arrayCompare;
   }
+}
+
+
+struct CraftingData
+{
+  public int m_resultingItemID;
+  public int[] m_requiredItemIDs;
 }

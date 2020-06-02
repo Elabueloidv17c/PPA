@@ -127,24 +127,46 @@ public class liCrafting : MonoBehaviour
 
   }
 
+  /// <summary>
+  /// Gets the file-path of the .JSON that stores all the valid craftable items.
+  /// </summary>
+  /// <returns>The file-path to the .JSON file. </returns>
+  private string getPathToJsonForCraftableItems()
+  {
+    return Application.streamingAssetsPath + "/craftable_items.json";
+  }
+
   #region InspectorButtons
 
 #if UNITY_EDITOR // This code is ONLY for debugging in the editor.
 
-  [InspectorButton("Inspector_CreateDefaultItem")]
-  public bool i_CreateDefaultItem;
-
-  private void Inspector_CreateDefaultItem()
+  private bool IsItOkToUseInspectorFunction()
   {
     if (!Application.isPlaying)
     {
       Debug.LogWarning("Calling method without running the game... you fool.");
-      return;
+      return false;
     }
 
     if (gameObject.IsPrefab())
     {
       Debug.LogWarning("Calling method from prefab... you fool.");
+      return false;
+    }
+
+    return true;
+  }
+
+  [InspectorButton("Inspector_CreateDefaultItem")]
+  public bool addDefaultItem_;
+
+  /// <summary>
+  /// Adds Something default items to the list of valid craftable items.
+  /// </summary>
+  private void Inspector_CreateDefaultItem()
+  {
+    if (false == IsItOkToUseInspectorFunction())
+    {
       return;
     }
 
@@ -182,21 +204,20 @@ public class liCrafting : MonoBehaviour
   [InspectorButton("Inspector_AddItem")]
   [SerializeField]
   private bool AddItem_;
-  public int[] InspectorRequiredItems;
-  public int InspectorResultingID;
+  [SerializeField]
+  private int[] InspectorRequiredItems;
+  [SerializeField]
+  private int InspectorResultingID;
 
-
+  /// <summary>
+  /// Adds items to the container thats used to check to see if a
+  /// combination of items can form a new item.
+  /// </summary>
   private void Inspector_AddItem()
   {
-    if (!Application.isPlaying)
-    {
-      Debug.LogWarning("Calling method without running the game... you fool.");
-      return;
-    }
 
-    if (gameObject.IsPrefab())
+    if (false == IsItOkToUseInspectorFunction())
     {
-      Debug.LogWarning("Calling method from prefab... you fool.");
       return;
     }
 
@@ -220,15 +241,9 @@ public class liCrafting : MonoBehaviour
 
   private void Inspector_CraftItem()
   {
-    if (!Application.isPlaying)
-    {
-      Debug.LogWarning("Calling method without running the game... you fool.");
-      return;
-    }
 
-    if (gameObject.IsPrefab())
+    if (false == IsItOkToUseInspectorFunction())
     {
-      Debug.LogWarning("Calling method from prefab... you fool.");
       return;
     }
 
@@ -248,19 +263,16 @@ public class liCrafting : MonoBehaviour
 
   [InspectorButton("Inspector_PrintItems")]
   [SerializeField]
-  private bool i_printItems;
+  private bool PrintItems_;
 
+  /// <summary>
+  ///  Prints the values that every valid craftable items has.
+  /// </summary>
   private void Inspector_PrintItems()
   {
-    if (!Application.isPlaying)
-    {
-      Debug.LogWarning("Calling method without running the game... you fool.");
-      return;
-    }
 
-    if (gameObject.IsPrefab())
+    if (false == IsItOkToUseInspectorFunction())
     {
-      Debug.LogWarning("Calling method from prefab... you fool.");
       return;
     }
 
@@ -289,38 +301,65 @@ public class liCrafting : MonoBehaviour
 
   [InspectorButton("Inspector_SerialzeItems")]
   [SerializeField]
-  private bool i_serializeItems;
+  private bool SaveItems_;
 
   /// <summary>
-  /// Serializes the craftable items.
+  /// Serializes the craftable items, in other words put them in a .JSON file.
   /// </summary>
   private void Inspector_SerialzeItems()
   {
-    string Path = Application.streamingAssetsPath + "/craftable_items.json";
+    if (false == IsItOkToUseInspectorFunction())
+    {
+      return;
+    }
+
+    string Path = getPathToJsonForCraftableItems();
+    FileStream fileStream = null; 
+
     if (false == File.Exists(Path))
     {
-      File.Create(Path);
+      fileStream = File.Create(Path);
     }
-
-    FileStream fileStream = File.OpenWrite(Path);
-
-    string[] data = new string[s_possibleCraftableItems.Count];
-
-    for (int i =0; i < s_possibleCraftableItems.Count; ++i)
+    else
     {
-      data[i] = JsonConvert.SerializeObject(s_possibleCraftableItems[i]) + "\n";
+      fileStream = File.OpenWrite(Path);
     }
+    
+    string data = JsonConvert.SerializeObject(s_possibleCraftableItems, Formatting.Indented);
 
-    foreach(string s in data)
-    {
-      byte[] info = new UTF8Encoding(true).GetBytes(s);
-      fileStream.Write(info, 0, info.Length);
-    }
+    byte[] info = new UTF8Encoding(true).GetBytes(data);
+    fileStream.Write(info, 0, info.Length);
 
     fileStream.Close();
   }
 
+  [InspectorButton("Inspector_DeserialzeItems")]
+  [SerializeField]
+  private bool LoadItems_;
 
+  private void Inspector_DeserialzeItems()
+  {
+    if (false == IsItOkToUseInspectorFunction())
+    {
+      return;
+    }
+
+    string path = getPathToJsonForCraftableItems();
+    if (File.Exists(path))
+    {
+      string data = File.ReadAllText(path);
+      s_possibleCraftableItems = JsonConvert.DeserializeObject<List<liCraftableItem>>(data);
+    }
+    else
+    {
+      int lastIndexOfForwardSlash = path.LastIndexOf('/');
+      string nameOfFile = path.Substring(lastIndexOfForwardSlash);
+
+      Debug.LogWarning("The File '" + nameOfFile + "' does not exist or cant be found.");
+    }
+
+
+  }
 
 #endif
 
