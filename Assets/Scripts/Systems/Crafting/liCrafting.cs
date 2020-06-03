@@ -31,11 +31,11 @@ public class liCrafting : MonoBehaviour
 
 
   /// <summary>
-  /// Takes an array of item IDs and check to see if an item can be crafted
+  /// Takes an array of item IDs and checks to see if an item can be crafted.
   /// </summary>
   /// <param name="itemIDsUseToCraft"> Contains the ids of the items used for crafting </param>
   /// <returns>'-1' when the combination of IDs is invalid, 
-  /// otherwise gives corresponding  </returns>
+  /// otherwise gives corresponding resulting item ID. </returns>
   public int GetItemIDForCraftableItem(int[] itemIDsUseToCraft)
   {
     Array.Sort(itemIDsUseToCraft);
@@ -134,6 +134,51 @@ public class liCrafting : MonoBehaviour
   private string getPathToJsonForCraftableItems()
   {
     return Application.streamingAssetsPath + "/craftable_items.json";
+  }
+
+  /// <summary>
+  /// Save the items in ' s_possibleCraftableItems ' to a JSON file.
+  /// </summary>
+  public void SaveCurrentItems()
+  {
+    string Path = getPathToJsonForCraftableItems();
+    FileStream fileStream = null; 
+
+    if (false == File.Exists(Path))
+    {
+      fileStream = File.Create(Path);
+    }
+    else
+    {
+      fileStream = File.OpenWrite(Path);
+    }
+    
+    string data = JsonConvert.SerializeObject(s_possibleCraftableItems, Formatting.Indented);
+
+    byte[] info = new UTF8Encoding(true).GetBytes(data);
+    fileStream.Write(info, 0, info.Length);
+
+    fileStream.Close();
+  }
+
+  public bool LoadItem()
+  {
+    string path = getPathToJsonForCraftableItems();
+    if (File.Exists(path))
+    {
+      string data = File.ReadAllText(path);
+      s_possibleCraftableItems = JsonConvert.DeserializeObject<List<liCraftableItem>>(data);
+      return true;
+    }
+    else
+    {
+      int lastIndexOfForwardSlash = path.LastIndexOf('/');
+      string nameOfFile = path.Substring(lastIndexOfForwardSlash);
+
+      Debug.LogWarning("The File '" + nameOfFile + "' does not exist or cant be found.");
+    }
+
+    return false;
   }
 
   #region InspectorButtons
@@ -313,24 +358,7 @@ public class liCrafting : MonoBehaviour
       return;
     }
 
-    string Path = getPathToJsonForCraftableItems();
-    FileStream fileStream = null; 
-
-    if (false == File.Exists(Path))
-    {
-      fileStream = File.Create(Path);
-    }
-    else
-    {
-      fileStream = File.OpenWrite(Path);
-    }
-    
-    string data = JsonConvert.SerializeObject(s_possibleCraftableItems, Formatting.Indented);
-
-    byte[] info = new UTF8Encoding(true).GetBytes(data);
-    fileStream.Write(info, 0, info.Length);
-
-    fileStream.Close();
+    SaveCurrentItems();
   }
 
   [InspectorButton("Inspector_DeserialzeItems")]
@@ -344,20 +372,7 @@ public class liCrafting : MonoBehaviour
       return;
     }
 
-    string path = getPathToJsonForCraftableItems();
-    if (File.Exists(path))
-    {
-      string data = File.ReadAllText(path);
-      s_possibleCraftableItems = JsonConvert.DeserializeObject<List<liCraftableItem>>(data);
-    }
-    else
-    {
-      int lastIndexOfForwardSlash = path.LastIndexOf('/');
-      string nameOfFile = path.Substring(lastIndexOfForwardSlash);
-
-      Debug.LogWarning("The File '" + nameOfFile + "' does not exist or cant be found.");
-    }
-
+    LoadItem();
 
   }
 

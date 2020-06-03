@@ -6,6 +6,11 @@ using UnityEngine;
 
 public struct liCraftableItem : IComparable<liCraftableItem>, IComparable<int[]>
 {
+  /// <summary>
+  /// 
+  /// </summary>
+  /// <param name="in_resultingItem"></param>
+  /// <param name="in_requiredItems">is always sort in ascending order</param>
   public liCraftableItem(int in_resultingItem, int[] in_requiredItems)
   {
     m_resultingItemID = in_resultingItem;
