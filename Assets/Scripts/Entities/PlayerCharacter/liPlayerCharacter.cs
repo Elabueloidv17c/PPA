@@ -1,68 +1,96 @@
 ﻿using UnityEngine;
 
+
 public class liPlayerCharacter : MonoBehaviour
 {
-    Rigidbody2D m_body;
-    Vector2 m_movement;
-    Animator m_animator;
-    public float m_verticalRatio = 0.75f;
-    public float m_walkSpeed = 1.8f;
-    public float m_runSpeed = 2.8f;
-    
 
+
+     Rigidbody2D m_body;
+    public Rigidbody2D body {
+        get { return m_body; }
+        set { m_body = value; }
+
+    }
+    public Vector2 m_movement;
+    public Vector2 movement{
+        get { return m_movement; }
+        set { m_movement = value; }
+    }
+    
+    public Animator animator { get ; private set; }
+    
+    public float m_verticalRatio;
+    public float verticalRatio {
+
+        get { return m_verticalRatio; }
+        set { m_verticalRatio = value; }
+    }
+        
+    public float m_walkSpeed = 1.8f;
+    public float walkSpeed {
+        get { return m_walkSpeed; }
+        set { m_walkSpeed = value; }
+    }
+
+    public float m_runSpeed = 2.8f;
+    public float runSpeed
+    {
+        get { return m_runSpeed; }
+        set { m_runSpeed = value; }
+    }
+
+    public liPlayerCharacter Entity => entity;
+
+    private readonly liPlayerCharacter entity;
+    StateMachine<liPlayerCharacter> machine;
+
+    StateRUN run;
+    StateWalk walk;
+    StateIdle idle;
+    private void Awake()
+    {
+        
+        machine = new StateMachine<liPlayerCharacter>();
+        run = new StateRUN(machine,Entity);
+        walk = new StateWalk(machine, Entity);
+        idle = new StateIdle(machine, Entity);
+        animator = GetComponent<Animator>();
+        animator.SetFloat("Y", -1);
+    }
     void Start() {
         m_body = GetComponent<Rigidbody2D>();
-        m_animator = GetComponent<Animator>();
+      
+        machine.Init(Entity, idle);
+       
+    }
+    private void FixedUpdate()
+    {
+        machine.onState();
+        if (isMoving()) {
 
-        m_animator.SetFloat("Y", -1);
+            if (Input.GetKey((KeyCode)GameInput.Sprint))
+            {
+
+                machine.toState(run);
+            }
+            machine.toState(walk);
+        }
+        else
+        {
+            machine.toState(idle);
+        }
     }
 
     private void Update() {
         
-        if (!liGameManager.instance.menuActive) 
-        {
-            Move();
-        }
+        
     }
 
-    void Move()
+  private bool isMoving()
     {
-        Vector2 delta = Vector2.zero;
+        return (Input.GetKey((KeyCode)GameInput.MoveUp) || Input.GetKey((KeyCode)GameInput.MoveDown) ||
+            Input.GetKey((KeyCode)GameInput.MoveRight) || Input.GetKey((KeyCode)GameInput.MoveLeft));
         
-        if (Input.GetKey((KeyCode)GameInput.MoveUp))
-        {
-            delta.y += 1;
-        }
-        if (Input.GetKey((KeyCode)GameInput.MoveDown))
-        {
-            delta.y -= 1;
-        }
-        if (Input.GetKey((KeyCode)GameInput.MoveLeft))
-        {
-            delta.x -= 1;
-        }
-        if (Input.GetKey((KeyCode)GameInput.MoveRight))
-        {
-            delta.x += 1;
-        }
-        if (delta != Vector2.zero) {
-            delta.Normalize();
-            
-            m_animator.SetFloat("X",delta.x);
-            m_animator.SetFloat("Y", delta.y);
-            m_animator.SetFloat("Speed", 0.5f);
-            
-            delta.y *= m_verticalRatio;
 
-            m_body.MovePosition(m_body.position + (delta * Time.deltaTime *
-                           ((Input.GetKey((KeyCode)GameInput.Sprint)) ?
-                           m_runSpeed : m_walkSpeed)));
-
-        }
-        else {
-            m_animator.SetFloat("Speed", 0f);
-        }
-       
-        
     }
 }
