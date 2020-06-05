@@ -39,9 +39,9 @@ public class liPlayerCharacter : MonoBehaviour
         set { m_runSpeed = value; }
     }
 
-    public liPlayerCharacter Entity => entity;
+    
 
-    private readonly liPlayerCharacter entity;
+    
     StateMachine<liPlayerCharacter> machine;
 
     StateRUN run;
@@ -51,16 +51,16 @@ public class liPlayerCharacter : MonoBehaviour
     {
         
         machine = new StateMachine<liPlayerCharacter>();
-        run = new StateRUN(machine,Entity);
-        walk = new StateWalk(machine, Entity);
-        idle = new StateIdle(machine, Entity);
+        run = new StateRUN(machine,this);
+        walk = new StateWalk(machine, this);
+        idle = new StateIdle(machine, this);
         animator = GetComponent<Animator>();
         animator.SetFloat("Y", -1);
     }
     void Start() {
         m_body = GetComponent<Rigidbody2D>();
       
-        machine.Init(Entity, idle);
+        machine.Init(this, idle);
        
     }
     private void FixedUpdate()

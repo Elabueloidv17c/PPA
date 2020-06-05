@@ -12,7 +12,7 @@ public abstract class IState<T>
         m_pStateMachine = stateMachine;
     }
    public virtual void onEnter() {
-
+        
     }
     public virtual void onExit() {
 

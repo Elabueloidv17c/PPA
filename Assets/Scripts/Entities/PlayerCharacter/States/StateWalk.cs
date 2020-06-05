@@ -5,18 +5,24 @@ using UnityEngine;
 public class StateWalk : IState<liPlayerCharacter>
 {
     liPlayerCharacter m_entity;
-   
+   /*
        float verticalRatio = 1.0f;
     public float m_runSpeed = 2.8f;
     public float m_walkSpeed = 1.8f;
+    */
+
     public StateWalk(StateMachine<liPlayerCharacter> stateMachine, liPlayerCharacter entity) : base(stateMachine, entity)
     {
+
+        // GameObject player = GameObject.FindGameObjectWithTag("Player");
+
         m_entity = entity;
+            //player.GetComponent<liPlayerCharacter>();
     }
 
     public override void onComputeNextState()
     {
-      
+      //
     }
 
     public override void onStateUpdate()
@@ -30,9 +36,7 @@ public class StateWalk : IState<liPlayerCharacter>
 
     void Move()
     {
-        //anima = m_entity.GetComponent<Animator>();
-
-        //anima.SetFloat("Y", -1);
+       
         Vector2 delta = Vector2.zero;
 
         if (Input.GetKey((KeyCode)GameInput.MoveUp))
@@ -58,22 +62,24 @@ public class StateWalk : IState<liPlayerCharacter>
         if (delta != Vector2.zero)
         {
             delta.Normalize();
-            
-          //anima.SetFloat("X", delta.x);
-            //anima.SetFloat("Y", delta.y);
-            //anima.SetFloat("Speed", 0.5f);
 
-            delta.y *= verticalRatio;
+            m_entity.animator.SetFloat("X", delta.x);
+            m_entity.animator.SetFloat("Y", delta.y);
+            m_entity.animator.SetFloat("Speed", 0.5f);
 
-            m_entity.body.MovePosition(m_entity.body.position + (delta * Time.deltaTime *
-                           ((Input.GetKey((KeyCode)GameInput.Sprint)) ?
-                           m_runSpeed : m_walkSpeed)));
-            
+              delta.y *= m_entity.verticalRatio;
 
+              m_entity.body.MovePosition(m_entity.body.position + (delta * Time.deltaTime *
+                             ((Input.GetKey((KeyCode)GameInput.Sprint)) ?
+                             m_entity.m_runSpeed : m_entity.m_walkSpeed)));
+
+                   
         }
+
         else
         {
-            //anima.SetFloat("Speed", 0f);
+            m_entity.animator.SetFloat("Speed", 0f);
         }
     }
+    
    }
