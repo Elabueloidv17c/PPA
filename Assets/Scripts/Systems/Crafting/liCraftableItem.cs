@@ -4,17 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+[Serializable]
 public struct liCraftableItem : IComparable<liCraftableItem>, IComparable<int[]>
 {
   /// <summary>
   /// 
   /// </summary>
   /// <param name="in_resultingItem"></param>
-  /// <param name="in_requiredItems">is always sort in ascending order</param>
+  /// <param name="in_requiredItems">is always sorted in ascending order</param>
   public liCraftableItem(int in_resultingItem, int[] in_requiredItems)
   {
     m_resultingItemID = in_resultingItem;
     m_requiredItemIDs = in_requiredItems;
+    m_playerKnowns = false;
     if(null != m_requiredItemIDs)
     {
       Array.Sort(m_requiredItemIDs);
@@ -26,6 +28,9 @@ public struct liCraftableItem : IComparable<liCraftableItem>, IComparable<int[]>
 
   public int m_resultingItemID;
   public int[] m_requiredItemIDs;
+
+
+  public bool m_playerKnowns;
 
   /// <summary>
   /// Sorts craftable items first by the amount of required items each one has,

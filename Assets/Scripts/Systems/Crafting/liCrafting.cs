@@ -42,16 +42,17 @@ public class liCrafting : MonoBehaviour
     if (CheckForDuplicates(itemIDsUseToCraft))
       return -1;
 
-    var inventory = liInventory.instance;
-    if (false == checkPlayerHasItems(itemIDsUseToCraft, inventory))
-      return -1;
 
+    //if (false == checkPlayerHasItems(itemIDsUseToCraft, inventory))
+    //  return -1;
+
+    var inventory = liInventory.instance;
+    removeItemsFromInventory(itemIDsUseToCraft, inventory);
 
     int index =
       s_possibleCraftableItems.FindIndex(items => 0 == items.CompareTo(itemIDsUseToCraft));
     if (-1 != index)
     {
-      removeItemsFromInventory(itemIDsUseToCraft, inventory);
       return s_possibleCraftableItems[index].resultingItemID;
     }
 
