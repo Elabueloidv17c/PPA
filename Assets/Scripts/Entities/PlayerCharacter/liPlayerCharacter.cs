@@ -3,8 +3,10 @@
 
 public class liPlayerCharacter : MonoBehaviour
 {
-
-
+    /// <summary>
+    /// en esta seccion se crean get and set de todos las 
+    /// propiedades que tiene el player
+    /// </summary>
      Rigidbody2D m_body;
     public Rigidbody2D body {
         get { return m_body; }
@@ -39,9 +41,11 @@ public class liPlayerCharacter : MonoBehaviour
         set { m_runSpeed = value; }
     }
 
-    
-
-    
+    /// <summary>
+    /// aqui genero todos los estados  
+    /// que existen que son run, walk, idle
+    /// ademas de que se crea la maquina la cual es la que mueve a todos los estados
+    /// </summary>
     StateMachine<liPlayerCharacter> machine;
 
     StateRUN run;
@@ -49,7 +53,10 @@ public class liPlayerCharacter : MonoBehaviour
     StateIdle idle;
     private void Awake()
     {
-        
+        /*
+         * en esta seccion inicializamos todas las variables y los estados y empezamos a correr
+         * la maquina de estados con el estado de idle
+         */
         machine = new StateMachine<liPlayerCharacter>();
         run = new StateRUN(machine,this);
         walk = new StateWalk(machine, this);
@@ -63,6 +70,11 @@ public class liPlayerCharacter : MonoBehaviour
         machine.Init(this, idle);
        
     }
+    /// <summary>
+    /// en fix update va hacer toda la logica del player para que se mueva y cambie de estados
+    /// en este caso se mueve y cambia a caminar y si preciona 'sprint ' se cambia a correr
+    /// y si no presiona nada se queda en idle
+    /// </summary>
     private void FixedUpdate()
     {
         machine.onState();
@@ -85,7 +97,12 @@ public class liPlayerCharacter : MonoBehaviour
         
         
     }
-
+    /// <summary>
+    /// aqui vemos que la funcion isMoving me dice si esta moviendo o no
+    /// 
+    /// </summary>
+    /// retorna un true si se mueve 
+    /// <returns></returns>
   private bool isMoving()
     {
         return (Input.GetKey((KeyCode)GameInput.MoveUp) || Input.GetKey((KeyCode)GameInput.MoveDown) ||

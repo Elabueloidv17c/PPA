@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// es la clase del estado en movimiento en esta 
+/// se realiza todo lo que tiene que ver con movimiento del personaje
+/// </summary>
 public class StateWalk : IState<liPlayerCharacter>
 {
     liPlayerCharacter m_entity;
@@ -34,7 +37,9 @@ public class StateWalk : IState<liPlayerCharacter>
             Move();
         }
     }
-
+    /// <summary>
+    /// se realiza la logica del movimiento
+    /// </summary>
     void Move()
     {
        
