@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 
 [Serializable]
 public struct liCraftableItem : IComparable<liCraftableItem>, IComparable<int[]>
 {
   /// <summary>
-  /// 
+  /// The constructor for the Craftable item.
   /// </summary>
   /// <param name="in_resultingItem"></param>
   /// <param name="in_requiredItems">is always sorted in ascending order</param>
@@ -16,7 +15,7 @@ public struct liCraftableItem : IComparable<liCraftableItem>, IComparable<int[]>
   {
     m_resultingItemID = in_resultingItem;
     m_requiredItemIDs = in_requiredItems;
-    m_playerKnowns = false;
+    m_DoesPlayerKnowCraftableItem = false;
     if(null != m_requiredItemIDs)
     {
       Array.Sort(m_requiredItemIDs);
@@ -25,12 +24,19 @@ public struct liCraftableItem : IComparable<liCraftableItem>, IComparable<int[]>
   public int resultingItemID { get { return m_resultingItemID; } set { } }
   public int[] requiredItemIDs { get { return m_requiredItemIDs; } set { } }
 
+  public bool doesPlayerKnowCraftableItem 
+  {
+    get { return m_DoesPlayerKnowCraftableItem; } 
+    set { m_DoesPlayerKnowCraftableItem = value; }
+  }
 
   public int m_resultingItemID;
   public int[] m_requiredItemIDs;
 
-
-  public bool m_playerKnowns;
+  /// <summary>
+  /// Used to know if a 
+  /// </summary>
+  public bool m_DoesPlayerKnowCraftableItem;
 
   /// <summary>
   /// Sorts craftable items first by the amount of required items each one has,

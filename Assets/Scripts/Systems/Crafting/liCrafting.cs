@@ -162,6 +162,10 @@ public class liCrafting : MonoBehaviour
     fileStream.Close();
   }
 
+  /// <summary>
+  /// Loads a data base of the valid craftable items from a '.Json' file.
+  /// </summary>
+  /// <returns> "true" when the file was loaded successfully , "false" otherwise. </returns>
   public bool LoadItem()
   {
     string path = getPathToJsonForCraftableItems();
@@ -181,6 +185,27 @@ public class liCrafting : MonoBehaviour
 
     return false;
   }
+
+  /// <summary>
+  /// Give the player knowledge of a recipe when the recipe is valid.
+  /// </summary>
+  /// <param name="possiblyValidRecipe"> The Recipe the player entered </param>
+  /// <returns> 'true' if the player gains the knowledge of the recipe , 'false' otherwise.</returns>
+  bool givePlayerCraftableItemRecipe(int[] possiblyValidRecipe)
+  {
+    int index = s_possibleCraftableItems.FindIndex(x => (0 == x.CompareTo(possiblyValidRecipe)) &&
+                                                   (x.m_DoesPlayerKnowCraftableItem == false));
+    if (-1 != index)
+    {
+      liCraftableItem itemAtIndex = s_possibleCraftableItems[index];
+      itemAtIndex.doesPlayerKnowCraftableItem = true;
+      s_possibleCraftableItems[index] = itemAtIndex;
+      return true;
+    }
+
+    return false;
+  }
+
 
   #region InspectorButtons
 
@@ -296,8 +321,14 @@ public class liCrafting : MonoBehaviour
     int ItemID = GetItemIDForCraftableItem(test_arrayItems);
     if (-1 != ItemID)
     {
-      liInventory.instance.AddItem(ItemID);
-      Debug.Log("successfully Created Item");
+      if (liInventory.instance.AddItem(ItemID))
+      {
+        Debug.Log("Successfully created and added Item");
+      }
+      else
+      {
+        Debug.Log("Could not add item");
+      }
     }
     else
     {
