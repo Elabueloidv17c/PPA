@@ -82,5 +82,83 @@
         "name": "Lemon",
         "type": "Recipies",
         "desc": "No I don't have your Lemons this is mine."
+    },
+    {
+        "id": 14,
+        "name": "Rice",
+        "type": "Recipies",
+        "desc": "Welcome to the rice fields individual who has fornicated with the motherly figure of someone."
+    },
+    {
+        "id": 15,
+        "name": "Onion",
+        "type": "Recipies",
+        "desc": "The more layers you remove the more putrid your soul is revealed to be."
+    },
+    {
+        "id": 16,
+        "name": "Butter",
+        "type": "Recipies",
+        "desc": "I can't believe it's NOT a description."
+    },
+    {
+        "id": 17,
+        "name": "Chile",
+        "type": "Recipies",
+        "desc": "Toilet here I come."
+    },
+    {
+        "id": 18,
+        "name": "Tomato",
+        "type": "Recipies",
+        "desc": "It's a fruit."
+    },
+    {
+        "id": 19,
+        "name": "Lettuce",
+        "type": "Recipies",
+        "desc": "It's filler."
+    },
+    {
+        "id": 20,
+        "name": "Pez_Abisal",
+        "type": "Recipies",
+        "desc": "That fish looking juicy, ;=>"
+    },
+    {
+        "id": 21,
+        "name": "Pez_Globo",
+        "type": "Recipies",
+        "desc": "Looking T H I C C."
+    },
+    {
+        "id": 22,
+        "name": "Pez_Betta",
+        "type": "Recipies",
+        "desc": "Always complains that the girls don't like the nice guys."
+    },
+    {
+        "id": 23,
+        "name": "Salmon",
+        "type": "Recipies",
+        "desc": "Why am I doing this no one reads this struff minus well be SCREENMING in the VOID of my SOUL, love is fake monie is the only reason to live (aka ignore the pain of life for 5 mins util the pain returns it always returns) *craying emoji* "
+    },
+    {
+        "id": 24,
+        "name": "Mojarra",
+        "type": "Recipies",
+        "desc": " \"a viewpoint that traditional values and beliefs are unfounded and that existence is senseless and useless\" Source :https://www.merriam-webster.com/dictionary/nihilism"
+    },
+    {
+        "id": 25,
+        "name": "Tuna",
+        "type": "Recipies",
+        "desc": "pls wake mi furm nit-mare uwu is bery scawy help ;|"
+    },
+    {
+        "id": 26,
+        "name": "Watermelon_Salt_Lemon",
+        "type": "General",
+        "desc": "They ask you how you are and you have to say 'fine' but your not really 'fine'."
     }
 ]
