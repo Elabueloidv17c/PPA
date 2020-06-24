@@ -17,6 +17,8 @@ public class liCrafting : MonoBehaviour
   /// </summary>
   protected static List<liCraftableItem> s_possibleCraftableItems;
 
+  protected static List<liCraftableItem> s_knownRecipesByPlayer;
+
   public static liCrafting instance;
 
   private void Awake()
@@ -27,6 +29,7 @@ public class liCrafting : MonoBehaviour
   private void Start()
   {
     s_possibleCraftableItems = new List<liCraftableItem>();
+    s_knownRecipesByPlayer = new List<liCraftableItem>();
   }
 
 
@@ -42,10 +45,6 @@ public class liCrafting : MonoBehaviour
     if (CheckForDuplicates(itemIDsUseToCraft))
       return -1;
 
-
-    //if (false == checkPlayerHasItems(itemIDsUseToCraft, inventory))
-    //  return -1;
-
     var inventory = liInventory.instance;
     removeItemsFromInventory(itemIDsUseToCraft, inventory);
 
@@ -53,7 +52,8 @@ public class liCrafting : MonoBehaviour
       s_possibleCraftableItems.FindIndex(items => 0 == items.CompareTo(itemIDsUseToCraft));
     if (-1 != index)
     {
-      return s_possibleCraftableItems[index].resultingItemID;
+      givePlayerCraftableItemRecipe(itemIDsUseToCraft);
+      return s_possibleCraftableItems[index].m_resultingItemID;
     }
 
     return -1;
@@ -132,10 +132,59 @@ public class liCrafting : MonoBehaviour
   /// Gets the file-path of the .JSON that stores all the valid craftable items.
   /// </summary>
   /// <returns>The file-path to the .JSON file. </returns>
-  private string getPathToJsonForCraftableItems()
+  private static string getPathToJsonForCraftableItems()
   {
     return Application.streamingAssetsPath + "/craftable_items.json";
   }
+
+  /// <summary>
+  /// 
+  /// </summary>
+  /// <returns>The Path to the ".Json" file.</returns>
+  public static string getPathToJsonForCraftableItemsKnownByPlayer()
+  {
+    return Application.streamingAssetsPath + "/craftable_items_known_by_player.json";
+  }
+
+  public bool LoadFromJson<T>(string path, ref T dataContainer)
+  {
+    if (File.Exists(path))
+    {
+      string data = File.ReadAllText(path);
+      dataContainer = JsonConvert.DeserializeObject<T>(data);
+      return true;
+    }
+    else
+    {
+      int lastIndexOfForwardSlash = path.LastIndexOf('/');
+      string nameOfFile = path.Substring(lastIndexOfForwardSlash);
+      Debug.LogWarning("The File '" + nameOfFile + "' does not exist or cant be found.");
+    }
+
+    return false;
+  }
+
+  public void SaveToJson<T>(string Path,ref T dataContainer)
+  {
+    FileStream fileStream = null; 
+
+    if (false == File.Exists(Path))
+    {
+      fileStream = File.Create(Path);
+    }
+    else
+    {
+      fileStream = File.OpenWrite(Path);
+    }
+    
+    string data = JsonConvert.SerializeObject(dataContainer, Formatting.Indented);
+
+    byte[] info = new UTF8Encoding(true).GetBytes(data);
+    fileStream.Write(info, 0, info.Length);
+
+    fileStream.Close();
+  }
+
 
   /// <summary>
   /// Save the items in ' s_possibleCraftableItems ' to a JSON file.
@@ -179,7 +228,6 @@ public class liCrafting : MonoBehaviour
     {
       int lastIndexOfForwardSlash = path.LastIndexOf('/');
       string nameOfFile = path.Substring(lastIndexOfForwardSlash);
-
       Debug.LogWarning("The File '" + nameOfFile + "' does not exist or cant be found.");
     }
 
@@ -190,19 +238,25 @@ public class liCrafting : MonoBehaviour
   /// Give the player knowledge of a recipe when the recipe is valid.
   /// </summary>
   /// <param name="possiblyValidRecipe"> The Recipe the player entered </param>
-  /// <returns> 'true' if the player gains the knowledge of the recipe , 'false' otherwise.</returns>
+  /// <returns> 'true' if the player gains the knowledge of the recipe , 'false' otherwise </returns>
   bool givePlayerCraftableItemRecipe(int[] possiblyValidRecipe)
   {
-    int index = s_possibleCraftableItems.FindIndex(x => (0 == x.CompareTo(possiblyValidRecipe)) &&
-                                                   (x.m_DoesPlayerKnowCraftableItem == false));
+    int index = s_possibleCraftableItems.FindIndex(x => (0 == x.CompareTo(possiblyValidRecipe)));
+
     if (-1 != index)
     {
       liCraftableItem itemAtIndex = s_possibleCraftableItems[index];
-      itemAtIndex.doesPlayerKnowCraftableItem = true;
-      s_possibleCraftableItems[index] = itemAtIndex;
+      if (0 > s_knownRecipesByPlayer.BinarySearch(s_possibleCraftableItems[index]))
+      {
+        s_knownRecipesByPlayer.Add(itemAtIndex);
+        s_knownRecipesByPlayer.Sort();
+      }
+      else
+      {
+        return false;
+      }
       return true;
     }
-
     return false;
   }
 
@@ -358,11 +412,11 @@ public class liCrafting : MonoBehaviour
     foreach (liCraftableItem item in s_possibleCraftableItems)
     {
       result += "Resulting item =" +
-       item.resultingItemID.ToString();
+       item.m_resultingItemID.ToString();
 
 
       result += "\n Items for Creating Resulting Item =[";
-      foreach (int i in item.requiredItemIDs)
+      foreach (int i in item.m_requiredItemIDs)
       {
         result += i.ToString() + ", ";
       }
@@ -406,6 +460,53 @@ public class liCrafting : MonoBehaviour
 
     LoadItem();
 
+  }
+
+  [InspectorButton("Inspector_LoadPlayerKnowledge")]
+  [SerializeField]
+  private bool loadPlayerKnowledge_;
+  private void Inspector_LoadPlayerKnowledge()
+  {
+    if (false == IsItOkToUseInspectorFunction())
+    {
+      return;
+    }
+    string path = getPathToJsonForCraftableItemsKnownByPlayer();
+    LoadFromJson<List<liCraftableItem>>(path, ref s_knownRecipesByPlayer);
+
+    string result = "";
+    foreach (liCraftableItem item in s_knownRecipesByPlayer)
+    {
+      result += "Resulting item =" +
+       item.m_resultingItemID.ToString();
+
+
+      result += "\n Items for Creating Resulting Item =[";
+      foreach (int i in item.m_requiredItemIDs)
+      {
+        result += i.ToString() + ", ";
+      }
+      result += "]\n\n";
+
+      Debug.Log(result);
+      result = "";
+    }
+
+  }
+
+  [InspectorButton("Inspector_SaveKnowledge")]
+  [SerializeField]
+  private bool givePlayerKnowledge_;
+  private void Inspector_SaveKnowledge()
+  {
+    if (false == IsItOkToUseInspectorFunction())
+    {
+      return;
+    }
+
+    string path = getPathToJsonForCraftableItemsKnownByPlayer();
+    SaveToJson<List<liCraftableItem>>(path, ref s_knownRecipesByPlayer);
+    s_knownRecipesByPlayer.Sort();
   }
 
 #endif
