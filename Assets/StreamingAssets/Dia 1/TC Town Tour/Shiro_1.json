@@ -1,0 +1,367 @@
+ {
+    "InComment" : null,
+    "OutComment" : null,
+    "Conversations" : [
+        {
+            "Character" : 1,
+            "Dialogs" : [
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 4,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 0,
+                    "ActiveCharacterRight" : 0,
+                    "ActiveSide" : true,
+
+                    "Text" : "Good morning, [PL]. Did you sleep well?",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "OptionType" : "Buttons",
+                        "Next" : 0,
+                        "Value" : 0
+                    },
+
+                    "Options" : [
+                    {
+                        "Text" : "[Totally!]",
+                        "Next" : 1,
+                        "Value" : 1
+                    },
+                    {
+                        "Text" : "[It was okay.]",
+                        "Next" : 3,
+                        "Value" : 0
+                    },
+                    {
+                        "Text" : "[Not really.]",
+                        "Next" : 6,
+                        "Value" : 0
+                    }
+                    ]
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 4,
+                        "Expression" : 2
+                    }],
+
+                    "ActiveCharacterLeft" : 0,
+                    "ActiveCharacterRight" : 0,
+                    "ActiveSide" : false,
+
+                    "Text" : "Totally! That was the most comfortable bed I’ve slept on in years!",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "ActionType": "JumpToNext",
+                        "Next" : 2,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 4,
+                        "Expression" : 2
+                    }],
+
+                    "ActiveCharacterLeft" : 0,
+                    "ActiveCharacterRight" : 0,
+                    "ActiveSide" : true,
+
+                    "Text" : "I’m glad to hear that. We don’t get visits very often so we’re all very excited you’re here",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "ActionType": "JumpToNext",
+                        "Next" : 10,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 4,
+                        "Expression" : 2
+                    }],
+
+                    "ActiveCharacterLeft" : 0,
+                    "ActiveCharacterRight" : 0,
+                    "ActiveSide" : false,
+
+                    "Text" : "It was okay. I just wasn’t feeling all that great after the trip",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "ActionType": "JumpToNext",
+                        "Next" : 4,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 4,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 0,
+                    "ActiveCharacterRight" : 0,
+                    "ActiveSide" : true,
+
+                    "Text" : "Do you need some medicine?",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "ActionType": "JumpToNext",
+                        "Next" : 5,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 4,
+                        "Expression" : 3
+                    }],
+
+                    "ActiveCharacterLeft" : 0,
+                    "ActiveCharacterRight" : 0,
+                    "ActiveSide" : false,
+
+                    "Text" : "I’m all good now, thanks",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "ActionType": "JumpToNext",
+                        "Next" : 10,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 4,
+                        "Expression" : 3
+                    }],
+
+                    "ActiveCharacterLeft" : 0,
+                    "ActiveCharacterRight" : 0,
+                    "ActiveSide" : false,
+
+                    "Text" : "Not really. I think I might be feeling a bit homesick, actually",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "ActionType": "JumpToNext",
+                        "Next" : 7,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 4,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 0,
+                    "ActiveCharacterRight" : 0,
+                    "ActiveSide" : true,
+
+                    "Text" : "I can imagine. If you need anything let me know",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "ActionType": "JumpToNext",
+                        "Next" : 8,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 4,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 0,
+                    "ActiveCharacterRight" : 0,
+                    "ActiveSide" : false,
+
+                    "Text" : "Sure, thanks",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "ActionType": "JumpToNext",
+                        "Next" : 9,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 4,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 0,
+                    "ActiveCharacterRight" : 0,
+                    "ActiveSide" : true,
+
+                    "Text" : "Well then, I’ll get out of your way. See you later!",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "ActionType": "JumpToNext",
+                        "Next" : 10,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 4,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 0,
+                    "ActiveCharacterRight" : 0,
+                    "ActiveSide" : true,
+
+                    "Text" : "Ready for some breakfast?",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "ActionType": "JumpToNext",
+                        "Next" : 11,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 4,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 0,
+                    "ActiveCharacterRight" : 0,
+                    "ActiveSide" : false,
+
+                    "Text" : "Uh.. yeah but, how did you…?",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "ActionType": "JumpToNext",
+                        "Next" : 12,
+                        "Value" : 0
+                    }
+                },
+                {
+                    "LeftCharacter" : [
+                    {
+                       "CharacterID" : 10,
+                       "Expression" : 0 
+                    }],
+
+                    "RightCharacter" : [
+                    {
+                        "CharacterID" : 4,
+                        "Expression" : 0
+                    }],
+
+                    "ActiveCharacterLeft" : 0,
+                    "ActiveCharacterRight" : 0,
+                    "ActiveSide" : true,
+
+                    "Text" : "Oh, cooking eggs is not that hard! You need some energy today since I’m showing you around.” He turned back to smile at me. “I’ll give you a nice tour",
+                    "Thought" : null,
+
+                    "LogAction" : {
+                        "ActionType": "None",
+                        "Next" : 13,
+                        "Value" : 0
+                    }
+                }
+            ]   
+        }
+    ]
+}

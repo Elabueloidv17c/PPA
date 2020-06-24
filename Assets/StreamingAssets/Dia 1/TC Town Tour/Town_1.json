@@ -1,0 +1,36 @@
+{
+    "InComment": null,
+    "OutComment" : null,
+    "Conversations": [
+      {
+        "Character": 10,
+        "Dialogs": [
+            {
+            "LeftCharacter": [
+              {
+                "CharacterID": 10,
+                "Expression": 2
+              }
+            ],
+  
+            "RightCharacter": [
+              {
+                "CharacterID": 4,
+                "Expression": 0
+              }
+            ],
+  
+            "ActiveCharacterLeft": 0,
+            "ActiveCharacterRight": 0,
+            "ActiveSide": true,
+  
+            "Text": "This is our town. It’s kind of boring, but that can’t be helped. This is just where everyone lives. Now follow me this way, to the more fun spots!",
+  
+            "LogAction": {
+              "ActionType": "None"
+            }
+            }    
+        ]
+      }
+    ]
+  }

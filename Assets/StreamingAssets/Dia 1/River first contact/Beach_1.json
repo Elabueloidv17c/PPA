@@ -1,0 +1,387 @@
+{
+    "InComment": null,
+    "OutComment":null,
+    "Conversation": [
+        {
+            "Character": 0,
+            "Dialogs": [
+                {
+                    "LeftCharacter": [
+                        {
+                            "CharacterID": 10,
+                            "Expression": 0
+                        }
+                    ],
+                    "RightCharacter": [
+                        {
+                            "CharacterID": 1,
+                            "Expression": 0
+                        }
+                    ],
+
+                    "ActiveCharacterLeft": 0,
+                    "ActiveCharacterRight": 0,
+                    "ActiveSide": true,
+
+                    "Text": "Are you new here, kid",
+
+                    "LogAction": {
+                        "ActionType": "JumpToNext",
+                        "Next:": 1,
+                        "Value": 0
+                    }
+                },
+
+                {//1
+                    "LeftCharacter": [
+                        {
+                            "CharacterID": 10,
+                            "Expression": 0
+                        }
+                    ],
+                    "RightCharacter": [
+                        {
+                            "CharacterID": 1,
+                            "Expression": 0
+                        }
+                    ],
+
+                    "ActiveCharacterLeft": 0,
+                    "ActiveCharacterRight": 0,
+                    "ActiveSide": false,
+
+                    "Text": "Uh... /nYeah, I'm here on vacation",
+
+                    "LogAction": {
+                        "ActionType": "JumpToNext",
+                        "Next:": 2,
+                        "Value": 0
+                    }
+                }
+
+
+                {//2
+                    "LeftCharacter": [
+                        {
+                            "CharacterID": 10,
+                            "Expression": 0
+                        }
+                    ],
+                    "RightCharacter": [
+                        {
+                            "CharacterID": 1,
+                            "Expression": 0
+                        }
+                    ],
+
+                    "ActiveCharacterLeft": 0,
+                    "ActiveCharacterRight": 0,
+                    "ActiveSide": true,
+
+                    "Text": "Oh, are you? /nWe don't get a lot of tourist around here.",
+
+                    "LogAction": {
+                        "ActionType": "JumpToNext",
+                        "Next:": 3,
+                        "Value": 0
+                    }
+                }
+
+                {//3
+                    "LeftCharacter": [
+                        {
+                            "CharacterID": 10,
+                            "Expression": 0
+                        }
+                    ],
+                    "RightCharacter": [
+                        {
+                            "CharacterID": 1,
+                            "Expression": 0
+                        }
+                    ],
+
+                    "ActiveCharacterLeft": 0,
+                    "ActiveCharacterRight": 0,
+                    "ActiveSide": false,
+
+                    "Text": "Yeah, I know, I guess most people just come to stay beacause this wonderful Island.",
+
+                    "LogAction": {
+                        "ActionType": "JumpToNext",
+                        "Next:": 3,
+                        "Value": 0
+                    }
+                }
+
+                {//4
+                    "LeftCharacter": [
+                        {
+                            "CharacterID": 10,
+                            "Expression": 0
+                        }
+                    ],
+                    "RightCharacter": [
+                        {
+                            "CharacterID": 1,
+                            "Expression": 2
+                        }
+                    ],
+
+                    "ActiveCharacterLeft": 0,
+                    "ActiveCharacterRight": 0,
+                    "ActiveSide": true,
+
+                    "Text": "They do; Say kid, are you intersting in making friends this summer?",
+
+                    "LogAction": {
+                        "ActionType": "JumpToNext",
+                        "Next:": 5,
+                        "Value": 0
+                    }
+                }
+
+                {//5
+                    "LeftCharacter": [
+                        {
+                            "CharacterID": 10,
+                            "Expression": 0
+                        }
+                    ],
+                    "RightCharacter": [
+                        {
+                            "CharacterID": 1,
+                            "Expression": 2
+                        }
+                    ],
+
+                    "ActiveCharacterLeft": 0,
+                    "ActiveCharacterRight": 0,
+                    "ActiveSide": false,
+
+                    "Text": "Sure, why not.",
+
+                    "LogAction": {
+                        "ActionType": "JumpToNext",
+                        "Next:": 6,
+                        "Value": 0
+                    }
+                }
+
+                {//6
+                    "LeftCharacter": [
+                        {
+                            "CharacterID": 10,
+                            "Expression": 0
+                        }
+                    ],
+                    "RightCharacter": [
+                        {
+                            "CharacterID": 1,
+                            "Expression": 7
+                        }
+                    ],
+
+                    "ActiveCharacterLeft": 0,
+                    "ActiveCharacterRight": 0,
+                    "ActiveSide": true,
+
+                    "Text": "I thoght so./n There's a kid living up there, but he's draedful shy./n I've been trying to convience him to come out and enjoy the sun, but I think I'm to old to look like fun.",
+
+                    "LogAction": {
+                        "ActionType": "JumpToNext",
+                        "Next:": 7,
+                        "Value": 0
+                    }
+                }
+
+                {//7
+                    "LeftCharacter": [
+                        {
+                            "CharacterID": 10,
+                            "Expression": 0
+                        }
+                    ],
+                    "RightCharacter": [
+                        {
+                            "CharacterID": 1,
+                            "Expression": 7
+                        }
+                    ],
+
+                    "ActiveCharacterLeft": 0,
+                    "ActiveCharacterRight": 0,
+                    "ActiveSide": true,
+
+                    "Text": "But you on the other hand look perfectly charming! Won’t you bring the little bird out of their cage?",
+
+                    "LogAction": {
+                        "ActionType": "JumpToNext",
+                        "Next:": 8,
+                        "Value": 0
+                    }
+                }
+
+                {//8
+                    "LeftCharacter": [
+                        {
+                            "CharacterID": 10,
+                            "Expression": 0
+                        }
+                    ],
+                    "RightCharacter": [
+                        {
+                            "CharacterID": 1,
+                            "Expression": 7
+                        }
+                    ],
+
+                    "ActiveCharacterLeft": 0,
+                    "ActiveCharacterRight": 0,
+                    "ActiveSide": false,
+
+                    "Text": "I gess I can.../n try...? ",
+
+                    "LogAction": {
+                        "ActionType": "JumpToNext",
+                        "Next:": 9,
+                        "Value": 0
+                    }
+                }
+
+                {//9
+                    "LeftCharacter": [
+                        {
+                            "CharacterID": 10,
+                            "Expression": 0
+                        }
+                    ],
+                    "RightCharacter": [
+                        {
+                            "CharacterID": 1,
+                            "Expression": 2
+                        }
+                    ],
+
+                    "ActiveCharacterLeft": 0,
+                    "ActiveCharacterRight": 0,
+                    "ActiveSide": true,
+
+                    "Text": "Wonderful! Why don’t you go in there, then? ",
+
+                    "LogAction": {
+                        "ActionType": "JumpToNext",
+                        "Next:": 10,
+                        "Value": 0
+                    }
+                }
+
+                {//10
+                    "LeftCharacter": [
+                        {
+                            "CharacterID": 10,
+                            "Expression": 0
+                        }
+                    ],
+                    "RightCharacter": [
+                        {
+                            "CharacterID": 1,
+                            "Expression": 2
+                        }
+                    ],
+
+                    "ActiveCharacterLeft": 0,
+                    "ActiveCharacterRight": 0,
+                    "ActiveSide": false,
+
+                    "Text": "Right now...?",
+
+                    "LogAction": {
+                        "ActionType": "JumpToNext",
+                        "Next:": 11,
+                        "Value": 0
+                    }
+                }
+
+                {//11
+                    "LeftCharacter": [
+                        {
+                            "CharacterID": 10,
+                            "Expression": 0
+                        }
+                    ],
+                    "RightCharacter": [
+                        {
+                            "CharacterID": 1,
+                            "Expression": 2
+                        }
+                    ],
+
+                    "ActiveCharacterLeft": 0,
+                    "ActiveCharacterRight": 0,
+                    "ActiveSide": true,
+
+                    "Text": "Of course! I’m he won’t mind. Now go, go!",
+
+                    "LogAction": {
+                        "ActionType": "JumpToNext",
+                        "Next:": 12,
+                        "Value": 0
+                    }
+                }
+
+                {//12
+                    "LeftCharacter": [
+                        {
+                            "CharacterID": 10,
+                            "Expression": 0
+                        }
+                    ],
+                    "RightCharacter": [
+                        {
+                            "CharacterID": 1,
+                            "Expression": 2
+                        }
+                    ],
+
+                    "ActiveCharacterLeft": 0,
+                    "ActiveCharacterRight": 0,
+                    "ActiveSide": true,
+
+                    "Text": "Don’t mind it, it’s unlocked! Go on!",
+
+                    "LogAction": {
+                        "ActionType": "JumpToNext",
+                        "Next:": 13,
+                        "Value": 0
+                    }
+                }
+
+                {//13
+                    "LeftCharacter": [
+                        {
+                            "CharacterID": 10,
+                            "Expression": 0
+                        }
+                    ],
+                    "RightCharacter": [
+                        {
+                            "CharacterID": 0,
+                            "Expression": 0
+                        }
+                    ],
+
+                    "ActiveCharacterLeft": 0,
+                    "ActiveCharacterRight": 0,
+                    "ActiveSide": false,
+
+                    "Text": "Wait, what’s your name anyw... /n Hello?",
+
+                    "LogAction": {
+                        "ActionType": "None"
+                    }
+                }
+            ]
+        }
+    ]
+}

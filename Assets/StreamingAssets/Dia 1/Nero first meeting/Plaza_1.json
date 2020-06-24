@@ -1,0 +1,612 @@
+{
+    "InComment": null,
+    "OutComment" : null,
+    "Conversations": [
+      {
+        "Character": 10,
+        "Dialogs": [
+          {
+            "LeftCharacter": [
+              {
+                "CharacterID": 10,
+                "Expression": 0
+              }
+            ],
+  
+            "RightCharacter": [
+              {
+                "CharacterID": 0,
+                "Expression": 0
+              }
+            ],
+  
+            "ActiveCharacterLeft": 0,
+            "ActiveCharacterRight": 0,
+            "ActiveSide": false,
+  
+            "Text": "What a strange tree",
+  
+            "LogAction" : {
+                "ActionType" : "Buttons",
+                "Next" : 0,
+                "Value" : 0
+            },
+            "Options" : [
+                {
+                    "Text" : "Approach the tree",
+                    "Next" : 1,
+                    "Value" : 0.00
+                },
+                {
+                    "Text" : "Are those... watermelons?",
+                    "Next" : 1,
+                    "Value" : 0.00
+                }
+            ]
+            },
+  
+            {//1
+              "LeftCharacter": [
+                {
+                  "CharacterID": 10,
+                  "Expression": 0
+                }
+              ],
+    
+              "RightCharacter": [
+                {
+                  "CharacterID": 0,
+                  "Expression": 0
+                }
+              ],
+    
+              "ActiveCharacterLeft": 0,
+              "ActiveCharacterRight": 0,
+              "ActiveSide": false,
+    
+              "Text": "",
+    
+              "LogAction" : {
+                "ActionType" : "Buttons",
+                "Next" : 0,
+                "Value" : 0
+            },
+            "Options" : [
+                {
+                    "Text" : "What up, bud!",
+                    "Next" : 3,
+                    "Value" : 0.00
+                },
+                {
+                    "Text" : "Hello there",
+                    "Next" : 8,
+                    "Value" : 0.00
+                },
+                {
+                    "Text" : "I leave him alone",
+                    "Next" : 19,
+                    "Value" : 0.00
+                }
+            ]
+            },
+
+            {//2
+              "LeftCharacter": [
+                {
+                  "CharacterID": 10,
+                  "Expression": 0
+                }
+              ],
+    
+              "RightCharacter": [
+                {
+                  "CharacterID": 0,
+                  "Expression": 0
+                }
+              ],
+    
+              "ActiveCharacterLeft": 0,
+              "ActiveCharacterRight": 0,
+              "ActiveSide": false,
+    
+              "Text": ".",
+    
+              "LogAction" : {
+                "ActionType" : "Buttons",
+                "Next" : 0,
+                "Value" : 0
+            },
+            "Options" : [
+                {
+                    "Text" : "What up, bud!",
+                    "Next" : 3,
+                    "Value" : 0.00
+                },
+                {
+                    "Text" : "Hello there",
+                    "Next" : 8,
+                    "Value" : 0.00
+                },
+                {
+                    "Text" : "I leave him alone",
+                    "Next" : 19,
+                    "Value" : 0.00
+                }
+            ]
+            },
+
+            {//3
+              "LeftCharacter": [
+                {
+                  "CharacterID": 10,
+                  "Expression": 0
+                }
+              ],
+    
+              "RightCharacter": [
+                {
+                  "CharacterID": 0,
+                  "Expression": 0
+                }
+              ],
+    
+              "ActiveCharacterLeft": 0,
+              "ActiveCharacterRight": 0,
+              "ActiveSide": false,
+    
+              "Text": "What up, bud",
+              "Thought": "Why did I say that?",
+    
+              "LogAction": {
+                "ActionType": "JumpToNext",
+                "Next": 4,
+                "Value": 0
+              }
+            },
+
+            {//4
+              "LeftCharacter": [
+                {
+                  "CharacterID": 10,
+                  "Expression": 0
+                }
+              ],
+    
+              "RightCharacter": [
+                {
+                  "CharacterID": 2,
+                  "Expression": 6
+                }
+              ],
+    
+              "ActiveCharacterLeft": 0,
+              "ActiveCharacterRight": 0,
+              "ActiveSide": true,
+    
+              "Text": "Ah… y-you scared m-me…",
+    
+              "LogAction": {
+                "ActionType": "JumpToNext",
+                "Next": 5,
+                "Value": 0
+              }
+            },
+
+            {//5
+              "LeftCharacter": [
+                {
+                  "CharacterID": 10,
+                  "Expression": 0
+                }
+              ],
+    
+              "RightCharacter": [
+                {
+                  "CharacterID": 2,
+                  "Expression": 0
+                }
+              ],
+    
+              "ActiveCharacterLeft": 0,
+              "ActiveCharacterRight": 0,
+              "ActiveSide": false,
+    
+              "Text": "I am so sorry, I’ve got no idea what came over me",
+    
+              "LogAction": {
+                "ActionType": "JumpToNext",
+                "Next": 6,
+                "Value": 0
+              }
+            },
+
+            {//6
+              "LeftCharacter": [
+                {
+                  "CharacterID": 10,
+                  "Expression": 0
+                }
+              ],
+    
+              "RightCharacter": [
+                {
+                  "CharacterID": 2,
+                  "Expression": 3
+                }
+              ],
+    
+              "ActiveCharacterLeft": 0,
+              "ActiveCharacterRight": 0,
+              "ActiveSide": true,
+    
+              "Text": "Yeah, it’s fine... Can I just..., go back to reading? I’m kind of busy at the moment",
+    
+              "LogAction": {
+                "ActionType": "JumpToNext",
+                "Next": 7,
+                "Value": 0
+              }
+            },
+
+            {//7
+              "LeftCharacter": [
+                {
+                  "CharacterID": 10,
+                  "Expression": 1
+                }
+              ],
+    
+              "RightCharacter": [
+                {
+                  "CharacterID": 2,
+                  "Expression": 3
+                }
+              ],
+    
+              "ActiveCharacterLeft": 0,
+              "ActiveCharacterRight": 0,
+              "ActiveSide": false,
+    
+              "Text": "Of course! Lemme just... get out of your way then…",
+    
+              "LogAction": {
+                "ActionType": "None"
+              }
+            },
+
+            {//8
+              "LeftCharacter": [
+                {
+                  "CharacterID": 10,
+                  "Expression": 0
+                }
+              ],
+    
+              "RightCharacter": [
+                {
+                  "CharacterID": 0,
+                  "Expression": 0
+                }
+              ],
+    
+              "ActiveCharacterLeft": 0,
+              "ActiveCharacterRight": 0,
+              "ActiveSide": false,
+    
+              "Text": "Helo there",
+    
+              "LogAction": {
+                "ActionType": "JumpToNext",
+                "Next": 9,
+                "Value": 0
+              }
+            },
+
+            {//9
+              "LeftCharacter": [
+                {
+                  "CharacterID": 10,
+                  "Expression": 0
+                }
+              ],
+    
+              "RightCharacter": [
+                {
+                  "CharacterID": 2,
+                  "Expression": 5
+                }
+              ],
+    
+              "ActiveCharacterLeft": 0,
+              "ActiveCharacterRight": 0,
+              "ActiveSide": true,
+    
+              "Text": "Ah… h-hello, I didn’t notice you there, sorry.",
+    
+              "LogAction": {
+                "ActionType": "JumpToNext",
+                "Next": 10,
+                "Value": 0
+              }
+            },
+
+            {//10
+              "LeftCharacter": [
+                {
+                  "CharacterID": 10,
+                  "Expression": 2
+                }
+              ],
+    
+              "RightCharacter": [
+                {
+                  "CharacterID": 2,
+                  "Expression": 5
+                }
+              ],
+    
+              "ActiveCharacterLeft": 0,
+              "ActiveCharacterRight": 0,
+              "ActiveSide": false,
+    
+              "Text": "That’s okay! Looks like you were really into your book",
+    
+              "LogAction": {
+                "ActionType": "JumpToNext",
+                "Next": 11,
+                "Value": 0
+              }
+            },
+
+            {//11
+              "LeftCharacter": [
+                {
+                  "CharacterID": 10,
+                  "Expression": 2
+                }
+              ],
+    
+              "RightCharacter": [
+                {
+                  "CharacterID": 2,
+                  "Expression": 2
+                }
+              ],
+    
+              "ActiveCharacterLeft": 0,
+              "ActiveCharacterRight": 0,
+              "ActiveSide": true,
+    
+              "Text": "Uh, yes! It’s a horror mystery and it’s so good! We were just getting to where the monster is revealed and... and you probably don’t care, right?",
+    
+              "LogAction": {
+                "ActionType": "JumpToNext",
+                "Next": 12,
+                "Value": 0
+              }
+            },
+
+            {//12
+              "LeftCharacter": [
+                {
+                  "CharacterID": 10,
+                  "Expression": 2
+                }
+              ],
+    
+              "RightCharacter": [
+                {
+                  "CharacterID": 2,
+                  "Expression": 1
+                }
+              ],
+    
+              "ActiveCharacterLeft": 0,
+              "ActiveCharacterRight": 0,
+              "ActiveSide": true,
+    
+              "Text": "I’m sorry, I do this all the time.",
+    
+              "LogAction": {
+                "ActionType": "JumpToNext",
+                "Next": 13,
+                "Value": 0
+              }
+            },
+
+            {//13
+              "LeftCharacter": [
+                {
+                  "CharacterID": 10,
+                  "Expression": 2
+                }
+              ],
+    
+              "RightCharacter": [
+                {
+                  "CharacterID": 2,
+                  "Expression": 1
+                }
+              ],
+    
+              "ActiveCharacterLeft": 0,
+              "ActiveCharacterRight": 0,
+              "ActiveSide": false,
+    
+              "Text": "N-Not at all! It sounds really interesting! I’m sure you had to be, for you to be so concentrated",
+    
+              "LogAction": {
+                "ActionType": "JumpToNext",
+                "Next": 14,
+                "Value": 0
+              }
+            },
+            
+            {//14
+              "LeftCharacter": [
+                {
+                  "CharacterID": 10,
+                  "Expression": 2
+                }
+              ],
+    
+              "RightCharacter": [
+                {
+                  "CharacterID": 2,
+                  "Expression": 5
+                }
+              ],
+    
+              "ActiveCharacterLeft": 0,
+              "ActiveCharacterRight": 0,
+              "ActiveSide": true,
+    
+              "Text": "I-I’m so sorry, I’ve gotta get back to work",
+    
+              "LogAction": {
+                "ActionType": "JumpToNext",
+                "Next": 15,
+                "Value": 0
+              }
+            },
+
+            {//15
+              "LeftCharacter": [
+                {
+                  "CharacterID": 10,
+                  "Expression": 2
+                }
+              ],
+    
+              "RightCharacter": [
+                {
+                  "CharacterID": 2,
+                  "Expression": 5
+                }
+              ],
+    
+              "ActiveCharacterLeft": 0,
+              "ActiveCharacterRight": 0,
+              "ActiveSide": false,
+    
+              "Text": "Dont worry obout it",
+    
+              "LogAction": {
+                "ActionType": "JumpToNext",
+                "Next": 16,
+                "Value": 0
+              }
+            },
+
+            
+            {//16
+              "LeftCharacter": [
+                {
+                  "CharacterID": 10,
+                  "Expression": 2
+                }
+              ],
+    
+              "RightCharacter": [
+                {
+                  "CharacterID": 2,
+                  "Expression": 5
+                }
+              ],
+    
+              "ActiveCharacterLeft": 0,
+              "ActiveCharacterRight": 0,
+              "ActiveSide": true,
+    
+              "Text": "If you ever wanna, uh, keep talking about books and stuff I’ll be at the library.",
+    
+              "LogAction": {
+                "ActionType": "JumpToNext",
+                "Next": 17,
+                "Value": 0
+              }
+            },
+
+            {//17
+              "LeftCharacter": [
+                {
+                  "CharacterID": 10,
+                  "Expression": 2
+                }
+              ],
+    
+              "RightCharacter": [
+                {
+                  "CharacterID": 2,
+                  "Expression": 2
+                }
+              ],
+    
+              "ActiveCharacterLeft": 0,
+              "ActiveCharacterRight": 0,
+              "ActiveSide": true,
+    
+              "Text": "Uh, see you around!",
+    
+              "LogAction": {
+                "ActionType": "JumpToNext",
+                "Next": 18,
+                "Value": 0
+              }
+            },
+
+            {//18
+              "LeftCharacter": [
+                {
+                  "CharacterID": 10,
+                  "Expression": 2
+                }
+              ],
+    
+              "RightCharacter": [
+                {
+                  "CharacterID": 2,
+                  "Expression": 2
+                }
+              ],
+    
+              "ActiveCharacterLeft": 0,
+              "ActiveCharacterRight": 0,
+              "ActiveSide": false,
+    
+              "Text": "Bye!",
+    
+              "LogAction": {
+                "ActionType": "None"
+              }
+            },
+
+            {//19
+              "LeftCharacter": [
+                {
+                  "CharacterID": 10,
+                  "Expression": 2
+                }
+              ],
+    
+              "RightCharacter": [
+                {
+                  "CharacterID": 0,
+                  "Expression": 0
+                }
+              ],
+    
+              "ActiveCharacterLeft": 0,
+              "ActiveCharacterRight": 0,
+              "ActiveSide": false,
+    
+              "Thought": "Better leave him alone",
+    
+              "LogAction": {
+                "ActionType": "None"
+              }
+            }
+        ]
+      }
+    ]
+  }
