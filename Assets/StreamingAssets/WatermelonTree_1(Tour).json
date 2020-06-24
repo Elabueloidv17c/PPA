@@ -1,0 +1,65 @@
+{
+    "InComment": null,
+    "OutComment" : null,
+    "Conversations": [
+      {
+        "Character": 10,
+        "Dialogs": [
+            {
+            "LeftCharacter": [
+              {
+                "CharacterID": 10,
+                "Expression": 2
+              }
+            ],
+  
+            "RightCharacter": [
+              {
+                "CharacterID": 4,
+                "Expression": 0
+              }
+            ],
+  
+            "ActiveCharacterLeft": 0,
+            "ActiveCharacterRight": 0,
+            "ActiveSide": true,
+  
+            "Text": "This is just our big ol’ tree. People gather around it for the town festivals.",
+  
+            "LogActionData": {
+                "ActionType": "JumpToNext",
+                "Next": 1,
+                "Value": 0
+              }
+            },        
+            
+            {
+                "LeftCharacter": [
+                  {
+                    "CharacterID": 10,
+                    "Expression": 2
+                  }
+                ],
+      
+                "RightCharacter": [
+                  {
+                    "CharacterID": 4,
+                    "Expression": 0
+                  }
+                ],
+      
+                "ActiveCharacterLeft": 0,
+                "ActiveCharacterRight": 0,
+                "ActiveSide": true,
+      
+                "Text": "Anyway, it’s just a tree. Let’s move on.",
+      
+                "LogActionData": {
+                    "ActionType": "None"
+                }
+            } 
+            
+        ]
+      }
+    ]
+  }

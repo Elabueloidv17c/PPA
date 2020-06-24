@@ -1,0 +1,243 @@
+{
+    "InComment": null,
+    "OutComment" : null,
+    "Conversations": [
+      {
+        "Character": 10,
+        "Dialogs": [
+            {
+            "LeftCharacter": [
+              {
+                "CharacterID": 10,
+                "Expression": 2
+              }
+            ],
+  
+            "RightCharacter": [
+              {
+                "CharacterID": 4,
+                "Expression": 0
+              }
+            ],
+  
+            "ActiveCharacterLeft": 0,
+            "ActiveCharacterRight": 0,
+            "ActiveSide": true,
+  
+            "Text": "And here’s the beach. This is where you can swim. There’s a dock here too, but just for little fishing boats.",
+  
+            "LogActionData": {
+                "ActionType": "JumpToNext",
+                "Next": 1,
+                "Value": 0
+              }
+            },        
+            
+            {
+                "LeftCharacter": [
+                  {
+                    "CharacterID": 10,
+                    "Expression": 2
+                  }
+                ],
+      
+                "RightCharacter": [
+                  {
+                    "CharacterID": 4,
+                    "Expression": 0
+                  }
+                ],
+      
+                "ActiveCharacterLeft": 0,
+                "ActiveCharacterRight": 0,
+                "ActiveSide": true,
+      
+                "Text": "So how did you like the island?",
+      
+                "LogActionData": {
+                    "ActionType": "JumpToNext",
+                    "Next": 2,
+                    "Value": 0
+                  }
+                },   
+
+            {
+                "LeftCharacter": [
+                  {
+                    "CharacterID": 10,
+                    "Expression": 2
+                  }
+                ],
+      
+                "RightCharacter": [
+                  {
+                    "CharacterID": 4,
+                    "Expression": 0
+                  }
+                ],
+      
+                "ActiveCharacterLeft": 0,
+                "ActiveCharacterRight": 0,
+                "ActiveSide": true,
+      
+                "Text": "So how did you like the island?",
+      
+                "LogActionData" : {
+                    "ActionType" : "Buttons"
+                },
+                
+                "Options" : [
+                    {
+                        "Text" : "Nice",
+                        "Next" : 3,
+                        "Value" : 0
+                    },
+                    {
+                        "Text" : "Nice",
+                        "Next" : 7,
+                        "Value" : 0
+                    }
+                ]
+            },
+
+
+            {
+                "LeftCharacter": [
+                  {
+                    "CharacterID": 10,
+                    "Expression": 2
+                  }
+                ],
+      
+                "RightCharacter": [
+                  {
+                    "CharacterID": 4,
+                    "Expression": 0
+                  }
+                ],
+      
+                "ActiveCharacterLeft": 0,
+                "ActiveCharacterRight": 0,
+                "ActiveSide": false,
+      
+                "Text": "It’s a very beautiful island. I can already tell I’ll enjoy my time here very much.",
+      
+                "LogActionData": {
+                    "ActionType": "JumpToNext",
+                    "Next": 5,
+                    "Value": 0
+                  }
+                },
+
+                {
+                    "LeftCharacter": [
+                      {
+                        "CharacterID": 10,
+                        "Expression": 2
+                      }
+                    ],
+          
+                    "RightCharacter": [
+                      {
+                        "CharacterID": 4,
+                        "Expression": 0
+                      }
+                    ],
+          
+                    "ActiveCharacterLeft": 0,
+                    "ActiveCharacterRight": 0,
+                    "ActiveSide": true,
+          
+                    "Text": "“I’m glad you like it. This is a very special place. Why not go and explore it a little more?, by your own",
+          
+                    "LogActionData": {
+                        "ActionType": "None"
+                      }
+                },
+
+                {
+                    "LeftCharacter": [
+                      {
+                        "CharacterID": 10,
+                        "Expression": 2
+                      }
+                    ],
+          
+                    "RightCharacter": [
+                      {
+                        "CharacterID": 4,
+                        "Expression": 0
+                      }
+                    ],
+          
+                    "ActiveCharacterLeft": 0,
+                    "ActiveCharacterRight": 0,
+                    "ActiveSide": false,
+          
+                    "Text": "Well it’s...an island, I guess. There’s nothing much to say.",
+          
+                    "LogActionData": {
+                        "ActionType": "JumpToNext",
+                        "Next": 8,
+                        "Value": 0
+                      }
+                },
+
+                {
+                    "LeftCharacter": [
+                      {
+                        "CharacterID": 10,
+                        "Expression": 2
+                      }
+                    ],
+          
+                    "RightCharacter": [
+                      {
+                        "CharacterID": 4,
+                        "Expression": 0
+                      }
+                    ],
+          
+                    "ActiveCharacterLeft": 0,
+                    "ActiveCharacterRight": 0,
+                    "ActiveSide": true,
+          
+                    "Text": "That’s a shame.Maybe you’ll start liking it once you spend more time exploring. Everyone here loves the island.",
+          
+                    "LogActionData": {
+                        "ActionType": "JumpToNext",
+                        "Next": 9,
+                        "Value": 0
+                      }
+                },
+
+                {
+                    "LeftCharacter": [
+                      {
+                        "CharacterID": 10,
+                        "Expression": 2
+                      }
+                    ],
+          
+                    "RightCharacter": [
+                      {
+                        "CharacterID": 4,
+                        "Expression": 0
+                      }
+                    ],
+          
+                    "ActiveCharacterLeft": 0,
+                    "ActiveCharacterRight": 0,
+                    "ActiveSide": true,
+          
+                    "Text": "Well, I’m a bit busy now so I’ll leave you here. You know the way back home. See you later!",
+          
+                    "LogActionData": {
+                        "ActionType": "None"
+                      }
+                }
+            
+        ]
+      }
+    ]
+  }

@@ -1,0 +1,36 @@
+{
+    "InComment": null,
+    "OutComment" : null,
+    "Conversations": [
+      {
+        "Character": 10,
+        "Dialogs": [
+            {
+            "LeftCharacter": [
+              {
+                "CharacterID": 10,
+                "Expression": 2
+              }
+            ],
+  
+            "RightCharacter": [
+              {
+                "CharacterID": 4,
+                "Expression": 0
+              }
+            ],
+  
+            "ActiveCharacterLeft": 0,
+            "ActiveCharacterRight": 0,
+            "ActiveSide": true,
+  
+            "Text": "You were here yesterday, remember? This is the industrial dock. We receive our goods and the occasional visitor here. You can get close and look at the boats, but you shouldn’t swim around here. It can be dangerous.",
+  
+            "LogActionData": {
+              "ActionType": "None"
+            }
+            }          
+        ]
+      }
+    ]
+  }

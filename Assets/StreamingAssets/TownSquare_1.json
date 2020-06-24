@@ -1,0 +1,36 @@
+{
+    "InComment": null,
+    "OutComment" : null,
+    "Conversations": [
+      {
+        "Character": 10,
+        "Dialogs": [
+            {
+            "LeftCharacter": [
+              {
+                "CharacterID": 10,
+                "Expression": 2
+              }
+            ],
+  
+            "RightCharacter": [
+              {
+                "CharacterID": 4,
+                "Expression": 0
+              }
+            ],
+  
+            "ActiveCharacterLeft": 0,
+            "ActiveCharacterRight": 0,
+            "ActiveSide": true,
+  
+            "Text": "This is our town square! Although it’s a circle. From here you can access the library, the beach, a xoxo, and the fountain in the middle. Let’s look around.",
+  
+            "LogActionData": {
+              "ActionType": "None"
+            }
+            }          
+        ]
+      }
+    ]
+  }

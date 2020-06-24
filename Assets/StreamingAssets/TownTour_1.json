@@ -1,0 +1,83 @@
+{
+    "InComment": null,
+    "OutComment" : null,
+    "Conversations": [
+      {
+        "Character": 10,
+        "Dialogs": [
+            {
+            "LeftCharacter": [
+              {
+                "CharacterID": 10,
+                "Expression": 2
+              }
+            ],
+  
+            "RightCharacter": [
+              {
+                "CharacterID": 4,
+                "Expression": 0
+              }
+            ],
+  
+            "ActiveCharacterLeft": 0,
+            "ActiveCharacterRight": 0,
+            "ActiveSide": true,
+  
+            "Text": "Good morning, []. Did you sleep well?",
+  
+            "LogActionData": {
+              "ActionType": "JumpToNext",
+              "Next": 1,
+              "Value": 0
+            }
+            },            
+            
+            
+            {
+                "LeftCharacter": [
+                    {
+                      "CharacterID": 10,
+                      "Expression": 0
+                    }
+                  ],
+                
+                  "RightCharacter": [
+                    {
+                      "CharacterID": 4,
+                      "Expression": 0
+                    }
+                  ],
+                
+                  "ActiveCharacterLeft": 0,
+                  "ActiveCharacterRight": 0,
+                  "ActiveSide": false,
+                
+                  "Text": "",
+                
+  
+                  "LogActionData" : {
+                    "ActionType" : "Buttons",
+                    "Next" : 0,
+                    "Value" : 0
+                },
+                
+                "Options" : [
+                    {
+                        "Text" : "Take a boat tied to the dock",
+                        "Next" : 3,
+                        "Value" : 0.00
+                    },
+                    {
+                        "Text" : "Try to figure out what she’s doing",
+                        "Next" : 18,
+                        "Value" : 0.00
+                    }
+                ]
+            }
+
+
+        ]
+      }
+    ]
+  }

@@ -1,0 +1,388 @@
+{
+	"InComment" : null,
+	"OutComment" : null,
+    "Conversations" : [
+        {
+            "Character" : 0,
+            "Dialogs" : [
+				{
+					"LeftCharacter": [{
+						"CharacterID" : 10,
+						"Expression" : 0
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
+						"Expression" : 0
+					}],
+					
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": false,
+					
+					
+					"LogActionData" : {
+						"ActionType" : "Buttons"
+					},
+					
+					"Options" : [
+						{
+							"Text" : "Offer to help.",
+							"Next" : 1,
+							"Value" : 0
+						},
+						{
+							"Text" : "Greet her.",
+							"Next" : 5,
+							"Value" : 0
+                        },
+                        {
+							"Text" : "Show her the (watermelon seashell)",
+							"Next" : 9,
+							"Value" : 0
+                        }
+					]
+                },
+
+                {
+					"LeftCharacter": [{
+						"CharacterID" : 10,
+						"Expression" : 0
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
+						"Expression" : 0
+					}],
+					
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": false,
+					
+                    "Text" : "Hey Izzy! I noticed you’re really busy and, well,  I was wondering if you wanted some help.",
+                    
+                    "LogActionData" : {
+						"ActionType" : "JumpToNext",
+						"Next" : 2,
+						"Value" : 0
+					}
+                },
+
+                {
+					"LeftCharacter": [{
+						"CharacterID" : 10,
+						"Expression" : 0
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
+						"Expression" : 2
+					}],
+					
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": true,
+					
+                    "Text" : "Really? Yes, thank you! Look, I’ve got some new decorations!",
+                    
+                    "LogActionData" : {
+						"ActionType" : "JumpToNext",
+						"Next" : 3,
+						"Value" : 0
+					}
+                },
+
+                {
+					"LeftCharacter": [{
+						"CharacterID" : 10,
+						"Expression" : 0
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
+						"Expression" : 2
+					}],
+					
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": false,
+					
+                    "Text" : "Wow...those are...really shiny!",
+                    
+                    "LogActionData" : {
+						"ActionType" : "JumpToNext",
+						"Next" : 4,
+						"Value" : 0
+					}
+                },
+
+                {
+					"LeftCharacter": [{
+						"CharacterID" : 10,
+						"Expression" : 2
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
+						"Expression" : 2
+					}],
+					
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": true,
+					
+                    "Text" : "Of course! There’s no such thing as too shiny!",
+                    
+                    "LogActionData" : {
+						"ActionType" : "None"
+					}
+                },
+
+
+                {
+					"LeftCharacter": [{
+						"CharacterID" : 10,
+						"Expression" : 0
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
+						"Expression" : 0
+					}],
+					
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": false,
+					
+                    "Text" : "Hey, what’s up? Are you busy?",
+                    
+                    "LogActionData" : {
+						"ActionType" : "JumpToNext",
+						"Next" : 6,
+						"Value" : 0
+					}
+                },
+
+                {
+					"LeftCharacter": [{
+						"CharacterID" : 10,
+						"Expression" : 0
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
+						"Expression" : 2
+					}],
+					
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": true,
+					
+                    "Text" : "Oh, hey []...Yeah, I’ve been hanging decorations all week. I’m super excited but my arms are killing me.",
+                    
+                    "LogActionData" : {
+						"ActionType" : "JumpToNext",
+						"Next" : 7,
+						"Value" : 0
+					}
+                },
+
+
+                {
+					"LeftCharacter": [{
+						"CharacterID" : 10,
+						"Expression" : 0
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
+						"Expression" : 2
+					}],
+					
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": false,
+					
+                    "Text" : "Oh gotcha. I’ll get out of your way then. See you around, Izzy.",
+                    
+                    "LogActionData" : {
+						"ActionType" : "JumpToNext",
+						"Next" : 8,
+						"Value" : 0
+					}
+                },
+
+
+                {
+					"LeftCharacter": [{
+						"CharacterID" : 10,
+						"Expression" : 0
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
+						"Expression" : 2
+					}],
+					
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": true,
+					
+                    "Text" : "See you",
+                    
+                    "LogActionData" : {
+						"ActionType" : "None"
+					}
+                },
+
+
+                {
+					"LeftCharacter": [{
+						"CharacterID" : 10,
+						"Expression" : 2
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
+						"Expression" : 0
+					}],
+					
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": false,
+					
+                    "Text" : "Hey Izzy! I found something! I think you might like it.",
+                    
+                    "LogActionData" : {
+						"ActionType" : "JumpToNext",
+						"Next" : 10,
+						"Value" : 0
+					}
+                },
+
+
+                {
+					"LeftCharacter": [{
+						"CharacterID" : 10,
+						"Expression" : 2
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
+						"Expression" : 2
+					}],
+					
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": true,
+					
+                    "Text" : "Really?! Can I see?",
+                    
+                    "LogActionData" : {
+						"ActionType" : "JumpToNext",
+						"Next" : 11,
+						"Value" : 0
+					}
+                },
+
+
+                {
+					"LeftCharacter": [{
+						"CharacterID" : 10,
+						"Expression" : 2
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
+						"Expression" : 2
+					}],
+					
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": false,
+					
+                    "Text" : "Of course!",
+                    
+                    "LogActionData" : {
+						"ActionType" : "JumpToNext",
+						"Next" : 12,
+						"Value" : 0
+					}
+                },
+
+
+                {
+					"LeftCharacter": [{
+						"CharacterID" : 10,
+						"Expression" : 2
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
+						"Expression" : 5
+					}],
+					
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": false,
+					
+                    "Text" : "Sure, it’s all yours",
+                    
+                    "LogActionData" : {
+						"ActionType" : "JumpToNext",
+						"Next" : 13,
+						"Value" : 0
+					}
+                },
+
+
+                {
+					"LeftCharacter": [{
+						"CharacterID" : 10,
+						"Expression" : 2
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
+						"Expression" : 5
+					}],
+					
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": true,
+					
+                    "Text" : "Thank you, [].",
+                    
+                    "LogActionData" : {
+						"ActionType" : "JumpToNext",
+						"Next" : 14,
+						"Value" : 0
+					}
+                },
+
+                {
+					"LeftCharacter": [{
+						"CharacterID" : 10,
+						"Expression" : 5
+					}],
+					
+					"RightCharacter": [{
+						"CharacterID" : 3,
+						"Expression" : 5
+					}],
+					
+					"ActiveCharacterLeft": 0,
+					"ActiveCharacterRight": 0,
+					"ActiveSide": false,
+					
+                    "Text" : "...No problem.",
+                    
+                    "LogActionData" : {
+						"ActionType" : "None"
+					}
+                }
+
+            ]
+        }
+    ]
+}

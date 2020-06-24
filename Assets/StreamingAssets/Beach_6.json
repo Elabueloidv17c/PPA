@@ -1,0 +1,68 @@
+{
+    "InComment": null,
+    "OutComment" : null,
+    "Conversations": [
+      {
+        "Character": 10,
+        "Dialogs": [
+            {
+            "LeftCharacter": [
+              {
+                "CharacterID": 10,
+                "Expression": 2
+              }
+            ],
+  
+            "RightCharacter": [
+              {
+                "CharacterID": 4,
+                "Expression": 2
+              }
+            ],
+  
+            "ActiveCharacterLeft": 0,
+            "ActiveCharacterRight": 0,
+            "ActiveSide": true,
+  
+            "Text": "Hey, []! Over here! Let’s enjoy the sun, yeah?",
+  
+            "LogActionData": {
+                "ActionType": "None"
+              }
+            }
+            
+        ]
+      },
+      {
+        "Character": 10,
+        "Dialogs": [
+            {
+            "LeftCharacter": [
+              {
+                "CharacterID": 10,
+                "Expression": 2
+              }
+            ],
+  
+            "RightCharacter": [
+              {
+                "CharacterID": 20,
+                "Expression": 2
+              }
+            ],
+  
+            "ActiveCharacterLeft": 0,
+            "ActiveCharacterRight": 0,
+            "ActiveSide": true,
+  
+            "Text": "I wanna play with my beach ball but Jerry had to go pee and now I’m sitting alone. What’s taking him so long…?",
+  
+            "LogActionData": {
+                "ActionType": "None"
+              }
+            }
+        ]
+      }
+      
+    ]
+  }

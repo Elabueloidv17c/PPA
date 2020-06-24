@@ -1,0 +1,95 @@
+{
+    "InComment": null,
+    "OutComment" : null,
+    "Conversations": [
+
+
+      {
+        "Character": 10,
+        "Dialogs": [
+            {
+            "LeftCharacter": [
+              {
+                "CharacterID": 10,
+                "Expression": 2
+              }
+            ],
+  
+            "RightCharacter": [
+              {
+                "CharacterID": 4,
+                "Expression": 0
+              }
+            ],
+  
+            "ActiveCharacterLeft": 0,
+            "ActiveCharacterRight": 0,
+            "ActiveSide": true,
+  
+            "Text": "Listen here. []. You see that last house on the left?",
+  
+            "LogActionData": {
+              "ActionType": "JumpToNext",
+              "Next": 1,
+              "Value": 0
+            }
+            },       
+            
+            {
+                "LeftCharacter": [
+                  {
+                    "CharacterID": 10,
+                    "Expression": 2
+                  }
+                ],
+      
+                "RightCharacter": [
+                  {
+                    "CharacterID": 4,
+                    "Expression": 0
+                  }
+                ],
+      
+                "ActiveCharacterLeft": 0,
+                "ActiveCharacterRight": 0,
+                "ActiveSide": true,
+      
+                "Text": "Lots of kids dare each other to go up there and play around, but I wouldn’t recommend it. Someone lives there, though they never come out, and I’m not sure they appreciate the constant pranks.",
+      
+                "LogActionData": {
+                  "ActionType": "JumpToNext",
+                  "Next": 2,
+                  "Value": 0
+                }
+                },
+
+
+            {
+                    "LeftCharacter": [
+                      {
+                        "CharacterID": 10,
+                        "Expression": 2
+                      }
+                    ],
+          
+                    "RightCharacter": [
+                      {
+                        "CharacterID": 4,
+                        "Expression": 0
+                      }
+                    ],
+          
+                    "ActiveCharacterLeft": 0,
+                    "ActiveCharacterRight": 0,
+                    "ActiveSide": true,
+          
+                    "Text": "Come on. I’ll show you the town.",
+          
+                    "LogActionData": {
+                      "ActionType": "None"
+                    }
+            }    
+        ]
+      }
+    ]
+  }
