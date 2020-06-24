@@ -2,7 +2,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 using Text = TMPro.TextMeshProUGUI;
-
+ /// <summary>
+ /// YHALIFF WAS HERE , and read the file.
+ /// all it does is define what a item slot is.
+ /// </summary>
 public class liItemSlot : MonoBehaviour
 {
     [HideInInspector]
