@@ -361,8 +361,6 @@ public class liCrafting : MonoBehaviour
   [InspectorButton("Inspector_CraftItem")]
   [SerializeField]
   private bool CraftItem_;
-  public int[] test_arrayItems;
-
 
   private void Inspector_CraftItem()
   {
@@ -372,7 +370,7 @@ public class liCrafting : MonoBehaviour
       return;
     }
 
-    int ItemID = GetItemIDForCraftableItem(test_arrayItems);
+    int ItemID = GetItemIDForCraftableItem(InspectorRequiredItems);
     if (-1 != ItemID)
     {
       if (liInventory.instance.AddItem(ItemID))
