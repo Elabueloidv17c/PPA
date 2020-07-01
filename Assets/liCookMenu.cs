@@ -14,6 +14,12 @@ public class liCookMenu : BaseUIManager
         m_mainPanel = transform.GetChild(0).gameObject;
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
     private void ShrinkSlots()
     {
         int index;
@@ -43,73 +49,61 @@ public class liCookMenu : BaseUIManager
 
     private void ExpandSlots()
     {
-        for (int i = 0; i < 4; i++)
-        {
-            int index = itemSlots.Count; // needed by lambda so it's capture by value
-            var GO = Instantiate(itemSlots[0].gameObject, itemSlotPanel);
-            itemSlots.Add(GO.GetComponent<liItemSlot>());
-            itemSlots[index].button.onClick.AddListener(() => {
-                SlotBtnCallback(index);
-            });
+        //for (int i = 0; i < 4; i++)
+        //{
+        //    int index = itemSlots.Count; // needed by lambda so it's capture by value
+        //    var GO = Instantiate(itemSlots[0].gameObject, itemSlotPanel);
+        //    itemSlots.Add(GO.GetComponent<liItemSlot>());
+        //    itemSlots[index].button.onClick.AddListener(() => {
+        //        SlotBtnCallback(index);
+        //    });
 
-            itemSlots[index].image.color = Color.clear;
-            itemSlots[index].text.text = "";
-            itemSlots[index].button.interactable = false;
-            itemSlots[index].itemID = -1;
-            itemSlots[index].itemInstIndex = -1;
-        }
+        //    itemSlots[index].image.color = Color.clear;
+        //    itemSlots[index].text.text = "";
+        //    itemSlots[index].button.interactable = false;
+        //    itemSlots[index].itemID = -1;
+        //    itemSlots[index].itemInstIndex = -1;
+        //}
     }
 
     public override void CloseUI()
     {
-        ShrinkSlots();
-        mainPanel.SetActive(false);
-        IsOpen = false;
-        IsMaximized = false;
+        //ShrinkSlots();
+        //mainPanel.SetActive(false);
+        //IsOpen = false;
+        //IsMaximized = false;
 
-        liGameManager.instance.RegisterCloseUI(this);
+        //liGameManager.instance.RegisterCloseUI(this);
     }
 
     public override void MaximizeUI()
     {
-        if (!IsOpen) { return; }
-        IsMaximized = true;
-        mainPanel.SetActive(true);
+        //if (!IsOpen) { return; }
+        //IsMaximized = true;
+        //mainPanel.SetActive(true);
 
-        UpdateItemUI();
+        //UpdateItemUI();
     }
 
     public override void MinimizeUI()
     {
-        if (!IsOpen) { return; }
-        IsMaximized = false;
-        mainPanel.SetActive(false);
+        //if (!IsOpen) { return; }
+        //IsMaximized = false;
+        //mainPanel.SetActive(false);
     }
 
     public override void OpenUI()
     {
-        mainPanel.SetActive(true);
-        IsOpen = true;
-        IsMaximized = true;
+        //mainPanel.SetActive(true)
+        //IsOpen = true;
+        //IsMaximized = true;
 
-        liGameManager.instance.RegisterOpenUI(this);
+        //liGameManager.instance.RegisterOpenUI(this);
 
-        if (activeTabIndex == -1)
-        {
-            TabBtnCallback(tabBtns.Length - 1);
-        }
-        UpdateItemUI();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //if (activeTabIndex == -1)
+        //{
+        //    TabBtnCallback(tabBtns.Length - 1);
+        //}
+        //UpdateItemUI();
     }
 }
