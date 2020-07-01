@@ -1,5 +1,4 @@
 {
-    "InComment" : "I’d never been particularly studious back home, but with long months of vacations stretching before me, I figured some light reading would do me some good. It was just my luck, then, that the library was closed. On the door hung a small sign, with a handwritten “Closed, be right back!” Maybe I should’ve paid a little more attention when Shiro was explaining the schedules. Figuring I could just lounge around, in case it opened today, I explored the plaza. It was small and old but with that undeniable charm of a place well loved. A bit of a ways off, a *huge* tree stood tall and proud.",
     "Conversations" : [
         {
             "Character" : 0,
@@ -21,7 +20,7 @@
 					
 					"Text" : "I can's stop admiring its size. Its beautiful branches created a sort of canopy over the ground, shading it from the sun. As my eyes followed their shape, I noticed I’d almost stepped over a boy. Despite the fact that I was almost on top of him, the boy took no notice, nose buried in the pages of a book. His eyes moved quickly from side to side, completely enraptured.",
 					
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "Buttons"
 					},
 					
@@ -58,8 +57,7 @@
 					"ActiveCharacterRight": 0,
 					"ActiveSide": false,
 	
-					"Text" : "<b>What up, bud!!!</b>",
-					"Tought": "Why, oh why, did I say that? Because I had no self control or self preservation, instead of backing up like a normal human being, I escalated the situation.  Grinning  with the particular brand of madness that comes from public humiliation, I pat the boy’s shoulder. What was I? His uncle?"
+					"Text" : "What up, bud!!!"
 				},
 				{
 					"LeftCharacter": [{
@@ -76,8 +74,7 @@
 					"ActiveCharacterRight": 0,
 					"ActiveSide": true,
 	
-					"Text" : "“Ah… y-you scared m-me…”",
-					"Tought": " The boy, rather reasonably, startled at the sound of my voice, sending the book flying. Now, I was no mind-reader... but the boy looked rather upset. Huffing in annoyance, he reached out for his fallen book."
+					"Text" : "“Ah… y-you scared m-me…”"
 				},
 				{
 					"LeftCharacter": [{
@@ -94,7 +91,6 @@
 					"ActiveCharacterRight": 0,
 					"ActiveSide": true,
 	
-					"Tought": "God, what was I doing?! I removed my hand immediately and moved to brush the dirt from his book. ",
 					"Text" : "“I am so sorry, I’ve got no idea what came over me.”"
 				},
 				{
@@ -112,7 +108,6 @@
 					"ActiveCharacterRight": 0,
 					"ActiveSide": true,
 	
-					"Tought": "The boy swat my hand away with a resigned sigh, eyebrows pinched in annoyance.",
 					"Text" : "“Yeah, it’s fine.. .Can I just,” he gestured towards his book, “go back to reading? I’m kind of busy at the moment.”"
 				},
 				{
@@ -131,9 +126,8 @@
 					"ActiveSide": true,
 	
 					"Text" : "“Of course! Lemme just...get out of your way then…”",
-					"Tought": "I stood up, trying my best not to run away from the scene, stiff smile on my face. As soon as I was out of sight, I groaned.  That had been *beyond* humiliating!",
 
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "End"
 					}
 				},
@@ -152,7 +146,6 @@
 					"ActiveCharacterRight": 0,
 					"ActiveSide": true,
 	
-					"Tought": "Rocking on my heels for a bit, I tried to catch his eye, but the boy was completely enraptured. Feeling rather shy, I coughed to get his attention. I pretended to cough to catch his attention and I greeted him politely.",
 					"Text" : "“Uh, hi there.”"
 				},
 				{
@@ -170,7 +163,6 @@
 					"ActiveCharacterRight": 0,
 					"ActiveSide": true,
 	
-					"Tought": "The boy looked up at me, big brown eyes widening in surprise. After a couple of blinks, he curled up, book against his chest and cheeks red. How cute!",
 					"Text" : "“Ah… h-hello. I didn’t notice you there.” He stole another glance. “Sorry.”"
 				},
 				{
@@ -188,14 +180,13 @@
 					"ActiveCharacterRight": 0,
 					"ActiveSide": true,
 	
-					"Tought": "Truly cute. I laughed light-heartedly.",
                     "Text" : "“That’s okay! Looks like you were really into your book.”"
 				},
 				{
 					"Tought": "WTF",
                     "Text" : "“Here, take a SQUIDWARD.”",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
                         "ActionType" : "GiveItem",
                         "Value" : 10
 					}

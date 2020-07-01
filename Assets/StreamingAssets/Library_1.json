@@ -26,7 +26,7 @@
   
             "Text": "See that big building right there? That’s the library. They say they have good books. You should take a look some time. But not today! This is exploring day.",
   
-            "LogAction": {
+            "LogActionData": {
               "ActionType": "None"
             }
             }          

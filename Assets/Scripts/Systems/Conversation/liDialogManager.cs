@@ -19,6 +19,8 @@ public partial class liDialogManager : BaseUIManager
     /// </summary>
     private liPlayerCharacter m_character;
     
+    #region UI_references
+    
     /// <summary>
     /// reference to main dialog panel
     /// </summary>
@@ -44,11 +46,21 @@ public partial class liDialogManager : BaseUIManager
     /// that they can click to show the next dialog.
     /// </summary>
     private GameObject m_elipsis;
+    
+    #endregion
 
     /// <summary>
     /// ID of the conversation currently being displayed.
     /// </summary>
-    private int m_convID;
+    private int m_conversationID;
+
+    /// <summary>
+    /// Get the list of dialogs for the current conversation.
+    /// </summary>
+    public Dialog[] CurrentDialogs
+    {
+        get => liDataManager.m_data.Conversations[m_conversationID].Dialogs;
+    }
 
     /// <summary>
     /// Index of the dialog currently being displayed.
@@ -66,9 +78,24 @@ public partial class liDialogManager : BaseUIManager
     private bool m_clickIntoNext;
 
     /// <summary>
+    /// Signals if UI should be closed instead of advancing to the next dialog.
+    /// </summary>
+    private bool m_clickToCloseUI;
+
+    /// <summary>
     /// Extra Action the dialog manager must execute for the current dialog.
     /// </summary>
-    private LogAction action;
+    private DialogAction m_action;
+
+    /// <summary>
+    /// Contains data as loaded from file about current dialog action.
+    /// </summary>
+    private LogActionData m_logAction;
+
+    /// <summary>
+    /// Contains data as loaded from file about current dialog action.
+    /// </summary>
+    public LogActionData LogActionData { get => m_logAction; }
 
     void Awake() 
     {
@@ -167,7 +194,7 @@ public partial class liDialogManager : BaseUIManager
     {
         OpenUI();
 
-        m_convID = conversationID;
+        m_conversationID = conversationID;
         m_dialogIndex = 0;
 
         m_charNameText.text = 
@@ -182,34 +209,17 @@ public partial class liDialogManager : BaseUIManager
     /// </summary>
     private void DisplayDialog()
     {
-        var dialogs = liDataManager.m_data.Conversations[m_convID].Dialogs;
+        var dialogs = CurrentDialogs;
 
         m_textTyper.ShowText(dialogs[m_dialogIndex].Text);
 
-        action = dialogs[m_dialogIndex].Action;
+        m_logAction = dialogs[m_dialogIndex].LogActionData;
+        m_action = GetDialogAction(m_logAction.ActionType);
 
-        switch (action.ActionType)
-        {
-            case EDialogAction.None:
-                m_clickIntoNext = m_dialogIndex + 1 < dialogs.Length;
-            break;
-            case EDialogAction.JumpToNext:
-                m_clickIntoNext = action.Next < dialogs.Length;
-            break;
-            case EDialogAction.Buttons:
-                m_clickIntoNext = false;
-            break;
-            case EDialogAction.End:
-                m_clickIntoNext = false;
-            break;
-            case EDialogAction.GiveItem:
-                m_clickIntoNext = m_dialogIndex + 1 < dialogs.Length;
-                liInventory.instance.AddItem(action.Value);
-            break;
-            
-            default:
-            throw new NotImplementedException();
-        }
+        m_clickIntoNext = m_action.ClickIntoNextEnabled();
+        m_clickToCloseUI = m_action.ClickToCloseUIEnabled();
+
+        m_action.onDialogBegin();
     }
 
     /// <summary>
@@ -218,25 +228,14 @@ public partial class liDialogManager : BaseUIManager
     /// </summary>
     public void NextDialog()
     {
-        if(action.ActionType == EDialogAction.Buttons)
+        if(m_clickIntoNext)
         {
-            return;
-        }
-        else if(m_clickIntoNext)
-        {
-            if(action.ActionType == EDialogAction.JumpToNext)
-            {
-                m_dialogIndex = action.Next;
-            }
-            else
-            {
-                m_dialogIndex++;
-            }
-            
+            m_dialogIndex = m_action.NextDialogIndex();
+            m_action.onDialogEnd();
             DisplayDialog();
             m_elipsis.SetActive(false);
         }
-        else
+        else if(m_clickToCloseUI)
         {
             CloseUI();
         }
@@ -247,29 +246,34 @@ public partial class liDialogManager : BaseUIManager
     /// </summary>
     public void FinishedTyping()
     {
-        if(action.ActionType == EDialogAction.Buttons)
-        {
-            var options = liDataManager.m_data.Conversations[m_convID].
-                          Dialogs[m_dialogIndex].Options;
-
-            for(int i = 0; i < options.Length; ++i)
-            {
-                m_buttons[i].gameObject.SetActive(true);
-                
-                m_buttons[i].GetComponentInChildren<Text>()
-                            .text = options[i].Text;
-
-                // nextIndex forces lambda capture by value
-                int nextIndex = options[i].Next;
-
-                m_buttons[i].onClick.AddListener(
-                    () => ButtonCallback(nextIndex));
-            }
-        }
+        m_action.onFinishedTyping();
         
         if(m_clickIntoNext)
         {
             m_elipsis.SetActive(true);
+        }
+    }
+
+    /// <summary>
+    /// Called by DialogActionButtons when finished typing.
+    /// Shows the option buttons according to the current LogOptions.
+    /// </summary>
+    public void ShowButtons()
+    {
+        var options = CurrentDialogs[m_dialogIndex].Options;
+
+        for(int i = 0; i < options.Length; ++i)
+        {
+            m_buttons[i].gameObject.SetActive(true);
+            
+            m_buttons[i].GetComponentInChildren<Text>()
+                        .text = options[i].Text;
+
+            // nextIndex forces lambda capture by value
+            int nextIndex = options[i].Next;
+
+            m_buttons[i].onClick.AddListener(
+                () => ButtonCallback(nextIndex));
         }
     }
 
@@ -282,8 +286,7 @@ public partial class liDialogManager : BaseUIManager
         m_dialogIndex = index;
         DisableButtons();
 
-        if(liDataManager.m_data.Conversations[m_convID].
-           Dialogs.Length <= m_dialogIndex)
+        if(CurrentDialogs.Length <= m_dialogIndex)
         {
             EndConversation();
         }

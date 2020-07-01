@@ -1,0 +1,93 @@
+{
+    "InComment": null,
+    "OutComment" : null,
+    "Conversations": [
+      {
+        "Character": 10,
+        "Dialogs": [
+            {
+            "LeftCharacter": [
+              {
+                "CharacterID": 10,
+                "Expression": 2
+              }
+            ],
+  
+            "RightCharacter": [
+              {
+                "CharacterID": 4,
+                "Expression": 0
+              }
+            ],
+  
+            "ActiveCharacterLeft": 0,
+            "ActiveCharacterRight": 0,
+            "ActiveSide": true,
+  
+            "Text": "This is the hot spot of the island - our dearly beloved Xoxo",
+  
+            "LogAction": {
+                "ActionType": "JumpToNext",
+                "Next": 1,
+                "Value": 0
+              }
+            },        
+
+            {
+                "LeftCharacter": [
+                  {
+                    "CharacterID": 10,
+                    "Expression": 2
+                  }
+                ],
+      
+                "RightCharacter": [
+                  {
+                    "CharacterID": 4,
+                    "Expression": 0
+                  }
+                ],
+      
+                "ActiveCharacterLeft": 0,
+                "ActiveCharacterRight": 0,
+                "ActiveSide": true,
+      
+                "Text": "Whenever you need something you can always come here. Always prepared and always there!",
+      
+                "LogAction": {
+                    "ActionType": "JumpToNext",
+                    "Next": 1,
+                    "Value": 0
+                }
+            },
+            
+            {
+                "LeftCharacter": [
+                  {
+                    "CharacterID": 10,
+                    "Expression": 2
+                  }
+                ],
+      
+                "RightCharacter": [
+                  {
+                    "CharacterID": 4,
+                    "Expression": 0
+                  }
+                ],
+      
+                "ActiveCharacterLeft": 0,
+                "ActiveCharacterRight": 0,
+                "ActiveSide": true,
+      
+                "Text": "Now let’s keep moving!",
+      
+                "LogAction": {
+                    "ActionType": "None"
+                }
+            } 
+            
+        ]
+      }
+    ]
+  }

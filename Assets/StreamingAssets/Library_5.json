@@ -22,7 +22,7 @@
 					
                     "Text" : "Hey! Were you looking for something?",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 1,
 						"Value" : 0
@@ -46,7 +46,7 @@
 					
                     "Text" : "Oh, I was just passing by. I was hoping you weren’t too busy...",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 2,
 						"Value" : 0
@@ -70,7 +70,7 @@
 					
                     "Text" : "I’m actually in a bit of a hurry, sorry! But I’ll talk to you later, yeah?",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "JumpToNext",
 						"Next" : 3,
 						"Value" : 0
@@ -94,7 +94,7 @@
 					
                     "Text" : "Don’t worry about it, I’ll see you later.",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
 						"ActionType" : "None"
 					}
                 }

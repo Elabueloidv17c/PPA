@@ -1,0 +1,557 @@
+{
+ "InComment": null,
+ "OutComment" : null,
+ "Conversations": [
+  {
+   "Character": 0,
+   "Dialogs": [
+    {
+     "LeftCharacter": [
+       {
+         "CharacterID": 10,
+         "Expression": 0
+       }
+     ],
+
+     "RightCharacter": [
+       {
+         "CharacterID": 0,
+         "Expression": 0
+       }
+     ],
+
+     "ActiveCharacterLeft": 0,
+     "ActiveCharacterRight": 0,
+     "ActiveSide": false,
+
+      "LogAction" : {
+        "ActionType" : "Buttons",
+        "Next" : 0,
+        "Value" : 0
+      },
+      "Options" : [
+      {
+        "Text" : "Approach the dock",
+        "Next" : 1,
+        "Value" : 0.00
+      }
+      ]
+    },
+
+    {//1
+     "LeftCharacter": [
+        {
+          "CharacterID": 10,
+          "Expression": 0
+        }
+      ],
+  
+      "RightCharacter": [
+        {
+         "CharacterID": 0,
+          "Expression": 0
+       }
+     ],
+
+     "ActiveCharacterLeft": 0,
+     "ActiveCharacterRight": 0,
+     "ActiveSide": false,
+
+     "Text": "Excuse me...ma’am…? Miss? Girl…? Ugh, sorry, could you please give me directions back to the square? I’m not from around here.",
+
+     "LogAction": {
+      "ActionType": "JumpToNext",
+      "Next": 2,
+      "Value": 0
+    }
+  },
+    
+    {//2
+     "LeftCharacter": [
+         {
+           "CharacterID": 10,
+           "Expression": 0
+         }
+       ],
+ 
+       "RightCharacter": [
+         {
+          "CharacterID": 12,
+          "Expression": 5
+        }
+      ],
+
+      "ActiveCharacterLeft": 0,
+      "ActiveCharacterRight": 0,
+      "ActiveSide": true,
+
+      "Text": "...",
+
+      "LogAction": {
+       "ActionType": "JumpToNext",
+       "Next": 3,
+       "Value": 0
+      }
+    },
+
+    {//3
+      "LeftCharacter": [
+        {
+          "CharacterID": 10,
+          "Expression": 0
+        }
+      ],
+
+      "RightCharacter": [
+        {
+         "CharacterID": 12,
+         "Expression": 5
+       }
+     ],
+
+     "ActiveCharacterLeft": 0,
+     "ActiveCharacterRight": 0,
+     "ActiveSide": false,
+
+     "Text": "Don’t worry about it.",
+
+     "LogAction" : {
+      "ActionType" : "Buttons",
+      "Next" : 0,
+      "Value" : 0
+    },
+
+    "Options" : [
+     {
+       "Text" : "Take the boat tied to the dock",
+       "Next" : 4,
+       "Value" : 0.00
+     },
+      {
+        "Text" : "Try to figure out what she's doing",
+        "Next" : 18,
+        "Value" : 0.00
+      }
+     ]
+    },
+
+    {//4
+     "LeftCharacter": [
+         {
+           "CharacterID": 10,
+           "Expression": 0
+         }
+       ],
+ 
+       "RightCharacter": [
+         {
+          "CharacterID": 12,
+          "Expression": 5
+        }
+      ],
+
+      "ActiveCharacterLeft": 0,
+      "ActiveCharacterRight": 0,
+      "ActiveSide": false,
+
+      "Text": "If you don’t mind...uh...what are you doing, exactly?",
+
+      "LogAction": {
+       "ActionType": "JumpToNext",
+       "Next": 5,
+       "Value": 0
+      }
+    },
+
+    {//5
+      "LeftCharacter": [
+        {
+          "CharacterID": 10,
+          "Expression": 0
+        }
+      ],
+
+      "RightCharacter": [
+        {
+         "CharacterID": 12,
+         "Expression": 5
+       }
+     ],
+
+     "ActiveCharacterLeft": 0,
+     "ActiveCharacterRight": 0,
+     "ActiveSide": true,
+
+     "Text": "What do you think?",
+
+     "LogAction": {
+      "ActionType": "JumpToNext",
+      "Next": 6,
+      "Value": 0
+     }
+    },
+
+    {//6
+      "LeftCharacter": [
+        {
+          "CharacterID": 10,
+          "Expression": 0
+        }
+      ],
+
+      "RightCharacter": [
+        {
+         "CharacterID": 12,
+         "Expression": 5
+       }
+     ],
+
+     "ActiveCharacterLeft": 0,
+     "ActiveCharacterRight": 0,
+     "ActiveSide": true,
+
+     "Text": "Yo really don't know? I'm fishing silly!",
+
+     "LogAction": {
+      "ActionType": "JumpToNext",
+      "Next": 7,
+      "Value": 0
+     }
+    },
+
+    {//7
+      "LeftCharacter": [
+        {
+          "CharacterID": 10,
+          "Expression": 2
+        }
+      ],
+
+      "RightCharacter": [
+        {
+         "CharacterID": 12,
+         "Expression": 5
+       }
+     ],
+
+     "ActiveCharacterLeft": 0,
+     "ActiveCharacterRight": 0,
+     "ActiveSide": false,
+
+     "Text": "Oh, Right! I just couldn’t see you very well, you know?",
+
+     "LogAction": {
+      "ActionType": "JumpToNext",
+      "Next": 8,
+      "Value": 0
+     }
+    },
+
+    {//8
+      "LeftCharacter": [
+        {
+          "CharacterID": 10,
+          "Expression": 2
+        }
+      ],
+
+      "RightCharacter": [
+        {
+         "CharacterID": 12,
+         "Expression": 2
+       }
+     ],
+
+     "ActiveCharacterLeft": 0,
+     "ActiveCharacterRight": 0,
+     "ActiveSide": true,
+
+     "Text": "Of course, of course.",
+
+     "LogAction": {
+      "ActionType": "JumpToNext",
+      "Next": 9,
+      "Value": 0
+     }
+    },
+    
+    {//9
+      "LeftCharacter": [
+        {
+          "CharacterID": 10,
+          "Expression": 2
+        }
+      ],
+
+      "RightCharacter": [
+        {
+         "CharacterID": 12,
+         "Expression": 2
+       }
+     ],
+
+     "ActiveCharacterLeft": 0,
+     "ActiveCharacterRight": 0,
+     "ActiveSide": false,
+
+     "Text": "Happens all the time.",
+
+     "LogAction": {
+      "ActionType": "JumpToNext",
+      "Next": 10,
+      "Value": 0
+     }
+    },    
+
+    {//10
+      "LeftCharacter": [
+        {
+          "CharacterID": 10,
+          "Expression": 2
+        }
+      ],
+
+      "RightCharacter": [
+        {
+         "CharacterID": 12,
+         "Expression": 2
+       }
+     ],
+
+     "ActiveCharacterLeft": 0,
+     "ActiveCharacterRight": 0,
+     "ActiveSide": true,
+
+     "Text": "I bet it does.",
+
+     "LogAction": {
+      "ActionType": "JumpToNext",
+      "Next": 11,
+      "Value": 0
+     }
+    },
+
+    {//11
+      "LeftCharacter": [
+        {
+          "CharacterID": 10,
+          "Expression": 2
+        }
+      ],
+
+      "RightCharacter": [
+        {
+         "CharacterID": 12,
+         "Expression": 2
+       }
+     ],
+
+     "ActiveCharacterLeft": 0,
+     "ActiveCharacterRight": 0,
+     "ActiveSide": false,
+
+     "Text": "So... did you catch anything yet?",
+
+     "LogAction": {
+      "ActionType": "JumpToNext",
+      "Next": 12,
+      "Value": 0
+     }
+    },
+
+    {//12
+      "LeftCharacter": [
+        {
+          "CharacterID": 10,
+          "Expression": 2
+        }
+      ],
+
+      "RightCharacter": [
+        {
+         "CharacterID": 12,
+         "Expression": 2
+       }
+     ],
+
+     "ActiveCharacterLeft": 0,
+     "ActiveCharacterRight": 0,
+     "ActiveSide": true,
+
+     "Text": "Sure I did! /n These babies will be today's delicius dinner",
+
+     "LogAction": {
+      "ActionType": "JumpToNext",
+      "Next": 13,
+      "Value": 0
+     }
+    },  
+    
+    {//13
+      "LeftCharacter": [
+        {
+          "CharacterID": 10,
+          "Expression": 0
+        }
+      ],
+
+      "RightCharacter": [
+        {
+         "CharacterID": 12,
+         "Expression": 2
+       }
+     ],
+
+     "ActiveCharacterLeft": 0,
+     "ActiveCharacterRight": 0,
+     "ActiveSide": false,
+
+     "Text": "You cook them? Right?",
+
+     "LogAction": {
+      "ActionType": "JumpToNext",
+      "Next": 14,
+      "Value": 0
+     }
+    },    
+
+    {//14
+      "LeftCharacter": [
+        {
+          "CharacterID": 10,
+          "Expression": 0
+        }
+      ],
+
+      "RightCharacter": [
+        {
+         "CharacterID": 12,
+         "Expression": 2
+       }
+     ],
+
+     "ActiveCharacterLeft": 0,
+     "ActiveCharacterRight": 0,
+     "ActiveSide": true,
+
+     "Text": "Of course! I roast them on my campfire. /n Raw fish is pretty great, I’ll admit, but nothing beats roasted fish.",
+
+     "LogAction": {
+      "ActionType": "JumpToNext",
+      "Next": 15,
+      "Value": 0
+     }
+    },      
+
+    {//15
+      "LeftCharacter": [
+        {
+          "CharacterID": 10,
+          "Expression": 2
+        }
+      ],
+
+      "RightCharacter": [
+        {
+         "CharacterID": 12,
+         "Expression": 2
+       }
+     ],
+
+     "ActiveCharacterLeft": 0,
+     "ActiveCharacterRight": 0,
+     "ActiveSide": false,
+
+     "Thought": "So she liked sushy uh.",
+     "Text": "That sounds graeat!",
+
+     "LogAction": {
+      "ActionType": "JumpToNext",
+      "Next": 16,
+      "Value": 0
+     }
+    }, 
+    
+    {//16
+      "LeftCharacter": [
+        {
+          "CharacterID": 10,
+          "Expression": 2
+        }
+      ],
+
+      "RightCharacter": [
+        {
+         "CharacterID": 12,
+         "Expression": 2
+       }
+     ],
+
+     "ActiveCharacterLeft": 0,
+     "ActiveCharacterRight": 0,
+     "ActiveSide": true,
+
+     "Text": "I know! /n You know!, you know!, I could share some with you, if you like.",
+
+     "LogAction": {
+      "ActionType": "JumpToNext",
+      "Next": 17,
+      "Value": 0
+     }
+    },  
+    
+    {//17
+      "LeftCharacter": [
+        {
+          "CharacterID": 10,
+          "Expression": 2
+        }
+      ],
+
+      "RightCharacter": [
+        {
+         "CharacterID": 12,
+         "Expression": 2
+       }
+     ],
+
+     "ActiveCharacterLeft": 0,
+     "ActiveCharacterRight": 0,
+     "ActiveSide": false,
+
+     "Text": "Sound like a deal.",
+
+     "LogAction": {
+      "ActionType": "None"
+     }
+    }
+
+    {//18
+      "LeftCharacter": [
+        {
+          "CharacterID": 10,
+          "Expression": 2
+        }
+      ],
+
+      "RightCharacter": [
+        {
+         "CharacterID": 12,
+         "Expression": 2
+       }
+     ],
+
+     "ActiveCharacterLeft": 0,
+     "ActiveCharacterRight": 0,
+     "ActiveSide": false,
+
+     "Thought": "I really don't know what she's doing. /n I should let her be.",
+
+     "LogAction": {
+      "ActionType": "None"
+     }
+    }    
+   ]
+  }
+ ]
+}

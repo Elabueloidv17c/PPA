@@ -28,7 +28,7 @@
   
             "Text": "Listen here. []. You see that last house on the left?",
   
-            "LogAction": {
+            "LogActionData": {
               "ActionType": "JumpToNext",
               "Next": 1,
               "Value": 0
@@ -56,7 +56,7 @@
       
                 "Text": "Lots of kids dare each other to go up there and play around, but I wouldn’t recommend it. Someone lives there, though they never come out, and I’m not sure they appreciate the constant pranks.",
       
-                "LogAction": {
+                "LogActionData": {
                   "ActionType": "JumpToNext",
                   "Next": 2,
                   "Value": 0
@@ -85,7 +85,7 @@
           
                     "Text": "Come on. I’ll show you the town.",
           
-                    "LogAction": {
+                    "LogActionData": {
                       "ActionType": "None"
                     }
             }    

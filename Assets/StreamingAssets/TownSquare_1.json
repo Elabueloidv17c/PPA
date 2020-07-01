@@ -26,7 +26,7 @@
   
             "Text": "This is our town square! Although it’s a circle. From here you can access the library, the beach, a xoxo, and the fountain in the middle. Let’s look around.",
   
-            "LogAction": {
+            "LogActionData": {
               "ActionType": "None"
             }
             }          

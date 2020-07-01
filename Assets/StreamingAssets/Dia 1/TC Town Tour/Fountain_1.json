@@ -1,0 +1,93 @@
+{
+    "InComment": null,
+    "OutComment" : null,
+    "Conversations": [
+      {
+        "Character": 10,
+        "Dialogs": [
+            {
+            "LeftCharacter": [
+              {
+                "CharacterID": 10,
+                "Expression": 2
+              }
+            ],
+  
+            "RightCharacter": [
+              {
+                "CharacterID": 4,
+                "Expression": 0
+              }
+            ],
+  
+            "ActiveCharacterLeft": 0,
+            "ActiveCharacterRight": 0,
+            "ActiveSide": true,
+  
+            "Text": "Here is our beautiful fountain. People usually come here to relax in the benches and eat. Why not try some hotdogs or watermelons? They’re so tasty!",
+  
+            "LogAction": {
+                "ActionType": "JumpToNext",
+                "Next": 1,
+                "Value": 0
+              }
+            },        
+
+            {
+                "LeftCharacter": [
+                  {
+                    "CharacterID": 10,
+                    "Expression": 2
+                  }
+                ],
+      
+                "RightCharacter": [
+                  {
+                    "CharacterID": 4,
+                    "Expression": 0
+                  }
+                ],
+      
+                "ActiveCharacterLeft": 0,
+                "ActiveCharacterRight": 0,
+                "ActiveSide": false,
+      
+                "Text": "Can I ask some...",
+      
+                "LogAction": {
+                    "ActionType": "JumpToNext",
+                    "Next": 1,
+                    "Value": 0
+                }
+            },
+            
+            {
+                "LeftCharacter": [
+                  {
+                    "CharacterID": 10,
+                    "Expression": 2
+                  }
+                ],
+      
+                "RightCharacter": [
+                  {
+                    "CharacterID": 4,
+                    "Expression": 0
+                  }
+                ],
+      
+                "ActiveCharacterLeft": 0,
+                "ActiveCharacterRight": 0,
+                "ActiveSide": true,
+      
+                "Text": "Questions at the end of the tour, thank you. Let’s move on.",
+      
+                "LogAction": {
+                    "ActionType": "None"
+                }
+            } 
+            
+        ]
+      }
+    ]
+  }

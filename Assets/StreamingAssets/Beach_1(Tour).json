@@ -26,7 +26,7 @@
   
             "Text": "And here’s the beach. This is where you can swim. There’s a dock here too, but just for little fishing boats.",
   
-            "LogAction": {
+            "LogActionData": {
                 "ActionType": "JumpToNext",
                 "Next": 1,
                 "Value": 0
@@ -54,7 +54,7 @@
       
                 "Text": "So how did you like the island?",
       
-                "LogAction": {
+                "LogActionData": {
                     "ActionType": "JumpToNext",
                     "Next": 2,
                     "Value": 0
@@ -82,7 +82,7 @@
       
                 "Text": "So how did you like the island?",
       
-                "LogAction" : {
+                "LogActionData" : {
                     "ActionType" : "Buttons"
                 },
                 
@@ -122,7 +122,7 @@
       
                 "Text": "It’s a very beautiful island. I can already tell I’ll enjoy my time here very much.",
       
-                "LogAction": {
+                "LogActionData": {
                     "ActionType": "JumpToNext",
                     "Next": 5,
                     "Value": 0
@@ -150,7 +150,7 @@
           
                     "Text": "“I’m glad you like it. This is a very special place. Why not go and explore it a little more?, by your own",
           
-                    "LogAction": {
+                    "LogActionData": {
                         "ActionType": "None"
                       }
                 },
@@ -176,7 +176,7 @@
           
                     "Text": "Well it’s...an island, I guess. There’s nothing much to say.",
           
-                    "LogAction": {
+                    "LogActionData": {
                         "ActionType": "JumpToNext",
                         "Next": 8,
                         "Value": 0
@@ -204,7 +204,7 @@
           
                     "Text": "That’s a shame.Maybe you’ll start liking it once you spend more time exploring. Everyone here loves the island.",
           
-                    "LogAction": {
+                    "LogActionData": {
                         "ActionType": "JumpToNext",
                         "Next": 9,
                         "Value": 0
@@ -232,7 +232,7 @@
           
                     "Text": "Well, I’m a bit busy now so I’ll leave you here. You know the way back home. See you later!",
           
-                    "LogAction": {
+                    "LogActionData": {
                         "ActionType": "None"
                       }
                 }

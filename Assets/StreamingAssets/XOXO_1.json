@@ -26,7 +26,7 @@
   
             "Text": "This is the hot spot of the island - our dearly beloved Xoxo",
   
-            "LogAction": {
+            "LogActionData": {
                 "ActionType": "JumpToNext",
                 "Next": 1,
                 "Value": 0
@@ -54,7 +54,7 @@
       
                 "Text": "Whenever you need something you can always come here. Always prepared and always there!",
       
-                "LogAction": {
+                "LogActionData": {
                     "ActionType": "JumpToNext",
                     "Next": 1,
                     "Value": 0
@@ -82,7 +82,7 @@
       
                 "Text": "Now let’s keep moving!",
       
-                "LogAction": {
+                "LogActionData": {
                     "ActionType": "None"
                 }
             } 

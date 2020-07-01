@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateTalk : MonoBehaviour
+public class StateTalk : IState<liPlayerCharacter>
 {
-    // Start is called before the first frame update
-    void Start()
+    public StateTalk(StateMachine<liPlayerCharacter> stateMachine, liPlayerCharacter entity) : base(stateMachine, entity)
     {
-        
+
+    }
+    public override void onComputeNextState()
+    {
+        throw new System.NotImplementedException();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void onStateUpdate()
     {
-        
+        throw new System.NotImplementedException();
     }
 }

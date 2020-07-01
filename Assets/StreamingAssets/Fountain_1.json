@@ -26,7 +26,7 @@
   
             "Text": "Here is our beautiful fountain. People usually come here to relax in the benches and eat. Why not try some hotdogs or watermelons? They’re so tasty!",
   
-            "LogAction": {
+            "LogActionData": {
                 "ActionType": "JumpToNext",
                 "Next": 1,
                 "Value": 0
@@ -54,7 +54,7 @@
       
                 "Text": "Can I ask some...",
       
-                "LogAction": {
+                "LogActionData": {
                     "ActionType": "JumpToNext",
                     "Next": 1,
                     "Value": 0
@@ -82,7 +82,7 @@
       
                 "Text": "Questions at the end of the tour, thank you. Let’s move on.",
       
-                "LogAction": {
+                "LogActionData": {
                     "ActionType": "None"
                 }
             } 
