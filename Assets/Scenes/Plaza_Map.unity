@@ -594,7 +594,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -262, y: -375.39566}
+  m_AnchoredPosition: {x: -262, y: -229.24478}
   m_SizeDelta: {x: 1281.109, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &241727573
@@ -5908,8 +5908,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 882661990}
   m_HandleRect: {fileID: 882661989}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 1
+  m_Value: 0
+  m_Size: 0.5000002
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6593,7 +6593,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -99.99996}
+  m_AnchoredPosition: {x: 0, y: -99.999954}
   m_SizeDelta: {x: 392, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1842808255714456923
@@ -7932,9 +7932,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inactiveColor: {r: 0.5686275, g: 0.34901962, b: 0.34509805, a: 1}
   activeColor: {r: 0.7137255, g: 0.87843144, b: 0.7294118, a: 1}
+  depositEnabledColor: {r: 0, g: 0, b: 0, a: 0}
+  depositActiveColor: {r: 0, g: 0, b: 0, a: 0}
+  inventoryColor: {r: 0, g: 0, b: 0, a: 0}
+  depositMode: 0
   itemID: 0
   addItem: 0
   removeItem: 0
+  expandSlots: 0
+  shrinkSlots: 0
 --- !u!114 &5671165618543825952
 MonoBehaviour:
   m_ObjectHideFlags: 0
