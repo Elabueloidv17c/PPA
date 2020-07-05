@@ -1,37 +1,33 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class liCookMenu : BaseUIManager
 {
     GameObject m_mainPanel;
-    List<liItemSlot> itemSlots;
-    Transform itemSlotPanel;
-    Button takeDepositBtn;
-    int activeSlotIndex = -1;
-    static Item[] s_itemDataBase = null;
-    public static List<ItemInstance> s_currentItems;
-    public static List<ItemInstance> s_depositItems;
-    Text itemNameTxt;
-    Image itemImg;
-    Text itemDescTxt;
-    int activeTabIndex = -1;
-    Button[] tabBtns;
-    Button[] depositBtns;
-    Image backgroundImg;
 
-    List<ItemInstance> currentItems
-    {
-        get
-        {
-            return depositMode == DepositMode.Active ?
-                                  s_depositItems :
-                                  s_currentItems;
-        }
-    }
+    List<liItemSlot> itemSlots;
+
+    Transform itemSlotPanel;
+
+    int activeSlotIndex = -1;
+
+    Text itemNameTxt;
+
+    Image itemImg;
+
+    Text itemDescTxt;
+
+    int activeTabIndex = -1;
+
+    Button[] tabBtns;
+
+    Button[] itemSlotBtns;
+  
+    Image backgroundImg;
 
     [SerializeField]
     DepositMode depositMode;
@@ -51,33 +47,38 @@ public class liCookMenu : BaseUIManager
     [SerializeField]
     Color inventoryColor;
 
-    void Start()
+  void Start()
+  {
+    m_mainPanel = transform.GetChild(0).gameObject;
+    tabBtns = m_mainPanel.transform.Find("Tabs").GetComponentsInChildren<Button>();
+    var background = m_mainPanel.transform.Find("Background");
+    itemSlotPanel = background.GetChild(0);
+    itemSlots = itemSlotPanel.GetComponentsInChildren<liItemSlot>().ToList<liItemSlot>();
+
+    //itemSlotPanel = background.GetChild(0).GetChild(0).GetChild(0);
+    //takeDepositBtn = m_mainPanel.transform.Find("Take Button").
+    //                        GetComponentInChildren<Button>();
+    //var itemDetails = background.GetChild(1);
+    //itemNameTxt = itemDetails.Find("Item Name").GetComponent<Text>();
+    //itemImg = itemDetails.Find("Item Image").GetChild(0).GetComponent<Image>();
+    //var scrollView = itemDetails.Find("Item Description").GetChild(0);
+    //itemDescTxt = scrollView.Find("Viewport").GetChild(0).GetComponent<Text>();
+    //tabBtns = m_mainPanel.transform.Find("Tabs").GetComponentsInChildren<Button>();
+
+    for (int i = 0; i < tabBtns.Length; i++)
     {
-        m_mainPanel = transform.GetChild(0).gameObject;
-        var background = m_mainPanel.transform.Find("Background");
-        itemSlotPanel = background.GetChild(0).GetChild(0).GetChild(0);
-        takeDepositBtn = m_mainPanel.transform.Find("Take Button").
-                                GetComponentInChildren<Button>();
-        var itemDetails = background.GetChild(1);
-        itemNameTxt = itemDetails.Find("Item Name").GetComponent<Text>();
-        itemImg = itemDetails.Find("Item Image").GetChild(0).GetComponent<Image>();
-        var scrollView = itemDetails.Find("Item Description").GetChild(0);
-        itemDescTxt = scrollView.Find("Viewport").GetChild(0).GetComponent<Text>();
-        tabBtns = m_mainPanel.transform.Find("Tabs").GetComponentsInChildren<Button>();
-
-        for (int i = 0; i < tabBtns.Length; i++)
-        {
-            int index = i; // needed by lambda so it's capture by value
-            tabBtns[i].onClick.AddListener(() => { TabBtnCallback(index); });
-        }
-
-        depositBtns = m_mainPanel.transform.Find("Deposit Buttons").
-                                GetComponentsInChildren<Button>();
-        backgroundImg = background.GetComponent<Image>();
+      int index = i; // needed by lambda so it's capture by value
+      tabBtns[i].onClick.AddListener(() => { TabBtnCallback(index); });
     }
 
-    // Update is called once per frame
-    void Update()
+    //depositBtns = m_mainPanel.transform.Find("Deposit Buttons").
+    //                        GetComponentsInChildren<Button>();
+    //backgroundImg = background.GetComponent<Image>();
+
+  }
+
+  // Update is called once per frame
+  void Update()
     {
         
     }
@@ -135,8 +136,8 @@ public class liCookMenu : BaseUIManager
 
     void DepositBtnsSetActive(bool active)
     {
-        depositBtns[0].gameObject.SetActive(active);
-        depositBtns[1].gameObject.SetActive(active);
+        itemSlotBtns[0].gameObject.SetActive(active);
+        itemSlotBtns[1].gameObject.SetActive(active);
     }
 
     void ClearActiveSlot()
@@ -145,96 +146,10 @@ public class liCookMenu : BaseUIManager
         itemNameTxt.text = "";
         itemImg.color = Color.clear;
         itemDescTxt.text = "";
-        takeDepositBtn.interactable = false;
     }
 
     void UpdateItemUI()
     {
-        if (!IsOpen || !IsMaximized) return;
-
-        int index = 0;// index to iterate though all slots in the UI.
-
-        for (int i = 0; i < currentItems.Count; i++)
-        {
-            Item item = s_itemDataBase[currentItems[i].id];
-
-            if (ItemTypeToTabIndex(item.type) == activeTabIndex)
-            {
-                if (depositMode == DepositMode.Active &&
-                   index >= itemSlots.Count)
-                {
-                    ExpandSlots();
-                }
-
-                itemSlots[index].image.color = Color.white;
-                itemSlots[index].button.interactable = true;
-                itemSlots[index].image.sprite = item.icon;
-                if (currentItems[i].count != 1)
-                {
-                    itemSlots[index].text.text = currentItems[i].count.ToString();
-                }
-                else
-                {
-                    itemSlots[index].text.text = "";
-                }
-
-                itemSlots[index].itemID = currentItems[i].id;
-                itemSlots[index].itemInstIndex = i;
-
-                index++;
-            }
-        }
-
-        /** Initialize empty item slots default values*/
-        for (; index < itemSlots.Count; index++)
-        {
-            itemSlots[index].image.color = Color.clear;
-            itemSlots[index].text.text = "";
-            itemSlots[index].button.interactable = false;
-            itemSlots[index].itemID = -1;
-            itemSlots[index].itemInstIndex = -1;
-        }
-
-        switch (depositMode)
-        {
-            case DepositMode.Active:
-                DepositBtnsSetActive(true);
-                depositBtns[0].GetComponent<Image>().color = inactiveColor;
-                depositBtns[0].GetComponentInChildren<Text>().color = activeColor;
-                depositBtns[0].interactable = true;
-
-                depositBtns[1].GetComponent<Image>().color = activeColor;
-                depositBtns[1].GetComponentInChildren<Text>().color = inactiveColor;
-                depositBtns[1].interactable = false;
-
-                takeDepositBtn.gameObject.SetActive(true);
-
-                backgroundImg.color = depositActiveColor;
-                ShrinkSlots();
-                break;
-
-            case DepositMode.Enabled:
-                DepositBtnsSetActive(true);
-                depositBtns[0].GetComponent<Image>().color = activeColor;
-                depositBtns[0].GetComponentInChildren<Text>().color = inactiveColor;
-                depositBtns[0].interactable = false;
-
-                depositBtns[1].GetComponent<Image>().color = inactiveColor;
-                depositBtns[1].GetComponentInChildren<Text>().color = activeColor;
-                depositBtns[1].interactable = true;
-
-                takeDepositBtn.gameObject.SetActive(true);
-
-                backgroundImg.color = depositEnabledColor;
-                break;
-
-            case DepositMode.Disabled:// how the inventory is normally used
-                DepositBtnsSetActive(false);
-                takeDepositBtn.gameObject.SetActive(false);
-
-                backgroundImg.color = inventoryColor;
-                break;
-        }
 
         ClearActiveSlot();
     }
@@ -306,24 +221,7 @@ public class liCookMenu : BaseUIManager
         if (itemSlots[index].itemID < 0) { return; }
 
         activeSlotIndex = index;
-        takeDepositBtn.interactable = true;
 
-        Item item = s_itemDataBase[itemSlots[index].itemID];
-        ItemInstance itemInst = currentItems[itemSlots[index].itemInstIndex];
-
-        itemNameTxt.text = "Name: " + item.name;
-        itemImg.color = Color.white;
-        itemImg.sprite = item.largeImage;
-
-        string text = "<size=40>Description:</size>\n" +
-                           item.desc + "\n";
-
-        foreach (var dateTime in itemInst.dateTimes)
-        {
-            text += " -" + dateTime + "\n";
-        }
-
-        itemDescTxt.text = text;
         Invoke("DelayScrollBarCorrection", 0.05f);
     }
 

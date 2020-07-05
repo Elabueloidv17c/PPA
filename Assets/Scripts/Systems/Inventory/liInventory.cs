@@ -827,6 +827,13 @@ public enum ItemType {
     Notes
 }
 
+public enum subType
+{
+  Other,
+  Fish,
+  Condiment
+}
+
 public enum DepositMode
 {
     Disabled,// default 
