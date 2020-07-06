@@ -6,42 +6,41 @@ using UnityEngine;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-// TODO: Document file
-
+/// <summary>
+/// Loads and stores data from json files.
+/// </summary>
 public class liDataManager : MonoBehaviour
 {
     public static uint s_currentDay = 0;
-    public static liScene s_currentScene = liScene.TownCenter;
+    public static EDialogScene s_currentScene = EDialogScene.WatermelonTree;
     public static float s_time = 0.0f;
-    public static Scene m_data;
+    public static DialogSceneData m_data;
     private List<GameObject> m_objectsOnLayer;
 
     void Start() 
     {
         s_currentDay++;
         s_time = 0.0f;
-        m_data = ParseConversation();
+        m_data = LoadConversationsFile();
     }
 
     void Update() 
     {
-        s_time += Time.deltaTime;
+        s_time += Time.deltaTime; // ???
     }
 
-    private Scene ParseConversation() {
+    /// <summary>
+    /// Loads conversation data for the current scene
+    /// </summary>
+    /// <returns>the loaded scene data</returns>
+    private DialogSceneData LoadConversationsFile() {
         string data = File.ReadAllText(Application.streamingAssetsPath + "/" + 
                                        s_currentScene.ToString() + "_" + s_currentDay + ".json");
-        return JsonConvert.DeserializeObject<Scene>(data);
-    }
-
-    public enum liScene {
-        House,
-        Library,
-        TownCenter
+        return JsonConvert.DeserializeObject<DialogSceneData>(data);
     }
 }
 
-public struct Scene
+public struct DialogSceneData
 {
     public string InComment;
     public string OutComment;
@@ -63,8 +62,8 @@ public struct Dialog
     public bool ActiveSide; // false if left, true if right
     public string Text;
     public string Thought;
-    public LogAction LogAction;
-    public Option[] Options;
+    public LogActionData LogActionData;
+    public LogOption[] Options;
 }
 
 [JsonConverter(typeof(StringEnumConverter))]  
@@ -84,28 +83,12 @@ public struct DialogCharacter
     public int Expression;
 }
 
-public struct Option
+/// <summary>
+/// Contains data as loaded from file about a dialog action.
+/// </summary>
+public struct LogOption
 {
     public string Text;
     public int Next;
     public int Value;
-}
-
-public struct LogAction
-{
-    public ActionType ActionType;
-    public int Next;
-    public int Value;
-}
-
-// TODO: Create a DialogAction class to make all functionality go there
-[JsonConverter(typeof(StringEnumConverter))]  
-public enum ActionType {
-    None,
-    JumpToNext,
-    Buttons,
-    End,
-    GiveItem,
-
-    //... 
 }

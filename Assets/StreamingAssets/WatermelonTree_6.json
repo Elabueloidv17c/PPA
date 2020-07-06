@@ -26,7 +26,7 @@
   
             "Text": "I’m tagging this tree. But shh! Don’t tell anyone.",
   
-            "LogAction": {
+            "LogActionData": {
                 "ActionType": "None"
               }
             }
@@ -57,7 +57,7 @@
   
             "Text": "I’m tagging this tree. But shh! Don’t tell anyone.",
   
-            "LogAction": {
+            "LogActionData": {
                 "ActionType": "None"
               }
             }

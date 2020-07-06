@@ -26,7 +26,7 @@
   
             "Text": "This is just our big ol’ tree. People gather around it for the town festivals.",
   
-            "LogAction": {
+            "LogActionData": {
                 "ActionType": "JumpToNext",
                 "Next": 1,
                 "Value": 0
@@ -54,7 +54,7 @@
       
                 "Text": "Anyway, it’s just a tree. Let’s move on.",
       
-                "LogAction": {
+                "LogActionData": {
                     "ActionType": "None"
                 }
             } 

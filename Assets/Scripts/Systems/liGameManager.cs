@@ -22,12 +22,15 @@ public class liGameManager : MonoBehaviour
 
     public static float m_time;
     public static int m_day;
-    public static Scene m_scene;
+    public static DialogSceneData m_sceneDialogs;
 
     public static PlayerData m_playerData;
 
     private List<BaseUIManager> m_OpenUIManagers = new List<BaseUIManager>();
 
+    /// <summary>
+    /// signals if any window ui is currently active.
+    /// </summary>
     public bool menuActive { 
         get
         {

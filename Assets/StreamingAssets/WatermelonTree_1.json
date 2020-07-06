@@ -20,7 +20,7 @@
 					
 					"Text" : "I can's stop admiring its size. Its beautiful branches created a sort of canopy over the ground, shading it from the sun. As my eyes followed their shape, I noticed I’d almost stepped over a boy. Despite the fact that I was almost on top of him, the boy took no notice, nose buried in the pages of a book. His eyes moved quickly from side to side, completely enraptured.",
 					
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "Buttons"
 					},
 					
@@ -127,7 +127,7 @@
 	
 					"Text" : "“Of course! Lemme just...get out of your way then…”",
 
-					"LogAction" : {
+					"LogActionData" : {
 						"ActionType" : "End"
 					}
 				},
@@ -186,7 +186,7 @@
 					"Tought": "WTF",
                     "Text" : "“Here, take a SQUIDWARD.”",
                     
-                    "LogAction" : {
+                    "LogActionData" : {
                         "ActionType" : "GiveItem",
                         "Value" : 10
 					}

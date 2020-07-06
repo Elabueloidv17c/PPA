@@ -26,7 +26,7 @@
   
             "Text": "Excuse me...ma’am…? Miss? Girl…? Ugh, sorry, could you please give me directions back to the square? I’m not from around here.",
   
-            "LogAction": {
+            "LogActionData": {
               "ActionType": "JumpToNext",
               "Next": 1,
               "Value": 0
@@ -55,7 +55,7 @@
   
             "Text": "Don’t worry about it.” I stretched out my hand to ruffle her hair.",
   
-            "LogAction": {
+            "LogActionData": {
               "ActionType": "JumpToNext",
               "Next": 2,
               "Value": 0
@@ -83,7 +83,7 @@
   
             "Text": "",
   
-            "LogAction" : {
+            "LogActionData" : {
                 "ActionType" : "Buttons",
                 "Next" : 0,
                 "Value" : 0
@@ -124,7 +124,7 @@
   
             "Text": "If you don’t mind...uh...what are you doing, exactly?",
   
-            "LogAction": {
+            "LogActionData": {
               "ActionType": "JumpToNext",
               "Next": 4,
               "Value": 0
@@ -152,7 +152,7 @@
   
             "Text": "What do you think?.",
   
-            "LogAction": {
+            "LogActionData": {
               "ActionType": "JumpToNext",
               "Next": 5,
               "Value": 0
@@ -180,7 +180,7 @@
             
               "Text": "You really don’t know?.",
             
-              "LogAction": {
+              "LogActionData": {
                 "ActionType": "JumpToNext",
                 "Next": 6,
                 "Value": 0
@@ -208,7 +208,7 @@
             
               "Text": "I’m fishing, silly!",
             
-              "LogAction": {
+              "LogActionData": {
                 "ActionType": "JumpToNext",
                 "Next": 7,
                 "Value": 0
@@ -236,7 +236,7 @@
             
               "Text": "Oh, duh! I just couldn’t see you very well, you know?",
             
-              "LogAction": {
+              "LogActionData": {
                 "ActionType": "JumpToNext",
                 "Next": 8,
                 "Value": 0
@@ -264,7 +264,7 @@
             
               "Text": "Of course, of course. Logical mistake.",
             
-              "LogAction": {
+              "LogActionData": {
                 "ActionType": "JumpToNext",
                 "Next": 9,
                 "Value": 0
@@ -292,7 +292,7 @@
             
               "Text": "Happens all the time.",
             
-              "LogAction": {
+              "LogActionData": {
                 "ActionType": "JumpToNext",
                 "Next": 10,
                 "Value": 0
@@ -320,7 +320,7 @@
             
               "Text": "I bet it does.",
             
-              "LogAction": {
+              "LogActionData": {
                 "ActionType": "JumpToNext",
                 "Next": 11,
                 "Value": 0
@@ -348,7 +348,7 @@
             
               "Text": "So...did you catch anything yet?",
             
-              "LogAction": {
+              "LogActionData": {
                 "ActionType": "JumpToNext",
                 "Next": 12,
                 "Value": 0
@@ -376,7 +376,7 @@
             
               "Text": "Sure did!” She turned to pat a cooler by her side. “These babies will be today’s delicious dinner",
             
-              "LogAction": {
+              "LogActionData": {
                 "ActionType": "JumpToNext",
                 "Next": 13,
                 "Value": 0
@@ -404,7 +404,7 @@
             
               "Text": "You cook them?",
             
-              "LogAction": {
+              "LogActionData": {
                 "ActionType": "JumpToNext",
                 "Next": 14,
                 "Value": 0
@@ -433,7 +433,7 @@
               "Text": "Of course! I roast them on my campfire. Raw fish is pretty great, I’ll admit, but nothing beats roasted fish.",
               "Thought": "So she liked sushi",
 
-              "LogAction": {
+              "LogActionData": {
                 "ActionType": "JumpToNext",
                 "Next": 15,
                 "Value": 0
@@ -461,7 +461,7 @@
             
               "Text": "That sounds great.",
 
-              "LogAction": {
+              "LogActionData": {
                 "ActionType": "JumpToNext",
                 "Next": 16,
                 "Value": 0
@@ -489,7 +489,7 @@
             
               "Text": "I know!, You know, you know! I could share some with you! If you want!",
 
-              "LogAction": {
+              "LogActionData": {
                 "ActionType": "JumpToNext",
                 "Next": 17,
                 "Value": 0
@@ -517,7 +517,7 @@
             
               "Text": "Sounds like a deal.",
 
-              "LogAction": {
+              "LogActionData": {
                 "ActionType": "None",
                 "Next": 0,
                 "Value": 0
@@ -544,7 +544,7 @@
               "ActiveSide": false,
             
 
-              "LogAction": {
+              "LogActionData": {
                 "ActionType": "None",
                 "Next": 0,
                 "Value": 0

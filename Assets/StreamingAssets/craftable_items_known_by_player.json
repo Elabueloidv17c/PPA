@@ -1,0 +1,10 @@
+[
+  {
+    "m_resultingItemID": 10,
+    "m_requiredItemIDs": [
+      1,
+      5,
+      9
+    ]
+  }
+]

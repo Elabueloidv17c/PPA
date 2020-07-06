@@ -86,11 +86,17 @@ public class liInventory : BaseUIManager
     Image backgroundImg;
 
     #endregion
-
+    /// <summary>
+    /// Good old fashion single-ton.
+    /// </summary>
     void Awake() {
         instance = this;
     }
     
+    /// <summary>
+    ///  Initializes all the items and makes sure non of them are out 
+    ///  of place or have wrong information.
+    /// </summary>
     void Start()
     {
         if(null == s_itemDataBase)
@@ -138,6 +144,7 @@ public class liInventory : BaseUIManager
             tabBtns[i].onClick.AddListener(() => { TabBtnCallback(index); });
         }
 
+        /* Initializes the UI for the inventory */
         var background = mainPanel.transform.Find("Background");
         backgroundImg = background.GetComponent<Image>();
         itemSlotPanel = background.GetChild(0).GetChild(0).GetChild(0);
@@ -166,6 +173,9 @@ public class liInventory : BaseUIManager
         CloseUI();
     }
 
+    /// <summary>
+    ///  Updates every frame
+    /// </summary>
     public void Update()
     {
         if(liGameManager.instance && 
@@ -174,7 +184,7 @@ public class liInventory : BaseUIManager
         {
             OpenUI();
         }
-        else if(IsOpen && IsMaximized && 
+        else if(IsOpen && IsMaximized &&
                 (Input.GetKeyDown(KeyCode.Escape) || 
                  Input.GetKeyDown(KeyCode.I)))
         {
@@ -182,6 +192,9 @@ public class liInventory : BaseUIManager
         }
     }
 
+    /// <summary>
+    ///  Opens the UI in deposit mode.
+    /// </summary>
     public void OpenUIDepositMode()
     {
         mainPanel.SetActive(true);
@@ -199,6 +212,9 @@ public class liInventory : BaseUIManager
         UpdateItemUI();
     }
 
+    /// <summary>
+    /// Opens the inventory UI.
+    /// </summary>
     public override void OpenUI()
     {
         mainPanel.SetActive(true);
@@ -216,6 +232,10 @@ public class liInventory : BaseUIManager
         UpdateItemUI();
     }
 
+
+    /// <summary>
+    /// Closes the inventory UI.
+    /// </summary>
     public override void CloseUI()
     {
         if(depositMode == DepositMode.Active) {
@@ -229,6 +249,9 @@ public class liInventory : BaseUIManager
         liGameManager.instance.RegisterCloseUI(this);
     }
 
+    /// <summary>
+    /// Hides the dialog manager UI without closing.
+    /// </summary>
     public override void MinimizeUI()
     {
         if(!IsOpen) { return; }
@@ -236,6 +259,9 @@ public class liInventory : BaseUIManager
         mainPanel.SetActive(false);
     }
 
+    /// <summary>
+    /// Unhides the dialog manager UI.
+    /// </summary>
     public override void MaximizeUI()
     {
         if(!IsOpen) { return; }
@@ -245,11 +271,14 @@ public class liInventory : BaseUIManager
         UpdateItemUI();
     }
 
+    /// <summary>
+    /// Refreshes the UI visual elements to match the internal data.
+    /// </summary>
     void UpdateItemUI()
     {
         if(!IsOpen || !IsMaximized) return;
 
-        int index = 0;
+        int index = 0;// index to iterate though all slots in the UI.
 
         for (int i = 0; i < currentItems.Count; i++)
         {
@@ -279,7 +308,8 @@ public class liInventory : BaseUIManager
                 index++;
             }
         }
-        
+       
+        /** Initialize empty item slots default values*/
         for (; index < itemSlots.Count; index++)
         {
             itemSlots[index].image.color = Color.clear;
@@ -322,7 +352,7 @@ public class liInventory : BaseUIManager
             backgroundImg.color = depositEnabledColor;
             break;
 
-            case DepositMode.Disabled:
+            case DepositMode.Disabled:// how the inventory is normally used
             DepositBtnsSetActive(false);
             takeDepositBtn.gameObject.SetActive(false);
 
@@ -333,12 +363,16 @@ public class liInventory : BaseUIManager
         ClearActiveSlot();
     }
 
+    /// <summary>
+    ///  Reduces the amount of item slot's and makes sure 
+    ///  there is a minimum of 12 available.
+    /// </summary>
     private void ShrinkSlots()
     {
-        int index; 
+        int index;
         for (index = 0; index < itemSlots.Count; index++)
         {
-            if(itemSlots[index].itemID == -1)
+            if (itemSlots[index].itemID == -1)
             {
                 break;
             }
@@ -360,6 +394,9 @@ public class liInventory : BaseUIManager
         }
     }
 
+    /// <summary>
+    ///  Expands the available item slot's by 4.
+    /// </summary>
     private void ExpandSlots()
     {
         for (int i = 0; i < 4; i++)
@@ -379,6 +416,10 @@ public class liInventory : BaseUIManager
         }
     }
 
+    /// <summary>
+    /// Controls what each tab button does every time it's used.
+    /// </summary>
+    /// <param name="index">the index of the particular button to use</param>
     void TabBtnCallback(int index)
     {
         Vector3 offset = Vector3.up * 20;
@@ -400,6 +441,10 @@ public class liInventory : BaseUIManager
         UpdateItemUI();
     }
 
+    /// <summary>
+    ///  Controls what each slot button does when used.
+    /// </summary>
+    /// <param name="index">the index of the particular button to use</param>
     void SlotBtnCallback(int index)
     {
         if(itemSlots[index].itemID < 0) { return; }
@@ -426,11 +471,15 @@ public class liInventory : BaseUIManager
         Invoke("DelayScrollBarCorrection", 0.05f);
     }
 
+
     void DelayScrollBarCorrection()
     {
         descScrollbar.value = 1;
     }
 
+    /// <summary>
+    /// Makes it so NO item slot is currently selected.
+    /// </summary>
     void ClearActiveSlot()
     {
         activeSlotIndex = -1;
@@ -440,14 +489,26 @@ public class liInventory : BaseUIManager
         takeDepositBtn.interactable = false;
     }
 
+    /// <summary>
+    /// Convert the value of ItemType to it's equivalent index in the
+    /// tab buttons array.
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns> A index into an tab slot </returns>
     int ItemTypeToTabIndex(ItemType type)
     {
         return tabBtns.Length - ((int)type + 1);
     }
 
+    /// <summary>
+    /// Adds an item to the inventory.
+    /// </summary>
+    /// <param name="itemID"></param>
+    /// <returns>'true' if it succeeds to add an item,
+    /// returns 'false' otherwise </returns>
     public bool AddItem(int itemID)
     {
-        #if UNITY_EDITOR
+        #if UNITY_EDITOR // This code is ONLY for debugging in the editor.
         if(itemID < 0 || itemID >= s_itemDataBase.Length) {
             Debug.LogWarning("Added Item ID out of Range.");
             return false;
@@ -456,6 +517,7 @@ public class liInventory : BaseUIManager
         
         var itemType = s_itemDataBase[itemID].type;
 
+        // update the count of the item
         for(int i = 0; i < currentItems.Count ; ++i) {
             if(currentItems[i].id == itemID) {
                 currentItems[i].count++;
@@ -496,11 +558,16 @@ public class liInventory : BaseUIManager
         }
 
         return true;
-    }    
+    }
 
+    /// <summary>
+    ///  Used to find-out if the inventory has a particular item.
+    /// </summary>
+    /// <param name="itemID">The id of the item to check for.</param>
+    /// <returns>'true' if it has the item otherwise returns 'false' </returns>
     public bool HasItem(int itemID) {
 
-        #if UNITY_EDITOR
+        #if UNITY_EDITOR// This code is ONLY for debugging in the editor. 
         if(itemID < 0 || itemID >= s_itemDataBase.Length) {
             Debug.LogWarning("Check Item ID out of Range.");
             return false;
@@ -516,8 +583,13 @@ public class liInventory : BaseUIManager
         return false;
     }
 
+    /// <summary>
+    ///  Remove an item from the inventory if there is one.
+    /// </summary>
+    /// <param name="itemID">Which type of item to remove</param>
+    /// <returns>'true' if an item was removed, returns false otherwise. </returns>
     public bool RemoveItem(int itemID) {
-        #if UNITY_EDITOR
+        #if UNITY_EDITOR // This code is ONLY for debugging in the editor.
         if(itemID < 0 || itemID >= s_itemDataBase.Length) {
             Debug.LogWarning("Remove Item ID out of Range.");
             return false;
@@ -545,12 +617,19 @@ public class liInventory : BaseUIManager
         return false;
     }
 
+    /// <summary>
+    /// Controls if the buttons for depositing are active or not.
+    /// <param name="active">Used to Activate or Deactivate the buttons.</param>
+    /// </summary>
     void DepositBtnsSetActive(bool active)
     {
         depositBtns[0].gameObject.SetActive(active);
         depositBtns[1].gameObject.SetActive(active);
     }
 
+    /// <summary>
+    /// Set's the deposit mode to 'Active'.
+    /// </summary>
     public void SetDepositModeActive() {
         depositMode = DepositMode.Active;
         if(IsOpen && IsMaximized) {
@@ -558,6 +637,9 @@ public class liInventory : BaseUIManager
         }
     }
 
+    /// <summary>
+    /// Set's the deposit mode to 'Enabled'.
+    /// </summary>
     public void SetDepositModeEnabled() {
         depositMode = DepositMode.Enabled;
         if(IsOpen && IsMaximized) {
@@ -565,6 +647,9 @@ public class liInventory : BaseUIManager
         }
     }
 
+    /// <summary>
+    /// Set's the deposit mode to 'Disabled'.
+    /// </summary>
     public void SetDepositModeDisabled() {
         depositMode = DepositMode.Disabled;
         if(IsOpen && IsMaximized) {
@@ -572,6 +657,10 @@ public class liInventory : BaseUIManager
         }
     }
 
+    /// <summary>
+    /// Adds an item from the deposit box to the inventory 
+    /// assuming one exist and the inventory has room for that item.
+    /// </summary>
     public void TakeDepositItem() {
         int slotIndex = activeSlotIndex;
         Item item = s_itemDataBase[itemSlots[slotIndex].itemID];
@@ -624,13 +713,16 @@ public class liInventory : BaseUIManager
         }
     }
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR // This code is ONLY for debugging in the editor.
     [SerializeField]
     int itemID;
 
     [InspectorButton("InspectorAddItem")]
     public bool addItem;
 
+    /// <summary>
+    /// Let's the user add an item to the inventory using the inspector
+    /// </summary>
     private void InspectorAddItem() {
         if(!Application.isPlaying) {
             Debug.LogWarning("Calling method without running the game... you fool.");
@@ -648,6 +740,9 @@ public class liInventory : BaseUIManager
     [InspectorButton("InspectorRemoveItem")]
     public bool removeItem;
 
+    /// <summary>
+    /// Let's the user remove an item to the inventory using the inspector
+    /// </summary>
     private void InspectorRemoveItem() {
         if(!Application.isPlaying) {
             Debug.LogWarning("Calling method without running the game... you fool.");
@@ -665,6 +760,9 @@ public class liInventory : BaseUIManager
     [InspectorButton("InspectorExpandSlots")]
     public bool expandSlots;
 
+    /// <summary>
+    /// Let's the user give more item slots to the inventory.
+    /// </summary>
     private void InspectorExpandSlots() {
         if(!Application.isPlaying) {
             Debug.LogWarning("Calling method without running the game... you fool.");
@@ -682,6 +780,9 @@ public class liInventory : BaseUIManager
     [InspectorButton("InspectorShrinkSlots")]
     public bool shrinkSlots;
 
+    /// <summary>
+    /// Let's the user reduce the amount of item slot .
+    /// </summary>
     private void InspectorShrinkSlots() {
         if(!Application.isPlaying) {
             Debug.LogWarning("Calling method without running the game... you fool.");
@@ -726,9 +827,16 @@ public enum ItemType {
     Notes
 }
 
+public enum subType
+{
+  Other,
+  Fish,
+  Condiment
+}
+
 public enum DepositMode
 {
-    Disabled,
-    Enabled,
-    Active
+    Disabled,// default 
+    Enabled,// you can see your items and put them in the deposit box.
+    Active// you can pass the items in the deposit box to your inventory.
 }

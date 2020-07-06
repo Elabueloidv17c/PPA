@@ -26,7 +26,7 @@
   
             "Text": "You were here yesterday, remember? This is the industrial dock. We receive our goods and the occasional visitor here. You can get close and look at the boats, but you shouldn’t swim around here. It can be dangerous.",
   
-            "LogAction": {
+            "LogActionData": {
               "ActionType": "None"
             }
             }          

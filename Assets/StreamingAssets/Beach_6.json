@@ -26,7 +26,7 @@
   
             "Text": "Hey, []! Over here! Let’s enjoy the sun, yeah?",
   
-            "LogAction": {
+            "LogActionData": {
                 "ActionType": "None"
               }
             }
@@ -57,7 +57,7 @@
   
             "Text": "I wanna play with my beach ball but Jerry had to go pee and now I’m sitting alone. What’s taking him so long…?",
   
-            "LogAction": {
+            "LogActionData": {
                 "ActionType": "None"
               }
             }
