@@ -55,9 +55,6 @@ public class liCookMenu : BaseUIManager
     itemSlotPanel = background.GetChild(0);
     itemSlots = itemSlotPanel.GetComponentsInChildren<liItemSlot>().ToList<liItemSlot>();
 
-    //itemSlotPanel = background.GetChild(0).GetChild(0).GetChild(0);
-    //takeDepositBtn = m_mainPanel.transform.Find("Take Button").
-    //                        GetComponentInChildren<Button>();
     //var itemDetails = background.GetChild(1);
     //itemNameTxt = itemDetails.Find("Item Name").GetComponent<Text>();
     //itemImg = itemDetails.Find("Item Image").GetChild(0).GetComponent<Image>();
