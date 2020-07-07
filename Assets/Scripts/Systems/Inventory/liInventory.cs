@@ -10,6 +10,7 @@ using Text = TMPro.TextMeshProUGUI;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.Runtime.InteropServices.ComTypes;
 
 #pragma warning disable CS0649
 
@@ -102,7 +103,7 @@ public class liInventory : BaseUIManager
         if(null == s_itemDataBase)
         {
             string data = File.ReadAllText(Application.streamingAssetsPath + "/Items.json");
-
+            
             s_itemDataBase = JsonConvert.DeserializeObject<Item[]>(data);
 
             for (int i = 0; i < s_itemDataBase.Length; i++)
@@ -128,6 +129,11 @@ public class liInventory : BaseUIManager
                 {
                     Debug.LogWarning("Missing Items Large Image " + s_itemDataBase[i].name);
                     s_itemDataBase[i].largeImage = s_itemDataBase[i].icon;
+                }
+
+                if(SubType.SOMETHING_IS_WRONG == s_itemDataBase[i].subType)
+                {
+                  Debug.LogWarning("Incorrect Item Subtype");
                 }
             }
 
@@ -713,6 +719,11 @@ public class liInventory : BaseUIManager
         }
     }
 
+  /// <summary>
+  /// Used to get the subtype of a particular Item.
+  /// </summary>
+  /// <param name="itemID">The Id of the item</param>
+  /// <returns>The subtype of the Item.</returns>
   public SubType GetItemSubType(int itemID)
   {
 
@@ -824,6 +835,16 @@ public class ItemInstance
 
 public struct Item
 {
+  //public Item(int id_,string name_,ItemType itemType_, SubType subType_, string descriptor_)
+  //{
+  //  id = id_;
+  //  name = name_;
+  //  type = itemType_;
+  //  subType = subType_;
+  //  desc = descriptor_;
+  //  icon = null;
+  //  largeImage = null;
+  //}
   public int id;
   public string name;
   public ItemType type;

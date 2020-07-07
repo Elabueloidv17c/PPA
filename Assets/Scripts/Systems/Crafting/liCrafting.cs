@@ -164,7 +164,7 @@ public class liCrafting : MonoBehaviour
     return false;
   }
 
-  public void SaveToJson<T>(string Path,ref T dataContainer)
+  public static void SaveToJson<T>(string Path,ref T dataContainer)
   {
     FileStream fileStream = null; 
 
