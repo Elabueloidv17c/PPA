@@ -713,6 +713,20 @@ public class liInventory : BaseUIManager
         }
     }
 
+  public SubType GetItemSubType(int itemID)
+  {
+
+    foreach (var item in s_itemDataBase)
+    {
+      if (item.id == itemID)
+      {
+        return item.subType;
+      }
+    }
+
+    return SubType.SOMETHING_IS_WRONG;  
+  }
+
 #if UNITY_EDITOR // This code is ONLY for debugging in the editor.
     [SerializeField]
     int itemID;
@@ -834,6 +848,7 @@ public enum ItemType {
 [JsonConverter(typeof(StringEnumConverter))]
 public enum SubType // used in the cooking system
 {
+  SOMETHING_IS_WRONG,
   Other,
   Fish,
   Condiment,
