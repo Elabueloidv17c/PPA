@@ -810,15 +810,16 @@ public class ItemInstance
 
 public struct Item
 {
-    public int id;
-    public string name;
-    public ItemType type;
-    public string desc;
-    public Sprite icon;
-    public Sprite largeImage;
+  public int id;
+  public string name;
+  public ItemType type;
+  public SubType subType;
+  public string desc;
+  public Sprite icon;
+  public Sprite largeImage;
 }
 
-[JsonConverter(typeof(StringEnumConverter))]  
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ItemType {
     General,
     Recipies,
@@ -827,11 +828,17 @@ public enum ItemType {
     Notes
 }
 
-public enum subType
+/// <summary>
+/// used for the crafting system.
+/// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
+public enum SubType // used in the cooking system
 {
   Other,
   Fish,
-  Condiment
+  Condiment,
+  Garnish,
+  FinishedFood
 }
 
 public enum DepositMode
