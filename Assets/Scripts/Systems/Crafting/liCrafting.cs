@@ -46,6 +46,10 @@ public class liCrafting : MonoBehaviour
     if (CheckForDuplicates(itemIDsUseToCraft,inventory))
       return -1;
 
+    if (hasMultipleFish(itemIDsUseToCraft, inventory))
+      return -1;
+      
+
     removeItemsFromInventory(itemIDsUseToCraft, inventory);
 
     int index =
@@ -70,16 +74,27 @@ public class liCrafting : MonoBehaviour
   {
     for (int i = 1; i < itemIDsUseToCraft.Length; ++i)
     {
-      SubType currentItemSubType = inventory.GetItemSubType(itemIDsUseToCraft[i]);
-
-      if (itemIDsUseToCraft[i] == itemIDsUseToCraft[i - 1] ||
-        currentItemSubType == inventory.GetItemSubType(itemIDsUseToCraft[i - 1]))
+      if (itemIDsUseToCraft[i] == itemIDsUseToCraft[i - 1])
       {
         return true;
       }
     }
 
     return false;
+  }
+
+  private bool hasMultipleFish(int[] itemIDsUseToCraft, liInventory inventory)
+  {
+    int FishCount = 0;
+    foreach ( var item in itemIDsUseToCraft)
+    {
+      if (SubType.Fish == inventory.GetItemSubType(item))
+      {
+        ++FishCount;
+      }
+    }
+
+    return (1 < FishCount);
   }
 
   /// <summary>
