@@ -43,14 +43,15 @@ public class liCrafting : MonoBehaviour
   {
     Array.Sort(itemIDsUseToCraft);
     var inventory = liInventory.instance;
+
+    removeItemsFromInventory(itemIDsUseToCraft, inventory);
+
     if (CheckForDuplicates(itemIDsUseToCraft,inventory))
       return -1;
 
     if (hasMultipleFish(itemIDsUseToCraft, inventory))
       return -1;
-      
 
-    removeItemsFromInventory(itemIDsUseToCraft, inventory);
 
     int index =
       s_possibleCraftableItems.FindIndex(items => 0 == items.CompareTo(itemIDsUseToCraft));
