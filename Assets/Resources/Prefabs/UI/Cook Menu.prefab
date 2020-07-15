@@ -797,7 +797,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -99.979}
+  m_AnchoredPosition: {x: 0, y: -100.000015}
   m_SizeDelta: {x: 392, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2917763773262572614
@@ -2863,7 +2863,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -262, y: -375.31674}
+  m_AnchoredPosition: {x: -262, y: -375.39548}
   m_SizeDelta: {x: 1281.109, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3598097827491586381
@@ -4577,8 +4577,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -67.0072}
+  m_AnchoredPosition: {x: 41, y: -58}
+  m_SizeDelta: {x: 0, y: -94.34247}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &3598097828094724013
 CanvasRenderer:
@@ -5846,7 +5846,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19.9, y: 47.8}
+  m_AnchoredPosition: {x: 2588, y: 32}
   m_SizeDelta: {x: 2475.1753, y: 1683.9844}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3598097828581621826
@@ -5870,7 +5870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6140,7 +6140,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 3598097827584639871}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.5
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7590,8 +7590,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -67.0072}
+  m_AnchoredPosition: {x: 0, y: -219}
+  m_SizeDelta: {x: 0, y: 469.44952}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &5309421863943686085
 CanvasRenderer:
@@ -7808,11 +7808,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depositMode: 0
-  inactiveColor: {r: 0, g: 0, b: 0, a: 0}
-  activeColor: {r: 0, g: 0, b: 0, a: 0}
-  depositEnabledColor: {r: 0, g: 0, b: 0, a: 0}
-  depositActiveColor: {r: 0, g: 0, b: 0, a: 0}
-  inventoryColor: {r: 0, g: 0, b: 0, a: 0}
+  inactiveColor: {r: 0.5686275, g: 0.34901962, b: 0.34509805, a: 1}
+  activeColor: {r: 0.3647059, g: 0.227451, b: 0.22352943, a: 1}
+  depositEnabledColor: {r: 0, g: 0, b: 0, a: 1}
+  depositActiveColor: {r: 0, g: 0, b: 0, a: 1}
+  inventoryColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &5309421865669970753
 GameObject:
   m_ObjectHideFlags: 0
@@ -8155,8 +8155,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1888399043621019345}
   m_HandleRect: {fileID: 6250301290786414485}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.5
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

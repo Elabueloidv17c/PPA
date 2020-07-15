@@ -75,9 +75,9 @@ public class liCookMenu : BaseUIManager
   }
 
   // Update is called once per frame
-  void Update()
+    void Update()
     {
-        
+            
     }
 
     private void ShrinkSlots()
