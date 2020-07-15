@@ -738,6 +738,24 @@ public class liInventory : BaseUIManager
     return SubType.SOMETHING_IS_WRONG;  
   }
 
+  /// <summary>
+  /// 
+  /// </summary>
+  /// <param name="itemID"></param>
+  /// <returns> An Copy of a item if it has a valid ID.</returns>
+  public Item GetItemById(int itemID)
+  {
+    Item result = new Item();
+    result.id = -1;
+    foreach(var items in s_itemDataBase)
+    {
+      if (itemID == items.id)
+        return s_itemDataBase[itemID];
+    }
+
+    return result;
+  }
+
 #if UNITY_EDITOR // This code is ONLY for debugging in the editor.
     [SerializeField]
     int itemID;
