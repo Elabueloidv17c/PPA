@@ -5,6 +5,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
+using Text = TMPro.TextMeshProUGUI;
+
 public class liCookMenu : BaseUIManager
 {
     GameObject m_mainPanel;
@@ -186,14 +188,16 @@ public class liCookMenu : BaseUIManager
         {
             tabBtns[activeTabIndex].transform.localPosition -= offset;
             tabBtns[activeTabIndex].GetComponent<Image>().color = inactiveColor;
-            tabBtns[activeTabIndex].GetComponentInChildren<Text>().color = activeColor;
+            Text textt = tabBtns[activeTabIndex].GetComponentInChildren<Text>();
+            textt.color = activeColor;
             tabBtns[activeTabIndex].interactable = true;
         }
 
         activeTabIndex = index;
         tabBtns[index].transform.localPosition += offset;
         tabBtns[index].GetComponent<Image>().color = activeColor;
-        tabBtns[index].GetComponentInChildren<Text>().color = inactiveColor;
+        Text text = tabBtns[index].GetComponentInChildren<Text>();
+        text.color = inactiveColor;
         tabBtns[index].interactable = false;
 
         UpdateItemUI();
