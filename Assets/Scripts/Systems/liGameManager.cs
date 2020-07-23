@@ -25,7 +25,7 @@ public class liGameManager : MonoBehaviour
     public static DialogSceneData m_sceneDialogs;
 
     public static PlayerData m_playerData;
-
+    
     private List<BaseUIManager> m_OpenUIManagers = new List<BaseUIManager>();
 
     /// <summary>
@@ -55,6 +55,11 @@ public class liGameManager : MonoBehaviour
 
         if(!liInventory.instance) {
             Instantiate(Resources.Load<GameObject>("Prefabs/UI/Inventory"));
+        }
+        
+        if (!liCookMenu.instance)
+        {
+            Instantiate(Resources.Load<GameObject>("Prefabs/UI/CookMenu"));
         }
     }
 

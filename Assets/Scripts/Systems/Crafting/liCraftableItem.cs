@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 
 
 [Serializable]
@@ -30,7 +28,7 @@ public struct liCraftableItem : IComparable<liCraftableItem>, IComparable<int[]>
   /// </summary>
   /// <param name="otherItem"></param>
   /// <returns>'0' when they are equal, '1' when current liCraftableItem is greater than otherItem,
-  /// '-1' when otherItem is greater then the current liCraftableItem. </returns>
+  /// '-1' when otherItem is lesser then the current liCraftableItem. </returns>
   public int CompareTo(liCraftableItem otherItem)
   {
     // use the array comparison
@@ -43,7 +41,7 @@ public struct liCraftableItem : IComparable<liCraftableItem>, IComparable<int[]>
   /// </summary>
   /// <param name="ArrayItemIDs"></param>
   /// <returns>'0' when they are equal, '1' when current liCraftableItem is greater than otherItem,
-  /// '-1' when otherItem is greater then the current liCraftableItem. </returns>
+  /// '-1' when otherItem is lesser then the current liCraftableItem. </returns>
   public int CompareTo(int[] ArrayItemIDs)
   {
     int arrayCompare = m_requiredItemIDs.Length.CompareTo(ArrayItemIDs.Length);

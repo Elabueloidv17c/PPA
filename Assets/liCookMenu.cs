@@ -5,47 +5,49 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
+using Text = TMPro.TextMeshProUGUI;
+
 public class liCookMenu : BaseUIManager
 {
-    GameObject m_mainPanel;
+  GameObject m_mainPanel;
 
-    List<liItemSlot> itemSlots;
+  List<liItemSlot> itemSlots;
 
-    Transform itemSlotPanel;
+  Transform itemSlotPanel;
 
-    int activeSlotIndex = -1;
+  int activeSlotIndex = -1;
 
-    Text itemNameTxt;
+  Text itemNameTxt;
 
-    Image itemImg;
+  Image itemImg;
 
-    Text itemDescTxt;
+  Text itemDescTxt;
 
-    int activeTabIndex = -1;
+  int activeTabIndex = -1;
 
-    Button[] tabBtns;
+  Button[] tabBtns;
 
-    Button[] itemSlotBtns;
-  
-    Image backgroundImg;
+  Button[] itemSlotBtns;
 
-    [SerializeField]
-    DepositMode depositMode;
+  Image backgroundImg;
 
-    [SerializeField]
-    Color inactiveColor;
+  [SerializeField]
+  DepositMode depositMode;
 
-    [SerializeField]
-    Color activeColor;
+  [SerializeField]
+  Color inactiveColor;
 
-    [SerializeField]
-    Color depositEnabledColor;
+  [SerializeField]
+  Color activeColor;
 
-    [SerializeField]
-    Color depositActiveColor;
+  [SerializeField]
+  Color depositEnabledColor;
 
-    [SerializeField]
-    Color inventoryColor;
+  [SerializeField]
+  Color depositActiveColor;
+
+  [SerializeField]
+  Color inventoryColor;
 
   void Start()
   {
@@ -75,130 +77,202 @@ public class liCookMenu : BaseUIManager
   }
 
   // Update is called once per frame
-    void Update()
+  void Update()
+  {
+
+  }
+
+  private void ShrinkSlots()
+  {
+    int index;
+    for (index = 0; index < itemSlots.Count; index++)
     {
-            
+      if (itemSlots[index].itemID == -1)
+      {
+        break;
+      }
     }
 
-    private void ShrinkSlots()
+    int slotCount = Math.Max(4 - index % 4, 12);
+
+    if (slotCount < itemSlots.Count)
     {
-        int index;
-        for (index = 0; index < itemSlots.Count; index++)
+      for (int i = itemSlots.Count - 1; i >= 0; i--)
+      {
+        if (i >= slotCount)
         {
-            if (itemSlots[index].itemID == -1)
-            {
-                break;
-            }
+          Destroy(itemSlots[i].gameObject);
         }
+      }
 
-        int slotCount = Math.Max(4 - index % 4, 12);
-
-        if (slotCount < itemSlots.Count)
-        {
-            for (int i = itemSlots.Count - 1; i >= 0; i--)
-            {
-                if (i >= slotCount)
-                {
-                    Destroy(itemSlots[i].gameObject);
-                }
-            }
-
-            itemSlots.RemoveRange(slotCount, itemSlots.Count - slotCount);
-        }
+      itemSlots.RemoveRange(slotCount, itemSlots.Count - slotCount);
     }
+  }
 
-    private void ExpandSlots()
+  private void ExpandSlots()
+  {
+    for (int i = 0; i < 4; i++)
     {
-        for (int i = 0; i < 4; i++)
-        {
-            int index = itemSlots.Count; // needed by lambda so it's capture by value
-            var GO = Instantiate(itemSlots[0].gameObject, itemSlotPanel);
-            itemSlots.Add(GO.GetComponent<liItemSlot>());
-            itemSlots[index].button.onClick.AddListener(() => {
-                SlotBtnCallback(index);
-            });
-           
-            itemSlots[index].image.color = Color.clear;
-            itemSlots[index].text.text = "";
-            itemSlots[index].button.interactable = false;
-            itemSlots[index].itemID = -1;
-            itemSlots[index].itemInstIndex = -1;
-        }
-    }
+      int index = itemSlots.Count; // needed by lambda so it's capture by value
+      var GO = Instantiate(itemSlots[0].gameObject, itemSlotPanel);
+      itemSlots.Add(GO.GetComponent<liItemSlot>());
+      itemSlots[index].button.onClick.AddListener(() => {
+        SlotBtnCallback(index);
+      });
 
-    int ItemTypeToTabIndex(ItemType type)
+      itemSlots[index].image.color = Color.clear;
+      itemSlots[index].text.text = "";
+      itemSlots[index].button.interactable = false;
+      itemSlots[index].itemID = -1;
+      itemSlots[index].itemInstIndex = -1;
+    }
+  }
+
+  int ItemTypeToTabIndex(ItemType type)
+  {
+    return tabBtns.Length - ((int)type + 1);
+  }
+
+  void DepositBtnsSetActive(bool active)
+  {
+    itemSlotBtns[0].gameObject.SetActive(active);
+    itemSlotBtns[1].gameObject.SetActive(active);
+  }
+
+  void ClearActiveSlot()
+  {
+    activeSlotIndex = -1;
+    itemNameTxt.text = "";
+    itemImg.color = Color.clear;
+    itemDescTxt.text = "";
+  }
+
+  void UpdateItemUI()
+  {
+
+    ClearActiveSlot();
+  }
+
+  public override void CloseUI()
+  {
+    ShrinkSlots();
+    m_mainPanel.SetActive(false);
+    IsOpen = false;
+    IsMaximized = false;
+
+    liGameManager.instance.RegisterCloseUI(this);
+  }
+
+  public override void MaximizeUI()
+  {
+    if (!IsOpen) { return; }
+    IsMaximized = true;
+    m_mainPanel.SetActive(true);
+
+    UpdateItemUI();
+  }
+
+  public override void MinimizeUI()
+  {
+    if (!IsOpen) { return; }
+    IsMaximized = false;
+    m_mainPanel.SetActive(false);
+  }
+
+  void TabBtnCallback(int index)
+  {
+    Vector3 offset = Vector3.up * 20;
+
+    //Debug.Log("Works");
+    if (activeTabIndex >= 0)
     {
-        return tabBtns.Length - ((int)type + 1);
+      tabBtns[activeTabIndex].transform.localPosition -= offset;
+      tabBtns[activeTabIndex].GetComponent<Image>().color = inactiveColor;
+      Text textt = tabBtns[activeTabIndex].GetComponentInChildren<Text>();
+      textt.color = activeColor;
+      tabBtns[activeTabIndex].interactable = true;
     }
 
-    void DepositBtnsSetActive(bool active)
+    activeTabIndex = index;
+    tabBtns[index].transform.localPosition += offset;
+    tabBtns[index].GetComponent<Image>().color = activeColor;
+    Text text = tabBtns[index].GetComponentInChildren<Text>();
+    text.color = inactiveColor;
+    tabBtns[index].interactable = false;
+
+    clearsItemSlots();
+
+    AddItemsToItemSlots(index);
+
+    UpdateItemUI();
+
+  }
+
+
+  private void AddItemsToItemSlots(int index)
+  {
+    SubType currentSubType = SubType.SOMETHING_IS_WRONG;
+
+    switch (index)
     {
-        itemSlotBtns[0].gameObject.SetActive(active);
-        itemSlotBtns[1].gameObject.SetActive(active);
+      case 0:
+        currentSubType = SubType.Fish;
+        break;
+      case 1:
+        currentSubType = SubType.Condiment;
+        break;
+      case 2:
+        currentSubType = SubType.Garnish;
+        break;
     }
 
-    void ClearActiveSlot()
+    if (SubType.SOMETHING_IS_WRONG == currentSubType)
     {
-        activeSlotIndex = -1;
-        itemNameTxt.text = "";
-        itemImg.color = Color.clear;
-        itemDescTxt.text = "";
+      Debug.LogWarning(" Trying to access non existent or non accounted for tab ");
+      return;
     }
 
-    void UpdateItemUI()
+
+    List<int> ValidListOfItemIDs = new List<int>();
+
+    var inventory = liInventory.instance;
+    var playerItems = liInventory.s_currentItems;
+    foreach (var item in playerItems)
     {
-
-        ClearActiveSlot();
+      if (currentSubType == inventory.GetItemSubType(item.id))
+      {
+        ValidListOfItemIDs.Add(item.id);
+      }
     }
 
-    public override void CloseUI()
+    for (int i = 0; i < ValidListOfItemIDs.Count; ++i)
     {
-        ShrinkSlots();
-        m_mainPanel.SetActive(false);
-        IsOpen = false;
-        IsMaximized = false;
-        
-        liGameManager.instance.RegisterCloseUI(this);
+      int validID = ValidListOfItemIDs[i];
+      Item possibleValidItem = liInventory.instance.GetItemById(validID);
+      if (-1 != possibleValidItem.id)
+      {
+        itemSlots[i].image.color = Color.white;
+        itemSlots[i].button.interactable = true;
+        itemSlots[i].image.sprite = possibleValidItem.icon;
+        itemSlots[i].itemID = possibleValidItem.id;
+      }
     }
+  }
 
-    public override void MaximizeUI()
+  private void clearsItemSlots()
+  {
+
+    foreach (var itemSlot in itemSlots)
     {
-        if (!IsOpen) { return; }
-        IsMaximized = true;
-        m_mainPanel.SetActive(true);
-        
-        UpdateItemUI();
+      itemSlot.image.color = Color.clear;
+      itemSlot.button.interactable = true;
+      itemSlot.image.sprite = null;
+      itemSlot.itemID = -1;
     }
 
-    public override void MinimizeUI()
-    {
-        if (!IsOpen) { return; }
-        IsMaximized = false;
-        m_mainPanel.SetActive(false);
-    }
+  }
 
-    void TabBtnCallback(int index)
-    {
-        Vector3 offset = Vector3.up * 20;
-
-        if (activeTabIndex >= 0)
-        {
-            tabBtns[activeTabIndex].transform.localPosition -= offset;
-            tabBtns[activeTabIndex].GetComponent<Image>().color = inactiveColor;
-            tabBtns[activeTabIndex].GetComponentInChildren<Text>().color = activeColor;
-            tabBtns[activeTabIndex].interactable = true;
-        }
-
-        activeTabIndex = index;
-        tabBtns[index].transform.localPosition += offset;
-        tabBtns[index].GetComponent<Image>().color = activeColor;
-        tabBtns[index].GetComponentInChildren<Text>().color = inactiveColor;
-        tabBtns[index].interactable = false;
-
-        UpdateItemUI();
-    }
-
-    public override void OpenUI()
+  public override void OpenUI()
     {
         m_mainPanel.SetActive(true);
         IsOpen = true;

@@ -10,6 +10,7 @@ using Text = TMPro.TextMeshProUGUI;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.Runtime.InteropServices.ComTypes;
 
 #pragma warning disable CS0649
 
@@ -102,7 +103,7 @@ public class liInventory : BaseUIManager
         if(null == s_itemDataBase)
         {
             string data = File.ReadAllText(Application.streamingAssetsPath + "/Items.json");
-
+            
             s_itemDataBase = JsonConvert.DeserializeObject<Item[]>(data);
 
             for (int i = 0; i < s_itemDataBase.Length; i++)
@@ -128,6 +129,11 @@ public class liInventory : BaseUIManager
                 {
                     Debug.LogWarning("Missing Items Large Image " + s_itemDataBase[i].name);
                     s_itemDataBase[i].largeImage = s_itemDataBase[i].icon;
+                }
+
+                if(SubType.SOMETHING_IS_WRONG == s_itemDataBase[i].subType)
+                {
+                  Debug.LogWarning("Incorrect Item Subtype");
                 }
             }
 
@@ -713,6 +719,43 @@ public class liInventory : BaseUIManager
         }
     }
 
+  /// <summary>
+  /// Used to get the subtype of a particular Item.
+  /// </summary>
+  /// <param name="itemID">The Id of the item</param>
+  /// <returns>The subtype of the Item.</returns>
+  public SubType GetItemSubType(int itemID)
+  {
+
+    foreach (var item in s_itemDataBase)
+    {
+      if (item.id == itemID)
+      {
+        return item.subType;
+      }
+    }
+
+    return SubType.SOMETHING_IS_WRONG;  
+  }
+
+  /// <summary>
+  /// 
+  /// </summary>
+  /// <param name="itemID"></param>
+  /// <returns> An Copy of a item if it has a valid ID.</returns>
+  public Item GetItemById(int itemID)
+  {
+    Item result = new Item();
+    result.id = -1;
+    foreach(var items in s_itemDataBase)
+    {
+      if (itemID == items.id)
+        return s_itemDataBase[itemID];
+    }
+
+    return result;
+  }
+
 #if UNITY_EDITOR // This code is ONLY for debugging in the editor.
     [SerializeField]
     int itemID;
@@ -810,15 +853,26 @@ public class ItemInstance
 
 public struct Item
 {
-    public int id;
-    public string name;
-    public ItemType type;
-    public string desc;
-    public Sprite icon;
-    public Sprite largeImage;
+  //public Item(int id_,string name_,ItemType itemType_, SubType subType_, string descriptor_)
+  //{
+  //  id = id_;
+  //  name = name_;
+  //  type = itemType_;
+  //  subType = subType_;
+  //  desc = descriptor_;
+  //  icon = null;
+  //  largeImage = null;
+  //}
+  public int id;
+  public string name;
+  public ItemType type;
+  public SubType subType;
+  public string desc;
+  public Sprite icon;
+  public Sprite largeImage;
 }
 
-[JsonConverter(typeof(StringEnumConverter))]  
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ItemType {
     General,
     Recipies,
@@ -827,11 +881,18 @@ public enum ItemType {
     Notes
 }
 
-public enum subType
+/// <summary>
+/// used for the crafting system.
+/// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
+public enum SubType // used in the cooking system
 {
+  SOMETHING_IS_WRONG,
   Other,
   Fish,
-  Condiment
+  Condiment,
+  Garnish,
+  FinishedFood
 }
 
 public enum DepositMode
