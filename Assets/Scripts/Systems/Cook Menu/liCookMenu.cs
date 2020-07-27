@@ -67,77 +67,39 @@ public class liCookMenu : BaseUIManager
     inactiveColor = new Color(0, 0, 0, 1.0f);
     activeColor = new Color(0, 0, 0, 1.0f);
     inventoryColor = new Color(0, 0, 0, 1.0f);
-    //if (null == s_itemDataBase)
-    //{
-    //    string data = File.ReadAllText(Application.streamingAssetsPath + "/Items.json");
 
-    //    s_itemDataBase = JsonConvert.DeserializeObject<Item[]>(data);
-
-    //    for (int i = 0; i < s_itemDataBase.Length; i++)
-    //    {
-    //        if (s_itemDataBase[i].id != i)
-    //        {
-    //            Debug.LogWarning("Wrong item id assignment at index: " + i);
-    //            s_itemDataBase[i].id = i;
-    //        }
-
-    //        s_itemDataBase[i].icon =
-    //            Resources.Load<Sprite>("Sprites/Items/Icons/" + s_itemDataBase[i].name);
-
-    //        if (s_itemDataBase[i].icon == null)
-    //        {
-    //            Debug.LogError("Missing Items Icon " + s_itemDataBase[i].name);
-    //        }
-
-    //        s_itemDataBase[i].largeImage =
-    //            Resources.Load<Sprite>("Sprites/Items/Large/" + s_itemDataBase[i].name);
-
-    //        if (s_itemDataBase[i].largeImage == null)
-    //        {
-    //            Debug.LogWarning("Missing Items Large Image " + s_itemDataBase[i].name);
-    //            s_itemDataBase[i].largeImage = s_itemDataBase[i].icon;
-    //        }
-
-    //        if (SubType.SOMETHING_IS_WRONG == s_itemDataBase[i].subType)
-    //        {
-    //            Debug.LogWarning("Incorrect Item Subtype");
-    //        }
-    //    }
-
-    //    s_currentItems = new List<ItemInstance>();
-    //}
     m_mainPanel = transform.GetChild(0).gameObject;
-        m_craftPanel = transform.GetChild(1).gameObject;
-        m_resultPanel = transform.GetChild(2).gameObject;
-        m_cookButton = transform.GetChild(3).gameObject;
+    m_craftPanel = transform.GetChild(1).gameObject;
+    m_resultPanel = transform.GetChild(2).gameObject;
+    m_cookButton = transform.GetChild(3).gameObject;
 
-        tabBtns = m_mainPanel.transform.Find("Tabs").GetComponentsInChildren<Button>();
-        var background = m_mainPanel.transform.Find("Background");
-        itemSlotPanel = background.GetChild(0);
-        itemSlots = itemSlotPanel.GetComponentsInChildren<liItemSlot>().ToList<liItemSlot>();
+    tabBtns = m_mainPanel.transform.Find("Tabs").GetComponentsInChildren<Button>();
+    var background = m_mainPanel.transform.Find("Background");
+    itemSlotPanel = background.GetChild(0);
+    itemSlots = itemSlotPanel.GetComponentsInChildren<liItemSlot>().ToList<liItemSlot>();
 
-        var itemDetails = background.GetChild(1);
-        itemNameTxt = itemDetails.Find("Item Name").GetComponent<Text>();
-        itemImg = itemDetails.Find("Item Image").GetChild(0).GetComponent<Image>();
-        var scrollView = itemDetails.Find("Item Description").GetChild(0);
-        itemDescTxt = scrollView.Find("Viewport").GetChild(0).GetComponent<Text>();
-        //tabBtns = m_mainPanel.transform.Find("Tabs").GetComponentsInChildren<Button>();
+    var itemDetails = background.GetChild(1);
+    itemNameTxt = itemDetails.Find("Item Name").GetComponent<Text>();
+    itemImg = itemDetails.Find("Item Image").GetChild(0).GetComponent<Image>();
+    var scrollView = itemDetails.Find("Item Description").GetChild(0);
+    itemDescTxt = scrollView.Find("Viewport").GetChild(0).GetComponent<Text>();
+    //tabBtns = m_mainPanel.transform.Find("Tabs").GetComponentsInChildren<Button>();
 
-        for (int i = 0; i < tabBtns.Length; i++)
-        {
-          int index = i; // needed by lambda so it's capture by value
-          tabBtns[i].onClick.AddListener(() => { TabBtnCallback(index); });
-        }
-        for (int i = 0; i < itemSlots.Count; i++)
-        {
-            int index = i; // needed by lambda so it's capture by value
-            itemSlots[i].button.onClick.AddListener(() => { SlotBtnCallback(index); });
-        }
-        //depositBtns = m_mainPanel.transform.Find("Deposit Buttons").
-        //                        GetComponentsInChildren<Button>();
-        //backgroundImg = background.GetComponent<Image>();
-        OpenUI();
-        CloseUI();
+    for (int i = 0; i < tabBtns.Length; i++)
+    {
+      int index = i; // needed by lambda so it's capture by value
+      tabBtns[i].onClick.AddListener(() => { TabBtnCallback(index); });
+    }
+    for (int i = 0; i < itemSlots.Count; i++)
+    {
+      int index = i; // needed by lambda so it's capture by value
+      itemSlots[i].button.onClick.AddListener(() => { SlotBtnCallback(index); });
+    }
+    //depositBtns = m_mainPanel.transform.Find("Deposit Buttons").
+    //                        GetComponentsInChildren<Button>();
+    //backgroundImg = background.GetComponent<Image>();
+    OpenUI();
+    CloseUI();
   }
 
   // Update is called once per frame
@@ -376,8 +338,7 @@ public class liCookMenu : BaseUIManager
         activeSlotIndex = index;
 
         Invoke("DelayScrollBarCorrection", 0.05f);
-        Item item = s_itemDataBase[itemSlots[index].itemID];
-        // ItemInstance itemInst = currentItems[itemSlots[index].itemInstIndex];
+        Item item  = liInventory.instance.GetItemById(itemSlots[index].itemID);
 
         itemNameTxt.text = "Name: " + item.name;
         itemImg.color = Color.white;
