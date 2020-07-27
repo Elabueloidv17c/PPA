@@ -84,14 +84,9 @@ public class liCookMenu : BaseUIManager
     var scrollView = itemDetails.Find("Item Description").GetChild(0);
     itemDescTxt = scrollView.Find("Viewport").GetChild(0).GetComponent<Text>();
 
-    //tabBtns = m_mainPanel.transform.Find("Tabs").GetComponentsInChildren<Button>();
 
     var craftPanelBackground = m_craftPanel.GetChildWithName("Background");
     craftPanelSlots = craftPanelBackground.GetComponentsInChildren<liItemSlot>().ToList();
-    foreach (liItemSlot slot in craftPanelSlots )
-    {
-      slot.itemID = -1;
-    }
 
     for (int i = 0; i < tabBtns.Length; i++)
     {
@@ -109,6 +104,7 @@ public class liCookMenu : BaseUIManager
     {
       int index = i; // needed by lambda so it's capture by value
       craftPanelSlots[i].button.onClick.AddListener(() => { craftPanelBtnCallBack(index); });
+      craftPanelSlots[i].itemID = -1;
     }
     //depositBtns = m_mainPanel.transform.Find("Deposit Buttons").
     //                        GetComponentsInChildren<Button>();
