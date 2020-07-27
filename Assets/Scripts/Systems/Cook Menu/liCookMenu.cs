@@ -26,27 +26,27 @@ public class liCookMenu : BaseUIManager
 
     List<liItemSlot> itemSlots;
 
+    List<liItemSlot> craftPanelSlots;
+
     Transform itemSlotPanel;
 
     int activeSlotIndex = -1;
 
-    public static List<ItemInstance> s_currentItems;
+    int activeTabIndex = -1;
+
+    int activeCraftPanelSlotIndex = -1;
 
     Text itemNameTxt;
 
-    Image itemImg;
-
     Text itemDescTxt;
-
-    int activeTabIndex = -1;
-
-    static Item[] s_itemDataBase = null;
 
     Button[] tabBtns;
 
     Button[] itemSlotBtns;
 
     Image backgroundImg;
+
+    Image itemImg;
 
     [SerializeField]
     Color inactiveColor;
@@ -64,9 +64,9 @@ public class liCookMenu : BaseUIManager
 
     void Start()
   {
-    inactiveColor = new Color(0, 0, 0, 1.0f);
-    activeColor = new Color(0, 0, 0, 1.0f);
-    inventoryColor = new Color(0, 0, 0, 1.0f);
+    inactiveColor = Color.white;
+    activeColor = Color.white;
+    inventoryColor = Color.white;
 
     m_mainPanel = transform.GetChild(0).gameObject;
     m_craftPanel = transform.GetChild(1).gameObject;
@@ -83,17 +83,32 @@ public class liCookMenu : BaseUIManager
     itemImg = itemDetails.Find("Item Image").GetChild(0).GetComponent<Image>();
     var scrollView = itemDetails.Find("Item Description").GetChild(0);
     itemDescTxt = scrollView.Find("Viewport").GetChild(0).GetComponent<Text>();
+
     //tabBtns = m_mainPanel.transform.Find("Tabs").GetComponentsInChildren<Button>();
+
+    var craftPanelBackground = m_craftPanel.GetChildWithName("Background");
+    craftPanelSlots = craftPanelBackground.GetComponentsInChildren<liItemSlot>().ToList();
+    foreach (liItemSlot slot in craftPanelSlots )
+    {
+      slot.itemID = -1;
+    }
 
     for (int i = 0; i < tabBtns.Length; i++)
     {
       int index = i; // needed by lambda so it's capture by value
       tabBtns[i].onClick.AddListener(() => { TabBtnCallback(index); });
     }
+
     for (int i = 0; i < itemSlots.Count; i++)
     {
       int index = i; // needed by lambda so it's capture by value
       itemSlots[i].button.onClick.AddListener(() => { SlotBtnCallback(index); });
+    }
+
+    for(int i = 0; i < craftPanelSlots.Count; i++)
+    {
+      int index = i; // needed by lambda so it's capture by value
+      craftPanelSlots[i].button.onClick.AddListener(() => { craftPanelBtnCallBack(index); });
     }
     //depositBtns = m_mainPanel.transform.Find("Deposit Buttons").
     //                        GetComponentsInChildren<Button>();
@@ -312,6 +327,14 @@ public class liCookMenu : BaseUIManager
 
   }
 
+
+  private void clearActiveCraftPanelSlot(int index)
+  {
+    craftPanelSlots[index].image.color = Color.clear;
+    craftPanelSlots[index].itemID = -1;
+    craftPanelSlots[index].button.interactable = true;
+    craftPanelSlots[index].text.text = "";
+  }
   public override void OpenUI()
     {
         m_mainPanel.SetActive(true);
@@ -331,29 +354,45 @@ public class liCookMenu : BaseUIManager
         UpdateItemUI();
     }
 
-    void SlotBtnCallback(int index)
+  void SlotBtnCallback(int index)
+  {
+    if (itemSlots[index].itemID < 0) { return; }
+
+    activeSlotIndex = index;
+
+    Invoke("DelayScrollBarCorrection", 0.05f);
+    Item item = liInventory.instance.GetItemById(itemSlots[index].itemID);
+
+    itemNameTxt.text = "Name: " + item.name;
+    itemImg.color = Color.white;
+    itemImg.sprite = item.largeImage;
+
+    string text = "<size=40>Description:</size>\n" +
+                       item.desc + "\n";
+
+    itemDescTxt.text = text;
+
+    foreach (liItemSlot slot in craftPanelSlots )
     {
-        if (itemSlots[index].itemID < 0) { return; }
+      if (-1 == slot.itemID)
+      {
+        slot.itemID = item.id;
+        slot.image.sprite = item.icon;
+        slot.image.color = Color.white;
+        slot.text = itemNameTxt;
 
-        activeSlotIndex = index;
+        break;
+      }
 
-        Invoke("DelayScrollBarCorrection", 0.05f);
-        Item item  = liInventory.instance.GetItemById(itemSlots[index].itemID);
-
-        itemNameTxt.text = "Name: " + item.name;
-        itemImg.color = Color.white;
-        itemImg.sprite = item.largeImage;
-
-        string text = "<size=40>Description:</size>\n" +
-                           item.desc + "\n";
-
-        //foreach (var dateTime in itemInst.dateTimes)
-        //{
-        //    text += " -" + dateTime + "\n";
-        //}
-
-        itemDescTxt.text = text;
-        Invoke("DelayScrollBarCorrection", 0.05f);
     }
+
+    Invoke("DelayScrollBarCorrection", 0.05f);
+  }
+
+  void craftPanelBtnCallBack(int index)
+  {
+    activeCraftPanelSlotIndex = index;
+    clearActiveCraftPanelSlot(index);
+  }
 
 }
