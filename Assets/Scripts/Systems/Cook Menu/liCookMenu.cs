@@ -64,46 +64,49 @@ public class liCookMenu : BaseUIManager
 
     void Start()
   {
-        if (null == s_itemDataBase)
-        {
-            string data = File.ReadAllText(Application.streamingAssetsPath + "/Items.json");
+    inactiveColor = new Color(0, 0, 0, 1.0f);
+    activeColor = new Color(0, 0, 0, 1.0f);
+    inventoryColor = new Color(0, 0, 0, 1.0f);
+    //if (null == s_itemDataBase)
+    //{
+    //    string data = File.ReadAllText(Application.streamingAssetsPath + "/Items.json");
 
-            s_itemDataBase = JsonConvert.DeserializeObject<Item[]>(data);
+    //    s_itemDataBase = JsonConvert.DeserializeObject<Item[]>(data);
 
-            for (int i = 0; i < s_itemDataBase.Length; i++)
-            {
-                if (s_itemDataBase[i].id != i)
-                {
-                    Debug.LogWarning("Wrong item id assignment at index: " + i);
-                    s_itemDataBase[i].id = i;
-                }
+    //    for (int i = 0; i < s_itemDataBase.Length; i++)
+    //    {
+    //        if (s_itemDataBase[i].id != i)
+    //        {
+    //            Debug.LogWarning("Wrong item id assignment at index: " + i);
+    //            s_itemDataBase[i].id = i;
+    //        }
 
-                s_itemDataBase[i].icon =
-                    Resources.Load<Sprite>("Sprites/Items/Icons/" + s_itemDataBase[i].name);
+    //        s_itemDataBase[i].icon =
+    //            Resources.Load<Sprite>("Sprites/Items/Icons/" + s_itemDataBase[i].name);
 
-                if (s_itemDataBase[i].icon == null)
-                {
-                    Debug.LogError("Missing Items Icon " + s_itemDataBase[i].name);
-                }
+    //        if (s_itemDataBase[i].icon == null)
+    //        {
+    //            Debug.LogError("Missing Items Icon " + s_itemDataBase[i].name);
+    //        }
 
-                s_itemDataBase[i].largeImage =
-                    Resources.Load<Sprite>("Sprites/Items/Large/" + s_itemDataBase[i].name);
+    //        s_itemDataBase[i].largeImage =
+    //            Resources.Load<Sprite>("Sprites/Items/Large/" + s_itemDataBase[i].name);
 
-                if (s_itemDataBase[i].largeImage == null)
-                {
-                    Debug.LogWarning("Missing Items Large Image " + s_itemDataBase[i].name);
-                    s_itemDataBase[i].largeImage = s_itemDataBase[i].icon;
-                }
+    //        if (s_itemDataBase[i].largeImage == null)
+    //        {
+    //            Debug.LogWarning("Missing Items Large Image " + s_itemDataBase[i].name);
+    //            s_itemDataBase[i].largeImage = s_itemDataBase[i].icon;
+    //        }
 
-                if (SubType.SOMETHING_IS_WRONG == s_itemDataBase[i].subType)
-                {
-                    Debug.LogWarning("Incorrect Item Subtype");
-                }
-            }
+    //        if (SubType.SOMETHING_IS_WRONG == s_itemDataBase[i].subType)
+    //        {
+    //            Debug.LogWarning("Incorrect Item Subtype");
+    //        }
+    //    }
 
-            s_currentItems = new List<ItemInstance>();
-        }
-        m_mainPanel = transform.GetChild(0).gameObject;
+    //    s_currentItems = new List<ItemInstance>();
+    //}
+    m_mainPanel = transform.GetChild(0).gameObject;
         m_craftPanel = transform.GetChild(1).gameObject;
         m_resultPanel = transform.GetChild(2).gameObject;
         m_cookButton = transform.GetChild(3).gameObject;
