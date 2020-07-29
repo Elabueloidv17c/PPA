@@ -319,7 +319,7 @@ public class liCookMenu : BaseUIManager
   }
 
 
-  private void clearActiveCraftPanelSlot(int index)
+  private void clearSelectedCraftPanelSlot(int index)
   {
     craftPanelSlots[index].image.color = Color.clear;
     craftPanelSlots[index].itemID = -1;
@@ -381,12 +381,29 @@ public class liCookMenu : BaseUIManager
     Invoke("DelayScrollBarCorrection", 0.05f);
   }
 
+  /// <summary>
+  /// Clear the select item panel
+  /// </summary>
+  /// <param name="index"></param>
   void craftPanelBtnCallBack(int index)
   {
     activeCraftPanelSlotIndex = index;
-    clearActiveCraftPanelSlot(index);
+    clearSelectedCraftPanelSlot(index);
   }
 
+  void clearAllCraftPanelBtns()
+  {
+    for(int i = 0; i < craftPanelSlots.Count;++i)
+    {
+      clearSelectedCraftPanelSlot(i);
+    }
+
+  }
+
+  /// <summary>
+  /// Cooks some food by using the items
+  /// </summary>
+  /// <param name="index"></param>
   void cookBtnCallBack(int index)
   {
     List<liItemSlot> usableSlots = craftPanelSlots.FindAll(X => -1 != X.itemID);
@@ -398,11 +415,17 @@ public class liCookMenu : BaseUIManager
 
     int newItemID = liCrafting.instance.GetItemIDForCraftableItem(ArrayOfIDs);
 
-    bool isItemAdded = liInventory.instance.AddItem(newItemID);
+    var inventory = liInventory.instance;
+    bool isItemAdded = inventory.AddItem(newItemID);
     if( !isItemAdded)
     {
       Debug.Log("Item was NOT added to player");
     }
+
+    clearAllCraftPanelBtns();
+
+    // update the amount each item slot displays.
+    usableSlots.ForEach(X => X.text.text = (inventory.GetItemCountByID(X.itemID)).ToString());
 
   }
 
