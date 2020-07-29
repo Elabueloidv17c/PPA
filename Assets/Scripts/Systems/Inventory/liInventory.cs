@@ -782,7 +782,9 @@ public class liInventory : BaseUIManager
     int itemID;
 
     [InspectorButton("InspectorAddItem")]
-    public bool addItem;
+
+    [SerializeField]
+    private bool addItem;
 
     /// <summary>
     /// Let's the user add an item to the inventory using the inspector

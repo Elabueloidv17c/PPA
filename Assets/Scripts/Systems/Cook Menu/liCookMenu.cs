@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +18,8 @@ public class liCookMenu : BaseUIManager
 
     GameObject m_resultPanel;
 
-    GameObject m_cookButton;
+    GameObject m_cookButtonObject;
+
 
     List<liItemSlot> itemSlots;
 
@@ -38,7 +41,9 @@ public class liCookMenu : BaseUIManager
 
     Button[] itemSlotBtns;
 
-    Image itemImg;
+  Button m_cookBtn;
+
+  Image itemImg;
 
     [SerializeField]
     Color inactiveColor;
@@ -63,7 +68,10 @@ public class liCookMenu : BaseUIManager
     m_mainPanel = transform.GetChild(0).gameObject;
     m_craftPanel = transform.GetChild(1).gameObject;
     m_resultPanel = transform.GetChild(2).gameObject;
-    m_cookButton = transform.GetChild(3).gameObject;
+    m_cookButtonObject = transform.GetChild(3).gameObject;
+     
+    m_cookBtn = m_cookButtonObject.GetComponent<Button>();
+   
 
     tabBtns = m_mainPanel.transform.Find("Tabs").GetComponentsInChildren<Button>();
     var background = m_mainPanel.transform.Find("Background");
@@ -98,6 +106,8 @@ public class liCookMenu : BaseUIManager
       craftPanelSlots[i].button.onClick.AddListener(() => { craftPanelBtnCallBack(index); });
       craftPanelSlots[i].itemID = -1;
     }
+
+    m_cookBtn.onClick.AddListener(() => cookBtnCallBack(0));
 
     OpenUI();
     CloseUI();
@@ -191,7 +201,7 @@ public class liCookMenu : BaseUIManager
     m_mainPanel.SetActive(false);
     m_craftPanel.SetActive(false);
     m_resultPanel.SetActive(false);
-    m_cookButton.SetActive(false);
+    m_cookButtonObject.SetActive(false);
 
     IsOpen = false;
     IsMaximized = false;
@@ -321,7 +331,7 @@ public class liCookMenu : BaseUIManager
         m_mainPanel.SetActive(true);
         m_craftPanel.SetActive(true);
         m_resultPanel.SetActive(false); //Needs a condition to open
-        m_cookButton.SetActive(true);
+        m_cookButtonObject.SetActive(true);
 
         IsOpen = true;
         IsMaximized = true;
@@ -375,6 +385,25 @@ public class liCookMenu : BaseUIManager
   {
     activeCraftPanelSlotIndex = index;
     clearActiveCraftPanelSlot(index);
+  }
+
+  void cookBtnCallBack(int index)
+  {
+    List<liItemSlot> usableSlots = craftPanelSlots.FindAll(X => -1 != X.itemID);
+    int[] ArrayOfIDs = new int[usableSlots.Count];
+    for(int i = 0; i < ArrayOfIDs.Length; ++i)
+    {
+      ArrayOfIDs[i] = usableSlots[i].itemID;
+    }
+
+    int newItemID = liCrafting.instance.GetItemIDForCraftableItem(ArrayOfIDs);
+
+    bool isItemAdded = liInventory.instance.AddItem(newItemID);
+    if( !isItemAdded)
+    {
+      Debug.Log("Item was NOT added to player");
+    }
+
   }
 
 }
