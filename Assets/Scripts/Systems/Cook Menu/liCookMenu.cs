@@ -38,8 +38,6 @@ public class liCookMenu : BaseUIManager
 
     Button[] itemSlotBtns;
 
-    Image backgroundImg;
-
     Image itemImg;
 
     [SerializeField]
