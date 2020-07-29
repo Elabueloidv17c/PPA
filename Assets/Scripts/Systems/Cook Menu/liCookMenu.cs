@@ -63,46 +63,7 @@ public class liCookMenu : BaseUIManager
     }
 
     void Start()
-  {
-        if (null == s_itemDataBase)
-        {
-            string data = File.ReadAllText(Application.streamingAssetsPath + "/Items.json");
-
-            s_itemDataBase = JsonConvert.DeserializeObject<Item[]>(data);
-
-            for (int i = 0; i < s_itemDataBase.Length; i++)
-            {
-                if (s_itemDataBase[i].id != i)
-                {
-                    Debug.LogWarning("Wrong item id assignment at index: " + i);
-                    s_itemDataBase[i].id = i;
-                }
-
-                s_itemDataBase[i].icon =
-                    Resources.Load<Sprite>("Sprites/Items/Icons/" + s_itemDataBase[i].name);
-
-                if (s_itemDataBase[i].icon == null)
-                {
-                    Debug.LogError("Missing Items Icon " + s_itemDataBase[i].name);
-                }
-
-                s_itemDataBase[i].largeImage =
-                    Resources.Load<Sprite>("Sprites/Items/Large/" + s_itemDataBase[i].name);
-
-                if (s_itemDataBase[i].largeImage == null)
-                {
-                    Debug.LogWarning("Missing Items Large Image " + s_itemDataBase[i].name);
-                    s_itemDataBase[i].largeImage = s_itemDataBase[i].icon;
-                }
-
-                if (SubType.SOMETHING_IS_WRONG == s_itemDataBase[i].subType)
-                {
-                    Debug.LogWarning("Incorrect Item Subtype");
-                }
-            }
-
-            s_currentItems = new List<ItemInstance>();
-        }
+    {
         m_mainPanel = transform.GetChild(0).gameObject;
         m_craftPanel = transform.GetChild(1).gameObject;
         m_resultPanel = transform.GetChild(2).gameObject;
@@ -122,8 +83,8 @@ public class liCookMenu : BaseUIManager
 
         for (int i = 0; i < tabBtns.Length; i++)
         {
-          int index = i; // needed by lambda so it's capture by value
-          tabBtns[i].onClick.AddListener(() => { TabBtnCallback(index); });
+            int index = i; // needed by lambda so it's capture by value
+            tabBtns[i].onClick.AddListener(() => { TabBtnCallback(index); });
         }
         for (int i = 0; i < itemSlots.Count; i++)
         {
@@ -135,11 +96,11 @@ public class liCookMenu : BaseUIManager
         //backgroundImg = background.GetComponent<Image>();
         OpenUI();
         CloseUI();
-  }
+    }
 
-  // Update is called once per frame
-  void Update()
-  {
+    // Update is called once per frame
+    void Update()
+    {
         if (liGameManager.instance &&
             !liGameManager.instance.menuActive &&
             Input.GetKeyDown(KeyCode.C))
@@ -154,200 +115,201 @@ public class liCookMenu : BaseUIManager
         }
     }
 
-  private void ShrinkSlots()
-  {
-    int index;
-    for (index = 0; index < itemSlots.Count; index++)
+    private void ShrinkSlots()
     {
-      if (itemSlots[index].itemID == -1)
-      {
-        break;
-      }
-    }
-
-    int slotCount = Math.Max(4 - index % 4, 12);
-
-    if (slotCount < itemSlots.Count)
-    {
-      for (int i = itemSlots.Count - 1; i >= 0; i--)
-      {
-        if (i >= slotCount)
+        int index;
+        for (index = 0; index < itemSlots.Count; index++)
         {
-          Destroy(itemSlots[i].gameObject);
+            if (itemSlots[index].itemID == -1)
+            {
+                break;
+            }
         }
-      }
 
-      itemSlots.RemoveRange(slotCount, itemSlots.Count - slotCount);
+        int slotCount = Math.Max(4 - index % 4, 12);
+
+        if (slotCount < itemSlots.Count)
+        {
+            for (int i = itemSlots.Count - 1; i >= 0; i--)
+            {
+                if (i >= slotCount)
+                {
+                    Destroy(itemSlots[i].gameObject);
+                }
+            }
+
+            itemSlots.RemoveRange(slotCount, itemSlots.Count - slotCount);
+        }
     }
-  }
 
-  private void ExpandSlots()
-  {
-    for (int i = 0; i < 4; i++)
+    private void ExpandSlots()
     {
-      int index = itemSlots.Count; // needed by lambda so it's capture by value
-      var GO = Instantiate(itemSlots[0].gameObject, itemSlotPanel);
-      itemSlots.Add(GO.GetComponent<liItemSlot>());
-      itemSlots[index].button.onClick.AddListener(() => {
-        SlotBtnCallback(index);
-      });
+        for (int i = 0; i < 4; i++)
+        {
+            int index = itemSlots.Count; // needed by lambda so it's capture by value
+            var GO = Instantiate(itemSlots[0].gameObject, itemSlotPanel);
+            itemSlots.Add(GO.GetComponent<liItemSlot>());
+            itemSlots[index].button.onClick.AddListener(() =>
+            {
+                SlotBtnCallback(index);
+            });
 
-      itemSlots[index].image.color = Color.clear;
-      itemSlots[index].text.text = "";
-      itemSlots[index].button.interactable = false;
-      itemSlots[index].itemID = -1;
-      itemSlots[index].itemInstIndex = -1;
+            itemSlots[index].image.color = Color.clear;
+            itemSlots[index].text.text = "";
+            itemSlots[index].button.interactable = false;
+            itemSlots[index].itemID = -1;
+            itemSlots[index].itemInstIndex = -1;
+        }
     }
-  }
 
-  int ItemTypeToTabIndex(ItemType type)
-  {
-    return tabBtns.Length - ((int)type + 1);
-  }
-
-  void DepositBtnsSetActive(bool active)
-  {
-    itemSlotBtns[0].gameObject.SetActive(active);
-    itemSlotBtns[1].gameObject.SetActive(active);
-  }
-
-  void ClearActiveSlot()
-  {
-    activeSlotIndex = -1;
-    itemNameTxt.text = "";
-    itemImg.color = Color.clear;
-    itemDescTxt.text = "";
-  }
-
-  void UpdateItemUI()
-  {
-    ClearActiveSlot();
-  }
-
-  public override void CloseUI()
-  {
-    ShrinkSlots();
-    m_mainPanel.SetActive(false);
-    m_craftPanel.SetActive(false);
-    m_resultPanel.SetActive(false);
-    m_cookButton.SetActive(false);
-
-    IsOpen = false;
-    IsMaximized = false;
-
-    liGameManager.instance.RegisterCloseUI(this);
-  }
-
-  public override void MaximizeUI()
-  {
-    if (!IsOpen) { return; }
-    IsMaximized = true;
-    m_mainPanel.SetActive(true);
-
-    UpdateItemUI();
-  }
-
-  public override void MinimizeUI()
-  {
-    if (!IsOpen) { return; }
-    IsMaximized = false;
-    m_mainPanel.SetActive(false);
-  }
-
-  void TabBtnCallback(int index)
-  {
-    Vector3 offset = Vector3.up * 20;
-
-    //Debug.Log("Works");
-    if (activeTabIndex >= 0)
+    int ItemTypeToTabIndex(ItemType type)
     {
-      tabBtns[activeTabIndex].transform.localPosition -= offset;
-      tabBtns[activeTabIndex].GetComponent<Image>().color = inactiveColor;
-      Text textt = tabBtns[activeTabIndex].GetComponentInChildren<Text>();
-      textt.color = activeColor;
-      tabBtns[activeTabIndex].interactable = true;
+        return tabBtns.Length - ((int)type + 1);
     }
 
-    activeTabIndex = index;
-    tabBtns[index].transform.localPosition += offset;
-    tabBtns[index].GetComponent<Image>().color = activeColor;
-    Text text = tabBtns[index].GetComponentInChildren<Text>();
-    text.color = inactiveColor;
-    tabBtns[index].interactable = false;
-
-    clearsItemSlots();
-
-    AddItemsToItemSlots(index);
-
-    UpdateItemUI();
-
-  }
-
-
-  private void AddItemsToItemSlots(int index)
-  {
-    SubType currentSubType = SubType.SOMETHING_IS_WRONG;
-
-    switch (index)
+    void DepositBtnsSetActive(bool active)
     {
-      case 0:
-        currentSubType = SubType.Fish;
-        break;
-      case 1:
-        currentSubType = SubType.Condiment;
-        break;
-      case 2:
-        currentSubType = SubType.Garnish;
-        break;
+        itemSlotBtns[0].gameObject.SetActive(active);
+        itemSlotBtns[1].gameObject.SetActive(active);
     }
 
-    if (SubType.SOMETHING_IS_WRONG == currentSubType)
+    void ClearActiveSlot()
     {
-      Debug.LogWarning(" Trying to access non existent or non accounted for tab ");
-      return;
+        activeSlotIndex = -1;
+        itemNameTxt.text = "";
+        itemImg.color = Color.clear;
+        itemDescTxt.text = "";
     }
 
-
-    List<int> ValidListOfItemIDs = new List<int>();
-
-    var inventory = liInventory.instance;
-    var playerItems = liInventory.s_currentItems;
-    foreach (var item in playerItems)
+    void UpdateItemUI()
     {
-      if (currentSubType == inventory.GetItemSubType(item.id))
-      {
-        ValidListOfItemIDs.Add(item.id);
-      }
+        ClearActiveSlot();
     }
 
-    for (int i = 0; i < ValidListOfItemIDs.Count; ++i)
+    public override void CloseUI()
     {
-      int validID = ValidListOfItemIDs[i];
-      Item possibleValidItem = liInventory.instance.GetItemById(validID);
-      if (-1 != possibleValidItem.id)
-      {
-        itemSlots[i].image.color = Color.white;
-        itemSlots[i].button.interactable = true;
-        itemSlots[i].image.sprite = possibleValidItem.icon;
-        itemSlots[i].itemID = possibleValidItem.id;
-      }
+        ShrinkSlots();
+        m_mainPanel.SetActive(false);
+        m_craftPanel.SetActive(false);
+        m_resultPanel.SetActive(false);
+        m_cookButton.SetActive(false);
+
+        IsOpen = false;
+        IsMaximized = false;
+
+        liGameManager.instance.RegisterCloseUI(this);
     }
-  }
 
-  private void clearsItemSlots()
-  {
-
-    foreach (var itemSlot in itemSlots)
+    public override void MaximizeUI()
     {
-      itemSlot.image.color = Color.clear;
-      itemSlot.button.interactable = true;
-      itemSlot.image.sprite = null;
-      itemSlot.itemID = -1;
+        if (!IsOpen) { return; }
+        IsMaximized = true;
+        m_mainPanel.SetActive(true);
+
+        UpdateItemUI();
     }
 
-  }
+    public override void MinimizeUI()
+    {
+        if (!IsOpen) { return; }
+        IsMaximized = false;
+        m_mainPanel.SetActive(false);
+    }
 
-  public override void OpenUI()
+    void TabBtnCallback(int index)
+    {
+        Vector3 offset = Vector3.up * 20;
+
+        //Debug.Log("Works");
+        if (activeTabIndex >= 0)
+        {
+            tabBtns[activeTabIndex].transform.localPosition -= offset;
+            tabBtns[activeTabIndex].GetComponent<Image>().color = inactiveColor;
+            Text textt = tabBtns[activeTabIndex].GetComponentInChildren<Text>();
+            textt.color = activeColor;
+            tabBtns[activeTabIndex].interactable = true;
+        }
+
+        activeTabIndex = index;
+        tabBtns[index].transform.localPosition += offset;
+        tabBtns[index].GetComponent<Image>().color = activeColor;
+        Text text = tabBtns[index].GetComponentInChildren<Text>();
+        text.color = inactiveColor;
+        tabBtns[index].interactable = false;
+
+        clearsItemSlots();
+
+        AddItemsToItemSlots(index);
+
+        UpdateItemUI();
+
+    }
+
+
+    private void AddItemsToItemSlots(int index)
+    {
+        SubType currentSubType = SubType.SOMETHING_IS_WRONG;
+
+        switch (index)
+        {
+            case 0:
+                currentSubType = SubType.Fish;
+                break;
+            case 1:
+                currentSubType = SubType.Condiment;
+                break;
+            case 2:
+                currentSubType = SubType.Garnish;
+                break;
+        }
+
+        if (SubType.SOMETHING_IS_WRONG == currentSubType)
+        {
+            Debug.LogWarning(" Trying to access non existent or non accounted for tab ");
+            return;
+        }
+
+
+        List<int> ValidListOfItemIDs = new List<int>();
+
+        var inventory = liInventory.instance;
+        var playerItems = liInventory.s_currentItems;
+        foreach (var item in playerItems)
+        {
+            if (currentSubType == inventory.GetItemSubType(item.id))
+            {
+                ValidListOfItemIDs.Add(item.id);
+            }
+        }
+
+        for (int i = 0; i < ValidListOfItemIDs.Count; ++i)
+        {
+            int validID = ValidListOfItemIDs[i];
+            Item possibleValidItem = liInventory.instance.GetItemById(validID);
+            if (-1 != possibleValidItem.id)
+            {
+                itemSlots[i].image.color = Color.white;
+                itemSlots[i].button.interactable = true;
+                itemSlots[i].image.sprite = possibleValidItem.icon;
+                itemSlots[i].itemID = possibleValidItem.id;
+            }
+        }
+    }
+
+    private void clearsItemSlots()
+    {
+
+        foreach (var itemSlot in itemSlots)
+        {
+            itemSlot.image.color = Color.clear;
+            itemSlot.button.interactable = true;
+            itemSlot.image.sprite = null;
+            itemSlot.itemID = -1;
+        }
+
+    }
+
+    public override void OpenUI()
     {
         m_mainPanel.SetActive(true);
         m_craftPanel.SetActive(true);
@@ -356,9 +318,9 @@ public class liCookMenu : BaseUIManager
 
         IsOpen = true;
         IsMaximized = true;
-        
+
         liGameManager.instance.RegisterOpenUI(this);
-        
+
         if (activeTabIndex == -1)
         {
             TabBtnCallback(tabBtns.Length - 1);
@@ -373,8 +335,7 @@ public class liCookMenu : BaseUIManager
         activeSlotIndex = index;
 
         Invoke("DelayScrollBarCorrection", 0.05f);
-        Item item = s_itemDataBase[itemSlots[index].itemID];
-        // ItemInstance itemInst = currentItems[itemSlots[index].itemInstIndex];
+        Item item = liInventory.instance.GetItemById(itemSlots[index].itemID);
 
         itemNameTxt.text = "Name: " + item.name;
         itemImg.color = Color.white;
@@ -390,6 +351,6 @@ public class liCookMenu : BaseUIManager
 
         itemDescTxt.text = text;
         Invoke("DelayScrollBarCorrection", 0.05f);
-    }
 
+    }
 }
