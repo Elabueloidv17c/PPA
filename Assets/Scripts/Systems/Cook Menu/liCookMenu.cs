@@ -166,11 +166,6 @@ public class liCookMenu : BaseUIManager
     }
   }
 
-  int ItemTypeToTabIndex(ItemType type)
-  {
-    return tabBtns.Length - ((int)type + 1);
-  }
-
   void DepositBtnsSetActive(bool active)
   {
     itemSlotBtns[0].gameObject.SetActive(active);
