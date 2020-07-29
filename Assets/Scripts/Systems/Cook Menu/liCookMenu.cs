@@ -290,7 +290,7 @@ public class liCookMenu : BaseUIManager
         itemSlots[i].button.interactable = true;
         itemSlots[i].image.sprite = possibleValidItem.icon;
         itemSlots[i].itemID = possibleValidItem.id;
-        itemSlots[i].itemInstIndex = inventory.GetItemInstanceIndex(possibleValidItem.id);
+        itemSlots[i].text.text = inventory.GetItemCountByID(possibleValidItem.id).ToString();
       }
     }
   }

@@ -762,9 +762,19 @@ public class liInventory : BaseUIManager
   /// </summary>
   /// <param name="itemID"> The Item to look for. </param>
   /// <returns> The Index where the count of the item is kept. </returns>
-  public int GetItemInstanceIndex(int itemID)
+  private int GetItemInstanceIndex(int itemID)
   {
     return s_currentItems.FindIndex(X => X.id == itemID);
+  }
+
+  public int GetItemCountByID(int itemID)
+  {
+    int indexForItemInstance = GetItemInstanceIndex(itemID);
+    if ( -1 != indexForItemInstance )
+    {
+      return s_currentItems[indexForItemInstance].count;
+    }
+    return -1;
   }
 
 #if UNITY_EDITOR // This code is ONLY for debugging in the editor.
