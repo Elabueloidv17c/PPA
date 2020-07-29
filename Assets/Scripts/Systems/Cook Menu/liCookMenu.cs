@@ -35,7 +35,11 @@ public class liCookMenu : BaseUIManager
 
     Text itemNameTxt;
 
+    Text itemNameTxt_resultPanel;
+
     Text itemDescTxt;
+
+    Text itemDescTxt_resultPanel;
 
     Button[] tabBtns;
 
@@ -44,6 +48,8 @@ public class liCookMenu : BaseUIManager
   Button m_cookBtn;
 
   Image itemImg;
+
+  Image itemImg_resultPanel;
 
     [SerializeField]
     Color inactiveColor;
@@ -58,44 +64,6 @@ public class liCookMenu : BaseUIManager
     {
         instance = this;
     }
-
-<<<<<<< HEAD
-    void Start()
-    {
-        m_mainPanel = transform.GetChild(0).gameObject;
-        m_craftPanel = transform.GetChild(1).gameObject;
-        m_resultPanel = transform.GetChild(2).gameObject;
-        m_cookButton = transform.GetChild(3).gameObject;
-
-        tabBtns = m_mainPanel.transform.Find("Tabs").GetComponentsInChildren<Button>();
-        var background = m_mainPanel.transform.Find("Background");
-        itemSlotPanel = background.GetChild(0);
-        itemSlots = itemSlotPanel.GetComponentsInChildren<liItemSlot>().ToList<liItemSlot>();
-
-        var itemDetails = background.GetChild(1);
-        itemNameTxt = itemDetails.Find("Item Name").GetComponent<Text>();
-        itemImg = itemDetails.Find("Item Image").GetChild(0).GetComponent<Image>();
-        var scrollView = itemDetails.Find("Item Description").GetChild(0);
-        itemDescTxt = scrollView.Find("Viewport").GetChild(0).GetComponent<Text>();
-        //tabBtns = m_mainPanel.transform.Find("Tabs").GetComponentsInChildren<Button>();
-
-        for (int i = 0; i < tabBtns.Length; i++)
-        {
-            int index = i; // needed by lambda so it's capture by value
-            tabBtns[i].onClick.AddListener(() => { TabBtnCallback(index); });
-        }
-        for (int i = 0; i < itemSlots.Count; i++)
-        {
-            int index = i; // needed by lambda so it's capture by value
-            itemSlots[i].button.onClick.AddListener(() => { SlotBtnCallback(index); });
-        }
-        //depositBtns = m_mainPanel.transform.Find("Deposit Buttons").
-        //                        GetComponentsInChildren<Button>();
-        //backgroundImg = background.GetComponent<Image>();
-        OpenUI();
-        CloseUI();
-    }
-=======
   void Start()
   {
     inactiveColor = Color.white;
@@ -112,15 +80,21 @@ public class liCookMenu : BaseUIManager
 
     tabBtns = m_mainPanel.transform.Find("Tabs").GetComponentsInChildren<Button>();
     var background = m_mainPanel.transform.Find("Background");
+    var result_panel_background = m_resultPanel.transform.Find("Background");
     itemSlotPanel = background.GetChild(0);
     itemSlots = itemSlotPanel.GetComponentsInChildren<liItemSlot>().ToList<liItemSlot>();
 
     var itemDetails = background.GetChild(1);
+    var itemDetails_resultPanel = result_panel_background.GetChild(0);
+    itemNameTxt_resultPanel = itemDetails_resultPanel.Find("Item Name").GetComponent<Text>();
     itemNameTxt = itemDetails.Find("Item Name").GetComponent<Text>();
     itemImg = itemDetails.Find("Item Image").GetChild(0).GetComponent<Image>();
-    var scrollView = itemDetails.Find("Item Description").GetChild(0);
-    itemDescTxt = scrollView.Find("Viewport").GetChild(0).GetComponent<Text>();
+    itemImg_resultPanel = itemDetails_resultPanel.Find("Item Image").GetChild(0).GetComponent<Image>();
 
+    var scrollView = itemDetails.Find("Item Description").GetChild(0);
+    var scrollView_resultPanel = itemDetails_resultPanel.Find("Item Description").GetChild(0);
+    itemDescTxt = scrollView.Find("Viewport").GetChild(0).GetComponent<Text>();
+    itemDescTxt_resultPanel = scrollView_resultPanel.Find("Viewport").GetChild(0).GetComponent<Text>();
 
     var craftPanelBackground = m_craftPanel.GetChildWithName("Background");
     craftPanelSlots = craftPanelBackground.GetComponentsInChildren<liItemSlot>().ToList();
@@ -149,7 +123,6 @@ public class liCookMenu : BaseUIManager
     OpenUI();
     CloseUI();
   }
->>>>>>> f756fda282ee8a0d3e1aad763a8981a61d6f650a
 
     // Update is called once per frame
     void Update()
@@ -219,30 +192,6 @@ public class liCookMenu : BaseUIManager
     {
         return tabBtns.Length - ((int)type + 1);
     }
-<<<<<<< HEAD
-
-    void DepositBtnsSetActive(bool active)
-=======
-  }
-
-  void DepositBtnsSetActive(bool active)
-  {
-    itemSlotBtns[0].gameObject.SetActive(active);
-    itemSlotBtns[1].gameObject.SetActive(active);
-  }
-
-  void ClearActiveSlot()
-  {
-    activeSlotIndex = -1;
-    itemNameTxt.text = "";
-    itemImg.color = Color.clear;
-    itemDescTxt.text = "";
-  }
-
-  void UpdateItemUI()
-  {
-    ClearActiveSlot();
-  }
 
   public override void CloseUI()
   {
@@ -274,18 +223,6 @@ public class liCookMenu : BaseUIManager
     m_mainPanel.SetActive(false);
   }
 
-  void TabBtnCallback(int index)
-  {
-    Vector3 offset = Vector3.up * 20;
-
-    //Debug.Log("Works");
-    if (activeTabIndex >= 0)
->>>>>>> f756fda282ee8a0d3e1aad763a8981a61d6f650a
-    {
-        itemSlotBtns[0].gameObject.SetActive(active);
-        itemSlotBtns[1].gameObject.SetActive(active);
-    }
-
     void ClearActiveSlot()
     {
         activeSlotIndex = -1;
@@ -299,48 +236,19 @@ public class liCookMenu : BaseUIManager
         ClearActiveSlot();
     }
 
-    public override void CloseUI()
-    {
-        ShrinkSlots();
-        m_mainPanel.SetActive(false);
-        m_craftPanel.SetActive(false);
-        m_resultPanel.SetActive(false);
-        m_cookButton.SetActive(false);
-
-        IsOpen = false;
-        IsMaximized = false;
-
-        liGameManager.instance.RegisterCloseUI(this);
-    }
-
-    public override void MaximizeUI()
-    {
-        if (!IsOpen) { return; }
-        IsMaximized = true;
-        m_mainPanel.SetActive(true);
-
-        UpdateItemUI();
-    }
-
-    public override void MinimizeUI()
-    {
-<<<<<<< HEAD
-        if (!IsOpen) { return; }
-        IsMaximized = false;
-        m_mainPanel.SetActive(false);
-    }
-=======
-      case 0:
-        currentSubType = SubType.Fish;
-        break;
-      case 1:
-        currentSubType = SubType.Condiment;
-        break;
-      case 2:
-        currentSubType = SubType.Garnish;
-        break;
-    };
->>>>>>> f756fda282ee8a0d3e1aad763a8981a61d6f650a
+    //public override void CloseUI()
+    //{
+    //    ShrinkSlots();
+    //    m_mainPanel.SetActive(false);
+    //    m_craftPanel.SetActive(false);
+    //    m_resultPanel.SetActive(false);
+    //    m_cookButton.SetActive(false);
+    //
+    //    IsOpen = false;
+    //    IsMaximized = false;
+    //
+    //    liGameManager.instance.RegisterCloseUI(this);
+    //}
 
     void TabBtnCallback(int index)
     {
@@ -368,21 +276,6 @@ public class liCookMenu : BaseUIManager
         AddItemsToItemSlots(index);
 
         UpdateItemUI();
-
-<<<<<<< HEAD
-=======
-    for (int i = 0; i < ValidListOfItemIDs.Count; ++i)
-    {
-      Item possibleValidItem = inventory.GetItemById(ValidListOfItemIDs[i]);
-      if (-1 != possibleValidItem.id)
-      {
-        itemSlots[i].image.color = Color.white;
-        itemSlots[i].button.interactable = true;
-        itemSlots[i].image.sprite = possibleValidItem.icon;
-        itemSlots[i].itemID = possibleValidItem.id;
-        itemSlots[i].text.text = inventory.GetItemCountByID(possibleValidItem.id).ToString();
-      }
->>>>>>> f756fda282ee8a0d3e1aad763a8981a61d6f650a
     }
 
 
@@ -446,12 +339,7 @@ public class liCookMenu : BaseUIManager
             itemSlot.image.sprite = null;
             itemSlot.itemID = -1;
         }
-
-<<<<<<< HEAD
     }
-
-    public override void OpenUI()
-=======
 
   private void clearSelectedCraftPanelSlot(int index)
   {
@@ -461,7 +349,7 @@ public class liCookMenu : BaseUIManager
     craftPanelSlots[index].text.text = "";
   }
   public override void OpenUI()
->>>>>>> f756fda282ee8a0d3e1aad763a8981a61d6f650a
+
     {
         m_mainPanel.SetActive(true);
         m_craftPanel.SetActive(true);
@@ -525,19 +413,12 @@ public class liCookMenu : BaseUIManager
     activeCraftPanelSlotIndex = index;
     clearSelectedCraftPanelSlot(index);
   }
-
-<<<<<<< HEAD
-        Invoke("DelayScrollBarCorrection", 0.05f);
-        Item item = liInventory.instance.GetItemById(itemSlots[index].itemID);
-=======
   void clearAllCraftPanelBtns()
   {
     for(int i = 0; i < craftPanelSlots.Count;++i)
     {
       clearSelectedCraftPanelSlot(i);
     }
->>>>>>> f756fda282ee8a0d3e1aad763a8981a61d6f650a
-
   }
 
   /// <summary>
@@ -554,26 +435,32 @@ public class liCookMenu : BaseUIManager
     }
 
     int newItemID = liCrafting.instance.GetItemIDForCraftableItem(ArrayOfIDs);
-
-<<<<<<< HEAD
-        itemDescTxt.text = text;
-        Invoke("DelayScrollBarCorrection", 0.05f);
-
-    }
-=======
+    
     var inventory = liInventory.instance;
     bool isItemAdded = inventory.AddItem(newItemID);
-    if( !isItemAdded)
+    if (!isItemAdded)
     {
-      Debug.Log("Item was NOT added to player");
+        Debug.Log("Item was NOT added to player");
     }
 
+    else
+    {
+        m_resultPanel.SetActive(true);
+        Item item = liInventory.instance.GetItemById(newItemID);
+
+        itemNameTxt_resultPanel.text = "Name: " + item.name;
+        itemImg_resultPanel.color = Color.white;
+        itemImg_resultPanel.sprite = item.largeImage;
+
+        string text = "<size=40>Description:</size>\n" +
+                           item.desc + "\n";
+
+        itemDescTxt_resultPanel.text = text;
+    }
     clearAllCraftPanelBtns();
 
     // update the amount each item slot displays.
     usableSlots.ForEach(X => X.text.text = (inventory.GetItemCountByID(X.itemID)).ToString());
 
   }
-
->>>>>>> f756fda282ee8a0d3e1aad763a8981a61d6f650a
 }
