@@ -30,6 +30,15 @@ public class liCrafting : MonoBehaviour
   {
     s_possibleCraftableItems = new List<liCraftableItem>();
     s_knownRecipesByPlayer = new List<liCraftableItem>();
+
+
+    string path = getPathToJsonForCraftableItemsKnownByPlayer();
+    LoadFromJson<List<liCraftableItem>>(path, ref s_knownRecipesByPlayer);
+
+    if (!LoadItem())
+    {
+      Debug.LogError("Missing craftable items file.");
+    }
   }
 
 
@@ -282,12 +291,12 @@ public class liCrafting : MonoBehaviour
       {
         s_knownRecipesByPlayer.Add(itemAtIndex);
         s_knownRecipesByPlayer.Sort();
+        return true;
       }
       else
       {
         return false;
       }
-      return true;
     }
     return false;
   }
@@ -315,7 +324,8 @@ public class liCrafting : MonoBehaviour
   }
 
   [InspectorButton("Inspector_CreateDefaultItem")]
-  public bool addDefaultItem_;
+  [SerializeField]
+  private bool addDefaultItem_;
 
   /// <summary>
   /// Adds Something default items to the list of valid craftable items.
