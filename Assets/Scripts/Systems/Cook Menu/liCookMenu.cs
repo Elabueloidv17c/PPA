@@ -283,14 +283,14 @@ public class liCookMenu : BaseUIManager
 
     for (int i = 0; i < ValidListOfItemIDs.Count; ++i)
     {
-      int validID = ValidListOfItemIDs[i];
-      Item possibleValidItem = liInventory.instance.GetItemById(validID);
+      Item possibleValidItem = inventory.GetItemById(ValidListOfItemIDs[i]);
       if (-1 != possibleValidItem.id)
       {
         itemSlots[i].image.color = Color.white;
         itemSlots[i].button.interactable = true;
         itemSlots[i].image.sprite = possibleValidItem.icon;
         itemSlots[i].itemID = possibleValidItem.id;
+        itemSlots[i].itemInstIndex = inventory.GetItemInstanceIndex(possibleValidItem.id);
       }
     }
   }
@@ -342,6 +342,7 @@ public class liCookMenu : BaseUIManager
     activeSlotIndex = index;
 
     Invoke("DelayScrollBarCorrection", 0.05f);
+
     Item item = liInventory.instance.GetItemById(itemSlots[index].itemID);
 
     itemNameTxt.text = "Name: " + item.name;
