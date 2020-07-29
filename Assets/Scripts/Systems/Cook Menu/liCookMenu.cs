@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
 using Text = TMPro.TextMeshProUGUI;
-
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.Runtime.InteropServices.ComTypes;
 
 public class liCookMenu : BaseUIManager
 {
@@ -62,7 +56,7 @@ public class liCookMenu : BaseUIManager
         instance = this;
     }
 
-    void Start()
+  void Start()
   {
     inactiveColor = Color.white;
     activeColor = Color.white;
@@ -100,15 +94,13 @@ public class liCookMenu : BaseUIManager
       itemSlots[i].button.onClick.AddListener(() => { SlotBtnCallback(index); });
     }
 
-    for(int i = 0; i < craftPanelSlots.Count; i++)
+    for (int i = 0; i < craftPanelSlots.Count; i++)
     {
       int index = i; // needed by lambda so it's capture by value
       craftPanelSlots[i].button.onClick.AddListener(() => { craftPanelBtnCallBack(index); });
       craftPanelSlots[i].itemID = -1;
     }
-    //depositBtns = m_mainPanel.transform.Find("Deposit Buttons").
-    //                        GetComponentsInChildren<Button>();
-    //backgroundImg = background.GetComponent<Image>();
+
     OpenUI();
     CloseUI();
   }
@@ -275,7 +267,7 @@ public class liCookMenu : BaseUIManager
       case 2:
         currentSubType = SubType.Garnish;
         break;
-    }
+    };
 
     if (SubType.SOMETHING_IS_WRONG == currentSubType)
     {
