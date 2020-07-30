@@ -42,11 +42,16 @@ public class liCrafting : MonoBehaviour
   public int GetItemIDForCraftableItem(int[] itemIDsUseToCraft)
   {
     Array.Sort(itemIDsUseToCraft);
-    if (CheckForDuplicates(itemIDsUseToCraft))
+    var inventory = liInventory.instance;
+
+    removeItemsFromInventory(itemIDsUseToCraft, inventory);
+
+    if (CheckForDuplicates(itemIDsUseToCraft,inventory))
       return -1;
 
-    var inventory = liInventory.instance;
-    removeItemsFromInventory(itemIDsUseToCraft, inventory);
+    if (hasMultipleFish(itemIDsUseToCraft, inventory))
+      return -1;
+
 
     int index =
       s_possibleCraftableItems.FindIndex(items => 0 == items.CompareTo(itemIDsUseToCraft));
@@ -66,15 +71,31 @@ public class liCrafting : MonoBehaviour
   /// </summary>
   /// <param name="itemUsedToCraft"></param>
   /// <returns>'false' when there are no duplicates, 'true' otherwise.</returns>
-  private bool CheckForDuplicates(int[] itemIDsUseToCraft)
+  private bool CheckForDuplicates(int[] itemIDsUseToCraft, liInventory inventory)
   {
     for (int i = 1; i < itemIDsUseToCraft.Length; ++i)
     {
       if (itemIDsUseToCraft[i] == itemIDsUseToCraft[i - 1])
+      {
         return true;
+      }
     }
 
     return false;
+  }
+
+  private bool hasMultipleFish(int[] itemIDsUseToCraft, liInventory inventory)
+  {
+    int FishCount = 0;
+    foreach ( var item in itemIDsUseToCraft)
+    {
+      if (SubType.Fish == inventory.GetItemSubType(item))
+      {
+        ++FishCount;
+      }
+    }
+
+    return (1 < FishCount);
   }
 
   /// <summary>
@@ -86,7 +107,17 @@ public class liCrafting : MonoBehaviour
   /// <returns>'true' when an item was added successfully,'false' otherwise.</returns>
   private bool AddCraftableItem(int[] requiredIDs, int resultID)
   {
-    liCraftableItem possiblyNewItem = new liCraftableItem(resultID, requiredIDs);
+    Array.Sort(requiredIDs);
+    // This is done because requiredIDs can be modified out side the function
+    // and will think I have a copy of a element when I don't.
+    int[] CopyOfIDs = new int[requiredIDs.Length] ;
+
+    for (int i = 0; i < requiredIDs.Length; ++i)
+    {
+      CopyOfIDs[i] = requiredIDs[i];
+    }
+    
+    liCraftableItem possiblyNewItem = new liCraftableItem(resultID, CopyOfIDs);
 
     if (0 > s_possibleCraftableItems.BinarySearch(possiblyNewItem))
     {
@@ -164,7 +195,7 @@ public class liCrafting : MonoBehaviour
     return false;
   }
 
-  public void SaveToJson<T>(string Path,ref T dataContainer)
+  public static void SaveToJson<T>(string Path,ref T dataContainer)
   {
     FileStream fileStream = null; 
 
@@ -189,6 +220,7 @@ public class liCrafting : MonoBehaviour
   /// <summary>
   /// Save the items in ' s_possibleCraftableItems ' to a JSON file.
   /// </summary>
+  /// <TODO> Make sure that there are no duplicates when saving. </TODO>
   public void SaveCurrentItems()
   {
     string Path = getPathToJsonForCraftableItems();
@@ -407,21 +439,25 @@ public class liCrafting : MonoBehaviour
 
     string result = "";
 
-    foreach (liCraftableItem item in s_possibleCraftableItems)
+    if(null != s_possibleCraftableItems)
     {
-      result += "Resulting item =" +
-       item.m_resultingItemID.ToString();
 
-
-      result += "\n Items for Creating Resulting Item =[";
-      foreach (int i in item.m_requiredItemIDs)
+      foreach (liCraftableItem item in s_possibleCraftableItems)
       {
-        result += i.ToString() + ", ";
-      }
-      result += "]\n\n";
+        result += "Resulting item =" +
+         item.m_resultingItemID.ToString();
 
-      Debug.Log(result);
-      result = "";
+
+        result += "\n Items for Creating Resulting Item =[";
+        foreach (int i in item.m_requiredItemIDs)
+        {
+          result += i.ToString() + ", ";
+        }
+        result += "]\n\n";
+
+        Debug.Log(result);
+        result = "";
+      }
     }
 
 

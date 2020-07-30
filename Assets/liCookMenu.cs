@@ -181,6 +181,7 @@ public class liCookMenu : BaseUIManager
     {
         Vector3 offset = Vector3.up * 20;
 
+    Debug.Log("Works");
         if (activeTabIndex >= 0)
         {
             tabBtns[activeTabIndex].transform.localPosition -= offset;

@@ -1,0 +1,69 @@
+[
+  {
+    "m_resultingItemID": 35,
+    "m_requiredItemIDs": [
+      3,
+      12
+    ]
+  },
+  {
+    "m_resultingItemID": 29,
+    "m_requiredItemIDs": [
+      3,
+      14
+    ]
+  },
+  {
+    "m_resultingItemID": 33,
+    "m_requiredItemIDs": [
+      3,
+      19
+    ]
+  },
+  {
+    "m_resultingItemID": 31,
+    "m_requiredItemIDs": [
+      18,
+      19
+    ]
+  },
+  {
+    "m_resultingItemID": 32,
+    "m_requiredItemIDs": [
+      19,
+      27
+    ]
+  },
+  {
+    "m_resultingItemID": 26,
+    "m_requiredItemIDs": [
+      3,
+      11,
+      13
+    ]
+  },
+  {
+    "m_resultingItemID": 28,
+    "m_requiredItemIDs": [
+      3,
+      13,
+      17
+    ]
+  },
+  {
+    "m_resultingItemID": 30,
+    "m_requiredItemIDs": [
+      3,
+      14,
+      16
+    ]
+  },
+  {
+    "m_resultingItemID": 34,
+    "m_requiredItemIDs": [
+      11,
+      12,
+      16
+    ]
+  }
+]
