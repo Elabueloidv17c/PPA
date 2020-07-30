@@ -1,6 +1,5 @@
 {
-    "InComment": null,
-    "OutComment" : null,
+	"Name" : "TownTour_1",
     "Conversations": [
       {
         "Character": 10,
