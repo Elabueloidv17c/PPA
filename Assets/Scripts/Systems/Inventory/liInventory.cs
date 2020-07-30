@@ -738,12 +738,53 @@ public class liInventory : BaseUIManager
     return SubType.SOMETHING_IS_WRONG;  
   }
 
+  /// <summary>
+  /// 
+  /// </summary>
+  /// <param name="itemID"></param>
+  /// <returns> An Copy of a item if it has a valid ID.</returns>
+  public Item GetItemById(int itemID)
+  {
+    Item dummyItem = new Item();
+    dummyItem.id = -1;
+    foreach(var items in s_itemDataBase)
+    {
+      if (itemID == items.id)
+        return s_itemDataBase[itemID];
+    }
+
+    return dummyItem;
+  }
+
+  /// <summary>
+  /// Helper function for finding the index of the value that keeps track
+  /// of how many instances of a item the player has.
+  /// </summary>
+  /// <param name="itemID"> The Item to look for. </param>
+  /// <returns> The Index where the count of the item is kept. </returns>
+  private int GetItemInstanceIndex(int itemID)
+  {
+    return s_currentItems.FindIndex(X => X.id == itemID);
+  }
+
+  public int GetItemCountByID(int itemID)
+  {
+    int indexForItemInstance = GetItemInstanceIndex(itemID);
+    if ( -1 != indexForItemInstance )
+    {
+      return s_currentItems[indexForItemInstance].count;
+    }
+    return -1;
+  }
+
 #if UNITY_EDITOR // This code is ONLY for debugging in the editor.
-    [SerializeField]
+  [SerializeField]
     int itemID;
 
     [InspectorButton("InspectorAddItem")]
-    public bool addItem;
+
+    [SerializeField]
+    private bool addItem;
 
     /// <summary>
     /// Let's the user add an item to the inventory using the inspector
