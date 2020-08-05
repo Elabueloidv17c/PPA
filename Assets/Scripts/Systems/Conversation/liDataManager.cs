@@ -53,13 +53,19 @@ public struct Conversation
     public Dialog[] Dialogs;
 }
 
+[JsonConverter(typeof(StringEnumConverter))]  
+public enum DialogSide {
+	Left = 0,
+	Right
+}
+
 public struct Dialog
 {
     public DialogCharacter[] LeftCharacter;
     public DialogCharacter[] RightCharacter;
     public int ActiveCharacterLeft;
     public int ActiveCharacterRight;
-    public bool ActiveSide; // false if left, true if right
+    public DialogSide ActiveSide;
     public string Text;
     public string Thought;
     public LogActionData LogActionData;

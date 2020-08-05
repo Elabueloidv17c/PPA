@@ -1,6 +1,5 @@
 {
- "InComment": null,
- "OutComment" : null,
+ "Name": "Dia_1/Ismene_First_Meeting/Dock_1",
  "Conversations": [
   {
    "Character": 0,
@@ -38,7 +37,8 @@
       ]
     },
 
-    {//1
+    {
+	 "_index" : 1,
      "LeftCharacter": [
         {
           "CharacterID": 10,
@@ -66,7 +66,8 @@
     }
   },
     
-    {//2
+    {
+	 "_index" : 2,
      "LeftCharacter": [
          {
            "CharacterID": 10,
@@ -94,7 +95,8 @@
       }
     },
 
-    {//3
+    {
+	 "_index" : 3,
       "LeftCharacter": [
         {
           "CharacterID": 10,
@@ -135,7 +137,8 @@
      ]
     },
 
-    {//4
+    {
+	 "_index" : 4,
      "LeftCharacter": [
          {
            "CharacterID": 10,
@@ -163,7 +166,8 @@
       }
     },
 
-    {//5
+    {
+	 "_index" : 5,
       "LeftCharacter": [
         {
           "CharacterID": 10,
@@ -191,7 +195,8 @@
      }
     },
 
-    {//6
+    {
+	 "_index" : 6,
       "LeftCharacter": [
         {
           "CharacterID": 10,
@@ -219,7 +224,8 @@
      }
     },
 
-    {//7
+    {
+	 "_index" : 7,
       "LeftCharacter": [
         {
           "CharacterID": 10,
@@ -247,7 +253,8 @@
      }
     },
 
-    {//8
+    {
+	 "_index" : 8,
       "LeftCharacter": [
         {
           "CharacterID": 10,
@@ -275,7 +282,8 @@
      }
     },
     
-    {//9
+    {
+	 "_index" : 9,
       "LeftCharacter": [
         {
           "CharacterID": 10,
@@ -303,7 +311,8 @@
      }
     },    
 
-    {//10
+    {
+	 "_index" : 10,
       "LeftCharacter": [
         {
           "CharacterID": 10,
@@ -331,7 +340,8 @@
      }
     },
 
-    {//11
+    {
+	 "_index" : 11,
       "LeftCharacter": [
         {
           "CharacterID": 10,
@@ -359,7 +369,8 @@
      }
     },
 
-    {//12
+    {
+	 "_index" : 12,
       "LeftCharacter": [
         {
           "CharacterID": 10,
@@ -387,7 +398,8 @@
      }
     },  
     
-    {//13
+    {
+	 "_index" : 13,
       "LeftCharacter": [
         {
           "CharacterID": 10,
@@ -415,7 +427,8 @@
      }
     },    
 
-    {//14
+    {
+	 "_index" : 14,
       "LeftCharacter": [
         {
           "CharacterID": 10,
@@ -443,7 +456,8 @@
      }
     },      
 
-    {//15
+    {
+	 "_index" : 15,
       "LeftCharacter": [
         {
           "CharacterID": 10,
@@ -472,7 +486,8 @@
      }
     }, 
     
-    {//16
+    {
+	 "_index" : 16,
       "LeftCharacter": [
         {
           "CharacterID": 10,
@@ -500,7 +515,8 @@
      }
     },  
     
-    {//17
+    {
+	 "_index" : 17,
       "LeftCharacter": [
         {
           "CharacterID": 10,
@@ -524,9 +540,10 @@
      "LogAction": {
       "ActionType": "None"
      }
-    }
+    },
 
-    {//18
+    {
+	 "_index" : 18,
       "LeftCharacter": [
         {
           "CharacterID": 10,
