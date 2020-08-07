@@ -1,64 +1,54 @@
 {
-	"Name" : "Cementery_1",
-    "Conversations": [
-      {
-        "Character": 10,
-        "Dialogs": [
+  "Name": "Cementery_1",
+  "Conversations": [
+    {
+      "Character": 10,
+      "Dialogs": [
+        {
+          "LeftCharacter": [
             {
-            "LeftCharacter": [
-              {
-                "CharacterID": 10,
-                "Expression": 2
-              }
-            ],
-  
-            "RightCharacter": [
-              {
-                "CharacterID": 4,
-                "Expression": 0
-              }
-            ],
-  
-            "ActiveCharacterLeft": 0,
-            "ActiveCharacterRight": 0,
-            "ActiveSide": true,
-  
-            "Text": "This is the cemetery. Nobody comes here very often.",
-  
-            "LogActionData": {
-                "ActionType": "JumpToNext",
-                "Next": 1,
-                "Value": 0
-              }
-            },        
-            
+              "CharacterID": 10,
+              "Expression": 2
+            }
+          ],
+          "RightCharacter": [
             {
-                "LeftCharacter": [
-                  {
-                    "CharacterID": 10,
-                    "Expression": 2
-                  }
-                ],
-      
-                "RightCharacter": [
-                  {
-                    "CharacterID": 4,
-                    "Expression": 0
-                  }
-                ],
-      
-                "ActiveCharacterLeft": 0,
-                "ActiveCharacterRight": 0,
-                "ActiveSide": true,
-      
-                "Text": "Let’s not waste time here. Come with me.",
-      
-                "LogActionData": {
-                    "ActionType": "None"
-                }
-            } 
-            
-        ]
-      }
-    ]
-  }
+              "CharacterID": 4,
+              "Expression": 0
+            }
+          ],
+          "ActiveCharacterLeft": 0,
+          "ActiveCharacterRight": 0,
+          "ActiveSide": "Right",
+          "Text": "This is the cemetery. Nobody comes here very often.",
+          "LogActionData": {
+            "ActionType": "JumpToNext",
+            "Next": 1,
+            "Value": 0
+          }
+        },
+        {
+          "LeftCharacter": [
+            {
+              "CharacterID": 10,
+              "Expression": 2
+            }
+          ],
+          "RightCharacter": [
+            {
+              "CharacterID": 4,
+              "Expression": 0
+            }
+          ],
+          "ActiveCharacterLeft": 0,
+          "ActiveCharacterRight": 0,
+          "ActiveSide": "Right",
+          "Text": "Let’s not waste time here. Come with me.",
+          "LogActionData": {
+            "ActionType": "None"
+          }
+        }
+      ]
+    }
+  ]
+}
