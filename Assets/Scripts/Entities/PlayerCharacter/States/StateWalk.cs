@@ -7,7 +7,6 @@ using UnityEngine;
 /// </summary>
 public class StateWalk : IState<liPlayerCharacter>
 {
-    liPlayerCharacter m_entity;
    /*
        float verticalRatio = 1.0f;
     public float m_runSpeed = 2.8f;
@@ -17,10 +16,6 @@ public class StateWalk : IState<liPlayerCharacter>
     public StateWalk(StateMachine<liPlayerCharacter> stateMachine, liPlayerCharacter entity) : base(stateMachine, entity)
     {
 
-        // GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-        m_entity = entity;
-            //player.GetComponent<liPlayerCharacter>();
     }
 
     public override void onComputeNextState()
@@ -69,22 +64,22 @@ public class StateWalk : IState<liPlayerCharacter>
         {
             delta.Normalize();
 
-            m_entity.animator.SetFloat("X", delta.x);
-            m_entity.animator.SetFloat("Y", delta.y);
-            m_entity.animator.SetFloat("Speed", 0.5f);
+            m_pEntity.animSetFloats("X", delta.x);
+            m_pEntity.animSetFloats("Y", delta.y);
+            m_pEntity.animSetFloats("Speed", 0.5f);
 
-              delta.y *= m_entity.verticalRatio;
+              delta.y *= m_pEntity.verticalRatio;
 
-              m_entity.body.MovePosition(m_entity.body.position + (delta * Time.deltaTime *
+              m_pEntity.body.MovePosition(m_pEntity.body.position + (delta * Time.deltaTime *
                              ((Input.GetKey((KeyCode)GameInput.Sprint)) ?
-                             m_entity.m_runSpeed : m_entity.m_walkSpeed)));
+                             m_pEntity.m_runSpeed : m_pEntity.m_walkSpeed)));
 
                    
         }
 
         else
         {
-            m_entity.animator.SetFloat("Speed", 0f);
+            m_pEntity.animSetFloats("Speed", 0f);
         }
     }
     
