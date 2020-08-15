@@ -358,5 +358,14 @@
         "desc": "One of the penalties for refusing to participate in politics is that you end up being governed by your inferiors. -Plato",
         "icon": null,
         "largeImage": null
+    },
+    {
+        "id": 40,
+        "name": "Pez_Globo_Lemon_Carrot_Good",
+        "type": "General",
+        "subType": "FinishedFood",
+        "desc": "VGhlIGVzc2VuY2Ugb2YgYWxsIGJlYXV0aWZ1bCBhcnQsIGFsbCBncmVhdCBhcnQsIGlzIGdyYXRpdHVkZS4gLSBGcmllZHJpY2ggTmlldHpzY2hl",
+        "icon": null,
+        "largeImage": null
     }
 ]

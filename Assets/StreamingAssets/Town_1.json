@@ -1,6 +1,5 @@
 {
-    "InComment": null,
-    "OutComment" : null,
+	"Name" : "Town_1",
     "Conversations": [
       {
         "Character": 10,
