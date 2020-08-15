@@ -3,6 +3,12 @@
 
 public class liPlayerCharacter : MonoBehaviour
 {
+    GameObject Shirt;
+    GameObject Hair;
+    GameObject Skin;
+    GameObject Shoes;
+    GameObject Pants;
+
     /// <summary>
     /// en esta seccion se crean get and set de todos las 
     /// propiedades que tiene el player
@@ -11,7 +17,6 @@ public class liPlayerCharacter : MonoBehaviour
     public Rigidbody2D body {
         get { return m_body; }
         set { m_body = value; }
-
     }
     public Vector2 m_movement;
     public Vector2 movement{
@@ -20,7 +25,13 @@ public class liPlayerCharacter : MonoBehaviour
     }
     
     public Animator animator { get ; private set; }
-    
+
+    public Animator animator_shirt;
+    public Animator animator_hair;
+    public Animator animator_skin;
+    public Animator animator_shoes;
+    public Animator animator_pants;
+
     public float m_verticalRatio;
     public float verticalRatio {
 
@@ -47,12 +58,16 @@ public class liPlayerCharacter : MonoBehaviour
     /// ademas de que se crea la maquina la cual es la que mueve a todos los estados
     /// </summary>
     StateMachine<liPlayerCharacter> machine;
-
     StateRUN run;
     StateWalk walk;
     StateIdle idle;
     private void Awake()
     {
+        Shirt = transform.GetChild(0).gameObject;
+        Pants = transform.GetChild(1).gameObject;
+        Skin = transform.GetChild(2).gameObject;
+        Hair = transform.GetChild(3).gameObject;
+        Shoes = transform.GetChild(4).gameObject;
         /*
          * en esta seccion inicializamos todas las variables y los estados y empezamos a correr
          * la maquina de estados con el estado de idle
@@ -62,13 +77,20 @@ public class liPlayerCharacter : MonoBehaviour
         walk = new StateWalk(machine, this);
         idle = new StateIdle(machine, this);
         animator = GetComponent<Animator>();
-        animator.SetFloat("Y", -1);
+
+        animator_hair = Hair.GetComponent<Animator>();
+        animator_pants = Pants.GetComponent<Animator>();
+        animator_shoes = Shoes.GetComponent<Animator>();
+        animator_skin = Skin.GetComponent<Animator>();
+        animator_shirt = Shirt.GetComponent<Animator>();
+        //Initializing position facing down
+        animSetFloats("Y", -1);
     }
     void Start() {
         m_body = GetComponent<Rigidbody2D>();
       
         machine.Init(this, idle);
-       
+
     }
     /// <summary>
     /// en fix update va hacer toda la logica del player para que se mueva y cambie de estados
@@ -109,5 +131,15 @@ public class liPlayerCharacter : MonoBehaviour
             Input.GetKey((KeyCode)GameInput.MoveRight) || Input.GetKey((KeyCode)GameInput.MoveLeft));
         
 
+    }
+
+    internal void animSetFloats(string field, float value)
+    {
+        animator.SetFloat(field, value);
+        animator_hair.SetFloat(field, value);
+        animator_pants.SetFloat(field, value);
+        animator_shoes.SetFloat(field, value);
+        animator_skin.SetFloat(field, value);
+        animator_shirt.SetFloat(field, value);
     }
 }

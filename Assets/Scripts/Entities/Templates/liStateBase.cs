@@ -11,8 +11,8 @@ using UnityEngine;
 /// <typeparam name="T"></typeparam>
 public abstract class IState<T>
 {
-    private StateMachine<T> m_pStateMachine;
-    private T m_pEntity;
+    protected StateMachine<T> m_pStateMachine;
+    protected T m_pEntity;
     //aqui se inicializa las variables
     public IState(StateMachine<T> stateMachine,T entity)
     {
