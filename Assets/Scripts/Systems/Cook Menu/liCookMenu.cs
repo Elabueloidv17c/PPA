@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -60,12 +61,21 @@ public class liCookMenu : BaseUIManager
     [SerializeField]
     Color inventoryColor;
 
+    liTransition m_transition;
+
+    bool m_isTransitionInDone;
+
+    bool m_isTransitionOutDone;
+
     void Awake()
     {
         instance = this;
     }
   void Start()
   {
+    m_isTransitionInDone = false;
+    m_isTransitionOutDone = false;
+
     inactiveColor = Color.white;
     activeColor = Color.white;
     inventoryColor = Color.white;
@@ -120,6 +130,8 @@ public class liCookMenu : BaseUIManager
 
     m_cookBtn.onClick.AddListener(() => cookBtnCallBack(0));
 
+    m_transition = GetComponent<liTransition>();
+
     OpenUI();
     CloseUI();
   }
@@ -129,15 +141,24 @@ public class liCookMenu : BaseUIManager
     {
         if (liGameManager.instance &&
             !liGameManager.instance.menuActive &&
+            m_transition.isFadeDone &&
             Input.GetKeyDown(KeyCode.C))
         {
+           //StartCoroutine( FadeInOfUI());
             OpenUI();
+            //m_transition.m_elementsToTransition.alpha = 1.0f;
+            StartCoroutine(m_transition.FadeIn());
+          
         }
-        else if (IsOpen && IsMaximized &&
+        else if (IsOpen && IsMaximized && 
+                 m_transition.isFadeDone &&
                 (Input.GetKeyDown(KeyCode.Escape) ||
                  Input.GetKeyDown(KeyCode.C)))
         {
-            CloseUI();
+
+            //m_transition.m_elementsToTransition.alpha = 1.0f;
+            StartCoroutine(FadeOutOfUI());
+       //     CloseUI();
         }
     }
 
@@ -462,5 +483,29 @@ public class liCookMenu : BaseUIManager
     // update the amount each item slot displays.
     usableSlots.ForEach(X => X.text.text = (inventory.GetItemCountByID(X.itemID)).ToString());
 
+  }
+
+  /// <summary>
+  /// Used to fade OUT the UI.
+  /// </summary>
+  /// <returns></returns>
+  private IEnumerator FadeOutOfUI()
+  {
+    yield return  m_transition.FadeOut();
+    Debug.Log("Done with fade out");
+    CloseUI();
+    yield return true;
+  }
+  
+  /// <summary>
+  /// Used to fade IN the UI.
+  /// </summary>
+  /// <returns></returns>
+  private IEnumerator FadeInOfUI()
+  {
+    OpenUI();
+    m_transition.FadeIn();
+
+    yield return true;
   }
 }

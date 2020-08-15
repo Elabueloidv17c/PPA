@@ -797,7 +797,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -80.24419}
+  m_AnchoredPosition: {x: 0, y: -99.999954}
   m_SizeDelta: {x: 392, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2917763773262572614
@@ -2863,7 +2863,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -262, y: -301.2332}
+  m_AnchoredPosition: {x: -262, y: -375.39542}
   m_SizeDelta: {x: 1281.109, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3598097827491586381
@@ -6066,7 +6066,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 3598097827584639871}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.5
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7630,6 +7630,8 @@ GameObject:
   - component: {fileID: 5309421865013503504}
   - component: {fileID: 5309421865013503505}
   - component: {fileID: 4618223328000492859}
+  - component: {fileID: -346487107975299409}
+  - component: {fileID: 4921995041996479654}
   m_Layer: 5
   m_Name: CookMenu
   m_TagString: Untagged
@@ -7735,6 +7737,32 @@ MonoBehaviour:
   inactiveColor: {r: 0, g: 0, b: 0, a: 0}
   activeColor: {r: 0.3880385, g: 0.8490566, b: 0.108134575, a: 0}
   inventoryColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!225 &-346487107975299409
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5309421865013503510}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &4921995041996479654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5309421865013503510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26456598924eb9c4687a646ddee31f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionAnimation: {fileID: 0}
+  m_elementsToTransition: {fileID: 0}
 --- !u!1 &5309421865669970753
 GameObject:
   m_ObjectHideFlags: 0
@@ -8077,8 +8105,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1888399043621019345}
   m_HandleRect: {fileID: 6250301290786414485}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.5
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
