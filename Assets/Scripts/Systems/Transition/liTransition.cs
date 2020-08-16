@@ -5,43 +5,34 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Requires a Canvas Group for this to work.
+/// Class used for transitioning effects for the UI of the game.
 /// </summary>
 [RequireComponent(typeof(CanvasGroup))]
 public class liTransition : MonoBehaviour
 {
   /// <summary>
-  /// The Reference to the Transition Effect.
+  /// The Reference to the Transition animation.
   /// </summary>
   [SerializeField]
   private Animation transitionAnimation;
 
-  public CanvasGroup m_elementsToTransition;
+  /// <summary>
+  /// Is the elements the class controls.
+  /// </summary>
+  public CanvasGroup elementsInCanvasGroup;
 
   public bool isFadeDone { get; set; }
 
   private void Awake()
   {
-    m_elementsToTransition = GetComponent<CanvasGroup>();
+    elementsInCanvasGroup = GetComponent<CanvasGroup>();
     isFadeDone = true;
   }
 
-  // Update is called once per frame
-  void Update()
-  {
-    //m_alphaSum += Time.deltaTime;
-    //m_elementsToTransition.alpha = m_alphaSum % 1.0f;
-
-    //if (Input.GetKeyDown(KeyCode.P))
-    //{
-    //  FadeIn();
-    //}
-
-    //if (Input.GetKeyDown(KeyCode.O))
-    //{
-    //  FadeOut();
-    //}
-  }
+  /// <summary>
+  /// Makes the elements in the CanvasGroup fade into existence (make them visible) .
+  /// </summary>
+  /// <returns></returns>
   public IEnumerator FadeIn()
   {
     isFadeDone = false;
@@ -53,24 +44,32 @@ public class liTransition : MonoBehaviour
     yield return true;
   }
 
+  /// <summary>
+  /// Makes the elements in the CanvasGroup fade out of existence (make them invisible).
+  /// </summary>
+  /// <returns></returns>
   public IEnumerator FadeOut()
   {
     isFadeDone = false;
-    foreach (var value in fade())
+    foreach (var value in vanishEffect())
     {
       yield return value;
     }
     isFadeDone = true;
-    yield return 1;
+    yield return true;
   }
 
-  public IEnumerable fade()
+  /// <summary>
+  /// Makes the elements attached to the Canvas Group disappear.
+  /// </summary>
+  /// <returns> "true" when the effect is complete, otherwise it returns "false"</returns>
+  private IEnumerable vanishEffect()
   {
     float totalTransition = 1.0f;
     while (totalTransition > 0.000000f)
     {
       totalTransition -= Time.deltaTime;
-      m_elementsToTransition.alpha = totalTransition;
+      elementsInCanvasGroup.alpha = totalTransition;
       yield return false;
     }
 
@@ -78,16 +77,16 @@ public class liTransition : MonoBehaviour
   }
 
   /// <summary>
-  /// 
+  /// Makes the elements attached to the Canvas Group reappear.
   /// </summary>
-  /// <returns></returns>
-  public IEnumerable reappear()
+  /// <returns> "true" when the effect is complete, otherwise it returns "false"</returns>
+  private IEnumerable reappear()
   {
     float totalTransition = 0.0f;
     while (totalTransition < 1.000000f)
     {
       totalTransition += Time.deltaTime;
-      m_elementsToTransition.alpha = totalTransition;
+      elementsInCanvasGroup.alpha = totalTransition;
       yield return false;
     }
 

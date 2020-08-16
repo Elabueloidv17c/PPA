@@ -492,7 +492,6 @@ public class liCookMenu : BaseUIManager
   private IEnumerator FadeOutOfUI()
   {
     yield return  m_transition.FadeOut();
-    Debug.Log("Done with fade out");
     CloseUI();
     yield return true;
   }
