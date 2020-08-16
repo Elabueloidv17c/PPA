@@ -144,9 +144,7 @@ public class liCookMenu : BaseUIManager
             m_transition.isFadeDone &&
             Input.GetKeyDown(KeyCode.C))
         {
-           //StartCoroutine( FadeInOfUI());
             OpenUI();
-            //m_transition.m_elementsToTransition.alpha = 1.0f;
             StartCoroutine(m_transition.FadeIn());
           
         }
@@ -155,10 +153,7 @@ public class liCookMenu : BaseUIManager
                 (Input.GetKeyDown(KeyCode.Escape) ||
                  Input.GetKeyDown(KeyCode.C)))
         {
-
-            //m_transition.m_elementsToTransition.alpha = 1.0f;
             StartCoroutine(FadeOutOfUI());
-       //     CloseUI();
         }
     }
 

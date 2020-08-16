@@ -23,6 +23,15 @@ public class liTransition : MonoBehaviour
 
   public bool isFadeDone { get; set; }
 
+  /// <summary>
+  /// How much time does it take to for the transition to happen.
+  /// </summary>
+  public float transitionTime = 1.0f;
+
+  /// <summary>
+  /// 
+  /// </summary>
+  protected float transitionSpeed; 
   private void Awake()
   {
     elementsInCanvasGroup = GetComponent<CanvasGroup>();
@@ -32,10 +41,13 @@ public class liTransition : MonoBehaviour
   /// <summary>
   /// Makes the elements in the CanvasGroup fade into existence (make them visible) .
   /// </summary>
+  /// <remarks> Is Meant to be used with a StartCoroutine(FadeIn()) call </remarks>
   /// <returns></returns>
   public IEnumerator FadeIn()
   {
+    
     isFadeDone = false;
+    transitionSpeed = 1.0f / Mathf.Max(transitionTime, float.Epsilon);
     foreach (var value in reappear())
     {
       yield return value;
@@ -51,6 +63,7 @@ public class liTransition : MonoBehaviour
   public IEnumerator FadeOut()
   {
     isFadeDone = false;
+    transitionSpeed = 1.0f / Mathf.Max(transitionTime, float.Epsilon);
     foreach (var value in vanishEffect())
     {
       yield return value;
@@ -68,7 +81,7 @@ public class liTransition : MonoBehaviour
     float totalTransition = 1.0f;
     while (totalTransition > 0.000000f)
     {
-      totalTransition -= Time.deltaTime;
+      totalTransition -= (Time.deltaTime * transitionSpeed);
       elementsInCanvasGroup.alpha = totalTransition;
       yield return false;
     }
@@ -85,7 +98,7 @@ public class liTransition : MonoBehaviour
     float totalTransition = 0.0f;
     while (totalTransition < 1.000000f)
     {
-      totalTransition += Time.deltaTime;
+      totalTransition += (Time.deltaTime * transitionSpeed);
       elementsInCanvasGroup.alpha = totalTransition;
       yield return false;
     }

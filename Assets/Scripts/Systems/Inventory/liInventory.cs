@@ -11,6 +11,8 @@ using Text = TMPro.TextMeshProUGUI;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.Runtime.InteropServices.ComTypes;
+using TreeEditor;
+using System.Collections;
 
 #pragma warning disable CS0649
 
@@ -86,7 +88,10 @@ public class liInventory : BaseUIManager
     Button takeDepositBtn;
     Image backgroundImg;
 
-    #endregion
+  #endregion
+
+  liTransition transition;
+
     /// <summary>
     /// Good old fashion single-ton.
     /// </summary>
@@ -174,6 +179,7 @@ public class liInventory : BaseUIManager
         var scrollView = itemDetails.Find("Item Description").GetChild(0);
         itemDescTxt = scrollView.Find("Viewport").GetChild(0).GetComponent<Text>();
         descScrollbar = scrollView.Find("Scrollbar Vertical").GetComponent<Scrollbar>();
+        transition = GetComponent<liTransition>();
 
         OpenUI();
         CloseUI();
@@ -189,12 +195,14 @@ public class liInventory : BaseUIManager
            Input.GetKeyDown(KeyCode.I))
         {
             OpenUI();
+            StartCoroutine(transition.FadeIn());
         }
         else if(IsOpen && IsMaximized &&
                 (Input.GetKeyDown(KeyCode.Escape) || 
                  Input.GetKeyDown(KeyCode.I)))
         {
-            CloseUI();
+            //CloseUI();
+            StartCoroutine(FadeOutUI());
         }
     }
 
@@ -776,6 +784,20 @@ public class liInventory : BaseUIManager
     }
     return -1;
   }
+
+  private IEnumerator FadeInUI()
+  {
+    OpenUI();
+    transition.FadeIn();
+    yield return true;
+  }
+
+  private IEnumerator FadeOutUI()
+  {
+    yield return transition.FadeOut();
+    CloseUI();
+    yield return true;
+  } 
 
 #if UNITY_EDITOR // This code is ONLY for debugging in the editor.
   [SerializeField]
