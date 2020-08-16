@@ -192,12 +192,13 @@ public class liInventory : BaseUIManager
     {
         if(liGameManager.instance && 
            !liGameManager.instance.menuActive &&
+           transition.isFadeDone &&
            Input.GetKeyDown(KeyCode.I))
         {
             OpenUI();
             StartCoroutine(transition.FadeIn());
         }
-        else if(IsOpen && IsMaximized &&
+        else if(IsOpen && IsMaximized && transition.isFadeDone &&
                 (Input.GetKeyDown(KeyCode.Escape) || 
                  Input.GetKeyDown(KeyCode.I)))
         {

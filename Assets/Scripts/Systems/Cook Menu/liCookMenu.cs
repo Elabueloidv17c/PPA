@@ -63,19 +63,12 @@ public class liCookMenu : BaseUIManager
 
     liTransition m_transition;
 
-    bool m_isTransitionInDone;
-
-    bool m_isTransitionOutDone;
-
     void Awake()
     {
         instance = this;
     }
   void Start()
   {
-    m_isTransitionInDone = false;
-    m_isTransitionOutDone = false;
-
     inactiveColor = Color.white;
     activeColor = Color.white;
     inventoryColor = Color.white;
