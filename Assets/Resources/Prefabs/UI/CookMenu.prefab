@@ -7762,7 +7762,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionAnimation: {fileID: 0}
-  m_elementsToTransition: {fileID: 0}
+  elementsInCanvasGroup: {fileID: 0}
+  transitionTime: 0.73
 --- !u!1 &5309421865669970753
 GameObject:
   m_ObjectHideFlags: 0

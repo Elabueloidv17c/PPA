@@ -8553,6 +8553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionAnimation: {fileID: 0}
   elementsInCanvasGroup: {fileID: 0}
+  transitionTime: 0.65
 --- !u!1 &9200177786952312232
 GameObject:
   m_ObjectHideFlags: 0
