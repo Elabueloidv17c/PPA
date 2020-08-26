@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -60,6 +61,8 @@ public class liCookMenu : BaseUIManager
     [SerializeField]
     Color inventoryColor;
 
+    liTransition m_transition;
+
     void Awake()
     {
         instance = this;
@@ -120,6 +123,8 @@ public class liCookMenu : BaseUIManager
 
     m_cookBtn.onClick.AddListener(() => cookBtnCallBack(0));
 
+    m_transition = GetComponent<liTransition>();
+
     OpenUI();
     CloseUI();
   }
@@ -129,15 +134,19 @@ public class liCookMenu : BaseUIManager
     {
         if (liGameManager.instance &&
             !liGameManager.instance.menuActive &&
+            m_transition.isFadeDone &&
             Input.GetKeyDown(KeyCode.C))
         {
             OpenUI();
+            StartCoroutine(m_transition.FadeIn());
+          
         }
-        else if (IsOpen && IsMaximized &&
+        else if (IsOpen && IsMaximized && 
+                 m_transition.isFadeDone &&
                 (Input.GetKeyDown(KeyCode.Escape) ||
                  Input.GetKeyDown(KeyCode.C)))
         {
-            CloseUI();
+            StartCoroutine(FadeOutOfUI());
         }
     }
 
@@ -462,5 +471,28 @@ public class liCookMenu : BaseUIManager
     // update the amount each item slot displays.
     usableSlots.ForEach(X => X.text.text = (inventory.GetItemCountByID(X.itemID)).ToString());
 
+  }
+
+  /// <summary>
+  /// Used to fade OUT the UI.
+  /// </summary>
+  /// <returns></returns>
+  private IEnumerator FadeOutOfUI()
+  {
+    yield return  m_transition.FadeOut();
+    CloseUI();
+    yield return true;
+  }
+  
+  /// <summary>
+  /// Used to fade IN the UI.
+  /// </summary>
+  /// <returns></returns>
+  private IEnumerator FadeInOfUI()
+  {
+    OpenUI();
+    m_transition.FadeIn();
+
+    yield return true;
   }
 }

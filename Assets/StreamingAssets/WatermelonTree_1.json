@@ -1,198 +1,203 @@
 {
-	"Name" : "WatermelonTree_1",
-    "Conversations" : [
-        {
-            "Character" : 0,
-            "Dialogs" : [
+	"Name": "WatermelonTree_1",
+	"Conversations": [
+		{
+			"Character": 0,
+			"Dialogs": [
 				{
-					"LeftCharacter": [{
-						"CharacterID" : 0,
-						"Expression" : 2
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 1,
-						"Expression" : 0
-					}],
-					
+					"LeftCharacter": [
+						{
+							"CharacterID": 0,
+							"Expression": 2
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 1,
+							"Expression": 0
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": false,
-					
-					"Text" : "I can's stop admiring its size. Its beautiful branches created a sort of canopy over the ground, shading it from the sun. As my eyes followed their shape, I noticed I’d almost stepped over a boy. Despite the fact that I was almost on top of him, the boy took no notice, nose buried in the pages of a book. His eyes moved quickly from side to side, completely enraptured.",
-					
-					"LogActionData" : {
-						"ActionType" : "Buttons"
+					"ActiveSide": "Left",
+					"Text": "I can's stop admiring its size. Its beautiful branches created a sort of canopy over the ground, shading it from the sun. As my eyes followed their shape, I noticed I’d almost stepped over a boy. Despite the fact that I was almost on top of him, the boy took no notice, nose buried in the pages of a book. His eyes moved quickly from side to side, completely enraptured.",
+					"LogActionData": {
+						"ActionType": "Buttons"
 					},
-					
-					"Options" : [
+					"Options": [
 						{
-							"Text" : "What up, bud!!!",
-							"Next" : 1,
-							"Value" : -2
+							"Text": "What up, bud!!!",
+							"Next": 1,
+							"Value": -2
 						},
 						{
-							"Text" : "Hi there.",
-							"Next" : 6,
-							"Value" : 1
+							"Text": "Hi there.",
+							"Next": 6,
+							"Value": 1
 						},
 						{
-							"Text" : "I leave him alone.",
-							"Next" : 100,
-							"Value" : 0
+							"Text": "I leave him alone.",
+							"Next": 100,
+							"Value": 0
 						}
 					]
 				},
 				{
-					"LeftCharacter": [{
-						"CharacterID" : 0,
-						"Expression" : 2
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 1,
-						"Expression" : 0
-					}],
-					
+					"LeftCharacter": [
+						{
+							"CharacterID": 0,
+							"Expression": 2
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 1,
+							"Expression": 0
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": false,
-	
-					"Text" : "What up, bud!!!"
+					"ActiveSide": "Left",
+					"Text": "What up, bud!!!"
 				},
 				{
-					"LeftCharacter": [{
-						"CharacterID" : 0,
-						"Expression" : 2
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 1,
-						"Expression" : 0
-					}],
-			
+					"LeftCharacter": [
+						{
+							"CharacterID": 0,
+							"Expression": 2
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 1,
+							"Expression": 0
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": true,
-	
-					"Text" : "“Ah… y-you scared m-me…”"
+					"ActiveSide": "Right",
+					"Text": "“Ah… y-you scared m-me…”"
 				},
 				{
-					"LeftCharacter": [{
-						"CharacterID" : 0,
-						"Expression" : 2
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 1,
-						"Expression" : 0
-					}],
-			
+					"LeftCharacter": [
+						{
+							"CharacterID": 0,
+							"Expression": 2
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 1,
+							"Expression": 0
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": true,
-	
-					"Text" : "“I am so sorry, I’ve got no idea what came over me.”"
+					"ActiveSide": "Right",
+					"Text": "“I am so sorry, I’ve got no idea what came over me.”"
 				},
 				{
-					"LeftCharacter": [{
-						"CharacterID" : 0,
-						"Expression" : 2
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 1,
-						"Expression" : 0
-					}],
-			
+					"LeftCharacter": [
+						{
+							"CharacterID": 0,
+							"Expression": 2
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 1,
+							"Expression": 0
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": true,
-	
-					"Text" : "“Yeah, it’s fine.. .Can I just,” he gestured towards his book, “go back to reading? I’m kind of busy at the moment.”"
+					"ActiveSide": "Right",
+					"Text": "“Yeah, it’s fine.. .Can I just,” he gestured towards his book, “go back to reading? I’m kind of busy at the moment.”"
 				},
 				{
-					"LeftCharacter": [{
-						"CharacterID" : 0,
-						"Expression" : 2
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 1,
-						"Expression" : 0
-					}],
-			
+					"LeftCharacter": [
+						{
+							"CharacterID": 0,
+							"Expression": 2
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 1,
+							"Expression": 0
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": true,
-	
-					"Text" : "“Of course! Lemme just...get out of your way then…”",
-
-					"LogActionData" : {
-						"ActionType" : "End"
+					"ActiveSide": "Right",
+					"Text": "“Of course! Lemme just...get out of your way then…”",
+					"LogActionData": {
+						"ActionType": "End"
 					}
 				},
 				{
-					"LeftCharacter": [{
-						"CharacterID" : 0,
-						"Expression" : 2
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 1,
-						"Expression" : 0
-					}],
-			
+					"LeftCharacter": [
+						{
+							"CharacterID": 0,
+							"Expression": 2
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 1,
+							"Expression": 0
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": true,
-	
-					"Text" : "“Uh, hi there.”"
+					"ActiveSide": "Right",
+					"Text": "“Uh, hi there.”"
 				},
 				{
-					"LeftCharacter": [{
-						"CharacterID" : 0,
-						"Expression" : 2
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 1,
-						"Expression" : 0
-					}],
-			
+					"LeftCharacter": [
+						{
+							"CharacterID": 0,
+							"Expression": 2
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 1,
+							"Expression": 0
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": true,
-	
-					"Text" : "“Ah… h-hello. I didn’t notice you there.” He stole another glance. “Sorry.”"
+					"ActiveSide": "Right",
+					"Text": "“Ah… h-hello. I didn’t notice you there.” He stole another glance. “Sorry.”"
 				},
 				{
-					"LeftCharacter": [{
-						"CharacterID" : 0,
-						"Expression" : 2
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 1,
-						"Expression" : 0
-					}],
-			
+					"LeftCharacter": [
+						{
+							"CharacterID": 0,
+							"Expression": 2
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 1,
+							"Expression": 0
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": true,
-	
-                    "Text" : "“That’s okay! Looks like you were really into your book.”"
+					"ActiveSide": "Right",
+					"Text": "“That’s okay! Looks like you were really into your book.”"
 				},
 				{
 					"Tought": "WTF",
-                    "Text" : "“Here, take a SQUIDWARD.”",
-                    
-                    "LogActionData" : {
-                        "ActionType" : "GiveItem",
-                        "Value" : 10
+					"Text": "“Here, take a SQUIDWARD.”",
+					"LogActionData": {
+						"ActionType": "GiveItem",
+						"Value": 10
 					}
 				}
 			]
-        }
-    ]
+		}
+	]
 }

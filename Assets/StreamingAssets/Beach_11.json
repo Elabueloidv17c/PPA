@@ -1,572 +1,525 @@
 {
-	"Name" : "Beach_11",
-    "Conversations" : [
-        {
-            "Character" : 0,
-            "Dialogs" : [
+	"Name": "Beach_11",
+	"Conversations": [
+		{
+			"Character": 0,
+			"Dialogs": [
 				{
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 0
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 1
-					}],
-					
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 0
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 1
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": false,
-					
-					
-					"LogActionData" : {
-						"ActionType" : "Buttons"
+					"ActiveSide": "Left",
+					"LogActionData": {
+						"ActionType": "Buttons"
 					},
-					
-					"Options" : [
+					"Options": [
 						{
-							"Text" : "Are you okay?",
-							"Next" : 1,
-							"Value" : 0
+							"Text": "Are you okay?",
+							"Next": 1,
+							"Value": 0
 						},
 						{
-							"Text" : "Push her into the water",
-							"Next" : 11,
-							"Value" : 0
+							"Text": "Push her into the water",
+							"Next": 11,
+							"Value": 0
 						},
 						{
-							"Text" : "Try to distract her",
-							"Next" : 16,
-							"Value" : 0
+							"Text": "Try to distract her",
+							"Next": 16,
+							"Value": 0
 						}
 					]
-                },
-
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 0
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 0
-					}],
-					
+				},
+				{
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 0
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 0
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": false,
-					
-                    "Text" : "Hey...you okay?",
-                    
-                    "LogActionData" : {
-						"ActionType" : "JumpToNext",
-						"Next" : 2,
-						"Value" : 0
+					"ActiveSide": "Left",
+					"Text": "Hey...you okay?",
+					"LogActionData": {
+						"ActionType": "JumpToNext",
+						"Next": 2,
+						"Value": 0
 					}
-                },
-
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 0
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 0
-					}],
-					
+				},
+				{
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 0
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 0
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": true,
-					
-                    "Text" : "Have you ever asked yourself how many islands there are in the world?",
-                    "Thought" : "Huh?",
-                    
-                    "LogActionData" : {
-						"ActionType" : "JumpToNext",
-						"Next" : 3,
-						"Value" : 0
+					"ActiveSide": "Right",
+					"Text": "Have you ever asked yourself how many islands there are in the world?",
+					"Thought": "Huh?",
+					"LogActionData": {
+						"ActionType": "JumpToNext",
+						"Next": 3,
+						"Value": 0
 					}
-                },
-
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 0
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 0
-					}],
-					
+				},
+				{
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 0
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 0
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": false,
-					
-                    "Text" : "Umm...no. Never. Why?",
-                    
-                    "LogActionData" : {
-						"ActionType" : "JumpToNext",
-						"Next" : 4,
-						"Value" : 0
+					"ActiveSide": "Left",
+					"Text": "Umm...no. Never. Why?",
+					"LogActionData": {
+						"ActionType": "JumpToNext",
+						"Next": 4,
+						"Value": 0
 					}
-                },
-
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 0
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 0
-					}],
-					
+				},
+				{
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 0
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 0
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": true,
-					
-                    "Text" : "We’re in an island right now, but how many are there? We’re just a tiny fraction.  And look at the see… it’s so big that you can’t even see where the sky starts and ends.",
-                    
-                    "LogActionData" : {
-						"ActionType" : "JumpToNext",
-						"Next" : 5,
-						"Value" : 0
+					"ActiveSide": "Right",
+					"Text": "We’re in an island right now, but how many are there? We’re just a tiny fraction.  And look at the see… it’s so big that you can’t even see where the sky starts and ends.",
+					"LogActionData": {
+						"ActionType": "JumpToNext",
+						"Next": 5,
+						"Value": 0
 					}
-                },
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 0
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 0
-					}],
-					
+				},
+				{
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 0
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 0
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": false,
-					
-                    "Text" : "That’s...true, I guess.",
-                    
-                    "LogActionData" : {
-						"ActionType" : "JumpToNext",
-						"Next" : 6,
-						"Value" : 0
+					"ActiveSide": "Left",
+					"Text": "That’s...true, I guess.",
+					"LogActionData": {
+						"ActionType": "JumpToNext",
+						"Next": 6,
+						"Value": 0
 					}
-                },
-
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 0
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 2
-					}],
-					
+				},
+				{
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 0
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 2
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": true,
-					
-                    "Text" : "You know? I’ve traveled a lot - to at least 6 other islands nearby. They are all equally beautiful and they all have different fishes...      I love fish",
-                    
-                    "LogActionData" : {
-						"ActionType" : "JumpToNext",
-						"Next" : 7,
-						"Value" : 0
+					"ActiveSide": "Right",
+					"Text": "You know? I’ve traveled a lot - to at least 6 other islands nearby. They are all equally beautiful and they all have different fishes...      I love fish",
+					"LogActionData": {
+						"ActionType": "JumpToNext",
+						"Next": 7,
+						"Value": 0
 					}
-                },
-
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 2
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 2
-					}],
-					
+				},
+				{
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 2
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 2
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": false,
-					
-                    "Text" : "Really! So what’s your favorite kind?",
-                    
-                    "LogActionData" : {
-						"ActionType" : "JumpToNext",
-						"Next" : 8,
-						"Value" : 0
+					"ActiveSide": "Left",
+					"Text": "Really! So what’s your favorite kind?",
+					"LogActionData": {
+						"ActionType": "JumpToNext",
+						"Next": 8,
+						"Value": 0
 					}
-                },
-
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 2
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 2
-					}],
-					
+				},
+				{
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 2
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 2
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": true,
-					
-                    "Text" : "There’s a fish that swims near the shore called Ornate Wrasse,” she told me, “I looked it up in a book. And it’s so colorful!” Then she pouted. “But I can’t eat it.",
-                    
-                    "LogActionData" : {
-						"ActionType" : "JumpToNext",
-						"Next" : 9,
-						"Value" : 0
+					"ActiveSide": "Right",
+					"Text": "There’s a fish that swims near the shore called Ornate Wrasse,” she told me, “I looked it up in a book. And it’s so colorful!” Then she pouted. “But I can’t eat it.",
+					"LogActionData": {
+						"ActionType": "JumpToNext",
+						"Next": 9,
+						"Value": 0
 					}
-                },
-
-            
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 2
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 2
-					}],
-					
+				},
+				{
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 2
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 2
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": false,
-					
-                    "Text" : "Well, I hope to see one someday.",
-                    
-                    "LogActionData" : {
-						"ActionType" : "JumpToNext",
-						"Next" : 10,
-						"Value" : 0
+					"ActiveSide": "Left",
+					"Text": "Well, I hope to see one someday.",
+					"LogActionData": {
+						"ActionType": "JumpToNext",
+						"Next": 10,
+						"Value": 0
 					}
-                },
-
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 2
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 2
-					}],
-					
+				},
+				{
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 2
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 2
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": true,
-					
-                    "Text" : "Well, maybe I’ll show it to you one day...        Oh, gotta go! I’ll see you later [].",
-                    
-                    "LogActionData" : {
-						"ActionType" : "None"
+					"ActiveSide": "Right",
+					"Text": "Well, maybe I’ll show it to you one day...        Oh, gotta go! I’ll see you later [].",
+					"LogActionData": {
+						"ActionType": "None"
 					}
-                },
-
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 2
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 2
-					}],
-					
+				},
+				{
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 2
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 2
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": true,
-					
-                    "Text" : "You know, the first time I saw the sea I thought the sky had melted and become a puddle.",
-                    
-                    "LogActionData" : {
-						"ActionType" : "JumpToNext",
-						"Next" : 12,
-						"Value" : 0
+					"ActiveSide": "Right",
+					"Text": "You know, the first time I saw the sea I thought the sky had melted and become a puddle.",
+					"LogActionData": {
+						"ActionType": "JumpToNext",
+						"Next": 12,
+						"Value": 0
 					}
-                },
-
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 2
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 2
-					}],
-					
+				},
+				{
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 2
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 2
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": false,
-					
-                    "Text" : "Oh...that sounds beautiful.",
-                    
-                    "LogActionData" : {
-						"ActionType" : "JumpToNext",
-						"Next" : 13,
-						"Value" : 0
+					"ActiveSide": "Left",
+					"Text": "Oh...that sounds beautiful.",
+					"LogActionData": {
+						"ActionType": "JumpToNext",
+						"Next": 13,
+						"Value": 0
 					}
-                },
-
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 2
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 2
-					}],
-					
+				},
+				{
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 2
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 2
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": true,
-					
-                    "Text" : "Here. For brightening my day.",
-                    
-                    "LogActionData" : {
-						"ActionType" : "JumpToNext",
-						"Next" : 14,
-						"Value" : 0
+					"ActiveSide": "Right",
+					"Text": "Here. For brightening my day.",
+					"LogActionData": {
+						"ActionType": "JumpToNext",
+						"Next": 14,
+						"Value": 0
 					}
-                },
-
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 2
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 2
-					}],
-					
+				},
+				{
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 2
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 2
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": false,
-					
-                    "Text" : "Thank you. I’ll treasure it.",
-                    
-                    "LogActionData" : {
-						"ActionType" : "JumpToNext",
-						"Next" : 15,
-						"Value" : 0
+					"ActiveSide": "Left",
+					"Text": "Thank you. I’ll treasure it.",
+					"LogActionData": {
+						"ActionType": "JumpToNext",
+						"Next": 15,
+						"Value": 0
 					}
-                },
-
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 2
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 2
-					}],
-					
+				},
+				{
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 2
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 2
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": true,
-					
-                    "Text" : "Gotta go! I hope I’ll see you later.",
-                    
-                    "LogActionData" : {
-                        "ActionType" : "None"
+					"ActiveSide": "Right",
+					"Text": "Gotta go! I hope I’ll see you later.",
+					"LogActionData": {
+						"ActionType": "None"
 					}
-                },
-
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 0
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 0
-					}],
-					
+				},
+				{
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 0
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 0
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": false,
-					
-                    "Text" : "Hey! The weather is good today, don’t you think?",
-                    
-                    "LogActionData" : {
-						"ActionType" : "JumpToNext",
-						"Next" : 17,
-						"Value" : 0
+					"ActiveSide": "Left",
+					"Text": "Hey! The weather is good today, don’t you think?",
+					"LogActionData": {
+						"ActionType": "JumpToNext",
+						"Next": 17,
+						"Value": 0
 					}
-                },
-
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 0
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 1
-					}],
-					
+				},
+				{
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 0
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 1
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": false,
-					
-                    "Text" : "There’s a lot of tiny islands near this one, did you know? I learned that the other day. There’s a really big one but nobody lives there. How cool is that?",
-                    
-                    "LogActionData" : {
-						"ActionType" : "JumpToNext",
-						"Next" : 18,
-						"Value" : 0
+					"ActiveSide": "Left",
+					"Text": "There’s a lot of tiny islands near this one, did you know? I learned that the other day. There’s a really big one but nobody lives there. How cool is that?",
+					"LogActionData": {
+						"ActionType": "JumpToNext",
+						"Next": 18,
+						"Value": 0
 					}
-                },
-
-
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 0
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 1
-					}],
-					
+				},
+				{
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 0
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 1
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": true,
-					
-                    "Text" : "Hmm.. That’s interesting ...",
-                    
-                    "LogActionData" : {
-						"ActionType" : "JumpToNext",
-						"Next" : 19,
-						"Value" : 0
+					"ActiveSide": "Right",
+					"Text": "Hmm.. That’s interesting ...",
+					"LogActionData": {
+						"ActionType": "JumpToNext",
+						"Next": 19,
+						"Value": 0
 					}
-                },
-
-
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 0
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 1
-					}],
-					
+				},
+				{
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 0
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 1
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": false,
-					
-                    "Text" : "And the weather is the same as here.",
-                    
-                    "LogActionData" : {
-						"ActionType" : "JumpToNext",
-						"Next" : 20,
-						"Value" : 0
+					"ActiveSide": "Left",
+					"Text": "And the weather is the same as here.",
+					"LogActionData": {
+						"ActionType": "JumpToNext",
+						"Next": 20,
+						"Value": 0
 					}
-                },
-
-
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 0
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 1
-					}],
-					
+				},
+				{
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 0
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 1
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": true,
-					
-                    "Text" : "Oh…hey…I need to go, see you another day.",
-                    
-                    "LogActionData" : {
-						"ActionType" : "JumpToNext",
-						"Next" : 21,
-						"Value" : 0
+					"ActiveSide": "Right",
+					"Text": "Oh…hey…I need to go, see you another day.",
+					"LogActionData": {
+						"ActionType": "JumpToNext",
+						"Next": 21,
+						"Value": 0
 					}
-                },
-
-
-                {
-					"LeftCharacter": [{
-						"CharacterID" : 10,
-						"Expression" : 0
-					}],
-					
-					"RightCharacter": [{
-						"CharacterID" : 3,
-						"Expression" : 1
-					}],
-					
+				},
+				{
+					"LeftCharacter": [
+						{
+							"CharacterID": 10,
+							"Expression": 0
+						}
+					],
+					"RightCharacter": [
+						{
+							"CharacterID": 3,
+							"Expression": 1
+						}
+					],
 					"ActiveCharacterLeft": 0,
 					"ActiveCharacterRight": 0,
-					"ActiveSide": false,
-					
-                    "Text" : "Bye!",
-                    
-                    "LogActionData" : {
-						"ActionType" : "None"
+					"ActiveSide": "Left",
+					"Text": "Bye!",
+					"LogActionData": {
+						"ActionType": "None"
 					}
-                }
-
-                
-            ]
-        }
-    ]
+				}
+			]
+		}
+	]
 }
