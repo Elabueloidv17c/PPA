@@ -916,7 +916,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -96.21394}
+  m_AnchoredPosition: {x: 0, y: -99.99999}
   m_SizeDelta: {x: 392, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2917763773262572614
@@ -2982,7 +2982,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -262, y: -361.1832}
+  m_AnchoredPosition: {x: -262, y: -375.39575}
   m_SizeDelta: {x: 1281.109, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3598097827491586381
@@ -6185,7 +6185,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 3598097827584639871}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.49999958
+  m_Size: 0.9999374
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7869,7 +7869,7 @@ GameObject:
   - component: {fileID: 5309421865013503507}
   - component: {fileID: 5309421865013503504}
   - component: {fileID: 5309421865013503505}
-  - component: {fileID: 5309421865013503511}
+  - component: {fileID: 3973252876451629432}
   m_Layer: 5
   m_Name: CookMenu
   m_TagString: Untagged
@@ -7960,7 +7960,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5309421865013503511
+--- !u!114 &3973252876451629432
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7969,14 +7969,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5309421865013503510}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34c57237e787b044cbdce95f1e7aef0f, type: 3}
+  m_Script: {fileID: 11500000, guid: ad416cc81d96b1741a5ba981575185ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  depositMode: 0
-  inactiveColor: {r: 0.5686275, g: 0.34901962, b: 0.34509805, a: 1}
-  activeColor: {r: 0.7137255, g: 0.87843144, b: 0.7294118, a: 1}
-  depositEnabledColor: {r: 0, g: 0, b: 0, a: 0}
-  depositActiveColor: {r: 0, g: 0, b: 0, a: 0}
+  inactiveColor: {r: 0.33333334, g: 0.33333334, b: 0.33333334, a: 0}
+  activeColor: {r: 0, g: 0, b: 0, a: 0}
   inventoryColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5309421865669970753
 GameObject:
@@ -8477,7 +8474,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 6250301290786414485}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.50000006
+  m_Size: 0.9999376
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
